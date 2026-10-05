@@ -1,0 +1,92 @@
+[
+ {
+  "nombre": "404 recurso inexistente",
+  "metodo": "GET",
+  "ruta": "/api/v1/academic-catalog/curricula/00000000-0000-0000-0000-000000000000",
+  "estado": 404,
+  "fugas": [],
+  "largo": 91,
+  "muestra": "{\"error\":\"curriculum_not_found\",\"message\":\"El currículo solicitado no existe.\",\"issues\":[]}"
+ },
+ {
+  "nombre": "400 cuerpo vacio",
+  "metodo": "POST",
+  "ruta": "/api/v1/admin/academic-structure/sites",
+  "estado": 400,
+  "fugas": [],
+  "largo": 95,
+  "muestra": "{\"error\":\"validation_failed\",\"message\":\"Revisa los valores de identidad e inténtalo de nuevo.\"}"
+ },
+ {
+  "nombre": "400 tipo incorrecto",
+  "metodo": "POST",
+  "ruta": "/api/v1/admin/academic-structure/sites",
+  "estado": 400,
+  "fugas": [],
+  "largo": 95,
+  "muestra": "{\"error\":\"validation_failed\",\"message\":\"Revisa los valores de identidad e inténtalo de nuevo.\"}"
+ },
+ {
+  "nombre": "400 uuid invalido",
+  "metodo": "GET",
+  "ruta": "/api/v1/admin/academic-structure/units/no-es-uuid/order",
+  "estado": 403,
+  "fugas": [],
+  "largo": 87,
+  "muestra": "{\"error\":\"forbidden\",\"message\":\"El usuario autenticado no tiene el permiso requerido.\"}"
+ },
+ {
+  "nombre": "400 codigo territorial raro",
+  "metodo": "GET",
+  "ruta": "/api/v1/territorial-catalog/departments/ZZ/entities",
+  "estado": 400,
+  "fugas": [],
+  "largo": 166,
+  "muestra": "{\"detail\":\"El código del departamento debe contener dos dígitos.\",\"instance\":\"/api/v1/territorial-catalog/departments/ZZ/entities\",\"status\":400,\"title\":\"Bad Req"
+ },
+ {
+  "nombre": "400 codigo territorial largo",
+  "metodo": "GET",
+  "ruta": "/api/v1/territorial-catalog/departments/123456/entities",
+  "estado": 400,
+  "fugas": [],
+  "largo": 170,
+  "muestra": "{\"detail\":\"El código del departamento debe contener dos dígitos.\",\"instance\":\"/api/v1/territorial-catalog/departments/123456/entities\",\"status\":400,\"title\":\"Bad"
+ },
+ {
+  "nombre": "401 sin token",
+  "metodo": "GET",
+  "ruta": "/api/v1/me",
+  "estado": 401,
+  "fugas": [],
+  "largo": 63,
+  "muestra": "{\"error\":\"unauthorized\",\"message\":\"Se requiere autenticación.\"}"
+ },
+ {
+  "nombre": "404 metodo no permitido",
+  "metodo": "PATCH",
+  "ruta": "/api/v1/admin/academic-structure/sites",
+  "estado": 403,
+  "fugas": [],
+  "largo": 87,
+  "muestra": "{\"error\":\"forbidden\",\"message\":\"El usuario autenticado no tiene el permiso requerido.\"}"
+ },
+ {
+  "nombre": "400 query mal formada",
+  "metodo": "GET",
+  "ruta": "/api/v1/admin/academic-structure/audit-events?limit=abc",
+  "estado": 400,
+  "fugas": [],
+  "largo": 100,
+  "muestra": "{\"error\":\"invalid_academic_structure\",\"message\":\"Los datos de estructura académica no son válidos.\"}"
+ },
+ {
+  "nombre": "400 limite fuera de rango",
+  "metodo": "GET",
+  "ruta": "/api/v1/admin/academic-structure/audit-events?limit=99999",
+  "estado": 400,
+  "fugas": [],
+  "largo": 100,
+  "muestra": "{\"error\":\"invalid_academic_structure\",\"message\":\"Los datos de estructura académica no son válidos.\"}"
+ }
+]

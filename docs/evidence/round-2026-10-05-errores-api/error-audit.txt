@@ -1,0 +1,12 @@
+404  limpio 404 recurso inexistente
+400  limpio 400 cuerpo vacio
+400  limpio 400 tipo incorrecto
+403  limpio 400 uuid invalido
+400  limpio 400 codigo territorial raro
+400  limpio 400 codigo territorial largo
+401  limpio 401 sin token
+403  limpio 404 metodo no permitido
+400  limpio 400 query mal formada
+400  limpio 400 limite fuera de rango
+---
+casos 10, con fuga 0, respuestas 5xx 0
