@@ -72,7 +72,13 @@
   p:not(.spaces-eyebrow) { max-width: 660px; margin: 7px 0 0; color: var(--ui-text-muted); font-size: 11px; line-height: 1.55; }
 }
 .spaces-pathways-mark { display: grid; width: 41px; height: 41px; flex: 0 0 auto; place-items: center; border: 1px solid #e3e4dc; border-radius: 50%; color: #60755a; font-size: 17px; }
+.spaces-pathways-count { margin: -6px 0 12px; color: var(--ui-text-muted); font-size: 10px; }
 .spaces-pathway-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 232px), 1fr)); gap: 12px; }
+.spaces-pathways-empty { display: grid; min-height: 128px; align-content: center; justify-items: center; gap: 10px; border: 1px dashed #d9dbd2; border-radius: 11px; color: var(--ui-text-muted); font-size: 12px; text-align: center;
+  p { margin: 0; }
+  button { min-height: 35px; padding: 0 13px; border: 1px solid #3d4437; border-radius: 7px; background: #283026; color: #fff; font: inherit; font-size: 10px; cursor: pointer; }
+  button:focus-visible { outline: 3px solid var(--brand-focus, #1a1a1a); outline-offset: 3px; }
+}
 .spaces-pathway-card { display: flex; min-width: 0; flex-direction: column; padding: 17px; border: 1px solid #e4e6dc; border-radius: 11px; background: #fff;
   h3 { margin: 13px 0 5px; color: #292a24; font-family: Georgia, 'Times New Roman', serif; font-size: 17px; font-weight: 500; line-height: 1.25; }
 }

@@ -221,21 +221,21 @@ describe('SpaceGuidePage', () => {
     await screen.findByRole('article', { name: /cread chiquinquirá/i })
 
     // Act
-    await user.type(screen.getByRole('searchbox', { name: 'Buscar espacios' }), 'chiquinquira')
+    await user.type(screen.getByRole('searchbox', { name: 'Buscar espacios o rutas oficiales' }), 'chiquinquira')
 
     // Assert
     expect(screen.getByRole('article', { name: /cread chiquinquirá/i })).toBeVisible()
     expect(screen.getByRole('status')).toHaveTextContent('1 de 3 espacios')
-    await user.clear(screen.getByRole('searchbox', { name: 'Buscar espacios' }))
+    await user.clear(screen.getByRole('searchbox', { name: 'Buscar espacios o rutas oficiales' }))
     await user.selectOptions(screen.getByRole('combobox', { name: 'Filtrar por tipo' }), 'SERVICE')
-    await user.type(screen.getByRole('searchbox', { name: 'Buscar espacios' }), 'TUNJA')
+    await user.type(screen.getByRole('searchbox', { name: 'Buscar espacios o rutas oficiales' }), 'TUNJA')
 
     // Assert
     expect(screen.getByRole('article', { name: /acra/i })).toBeVisible()
     expect(screen.queryByRole('article', { name: /sede central tunja/i })).not.toBeInTheDocument()
     expect(screen.getByRole('status')).toHaveTextContent('1 de 3 espacios')
-    await user.clear(screen.getByRole('searchbox', { name: 'Buscar espacios' }))
-    await user.type(screen.getByRole('searchbox', { name: 'Buscar espacios' }), 'chiquinquira')
+    await user.clear(screen.getByRole('searchbox', { name: 'Buscar espacios o rutas oficiales' }))
+    await user.type(screen.getByRole('searchbox', { name: 'Buscar espacios o rutas oficiales' }), 'chiquinquira')
     expect(screen.getByRole('status')).toHaveTextContent('0 de 3 espacios')
   })
 
@@ -258,7 +258,7 @@ describe('SpaceGuidePage', () => {
 
     await user.selectOptions(municipalityFilter, 'Tunja')
     await user.selectOptions(screen.getByRole('combobox', { name: 'Filtrar por tipo' }), 'SERVICE')
-    await user.type(screen.getByRole('searchbox', { name: 'Buscar espacios' }), 'acra')
+    await user.type(screen.getByRole('searchbox', { name: 'Buscar espacios o rutas oficiales' }), 'acra')
 
     expect(screen.getByRole('article', { name: /acra/i })).toBeVisible()
     expect(screen.queryByRole('article', { name: /sede central tunja/i })).not.toBeInTheDocument()
@@ -290,7 +290,7 @@ describe('SpaceGuidePage', () => {
     await user.selectOptions(screen.getByRole('combobox', { name: 'Filtrar por tipo' }), 'SERVICE')
 
     // Act
-    const search = screen.getByRole('searchbox', { name: 'Buscar espacios' })
+    const search = screen.getByRole('searchbox', { name: 'Buscar espacios o rutas oficiales' })
     await user.click(search)
     await user.paste('lugar inexistente')
 
@@ -351,5 +351,74 @@ describe('SpaceGuidePage', () => {
     expect(pathways).toHaveTextContent('La plataforma no muestra disponibilidad ni confirma reservas.')
     expect(pathways.querySelector('form')).toBeNull()
     expect(pathways.querySelector('input')).toBeNull()
+  })
+
+  it('finds an official rental pathway while reporting location and pathway results separately', async () => {
+    // Arrange
+    const user = userEvent.setup()
+    render(<SpaceGuidePage client={clientReturning()} />)
+    await screen.findByRole('article', { name: /sede central tunja/i })
+
+    // Act
+    await user.type(screen.getByRole('searchbox', { name: 'Buscar espacios o rutas oficiales' }), 'ALQUILER')
+
+    // Assert
+    const pathways = screen.getByRole('region', { name: 'Préstamo, asignación y alquiler' })
+    expect(within(pathways).getByRole('article', { name: 'Auditorios y espacios académicos o administrativos' }))
+      .toBeVisible()
+    expect(within(pathways).queryByRole('article', { name: 'Escenarios deportivos' })).not.toBeInTheDocument()
+    expect(screen.getByRole('status')).toHaveTextContent('0 de 3 espacios')
+    expect(screen.getByRole('status')).toHaveTextContent('1 de 5 recorridos')
+    expect(screen.getByText('No encontramos espacios con esos filtros.')).toBeVisible()
+  })
+
+  it('normalizes accents and keeps type and municipality filters limited to places', async () => {
+    // Arrange
+    const user = userEvent.setup()
+    render(<SpaceGuidePage client={clientReturning()} />)
+    await screen.findByRole('article', { name: /sede central tunja/i })
+
+    // Act
+    await user.selectOptions(screen.getByRole('combobox', { name: 'Filtrar por tipo' }), 'CREAD')
+    await user.selectOptions(screen.getByRole('combobox', { name: 'Filtrar por municipio' }), 'Chiquinquirá')
+    await user.type(screen.getByRole('searchbox', { name: 'Buscar espacios o rutas oficiales' }), 'ASIGNACION')
+
+    // Assert
+    const pathways = screen.getByRole('region', { name: 'Préstamo, asignación y alquiler' })
+    expect(within(pathways).getByRole('article', { name: 'Aulas de informática' })).toBeVisible()
+    expect(within(pathways).queryByRole('article', { name: 'Auditorios y espacios académicos o administrativos' }))
+      .not.toBeInTheDocument()
+    expect(screen.getByRole('status')).toHaveTextContent('0 de 3 espacios')
+    expect(screen.getByRole('status')).toHaveTextContent('1 de 5 recorridos')
+  })
+
+  it('searches official source labels and offers an independent way to clear a pathway query', async () => {
+    // Arrange
+    const user = userEvent.setup()
+    render(<SpaceGuidePage client={clientReturning()} />)
+    await screen.findByRole('article', { name: /sede central tunja/i })
+    await user.selectOptions(screen.getByRole('combobox', { name: 'Filtrar por tipo' }), 'CREAD')
+    await user.selectOptions(screen.getByRole('combobox', { name: 'Filtrar por municipio' }), 'Chiquinquirá')
+    const search = screen.getByRole('searchbox', { name: 'Buscar espacios o rutas oficiales' })
+
+    // Act
+    await user.type(search, 'resolucion 7189')
+
+    // Assert
+    const pathways = screen.getByRole('region', { name: 'Préstamo, asignación y alquiler' })
+    expect(within(pathways).getByRole('article', { name: 'Escenarios deportivos' })).toBeVisible()
+    expect(within(pathways).queryByRole('article', { name: 'Salas y espacios de biblioteca' }))
+      .not.toBeInTheDocument()
+    expect(within(pathways).getByText(/1 de 5 recorridos/)).toBeVisible()
+
+    await user.clear(search)
+    await user.type(search, 'sin coincidencias')
+    expect(screen.getByText('No encontramos recorridos oficiales para esta búsqueda.')).toBeVisible()
+    await user.click(screen.getByRole('button', { name: 'Limpiar búsqueda' }))
+    expect(search).toHaveValue('')
+    expect(within(pathways).getAllByRole('article')).toHaveLength(snapshot.requestPathways.length)
+    expect(screen.getByRole('status')).toHaveTextContent('1 de 3 espacios')
+    expect(screen.getByRole('combobox', { name: 'Filtrar por tipo' })).toHaveValue('CREAD')
+    expect(screen.getByRole('combobox', { name: 'Filtrar por municipio' })).toHaveValue('Chiquinquirá')
   })
 })

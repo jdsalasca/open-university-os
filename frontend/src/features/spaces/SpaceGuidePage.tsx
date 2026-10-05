@@ -96,6 +96,13 @@ export function SpaceGuidePage({ client = defaultSpaceGuideClient }: SpaceGuideP
     })
   }, [kind, municipality, search, visibleState])
 
+  const visiblePathways = useMemo(() => {
+    if (visibleState.status !== 'ready') return []
+    const normalizedSearch = normalizeForSearch(search.trim())
+    return visibleState.snapshot.requestPathways.filter((pathway) => !normalizedSearch
+      || normalizeForSearch(searchablePathwayText(pathway)).includes(normalizedSearch))
+  }, [search, visibleState])
+
   return (
     <section className="spaces-page" aria-label="Guía pública de espacios UPTC">
       <div className="spaces-hero">
@@ -120,17 +127,17 @@ export function SpaceGuidePage({ client = defaultSpaceGuideClient }: SpaceGuideP
         </div>
       </div>
 
-      <section className="spaces-search-panel" aria-label="Buscar lugares">
+      <section className="spaces-search-panel" aria-label="Buscar espacios y rutas oficiales">
         <label className="spaces-search-field">
-          <span>Buscar espacios</span>
+          <span>Buscar espacios o rutas oficiales</span>
           <span className="spaces-search-control">
             <span aria-hidden="true">⌕</span>
             <input
               type="search"
-              aria-label="Buscar espacios"
+              aria-label="Buscar espacios o rutas oficiales"
               value={search}
               onChange={(event) => setSearch(event.target.value)}
-              placeholder="Sede, municipio, dirección o servicio"
+              placeholder="Sede, municipio, alquiler, asignación o fuente oficial"
             />
           </span>
         </label>
@@ -163,7 +170,8 @@ export function SpaceGuidePage({ client = defaultSpaceGuideClient }: SpaceGuideP
         </label>
         {visibleState.status === 'ready' && (
           <p className="spaces-result-count" role="status" aria-live="polite">
-            {visibleLocations.length} de {visibleState.snapshot.locations.length} espacios
+            {visibleLocations.length} de {visibleState.snapshot.locations.length} espacios ·{' '}
+            {visiblePathways.length} de {visibleState.snapshot.requestPathways.length} recorridos oficiales
           </p>
         )}
       </section>
@@ -191,7 +199,11 @@ export function SpaceGuidePage({ client = defaultSpaceGuideClient }: SpaceGuideP
       )}
 
       {visibleState.status === 'ready' && (
-        <SpaceUsePathways pathways={visibleState.snapshot.requestPathways} />
+        <SpaceUsePathways
+          pathways={visiblePathways}
+          totalPathways={visibleState.snapshot.requestPathways.length}
+          onClearSearch={() => setSearch('')}
+        />
       )}
 
       {visibleState.status === 'ready' && (
@@ -210,7 +222,15 @@ export function SpaceGuidePage({ client = defaultSpaceGuideClient }: SpaceGuideP
   )
 }
 
-function SpaceUsePathways({ pathways }: { pathways: SpaceUsePathway[] }) {
+function SpaceUsePathways({
+  pathways,
+  totalPathways,
+  onClearSearch,
+}: {
+  pathways: SpaceUsePathway[]
+  totalPathways: number
+  onClearSearch: () => void
+}) {
   return (
     <section className="spaces-pathways" aria-labelledby="spaces-pathways-title">
       <div className="spaces-pathways-heading">
@@ -221,9 +241,15 @@ function SpaceUsePathways({ pathways }: { pathways: SpaceUsePathway[] }) {
         </div>
         <span className="spaces-pathways-mark" aria-hidden="true">↗</span>
       </div>
-      <div className="spaces-pathway-grid">
-        {pathways.map((pathway) => <SpaceUsePathwayCard key={pathway.id} pathway={pathway} />)}
-      </div>
+      <p className="spaces-pathways-count">{pathways.length} de {totalPathways} recorridos oficiales</p>
+      {pathways.length > 0
+        ? <div className="spaces-pathway-grid">
+          {pathways.map((pathway) => <SpaceUsePathwayCard key={pathway.id} pathway={pathway} />)}
+        </div>
+        : <div className="spaces-pathways-empty">
+          <p>No encontramos recorridos oficiales para esta búsqueda.</p>
+          <button type="button" onClick={onClearSearch}>Limpiar búsqueda</button>
+        </div>}
     </section>
   )
 }
@@ -335,6 +361,17 @@ function searchableText(location: SpaceLocation): string {
   return [location.name, location.municipality, location.department, location.address, location.locationDetail]
     .filter((value): value is string => Boolean(value))
     .join(' ')
+}
+
+function searchablePathwayText(pathway: SpaceUsePathway): string {
+  return [
+    USE_KIND_LABELS[pathway.kind],
+    pathway.title,
+    pathway.audience,
+    pathway.summary,
+    pathway.availabilityNote,
+    ...pathway.sources.map((source) => source.label),
+  ].join(' ')
 }
 
 function normalizeForSearch(value: string): string {
