@@ -1,8 +1,8 @@
-# Universiry — Open University Frontend
+# Universiry — Frontend
 
-El código público de [`open-university-frontend`](https://github.com/jdsalasca/open-university-frontend) busca apoyar la digitalización de la UPTC y servir como base adaptable para otras universidades que necesiten servicios digitales robustos y confiables. Construye el monolito web institucional con Vite, React, TypeScript y SCSS; sus capacidades operativas se habilitan según contratos y permisos del backend.
+Este frontend vive en `frontend/` del monorepo público [`open-university-os`](https://github.com/jdsalasca/open-university-os). La plataforma busca apoyar la digitalización de la UPTC y ofrecer una base adaptable a otras universidades que necesiten servicios digitales robustos y confiables. La aplicación web es un monolito desplegable construido con Vite, React, TypeScript y SCSS; sus capacidades operativas se habilitan según contratos y permisos del backend.
 
-El frontend vive en un repositorio independiente, coordinado con el backend mediante la rama `develop`.
+El código fuente, `backend/`, Compose y CI comparten el mismo `develop`; los dos monolitos mantienen límites de ejecución y despliegue independientes.
 
 ## Requisitos y comandos
 

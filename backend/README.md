@@ -1,6 +1,6 @@
 # Universiry Backend
 
-Monolito modular Java 25 / Spring Boot para la plataforma universitaria. Este directorio pertenece al repositorio privado `Universiry-backend`; en el checkout integrado es raíz de backend y convive con `frontend/` como submódulo de `Universiry-frontend` para desarrollo local. Las ramas de integración de ambos repositorios son `develop`.
+Monolito modular Java 25 / Spring Boot para la plataforma universitaria. Este directorio es `backend/` dentro del monorepo público [`open-university-os`](https://github.com/jdsalasca/open-university-os); el frontend vive en `frontend/` como contenido versionado normal del mismo repositorio. Compose y CI están en la raíz. Los monolitos comparten el `develop` del repositorio y conservan límites de ejecución y despliegue independientes.
 
 ## Herramientas y verificaciones
 

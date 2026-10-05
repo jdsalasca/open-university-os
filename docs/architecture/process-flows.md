@@ -1244,27 +1244,30 @@ sequenceDiagram
 
 El encabezado `Accept-Language` elige el bundle del backend; sin preferencia, se usa `es-CO`. Compose Watch y la base persistente son exclusivamente locales de desarrollo.
 
-## Verificación continua por repositorio
+## CI del monorepo
 
 ```mermaid
 flowchart TD
-  Dev[Push o pull request a develop]
-  Dev --> FrontRepo[Repositorio open-university-frontend]
-  Dev --> BackRepo[Repositorio open-university-backend]
-  FrontRepo --> CheckoutFront[Checkout de solo lectura]
-  CheckoutFront --> Node[Node 24 y npm ci]
-  Node --> FrontTests[npm test]
-  FrontTests --> FrontBuild[npm run build y presupuestos]
-  FrontBuild --> FrontLint[npm run lint]
-  BackRepo --> CheckoutBack[Checkout de solo lectura]
-  CheckoutBack --> Java[Java 25 desde .sdkmanrc]
-  Java --> MySQL[Servicio MySQL 8.4 efímero]
-  MySQL --> Maven[Maven verify y contratos MySQL sintéticos]
-  FrontLint --> FrontResult[Resultado del workflow frontend]
-  Maven --> BackResult[Resultado del workflow backend]
+  Trigger[Push a develop, PR hacia develop o ejecución manual]
+  Repo[Repositorio open-university-os]
+  Workflow[Platform CI\n.github/workflows/ci.yml]
+  FrontendJob[Job frontend]
+  Node[Node 24 + npm ci]
+  FrontTests[npm test]
+  FrontBuild[npm run build + presupuestos]
+  FrontLint[npm run lint]
+  BackendJob[Job backend]
+  Java[Java 25 desde .sdkmanrc]
+  MySQL[Servicio MySQL 8.4 efímero]
+  Maven[Maven verify + contratos MySQL sintéticos]
+  FrontResult[Resultado del job frontend]
+  BackResult[Resultado del job backend]
+  Trigger --> Repo --> Workflow
+  Workflow --> FrontendJob --> Node --> FrontTests --> FrontBuild --> FrontLint --> FrontResult
+  Workflow --> BackendJob --> Java --> MySQL --> Maven --> BackResult
 ```
 
-Las workflows usan acciones fijadas por SHA, permisos `contents: read` y no consumen secretos de producción. MySQL existe solo durante la ejecución del job. El perfil de latencia `<50 ms` queda fuera de esta señal: se mide con el protocolo reproducible descrito en el runbook y no se presenta como SLA institucional.
+El workflow único recibe el mismo SHA del monorepo y ejecuta los dos jobs de forma independiente. Usa acciones fijadas por SHA, permisos `contents: read` y no consume secretos de producción. MySQL existe solo durante el job backend. El perfil de latencia `<50 ms` queda fuera de esta señal: se mide con el protocolo reproducible descrito en el runbook y no se presenta como SLA institucional.
 
 ## Reemplazo y corte de un dominio
 

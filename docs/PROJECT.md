@@ -21,7 +21,7 @@ Avanzar hacia una plataforma universitaria coherente que pueda reemplazar sistem
 | Institución objetivo | Universidad Pedagógica y Tecnológica de Colombia (UPTC) |
 | Nombre de trabajo | Universiry |
 | Objetivo | Unificar gradualmente servicios de la vida universitaria y reemplazar sistemas por dominio, tras inventario, contratos y aceptación institucional |
-| Repositorios | `jdsalasca/open-university-frontend` y `jdsalasca/open-university-backend`; ambos publican el código e integran en `develop`. El backend contiene el frontend como submódulo para Compose local. |
+| Repositorio | `jdsalasca/open-university-os`: monorepo público con `backend/`, `frontend/`, Compose e integración continua en un solo `develop`. |
 | Frontend | Monolito Vite, React, TypeScript y SCSS; pruebas Vitest con AAA; catálogo público y navegación separados de operaciones protegidas. |
 | Backend | Monolito modular Spring Boot sobre Java 25 administrado por SDKMAN; contratos/interfaces de aplicación, pruebas AAA, i18n y migraciones Flyway. |
 | Persistencia | MySQL objetivo con esquema versionado. La metadata pública de directorios informativos se conserva como contenido atribuido; no se carga como maestro institucional. |
@@ -36,9 +36,9 @@ Completar el descubrimiento del proceso de inscripción y selección de aspirant
 
 ## Decisiones confirmadas
 
-- Dos repositorios públicos coordinados: `open-university-frontend` (monolito Vite/React/TypeScript) y `open-university-backend` (monolito Java/Spring Boot). Ambos integran en `develop`.
-- Integración remota solo en `develop`: no crear ramas de funcionalidad ni PRs; aislar cambios locales en worktrees detached desde `origin/develop`. Un push requiere autorización explícita, verificación y avance fast-forward.
-- El checkout backend incluye el frontend como submódulo para alojar el Compose local que levanta frontend, backend y MySQL. Esta relación de checkout no comparte código fuente ni despliegues entre las aplicaciones.
+- Un solo repositorio público, `open-university-os`, contiene los monolitos desplegables `frontend/` y `backend/`, junto con Compose, migraciones y el workflow único de CI. Ambos servicios conservan límites y ciclos de despliegue independientes.
+- La única rama remota de integración es `develop`. No publiques ramas de funcionalidad ni PRs; para aislar cambios usa worktrees detached desde `origin/develop`, integra mediante avance fast-forward y verifica el SHA remoto.
+- `frontend/` se versiona como contenido normal del monorepo. No hay gitlink ni `.gitmodules`; los repositorios históricos se conservan como referencia, no como dependencia de checkout o build.
 - Frontend: Vite, React y TypeScript.
 - Backend: Java 25 administrado por SDKMAN y Spring Boot; el build y el `.sdkmanrc` fijan versión exacta.
 - Backend como monolito modular, separado por capacidades de negocio. Los microservicios quedan aplazados hasta que haya evidencia de una frontera y una ganancia concreta.
@@ -57,7 +57,7 @@ Los grupos exactos y su mapeo al proveedor institucional se confirman con UPTC. 
 
 ## Alcance del primer incremento
 
-1. Dos repositorios reproducibles, herramientas de contexto IA, Compose Watch con MySQL local, traducciones del backend, base versionada y documentación viva.
+1. Un monorepo reproducible para ambos monolitos, herramientas de contexto IA, Compose Watch con MySQL local, traducciones del backend, base versionada y documentación viva.
 2. Centro de Identidad Visual que publica una configuración de marca validada: colores, logos, banners y nombres de módulos.
 3. Estructura de navegación y contratos preparados para identidad, estudiante y catálogo académico, sin inventar datos reales ni marcar módulos futuros como funcionales.
 4. El mecanismo OIDC se implementa con configuración vacía por defecto; DTIC debe confirmar issuer, audience, claim, scopes, callback registrado y matriz grupo-permiso antes de habilitarlo. Inventario vigente sigue siendo requisito para migraciones productivas y cortes oficiales.
