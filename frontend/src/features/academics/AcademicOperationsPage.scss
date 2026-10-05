@@ -56,14 +56,14 @@
 .academic-panel-heading { display: flex; align-items: center; gap: 11px; min-height: 38px; margin-bottom: 17px; }
 .academic-panel-heading > div { min-width: 0; }
 .academic-panel-heading h2 { margin: 2px 0 0; color: #24251f; font-family: Georgia, 'Times New Roman', serif; font-size: 19px; font-weight: 500; letter-spacing: -.02em; }
-.academic-panel-kicker { margin: 0; color: #8d8e84; font-size: 8px; font-weight: 750; letter-spacing: .13em; }
+.academic-panel-kicker { margin: 0; color: #6f7068; font-size: 8px; font-weight: 750; letter-spacing: .13em; }
 .academic-panel-icon { display: grid; flex: 0 0 33px; width: 33px; height: 33px; place-items: center; border-radius: 9px; font-size: 16px; }
 .academic-icon-units { background: #f5efda; color: #74621e; }
 .academic-icon-sites { background: #eaf2ec; color: #50745d; }
 .academic-icon-periods { background: #eaf0f5; color: #48667d; }
 .academic-panel-count { display: grid; width: 26px; height: 26px; place-items: center; margin-left: auto; border: 1px solid #e8e8e1; border-radius: 7px; color: #73746d; font-size: 9px; font-weight: 700; }
-.academic-panel-footnote { margin: 15px 0 0; padding-top: 11px; border-top: 1px solid #f0f0eb; color: #92938b; font-size: 8px; line-height: 1.5; }
-.academic-empty-state { margin: 0; padding: 22px 15px; border: 1px dashed #dedfd7; border-radius: 8px; background: #fafaf7; color: #84857b; font-size: 10px; line-height: 1.55; text-align: center; }
+.academic-panel-footnote { margin: 15px 0 0; padding-top: 11px; border-top: 1px solid #f0f0eb; color: #6f6f69; font-size: 8px; line-height: 1.5; }
+.academic-empty-state { margin: 0; padding: 22px 15px; border: 1px dashed #dedfd7; border-radius: 8px; background: #fafaf7; color: #6f7067; font-size: 10px; line-height: 1.55; text-align: center; }
 
 .academic-tree, .academic-tree-children, .academic-site-tree, .academic-site-tree ul, .academic-period-list, .academic-unattached-programs ul { margin: 0; padding: 0; list-style: none; }
 .academic-tree-wrap { min-height: 64px; }
@@ -93,7 +93,7 @@
 .academic-affiliation-row-heading > span { flex: 0 0 auto; padding: 4px 6px; border-radius: 5px; background: #edf3ed; color: #4c6f55; font-size: 7px; font-weight: 700; }
 .academic-affiliation-row-heading > span.is-outside-current { background: #f4f1e6; color: #77662e; }
 .academic-affiliation-timeline li p, .academic-affiliation-timeline li small { margin: 0; color: #6f7067; font-size: 8px; line-height: 1.5; }
-.academic-affiliation-timeline li small { color: #92938b; }
+.academic-affiliation-timeline li small { color: #6f6f69; }
 
 .academic-site-tree { display: grid; gap: 8px; }
 .academic-site-node > ul { display: grid; gap: 6px; margin: 6px 0 0 21px; padding-left: 13px; border-left: 1px solid #dfe7e0; }

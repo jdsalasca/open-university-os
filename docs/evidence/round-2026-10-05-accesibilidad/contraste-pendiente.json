@@ -1,0 +1,303 @@
+[
+ {
+  "color": "rgb(138, 140, 130)",
+  "ratioMedido": 3.41,
+  "usos": 57,
+  "sustituto": "#6e7068",
+  "ratioNuevo": 4.55,
+  "clases": [
+   "span"
+  ]
+ },
+ {
+  "color": "rgb(137, 139, 130)",
+  "ratioMedido": 3.45,
+  "usos": 24,
+  "sustituto": "#6e7069",
+  "ratioNuevo": 4.56,
+  "clases": [
+   "span"
+  ]
+ },
+ {
+  "color": "rgb(154, 155, 146)",
+  "ratioMedido": 2.81,
+  "usos": 24,
+  "sustituto": "#6f7069",
+  "ratioNuevo": 4.56,
+  "clases": [
+   "span"
+  ]
+ },
+ {
+  "color": "rgb(148, 145, 133)",
+  "ratioMedido": 3.16,
+  "usos": 7,
+  "sustituto": "#716f66",
+  "ratioNuevo": 4.56,
+  "clases": [
+   "span.admissions-milestone-kind"
+  ]
+ },
+ {
+  "color": "rgb(120, 121, 111)",
+  "ratioMedido": 4.41,
+  "usos": 7,
+  "sustituto": "#6f7067",
+  "ratioNuevo": 4.56,
+  "clases": [
+   "p"
+  ]
+ },
+ {
+  "color": "rgb(139, 135, 110)",
+  "ratioMedido": 3.63,
+  "usos": 7,
+  "sustituto": "#73705b",
+  "ratioNuevo": 4.56,
+  "clases": [
+   "span.admissions-milestone-arrow"
+  ]
+ },
+ {
+  "color": "rgb(121, 119, 98)",
+  "ratioMedido": 4.12,
+  "usos": 5,
+  "sustituto": "#72705c",
+  "ratioNuevo": 4.56,
+  "clases": [
+   "span.admissions-timeline-index"
+  ]
+ },
+ {
+  "color": "rgb(139, 141, 132)",
+  "ratioMedido": 3.36,
+  "usos": 4,
+  "sustituto": "#6e7069",
+  "ratioNuevo": 4.57,
+  "clases": [
+   "span.spaces-map-unavailable"
+  ]
+ },
+ {
+  "color": "rgb(141, 142, 132)",
+  "ratioMedido": 3.31,
+  "usos": 3,
+  "sustituto": "#6f7068",
+  "ratioNuevo": 4.56,
+  "clases": [
+   "p.academic-panel-kicker"
+  ]
+ },
+ {
+  "color": "rgb(132, 133, 123)",
+  "ratioMedido": 3.57,
+  "usos": 3,
+  "sustituto": "#6f7067",
+  "ratioNuevo": 4.56,
+  "clases": [
+   "p.academic-empty-state"
+  ]
+ },
+ {
+  "color": "rgb(140, 108, 36)",
+  "ratioMedido": 4.44,
+  "usos": 2,
+  "sustituto": "#8a6a23",
+  "ratioNuevo": 4.56,
+  "clases": [
+   "p.public-program-eyebrow"
+  ]
+ },
+ {
+  "color": "rgb(138, 124, 66)",
+  "ratioMedido": 3.78,
+  "usos": 2,
+  "sustituto": "#7b6f3b",
+  "ratioNuevo": 4.56,
+  "clases": [
+   "div.catalog-art-spark.catalog-art-spark-one",
+   "div.catalog-art-spark.catalog-art-spark-two"
+  ]
+ },
+ {
+  "color": "rgb(125, 127, 117)",
+  "ratioMedido": 3.69,
+  "usos": 2,
+  "sustituto": "#6e7067",
+  "ratioNuevo": 4.56,
+  "clases": [
+   "p.spaces-eyebrow"
+  ]
+ },
+ {
+  "color": "rgb(146, 147, 139)",
+  "ratioMedido": 3.1,
+  "usos": 2,
+  "sustituto": "#6f6f69",
+  "ratioNuevo": 4.57,
+  "clases": [
+   "p.academic-panel-footnote"
+  ]
+ },
+ {
+  "color": "rgb(122, 132, 109)",
+  "ratioMedido": 3.56,
+  "usos": 1,
+  "sustituto": "#69725e",
+  "ratioNuevo": 4.56,
+  "clases": [
+   "p.workspace-home-eyebrow"
+  ]
+ },
+ {
+  "color": "rgb(116, 118, 109)",
+  "ratioMedido": 4.18,
+  "usos": 1,
+  "sustituto": "#6e7068",
+  "ratioNuevo": 4.55,
+  "clases": [
+   "p"
+  ]
+ },
+ {
+  "color": "rgb(161, 140, 49)",
+  "ratioMedido": 3.3,
+  "usos": 1,
+  "sustituto": "#7f6e27",
+  "ratioNuevo": 4.56,
+  "clases": [
+   "span"
+  ]
+ },
+ {
+  "color": "rgb(133, 134, 125)",
+  "ratioMedido": 3.34,
+  "usos": 1,
+  "sustituto": "#6f7068",
+  "ratioNuevo": 4.55,
+  "clases": [
+   "span"
+  ]
+ },
+ {
+  "color": "rgb(126, 124, 109)",
+  "ratioMedido": 3.82,
+  "usos": 1,
+  "sustituto": "#717062",
+  "ratioNuevo": 4.55,
+  "clases": [
+   "div.catalog-art-caption"
+  ]
+ },
+ {
+  "color": "rgb(152, 152, 142)",
+  "ratioMedido": 2.64,
+  "usos": 1,
+  "sustituto": "#707068",
+  "ratioNuevo": 4.55,
+  "clases": [
+   "span.catalog-empty-footnote"
+  ]
+ },
+ {
+  "color": "rgb(160, 140, 52)",
+  "ratioMedido": 3.03,
+  "usos": 1,
+  "sustituto": "#7e6f29",
+  "ratioNuevo": 4.55,
+  "clases": [
+   "span"
+  ]
+ },
+ {
+  "color": "rgb(115, 117, 106)",
+  "ratioMedido": 4.16,
+  "usos": 1,
+  "sustituto": "#6e7066",
+  "ratioNuevo": 4.56,
+  "clases": [
+   "span"
+  ]
+ },
+ {
+  "color": "rgb(133, 134, 126)",
+  "ratioMedido": 3.68,
+  "usos": 1,
+  "sustituto": "#6f6f69",
+  "ratioNuevo": 4.57,
+  "clases": [
+   "p"
+  ]
+ },
+ {
+  "color": "rgb(137, 138, 130)",
+  "ratioMedido": 3.16,
+  "usos": 1,
+  "sustituto": "#6f7069",
+  "ratioNuevo": 4.57,
+  "clases": [
+   "span.catalog-locked-tag"
+  ]
+ },
+ {
+  "color": "rgb(97, 118, 91)",
+  "ratioMedido": 4.48,
+  "usos": 1,
+  "sustituto": "#60755a",
+  "ratioNuevo": 4.55,
+  "clases": [
+   "span.spaces-pathways-mark"
+  ]
+ },
+ {
+  "color": "rgb(131, 131, 120)",
+  "ratioMedido": 3.47,
+  "usos": 1,
+  "sustituto": "#707066",
+  "ratioNuevo": 4.56,
+  "clases": [
+   "span"
+  ]
+ },
+ {
+  "color": "rgb(130, 129, 117)",
+  "ratioMedido": 3.56,
+  "usos": 1,
+  "sustituto": "#706f65",
+  "ratioNuevo": 4.56,
+  "clases": [
+   "p.admissions-download-note"
+  ]
+ },
+ {
+  "color": "rgb(178, 177, 164)",
+  "ratioMedido": 1.96,
+  "usos": 1,
+  "sustituto": "#707067",
+  "ratioNuevo": 4.55,
+  "clases": [
+   "span.admissions-call-card-note"
+  ]
+ },
+ {
+  "color": "rgb(141, 137, 114)",
+  "ratioMedido": 3.53,
+  "usos": 1,
+  "sustituto": "#73705d",
+  "ratioNuevo": 4.56,
+  "clases": [
+   "span.admissions-checklist-footnote"
+  ]
+ },
+ {
+  "color": "rgb(116, 117, 108)",
+  "ratioMedido": 4.23,
+  "usos": 1,
+  "sustituto": "#6f7067",
+  "ratioNuevo": 4.55,
+  "clases": [
+   "p"
+  ]
+ }
+]

@@ -42,7 +42,7 @@
 .workspace-home-section { display: grid; gap: 12px; }
 .workspace-home-section-heading { display: flex; align-items: end; justify-content: space-between; gap: 12px; }
 .workspace-home-section-heading > div { min-width: 0; }
-.workspace-home-section-heading .workspace-home-eyebrow { margin-bottom: 4px; color: #7a846d; }
+.workspace-home-section-heading .workspace-home-eyebrow { margin-bottom: 4px; color: #69725e; }
 .workspace-home-section-heading h2 { margin: 0; color: var(--ui-text-primary, #30332d); font-size: clamp(17px, 2vw, 21px); font-weight: 700; letter-spacing: -.02em; }
 .workspace-home-section-heading > span { flex: 0 0 auto; padding: 5px 8px; border: 1px solid var(--ui-border, #e0e2d9); border-radius: 999px; color: var(--ui-text-muted, #787b71); font-size: 9px; font-weight: 700; }
 .workspace-home-section-intro { max-width: 70ch; margin: -4px 0 0; color: var(--ui-text-secondary, #74776d); font-size: 11px; line-height: 1.5; }

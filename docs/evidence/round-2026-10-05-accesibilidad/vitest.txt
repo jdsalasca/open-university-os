@@ -5,266 +5,330 @@
 
 [1m[30m[46m RUN [49m[39m[22m [36mv5.0.2 [39m[90mC:/Users/jdsal/Documents/Programming-personal/Universiry/frontend[39m
 
- [32mÔ£ô[39m src/features/library/LibraryAdminPage.test.tsx [2m([22m[2m16 tests[22m[2m)[22m[33m 5955[2mms[22m[39m
-   [32mÔ£ô[39m LibraryAdminPage [2m(16)[22m
-     [33m[2mÔ£ô[22m[39m does not allow withdrawing a copy without an institutional reference[33m 571[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m registers the return of an outstanding loan with an institutional reference[33m 509[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m keeps the catalogue usable when the same search is submitted twice[33m 310[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m registers a title without reporting a failure after the write succeeded[33m 816[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m registers a copy without reporting a failure after the write succeeded[33m 797[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m identifies a copy from its barcode and lets the desk withdraw it[33m 736[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m reports a failed refresh after a withdrawal that already succeeded[33m 517[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m records the institutional reference when a librarian withdraws a copy[33m 713[2mms[22m[39m
- [32mÔ£ô[39m src/features/academics/AcademicCatalogPage.test.tsx [2m([22m[2m39 tests[22m[2m)[22m[33m 8315[2mms[22m[39m
-   [32mÔ£ô[39m AcademicCatalogPage [2m(39)[22m
-     [33m[2mÔ£ô[22m[39m uses the current academic affiliation for program placement and search instead of CSV snapshots[33m 1061[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m searches programs by unaccented text and loads a selected result[33m 322[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m shows_no_server_matches[33m 436[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m loads_the_next_server_page[33m 1615[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m debounces_search_and_resets_pagination[33m 533[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m returns to the first draft page when publication empties the current cursor position[33m 363[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m explains that no comparison was made when a published reference is absent[33m 392[2mms[22m[39m
- [32mÔ£ô[39m src/App.test.tsx [2m([22m[2m30 tests[22m[2m)[22m[33m 9847[2mms[22m[39m
-   [32mÔ£ô[39m App [2m(29)[22m
-     [33m[2mÔ£ô[22m[39m lets keyboard users skip the application shell and focus the main region[33m 401[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m opens student services from the portal home and keeps the identity center on its own route[33m 552[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m opens the portal summary by default and preserves the visual identity center route[33m 473[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m labels local developer access and opens only modules returned by the current-identity API[33m 436[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m keeps the access route closed when the current identity has no read permission[33m 383[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m opens the public undergraduate directory by keyboard while curriculum controls stay unavailable[33m 715[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m opens the public undergraduate admissions calendar from the application navigation[33m 459[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m opens the public space guide from navigation and applies the configured module label[33m 485[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m uses backend branding permission without granting academic catalog controls[33m 730[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m keeps period controls suspended when a write gets 403 and /me still returns the same permission[33m 339[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m requires administrative read and write permissions for the audited order editor[33m 648[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m revalidates identity and hides the order editor after a PATCH 401 with an expired token[33m 703[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m revalidates identity and hides the order editor after a PATCH 403 with a removed permission[33m 684[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m revalidates identity and hides the order editor after a PATCH 403 with a stale permission response[33m 632[2mms[22m[39m
- [32mÔ£ô[39m src/features/branding/VisualIdentityCenter.test.tsx [2m([22m[2m14 tests[22m[2m)[22m[33m 3822[2mms[22m[39m
-   [32mÔ£ô[39m VisualIdentityCenter [2m(14)[22m
-     [33m[2mÔ£ô[22m[39m edits a known module label in the navigation preview[33m 459[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m requires banner alternative text, an image, and a valid time window[33m 1920[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m preserves the draft and reports a revision conflict[33m 442[2mms[22m[39m
- [32mÔ£ô[39m src/features/academics/AcademicPeriodForms.test.tsx [2m([22m[2m7 tests[22m[2m)[22m[33m 7793[2mms[22m[39m
+ [32mÔ£ô[39m src/features/academics/AcademicPeriodForms.test.tsx [2m([22m[2m7 tests[22m[2m)[22m[33m 9974[2mms[22m[39m
    [32mÔ£ô[39m academic period administration forms [2m(7)[22m
-     [33m[2mÔ£ô[22m[39m creates an intersemester draft with its own dates and sequence[33m 940[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m rejects an intersemester sequence above the API limit before requesting a period[33m 933[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m shows field errors for fractional academic years and sequence numbers before requesting a period[33m 838[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m blocks a regular period sequence above two before the server request[33m 760[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m adds an activity to a calendar draft and preserves administrative dates outside the class range[33m 2355[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m rejects an activity whose end precedes its start without creating a revision[33m 1287[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m approves only the chosen published revision and sends an explicit approval reference[33m 676[2mms[22m[39m
- [32mÔ£ô[39m src/features/academics/CreateFacultyForm.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[33m 5111[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m creates an intersemester draft with its own dates and sequence[33m 2137[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m rejects an intersemester sequence above the API limit before requesting a period[33m 988[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m shows field errors for fractional academic years and sequence numbers before requesting a period[33m 869[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m blocks a regular period sequence above two before the server request[33m 1015[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m adds an activity to a calendar draft and preserves administrative dates outside the class range[33m 2834[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m rejects an activity whose end precedes its start without creating a revision[33m 1521[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m approves only the chosen published revision and sends an explicit approval reference[33m 600[2mms[22m[39m
+ [32mÔ£ô[39m src/features/academics/AcademicCatalogPage.test.tsx [2m([22m[2m39 tests[22m[2m)[22m[33m 16772[2mms[22m[39m
+   [32mÔ£ô[39m AcademicCatalogPage [2m(39)[22m
+     [33m[2mÔ£ô[22m[39m uses the current academic affiliation for program placement and search instead of CSV snapshots[33m 2332[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m searches programs by unaccented text and loads a selected result[33m 444[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m explains when no program matches and keeps the selected plan identifiable[33m 558[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m requests_only_the_first_bounded_page[33m 557[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m filters_by_numeric_semester[33m 326[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m shows_no_server_matches[33m 810[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m loads_the_next_server_page[33m 3595[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m debounces_search_and_resets_pagination[33m 782[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m fails closed if a public detail response unexpectedly contains a draft[33m 306[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m loads the next administrative draft page from the server[33m 301[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m returns to the first draft page when publication empties the current cursor position[33m 642[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m previews a valid CSV before creating its draft and adds the draft to the review queue[33m 327[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m explains that no comparison was made when a published reference is absent[33m 541[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m shows published-reference metadata, all change counts, examples, and changed-field labels[33m 347[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m allows retrying a failed preview with the same file[33m 315[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m publishes a reviewed draft and refreshes the public list[33m 416[2mms[22m[39m
+ [32mÔ£ô[39m src/features/library/LibraryAdminPage.test.tsx [2m([22m[2m16 tests[22m[2m)[22m[33m 7506[2mms[22m[39m
+   [32mÔ£ô[39m LibraryAdminPage [2m(16)[22m
+     [33m[2mÔ£ô[22m[39m does not allow withdrawing a copy without an institutional reference[33m 908[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m registers the return of an outstanding loan with an institutional reference[33m 545[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m asks the server to search the catalogue by name[33m 305[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m keeps the catalogue usable when the same search is submitted twice[33m 338[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m registers a title without reporting a failure after the write succeeded[33m 874[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m registers a copy without reporting a failure after the write succeeded[33m 902[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m identifies a copy from its barcode and lets the desk withdraw it[33m 869[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m says when no copy carries the scanned barcode[33m 384[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m reports a failed refresh after a withdrawal that already succeeded[33m 781[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m records the institutional reference when a librarian withdraws a copy[33m 1025[2mms[22m[39m
+ [32mÔ£ô[39m src/App.test.tsx [2m([22m[2m30 tests[22m[2m)[22m[33m 20009[2mms[22m[39m
+   [32mÔ£ô[39m App [2m(29)[22m
+     [33m[2mÔ£ô[22m[39m lets keyboard users skip the application shell and focus the main region[33m 990[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m opens student services from the portal home and keeps the identity center on its own route[33m 1008[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m opens the portal summary by default and preserves the visual identity center route[33m 763[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m labels local developer access and opens only modules returned by the current-identity API[33m 923[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m keeps the access route closed when the current identity has no read permission[33m 534[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m shows role profiles in the protected read-only route without exposing assignment controls[33m 588[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m applies institution name, published logo, and module label to the application shell[33m 839[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m opens the visual identity control center and keeps publication closed without institutional access[33m 399[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m updates the skip link target when the active route changes[33m 384[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m opens the public undergraduate directory by keyboard while curriculum controls stay unavailable[33m 1630[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m opens the public undergraduate admissions calendar from the application navigation[33m 659[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m opens the public space guide from navigation and applies the configured module label[33m 751[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m uses backend branding permission without granting academic catalog controls[33m 1399[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m does not let an academic catalog permission publish visual identity changes[33m 596[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m passes only backend period permissions to explicit open and close controls[33m 504[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m keeps period controls suspended when a write gets 403 and /me still returns the same permission[33m 811[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m requires administrative read and write permissions for the audited order editor[33m 1126[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m revalidates identity and hides the order editor after a PATCH 401 with an expired token[33m 1387[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m revalidates identity and hides the order editor after a PATCH 403 with a removed permission[33m 1729[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m revalidates identity and hides the order editor after a PATCH 403 with a stale permission response[33m 1061[2mms[22m[39m
+ [32mÔ£ô[39m src/features/academics/CreateFacultyForm.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[33m 5667[2mms[22m[39m
    [32mÔ£ô[39m CreateFacultyForm [2m(5)[22m
-     [33m[2mÔ£ô[22m[39m creates an audited site with an explicitly selected institutional type[33m 1426[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m creates a root faculty with an institutional reference and refreshes the structure[33m 1400[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m keeps a duplicate-code conflict visible and does not refresh the structure[33m 1119[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m revalidates authorization when the server rejects a faculty write[33m 1160[2mms[22m[39m
- [32mÔ£ô[39m src/features/academics/AcademicOperationsPage.test.tsx [2m([22m[2m37 tests[22m[2m)[22m[33m 15978[2mms[22m[39m
-   [32mÔ£ô[39m AcademicOperationsPage [2m(37)[22m
-     [33m[2mÔ£ô[22m[39m loads and displays the structure audit panel only for readers with administrative structure access[33m 807[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m submits one reviewed reassignment and reloads public and administrative structure[33m 1290[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m reloads both structure snapshots after a reassignment conflict without retrying[33m 1199[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m shows audited order controls only when administrative read and write permissions are present[33m 434[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m saves a unit priority with its expected value and source reference, then refreshes from the server[33m 806[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m refreshes the displayed structure and reports a concurrent order conflict[33m 749[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m rejects a negative order before sending a structure mutation[33m 344[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m creates a period draft in the administrative view and adds it to the current list[33m 791[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m cancels an administrative refresh started after a creation when the view unmounts[33m 1152[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m creates a root site only for an authorized structure writer and reloads the server structure[33m 1486[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m creates a dated site hierarchy relation and refreshes the authoritative tree[33m 895[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m creates a faculty through the protected client and reloads the authoritative structure[33m 1706[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m creates a program affiliation through the protected client and reloads its academic hierarchy[33m 1202[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m refreshes the administrative affiliation timeline after a concurrent future affiliation conflict[33m 780[2mms[22m[39m
- [32mÔ£ô[39m src/features/students/StudentServicesPage.test.tsx [2m([22m[2m8 tests[22m[2m)[22m[33m 2321[2mms[22m[39m
-   [32mÔ£ô[39m StudentServicesPage [2m(8)[22m
-     [33m[2mÔ£ô[22m[39m finds the new wellbeing lines by distinct accent-insensitive terms[33m 593[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m filters institutional systems by category and accent-insensitive text[33m 367[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m combines a category filter with the local text search[33m 302[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m explains an empty result and resets the search and category together[33m 517[2mms[22m[39m
- [32mÔ£ô[39m src/features/academics/ReassignAcademicProgramAffiliationForm.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[33m 4068[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m creates an audited site with an explicitly selected institutional type[33m 2190[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m creates a root faculty with an institutional reference and refreshes the structure[33m 1218[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m keeps a duplicate-code conflict visible and does not refresh the structure[33m 1177[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m revalidates authorization when the server rejects a faculty write[33m 1056[2mms[22m[39m
+ [32mÔ£ô[39m src/features/academics/ReassignAcademicProgramAffiliationForm.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[33m 4821[2mms[22m[39m
    [32mÔ£ô[39m ReassignAcademicProgramAffiliationForm [2m(4)[22m
-     [33m[2mÔ£ô[22m[39m previews the inclusive cutover and refreshes after one confirmed reassignment[33m 1078[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m refreshes after a conflict but never retries the write[33m 1038[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m rejects an order-only change before preview and does not call the server[33m 866[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m revalidates authorization after a server denial without refreshing or retrying[33m 1084[2mms[22m[39m
- [32mÔ£ô[39m src/features/spaces/SpaceGuidePage.test.tsx [2m([22m[2m10 tests[22m[2m)[22m[33m 2088[2mms[22m[39m
-   [32mÔ£ô[39m SpaceGuidePage [2m(10)[22m
-     [33m[2mÔ£ô[22m[39m searches without accents and combines the text query with a location type filter[33m 769[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m filters by distinct published municipalities and combines municipality, type and text[33m 412[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m shows an empty-search state and lets the visitor clear filters[33m 318[2mms[22m[39m
- [32mÔ£ô[39m src/features/access/RoleAccessPage.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[33m 2066[2mms[22m[39m
-   [32mÔ£ô[39m RoleAccessPage [2m(5)[22m
-     [33m[2mÔ£ô[22m[39m asks for the whole search page and says when the result may be capped[33m 407[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m assigns the selected permitted profile once and reloads the target assignments[33m 623[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m refreshes after a stale revoke conflict and never retries the mutation[33m 765[2mms[22m[39m
- [32mÔ£ô[39m src/features/academics/CreateAcademicStructureRelationForm.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[33m 2521[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m previews the inclusive cutover and refreshes after one confirmed reassignment[33m 1733[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m refreshes after a conflict but never retries the write[33m 1015[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m rejects an order-only change before preview and does not call the server[33m 1052[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m revalidates authorization after a server denial without refreshing or retrying[33m 1012[2mms[22m[39m
+ [32mÔ£ô[39m src/features/academics/AcademicOperationsPage.test.tsx [2m([22m[2m37 tests[22m[2m)[22m[33m 24888[2mms[22m[39m
+   [32mÔ£ô[39m AcademicOperationsPage [2m(37)[22m
+     [33m[2mÔ£ô[22m[39m loads and displays the structure audit panel only for readers with administrative structure access[33m 1930[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m shows reassignment only when administrative read and write permissions are both present[33m 833[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m submits one reviewed reassignment and reloads public and administrative structure[33m 1894[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m reloads both structure snapshots after a reassignment conflict without retrying[33m 1684[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m shows the dated relation closure control only inside the authorized structure console[33m 450[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m shows audited order controls only when administrative read and write permissions are present[33m 965[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m saves a unit priority with its expected value and source reference, then refreshes from the server[33m 1400[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m refreshes the displayed structure and reports a concurrent order conflict[33m 1100[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m rejects a negative order before sending a structure mutation[33m 570[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m creates a period draft in the administrative view and adds it to the current list[33m 764[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m refreshes the active calendar and requires a new confirmation after a stale close conflict[33m 359[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m revalidates institutional authorization after a period transition returns 401[33m 377[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m cancels an administrative refresh started after a creation when the view unmounts[33m 1455[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m shows root-faculty creation only to an authorized structure writer[33m 681[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m creates a root site only for an authorized structure writer and reloads the server structure[33m 2324[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m creates a dated site hierarchy relation and refreshes the authoritative tree[33m 1029[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m creates a faculty through the protected client and reloads the authoritative structure[33m 1957[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m creates a program affiliation through the protected client and reloads its academic hierarchy[33m 1291[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m refreshes the administrative affiliation timeline after a concurrent future affiliation conflict[33m 1123[2mms[22m[39m
+ [32mÔ£ô[39m src/features/academics/CreateAcademicStructureRelationForm.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[33m 3152[2mms[22m[39m
    [32mÔ£ô[39m CreateAcademicStructureRelationForm [2m(4)[22m
-     [33m[2mÔ£ô[22m[39m creates an audited organization hierarchy relation[33m 703[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m creates an audited site hierarchy relation with explicit endpoints and validity[33m 649[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m rejects selecting the same place as parent and child without calling the server[33m 617[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m keeps a cycle conflict visible and reloads the hierarchy before another attempt[33m 549[2mms[22m[39m
- [32mÔ£ô[39m src/features/academics/CloseAcademicStructureRelationForm.test.tsx [2m([22m[2m7 tests[22m[2m)[22m[33m 2783[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m creates an audited organization hierarchy relation[33m 909[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m creates an audited site hierarchy relation with explicit endpoints and validity[33m 879[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m rejects selecting the same place as parent and child without calling the server[33m 735[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m keeps a cycle conflict visible and reloads the hierarchy before another attempt[33m 627[2mms[22m[39m
+ [32mÔ£ô[39m src/features/academics/CloseAcademicStructureRelationForm.test.tsx [2m([22m[2m7 tests[22m[2m)[22m[33m 3472[2mms[22m[39m
    [32mÔ£ô[39m CloseAcademicStructureRelationForm [2m(7)[22m
-     [33m[2mÔ£ô[22m[39m requires review and explicit confirmation, then closes only the selected dated relation[33m 803[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m closes a dated site relation with the same confirmation and refresh safeguards[33m 647[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m closes one dated program affiliation without confusing it with the legacy faculty or campus labels[33m 675[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m refreshes after a concurrent change and does not retry the close automatically[33m 568[2mms[22m[39m
- [32mÔ£ô[39m src/features/academics/AcademicOfferingDraftPanel.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[33m 1907[2mms[22m[39m
-   [32mÔ£ô[39m AcademicOfferingDraftPanel [2m(6)[22m
-     [33m[2mÔ£ô[22m[39m keeps the draft creation controls reachable in keyboard order[33m 375[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m creates a draft for a published curriculum subject and refreshes without implying availability[33m 793[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m reports an optimistic version conflict and never retries the write[33m 574[2mms[22m[39m
- [32mÔ£ô[39m src/features/admissions/demo/AdmissionsWorkflowLab.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[33m 1114[2mms[22m[39m
-   [32mÔ£ô[39m AdmissionsWorkflowLab [2m(5)[22m
-     [33m[2mÔ£ô[22m[39m starts in the applicant demo and keeps a created synthetic case available to the admin view[33m 356[2mms[22m[39m
- [32mÔ£ô[39m src/features/academics/CreateAcademicChildUnitForm.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[33m 2358[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m requires review and explicit confirmation, then closes only the selected dated relation[33m 1024[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m closes a dated site relation with the same confirmation and refresh safeguards[33m 890[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m closes one dated program affiliation without confusing it with the legacy faculty or campus labels[33m 850[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m refreshes after a concurrent change and does not retry the close automatically[33m 587[2mms[22m[39m
+ [32mÔ£ô[39m src/features/branding/VisualIdentityCenter.test.tsx [2m([22m[2m14 tests[22m[2m)[22m[33m 6475[2mms[22m[39m
+   [32mÔ£ô[39m VisualIdentityCenter [2m(14)[22m
+     [33m[2mÔ£ô[22m[39m edits a local preview without publishing until the administrator saves[33m 469[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m shows a selected institutional logo in the local preview before publication[33m 341[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m edits a known module label in the navigation preview[33m 850[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m blocks a color pair that does not meet the text contrast threshold[33m 336[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m requires banner alternative text, an image, and a valid time window[33m 2595[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m preserves the draft and reports a revision conflict[33m 725[2mms[22m[39m
+ [32mÔ£ô[39m src/features/academics/CreateAcademicChildUnitForm.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[33m 3405[2mms[22m[39m
    [32mÔ£ô[39m CreateAcademicChildUnitForm [2m(3)[22m
-     [33m[2mÔ£ô[22m[39m creates one child with the selected parent, ordering and validity, then refreshes the tree[33m 1502[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m refreshes current structure after a server conflict and does not repeat the write[33m 840[2mms[22m[39m
- [32mÔ£ô[39m src/features/gradebook/demo/GradeEntryDemo.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[33m 1543[2mms[22m[39m
-   [32mÔ£ô[39m GradeEntryDemo [2m(6)[22m
-     [33m[2mÔ£ô[22m[39m keeps valid entries as an in-memory draft without publishing or computing a final result[33m 306[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m clears the local draft when switching to another fictional group[33m 352[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m clears the saved acknowledgement when a grade is edited again[33m 374[2mms[22m[39m
- [32mÔ£ô[39m src/features/academics/CreateAcademicProgramAffiliationForm.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[33m 1888[2mms[22m[39m
-   [32mÔ£ô[39m CreateAcademicProgramAffiliationForm [2m(4)[22m
-     [33m[2mÔ£ô[22m[39m creates an audited program affiliation from explicit catalog identities[33m 946[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m refreshes after a program affiliation conflict without retrying the write[33m 448[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m revalidates authorization when the server rejects an affiliation write[33m 475[2mms[22m[39m
- [32mÔ£ô[39m src/features/admissions/AdmissionsExperience.test.tsx [2m([22m[2m10 tests[22m[2m)[22m[33m 777[2mms[22m[39m
- [32mÔ£ô[39m src/features/academics/publicCatalog/PublicProgramDirectoryWindow.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[33m 748[2mms[22m[39m
-   [32mÔ£ô[39m PublicUndergraduateDirectory result window [2m(3)[22m
-     [33m[2mÔ£ô[22m[39m resets the window when a filter narrows the results[33m 416[2mms[22m[39m
- [32mÔ£ô[39m src/features/territorial-catalog/TerritorialCatalogSelector.test.tsx [2m([22m[2m7 tests[22m[2m)[22m[33m 1251[2mms[22m[39m
-   [32mÔ£ô[39m TerritorialCatalogSelector [2m(7)[22m
-     [33m[2mÔ£ô[22m[39m loads only the selected department, normalizes search, and clears its previous entity after a change[33m 340[2mms[22m[39m
- [32mÔ£ô[39m src/features/notices/InstitutionalNoticesAdminPage.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[33m 1518[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m creates one child with the selected parent, ordering and validity, then refreshes the tree[33m 1843[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m refreshes current structure after a server conflict and does not repeat the write[33m 1518[2mms[22m[39m
+ [32mÔ£ô[39m src/features/access/RoleAccessPage.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[33m 3327[2mms[22m[39m
+   [32mÔ£ô[39m RoleAccessPage [2m(5)[22m
+     [33m[2mÔ£ô[22m[39m asks for the whole search page and says when the result may be capped[33m 550[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m lets a read-only operator inspect assignments without exposing mutation controls[33m 509[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m assigns the selected permitted profile once and reloads the target assignments[33m 1142[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m refreshes after a stale revoke conflict and never retries the mutation[33m 1094[2mms[22m[39m
+ [32mÔ£ô[39m src/features/spaces/SpaceGuidePage.test.tsx [2m([22m[2m10 tests[22m[2m)[22m[33m 4381[2mms[22m[39m
+   [32mÔ£ô[39m SpaceGuidePage [2m(10)[22m
+     [33m[2mÔ£ô[22m[39m shows Music capacities as separate announcements, links both source contexts, and offers no map[33m 408[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m loads the sourced campus, CREAD and service cards with map and source links[33m 375[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m searches without accents and combines the text query with a location type filter[33m 1659[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m filters by distinct published municipalities and combines municipality, type and text[33m 558[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m shows an empty-search state and lets the visitor clear filters[33m 392[2mms[22m[39m
+ [32mÔ£ô[39m src/features/students/StudentServicesPage.test.tsx [2m([22m[2m8 tests[22m[2m)[22m[33m 4976[2mms[22m[39m
+   [32mÔ£ô[39m StudentServicesPage [2m(8)[22m
+     [33m[2mÔ£ô[22m[39m shows student services across categories as source-attributed cards[33m 844[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m shows official entry points for UPTConecta, SIRA, subject registration and the undergraduate calendar[33m 309[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m finds the new wellbeing lines by distinct accent-insensitive terms[33m 1189[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m filters institutional systems by category and accent-insensitive text[33m 569[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m matches accented service names with case-insensitive, unaccented text[33m 374[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m combines a category filter with the local text search[33m 364[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m explains an empty result and resets the search and category together[33m 1171[2mms[22m[39m
+ [32mÔ£ô[39m src/features/academics/AcademicOfferingDraftPanel.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[33m 4143[2mms[22m[39m
+   [32mÔ£ô[39m AcademicOfferingDraftPanel [2m(6)[22m
+     [33m[2mÔ£ô[22m[39m keeps the draft creation controls reachable in keyboard order[33m 811[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m creates a draft for a published curriculum subject and refreshes without implying availability[33m 1229[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m reports an optimistic version conflict and never retries the write[33m 1671[2mms[22m[39m
+ [32mÔ£ô[39m src/features/notices/InstitutionalNoticesAdminPage.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[33m 1772[2mms[22m[39m
    [32mÔ£ô[39m InstitutionalNoticesAdminPage [2m(3)[22m
-     [33m[2mÔ£ô[22m[39m publishes a notice with a scoped audience and clears the form[33m 1482[2mms[22m[39m
- [32mÔ£ô[39m src/features/students/demo/MyAcademicWeekDemo.test.tsx [2m([22m[2m8 tests[22m[2m)[22m[33m 1081[2mms[22m[39m
- [32mÔ£ô[39m src/features/academics/publicCatalog/PublicUndergraduateDirectory.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[33m 1010[2mms[22m[39m
-   [32mÔ£ô[39m PublicUndergraduateDirectory [2m(6)[22m
-     [33m[2mÔ£ô[22m[39m supports accent-insensitive search and communicates an empty result[33m 395[2mms[22m[39m
- [32mÔ£ô[39m src/features/academics/AcademicStructureAuditPanel.test.tsx [2m([22m[2m8 tests[22m[2m)[22m[33m 880[2mms[22m[39m
-   [32mÔ£ô[39m AcademicStructureAuditPanel [2m(8)[22m
-     [33m[2mÔ£ô[22m[39m applies entity and action filters to the paginated audit request[33m 588[2mms[22m[39m
- [32mÔ£ô[39m src/features/admissions/demo/AdmissionsAdminDemo.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[33m 851[2mms[22m[39m
- [32mÔ£ô[39m src/features/admissions/demo/AdmissionsApplicantDemo.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[33m 879[2mms[22m[39m
-   [32mÔ£ô[39m AdmissionsApplicantDemo [2m(4)[22m
-     [33m[2mÔ£ô[22m[39m rejects the same sample option in both preference fields[33m 339[2mms[22m[39m
- [32mÔ£ô[39m src/features/academics/publicCatalog/PublicPostgraduateDirectory.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[33m 1163[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m publishes a notice with a scoped audience and clears the form[33m 1650[2mms[22m[39m
+ [32mÔ£ô[39m src/features/gradebook/demo/GradeEntryDemo.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[33m 2665[2mms[22m[39m
+   [32mÔ£ô[39m GradeEntryDemo [2m(6)[22m
+     [33m[2mÔ£ô[22m[39m shows a local-only grade entry workflow with anonymous sample references[33m 619[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m rejects scores outside the explicitly provisional demo range[33m 479[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m keeps valid entries as an in-memory draft without publishing or computing a final result[33m 403[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m clears the local draft when switching to another fictional group[33m 484[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m clears the saved acknowledgement when a grade is edited again[33m 493[2mms[22m[39m
+ [32mÔ£ô[39m src/features/academics/CreateAcademicProgramAffiliationForm.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[33m 3366[2mms[22m[39m
+   [32mÔ£ô[39m CreateAcademicProgramAffiliationForm [2m(4)[22m
+     [33m[2mÔ£ô[22m[39m creates an audited program affiliation from explicit catalog identities[33m 1983[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m refreshes after a program affiliation conflict without retrying the write[33m 661[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m revalidates authorization when the server rejects an affiliation write[33m 683[2mms[22m[39m
+ [32mÔ£ô[39m src/features/territorial-catalog/TerritorialCatalogSelector.test.tsx [2m([22m[2m7 tests[22m[2m)[22m[33m 1851[2mms[22m[39m
+   [32mÔ£ô[39m TerritorialCatalogSelector [2m(7)[22m
+     [33m[2mÔ£ô[22m[39m keeps labels associated with unique field IDs across selector instances[33m 327[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m loads only the selected department, normalizes search, and clears its previous entity after a change[33m 430[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m clears an unmatched search and restores the current department entities[33m 400[2mms[22m[39m
+ [32mÔ£ô[39m src/features/academics/publicCatalog/PublicPostgraduateDirectory.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[33m 1489[2mms[22m[39m
    [32mÔ£ô[39m PublicPostgraduateDirectory [2m(4)[22m
-     [33m[2mÔ£ô[22m[39m shows attributed snapshot dates and makes no claim about calls or availability[33m 328[2mms[22m[39m
-     [33m[2mÔ£ô[22m[39m combines a search without accents with public unit, place, modality and level filters[33m 579[2mms[22m[39m
- [32mÔ£ô[39m src/features/academics/publicCatalog/PublicProgramDirectories.test.tsx [2m([22m[2m1 test[22m[2m)[22m[33m 1101[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m shows attributed snapshot dates and makes no claim about calls or availability[33m 437[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m combines a search without accents with public unit, place, modality and level filters[33m 705[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m retries after the static snapshot request fails[33m 333[2mms[22m[39m
+ [32mÔ£ô[39m src/features/academics/publicCatalog/PublicProgramDirectories.test.tsx [2m([22m[2m1 test[22m[2m)[22m[33m 1189[2mms[22m[39m
    [32mÔ£ô[39m PublicProgramDirectories [2m(1)[22m
-     [33m[2mÔ£ô[22m[39m keeps pregrado as the default and loads posgrado only after selection[33m 1097[2mms[22m[39m
- [32mÔ£ô[39m src/features/academics/publicCatalog/PublicPostgraduateDirectoryWindow.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[33m 950[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m keeps pregrado as the default and loads posgrado only after selection[33m 1184[2mms[22m[39m
+ [32mÔ£ô[39m src/features/admissions/demo/AdmissionsWorkflowLab.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[33m 1869[2mms[22m[39m
+   [32mÔ£ô[39m AdmissionsWorkflowLab [2m(5)[22m
+     [33m[2mÔ£ô[22m[39m starts in the applicant demo and keeps a created synthetic case available to the admin view[33m 521[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m keeps the demo store in memory during perspective changes but starts a clean demo after remount[33m 547[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m offers a reference-only territorial selector that does not create an admissions case[33m 341[2mms[22m[39m
+ [32mÔ£ô[39m src/features/students/demo/MyAcademicWeekDemo.test.tsx [2m([22m[2m8 tests[22m[2m)[22m[33m 1699[2mms[22m[39m
+   [32mÔ£ô[39m MyAcademicWeekDemo [2m(8)[22m
+     [33m[2mÔ£ô[22m[39m clears the selected subject when returning to the week view[33m 338[2mms[22m[39m
+ [32mÔ£ô[39m src/features/academics/publicCatalog/PublicPostgraduateDirectoryWindow.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[33m 994[2mms[22m[39m
    [32mÔ£ô[39m PublicPostgraduateDirectory result window [2m(3)[22m
-     [33m[2mÔ£ô[22m[39m starts from the first window again when a filter narrows the results[33m 626[2mms[22m[39m
- [32mÔ£ô[39m src/features/room-planning/demo/RoomAllocationDemo.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[33m 638[2mms[22m[39m
- [32mÔ£ô[39m src/features/navigation/MobileNavigation.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[33m 515[2mms[22m[39m
- [32mÔ£ô[39m src/features/identity/IdentityProvider.test.tsx [2m([22m[2m18 tests[22m[2m)[22m[33m 853[2mms[22m[39m
- [32mÔ£ô[39m src/features/academics/AcademicPeriodHistoryPanel.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[33m 362[2mms[22m[39m
- [32mÔ£ô[39m src/features/admissions/AdmissionsCalendarPage.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[32m 252[2mms[22m[39m
- [32mÔ£ô[39m src/features/workspace/WorkspaceHomePage.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[33m 380[2mms[22m[39m
- [32mÔ£ô[39m src/features/admissions/AdmissionsExperiencePublicRetry.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 177[2mms[22m[39m
- [32mÔ£ô[39m src/features/theme/ThemeSelector.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 239[2mms[22m[39m
- [32mÔ£ô[39m src/features/admissions/AdmissionsExperienceDev.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 192[2mms[22m[39m
- [32mÔ£ô[39m src/features/academics/AcademicOfferingDraftPanelCurriculumRetry.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 182[2mms[22m[39m
- [32mÔ£ô[39m src/features/academics/AcademicOfferingDraftPanelSubjectRetry.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 221[2mms[22m[39m
- [32mÔ£ô[39m src/features/academics/AcademicOfferingDraftPanelHistoryRetry.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 239[2mms[22m[39m
- [32mÔ£ô[39m src/features/academics/academicCatalogClient.test.ts [2m([22m[2m21 tests[22m[2m)[22m[32m 62[2mms[22m[39m
- [32mÔ£ô[39m src/features/academics/academicOperationsClient.test.ts [2m([22m[2m41 tests[22m[2m)[22m[32m 126[2mms[22m[39m
- [32mÔ£ô[39m src/App.lazyFailure.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 188[2mms[22m[39m
- [32mÔ£ô[39m src/features/notices/MyNoticesPage.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 125[2mms[22m[39m
- [32mÔ£ô[39m src/features/admissions/AdmissionsCallManagementPanelRetry.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 122[2mms[22m[39m
- [32mÔ£ô[39m src/features/identity/IdentityProvider.lazyOidc.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 126[2mms[22m[39m
- [32mÔ£ô[39m src/features/admissions/AdmissionsCalendarPageDownloadFeedback.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 110[2mms[22m[39m
- [32mÔ£ô[39m src/features/branding/BrandingProvider.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[32m 105[2mms[22m[39m
- [32mÔ£ô[39m src/features/admissions/admissionsCalendarIcs.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 103[2mms[22m[39m
- [32mÔ£ô[39m src/features/admissions/admissionsCalendarIcsUid.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 60[2mms[22m[39m
- [32mÔ£ô[39m src/features/identity/identitySessionManager.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 203[2mms[22m[39m
- [32mÔ£ô[39m src/features/admissions/demo/admissionsDemoStore.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 34[2mms[22m[39m
- [32mÔ£ô[39m src/features/access/roleAccessClient.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 57[2mms[22m[39m
- [32mÔ£ô[39m src/features/admissions/admissionsCallClient.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 38[2mms[22m[39m
- [32mÔ£ô[39m src/features/theme/themeStore.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 14[2mms[22m[39m
- [32mÔ£ô[39m src/features/branding/api/brandingAdministrationClient.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 30[2mms[22m[39m
- [32mÔ£ô[39m src/features/academics/curriculumVersionComparisonContract.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 56[2mms[22m[39m
- [32mÔ£ô[39m src/features/spaces/spaceGuideClient.test.ts [2m([22m[2m9 tests[22m[2m)[22m[32m 38[2mms[22m[39m
- [32mÔ£ô[39m src/features/identity/identityClient.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 85[2mms[22m[39m
- [32mÔ£ô[39m src/features/room-planning/demo/roomAllocationClient.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 36[2mms[22m[39m
- [32mÔ£ô[39m src/features/academics/publicCatalog/publicUndergraduateCatalogClient.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 58[2mms[22m[39m
- [32mÔ£ô[39m src/features/academics/academicOfferingDraftClient.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 66[2mms[22m[39m
- [32mÔ£ô[39m src/features/territorial-catalog/territorialCatalogClient.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 40[2mms[22m[39m
- [32mÔ£ô[39m src/features/academics/publicCatalog/publicPostgraduateCatalogClient.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 38[2mms[22m[39m
- [32mÔ£ô[39m src/features/identity/localPreviewSessionClient.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 21[2mms[22m[39m
- [32mÔ£ô[39m src/features/branding/api/brandingClient.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 17[2mms[22m[39m
- [32mÔ£ô[39m src/features/identity/localPreviewIdentity.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 23[2mms[22m[39m
- [32mÔ£ô[39m src/features/identity/oidcConfiguration.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 15[2mms[22m[39m
- [32mÔ£ô[39m src/features/library/libraryClient.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 15[2mms[22m[39m
- [32mÔ£ô[39m src/features/notices/noticesAdminClient.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 12[2mms[22m[39m
- [32mÔ£ô[39m src/features/academics/publicCatalog/publicPostgraduateCatalog.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 11[2mms[22m[39m
- [32mÔ£ô[39m src/features/notices/noticesClient.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 17[2mms[22m[39m
- [32mÔ£ô[39m src/features/identity/identityPermissionContract.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 14[2mms[22m[39m
- [32mÔ£ô[39m src/features/academics/publicCatalog/publicUndergraduateCatalog.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 13[2mms[22m[39m
- [32mÔ£ô[39m src/shared/localDateInput.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 7[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m starts from the first window again when a filter narrows the results[33m 567[2mms[22m[39m
+ [32mÔ£ô[39m src/features/academics/publicCatalog/PublicUndergraduateDirectory.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[33m 1469[2mms[22m[39m
+   [32mÔ£ô[39m PublicUndergraduateDirectory [2m(6)[22m
+     [33m[2mÔ£ô[22m[39m offers retry after the static snapshot fails and recovers when it becomes available[33m 375[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m supports accent-insensitive search and communicates an empty result[33m 552[2mms[22m[39m
+ [32mÔ£ô[39m src/features/academics/AcademicStructureAuditPanel.test.tsx [2m([22m[2m8 tests[22m[2m)[22m[33m 1168[2mms[22m[39m
+   [32mÔ£ô[39m AcademicStructureAuditPanel [2m(8)[22m
+     [33m[2mÔ£ô[22m[39m applies entity and action filters to the paginated audit request[33m 821[2mms[22m[39m
+ [32mÔ£ô[39m src/features/admissions/demo/AdmissionsApplicantDemo.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[33m 1133[2mms[22m[39m
+   [32mÔ£ô[39m AdmissionsApplicantDemo [2m(4)[22m
+     [33m[2mÔ£ô[22m[39m rejects the same sample option in both preference fields[33m 374[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m creates a local synthetic case that the admin inbox can read[33m 383[2mms[22m[39m
+ [32mÔ£ô[39m src/features/identity/IdentityProvider.test.tsx [2m([22m[2m18 tests[22m[2m)[22m[33m 1020[2mms[22m[39m
+ [32mÔ£ô[39m src/features/admissions/demo/AdmissionsAdminDemo.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[33m 1202[2mms[22m[39m
+   [32mÔ£ô[39m AdmissionsAdminDemo [2m(5)[22m
+     [33m[2mÔ£ô[22m[39m starts a review and requests a checklist correction through the detail panel[33m 363[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m resumes review after the applicant response and closes only the demo review[33m 405[2mms[22m[39m
+ [32mÔ£ô[39m src/features/room-planning/demo/RoomAllocationDemo.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[33m 852[2mms[22m[39m
+ [32mÔ£ô[39m src/features/navigation/MobileNavigation.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[33m 613[2mms[22m[39m
+ [32mÔ£ô[39m src/features/admissions/AdmissionsExperience.test.tsx [2m([22m[2m10 tests[22m[2m)[22m[33m 1839[2mms[22m[39m
+   [32mÔ£ô[39m AdmissionsExperience [2m(10)[22m
+     [33m[2mÔ£ô[22m[39m reloads a conflicting draft without retrying the write[33m 340[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m creates then publishes a call from an authorized form and refreshes the public view[33m 436[2mms[22m[39m
+ [32mÔ£ô[39m src/features/workspace/WorkspaceHomePage.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[33m 374[2mms[22m[39m
+ [32mÔ£ô[39m src/features/academics/publicCatalog/PublicProgramDirectoryWindow.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[33m 1668[2mms[22m[39m
+   [32mÔ£ô[39m PublicUndergraduateDirectory result window [2m(3)[22m
+     [33m[2mÔ£ô[22m[39m renders a first window of results and offers the rest on demand[33m 479[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m reveals the remaining results when the visitor asks for more[33m 458[2mms[22m[39m
+     [33m[2mÔ£ô[22m[39m resets the window when a filter narrows the results[33m 718[2mms[22m[39m
+ [32mÔ£ô[39m src/features/academics/AcademicPeriodHistoryPanel.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[33m 411[2mms[22m[39m
+   [32mÔ£ô[39m academic period history administration [2m(2)[22m
+     [33m[2mÔ£ô[22m[39m requires an explicit confirmation before publishing a draft calendar revision[33m 331[2mms[22m[39m
+ [32mÔ£ô[39m src/features/admissions/AdmissionsCalendarPage.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[33m 373[2mms[22m[39m
+ [32mÔ£ô[39m src/features/theme/ThemeSelector.test.tsx [2m([22m[2m1 test[22m[2m)[22m[33m 312[2mms[22m[39m
+   [32mÔ£ô[39m theme selector [2m(1)[22m
+     [33m[2mÔ£ô[22m[39m lets a keyboard and screen-reader user select and restore a color theme[33m 308[2mms[22m[39m
+ [32mÔ£ô[39m src/features/academics/AcademicOfferingDraftPanelSubjectRetry.test.tsx [2m([22m[2m1 test[22m[2m)[22m[33m 367[2mms[22m[39m
+   [32mÔ£ô[39m AcademicOfferingDraftPanel subject recovery [2m(1)[22m
+     [33m[2mÔ£ô[22m[39m retries a failed curriculum subject read and enables the subject selector[33m 362[2mms[22m[39m
+ [32mÔ£ô[39m src/features/academics/AcademicOfferingDraftPanelHistoryRetry.test.tsx [2m([22m[2m1 test[22m[2m)[22m[33m 362[2mms[22m[39m
+   [32mÔ£ô[39m AcademicOfferingDraftPanel audit history recovery [2m(1)[22m
+     [33m[2mÔ£ô[22m[39m retries a failed audit history read without reloading the draft list[33m 358[2mms[22m[39m
+ [32mÔ£ô[39m src/features/identity/identitySessionManager.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 302[2mms[22m[39m
+ [32mÔ£ô[39m src/features/admissions/AdmissionsExperienceDev.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[33m 431[2mms[22m[39m
+ [32mÔ£ô[39m src/features/academics/AcademicOfferingDraftPanelCurriculumRetry.test.tsx [2m([22m[2m1 test[22m[2m)[22m[33m 492[2mms[22m[39m
+   [32mÔ£ô[39m AcademicOfferingDraftPanel curriculum recovery [2m(1)[22m
+     [33m[2mÔ£ô[22m[39m retries the published curriculum read without discarding the selected program[33m 490[2mms[22m[39m
+ [32mÔ£ô[39m src/App.lazyFailure.test.tsx [2m([22m[2m1 test[22m[2m)[22m[33m 495[2mms[22m[39m
+   [32mÔ£ô[39m App route chunk recovery [2m(1)[22m
+     [33m[2mÔ£ô[22m[39m keeps the application shell usable and offers reload when the selected module throws[33m 488[2mms[22m[39m
+ [32mÔ£ô[39m src/features/admissions/AdmissionsExperiencePublicRetry.test.tsx [2m([22m[2m1 test[22m[2m)[22m[33m 375[2mms[22m[39m
+   [32mÔ£ô[39m AdmissionsExperience public reload [2m(1)[22m
+     [33m[2mÔ£ô[22m[39m lets a visitor retry the public calendar read after a failure[33m 351[2mms[22m[39m
+ [32mÔ£ô[39m src/features/identity/IdentityProvider.lazyOidc.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 212[2mms[22m[39m
+ [32mÔ£ô[39m src/features/academics/academicOperationsClient.test.ts [2m([22m[2m41 tests[22m[2m)[22m[32m 247[2mms[22m[39m
+ [32mÔ£ô[39m src/features/admissions/AdmissionsCallManagementPanelRetry.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 243[2mms[22m[39m
+ [32mÔ£ô[39m src/features/notices/MyNoticesPage.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 269[2mms[22m[39m
+ [32mÔ£ô[39m src/features/admissions/AdmissionsCalendarPageDownloadFeedback.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 261[2mms[22m[39m
+ [32mÔ£ô[39m src/features/identity/identityClient.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 112[2mms[22m[39m
+ [32mÔ£ô[39m src/features/branding/BrandingProvider.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[32m 237[2mms[22m[39m
+ [32mÔ£ô[39m src/features/academics/academicOfferingDraftClient.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 95[2mms[22m[39m
+ [32mÔ£ô[39m src/features/admissions/admissionsCalendarIcs.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 256[2mms[22m[39m
+ [32mÔ£ô[39m src/features/academics/academicCatalogClient.test.ts [2m([22m[2m21 tests[22m[2m)[22m[32m 120[2mms[22m[39m
+ [32mÔ£ô[39m src/features/admissions/admissionsCalendarIcsUid.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 105[2mms[22m[39m
+ [32mÔ£ô[39m src/features/academics/publicCatalog/publicUndergraduateCatalogClient.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 32[2mms[22m[39m
+ [32mÔ£ô[39m src/features/access/roleAccessClient.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 66[2mms[22m[39m
+ [32mÔ£ô[39m src/features/territorial-catalog/territorialCatalogClient.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 34[2mms[22m[39m
+ [32mÔ£ô[39m src/features/academics/curriculumVersionComparisonContract.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 70[2mms[22m[39m
+ [32mÔ£ô[39m src/features/admissions/admissionsCallClient.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 45[2mms[22m[39m
+ [32mÔ£ô[39m src/features/academics/publicCatalog/publicPostgraduateCatalogClient.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 51[2mms[22m[39m
+ [32mÔ£ô[39m src/features/spaces/spaceGuideClient.test.ts [2m([22m[2m9 tests[22m[2m)[22m[32m 63[2mms[22m[39m
+ [32mÔ£ô[39m src/features/room-planning/demo/roomAllocationClient.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 51[2mms[22m[39m
+ [32mÔ£ô[39m src/features/admissions/demo/admissionsDemoStore.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 61[2mms[22m[39m
+ [32mÔ£ô[39m src/features/branding/api/brandingAdministrationClient.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 91[2mms[22m[39m
+ [32mÔ£ô[39m src/features/identity/localPreviewIdentity.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 18[2mms[22m[39m
+ [32mÔ£ô[39m src/features/identity/localPreviewSessionClient.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 20[2mms[22m[39m
+ [32mÔ£ô[39m src/features/notices/noticesClient.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 15[2mms[22m[39m
+ [32mÔ£ô[39m src/features/branding/api/brandingClient.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 29[2mms[22m[39m
+ [32mÔ£ô[39m src/features/library/libraryClient.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 18[2mms[22m[39m
+ [32mÔ£ô[39m src/features/identity/oidcConfiguration.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 26[2mms[22m[39m
+ [32mÔ£ô[39m src/features/theme/themeStore.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 44[2mms[22m[39m
+ [32mÔ£ô[39m src/features/identity/identityPermissionContract.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 32[2mms[22m[39m
+ [32mÔ£ô[39m src/features/academics/publicCatalog/publicUndergraduateCatalog.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 15[2mms[22m[39m
+ [32mÔ£ô[39m src/features/notices/noticesAdminClient.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 14[2mms[22m[39m
+ [32mÔ£ô[39m src/features/academics/publicCatalog/publicPostgraduateCatalog.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 12[2mms[22m[39m
+ [32mÔ£ô[39m src/shared/localDateInput.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 14[2mms[22m[39m
 
 [2m Test Files [22m [1m[32m77 passed[39m[22m[90m (77)[39m
 [2m      Tests [22m [1m[32m518 passed[39m[22m[90m (518)[39m
-[2m   Start at [22m 01:28:51
-[2m   Duration [22m 55.69s[2m (tests 46%, environment 35%, setup 12%, import 5%, worker 2%)[22m
+[2m   Start at [22m 02:11:36
+[2m   Duration [22m 80.97s[2m (tests 50%, environment 34%, setup 9%, import 4%, worker 3%)[22m
 
-Ô£ö mide los assets est├íticos de la ruta y deja OIDC en un chunk din├ímico (7.5379ms)
-Ô£ö aplica los l├¡mites de la portada y la ruta completa de programas (0.5096ms)
-Ô£ö exige portada y directorio p├║blico como chunks din├ímicos independientes (0.5397ms)
-Ô£ö limita el JSON p├║blico y exige que el directorio lo declare como asset asociado (0.3518ms)
-Ô£ö rechaza la instant├ínea p├║blica cuando el manifest no la asocia al directorio (0.4087ms)
-Ô£ö rechaza la instant├ínea de posgrado cuando el manifest no la asocia al directorio diferido (0.4206ms)
-Ô£ö mantiene los dos niveles del directorio p├║blico en chunks diferidos (1.8815ms)
-Ô£ö mantiene la comparaci├│n curricular en un chunk din├ímico de la ruta de programas (0.4171ms)
-Ô£ö rechaza cargar la comparaci├│n curricular de forma est├ítica con la ruta de programas (0.286ms)
-Ô£ö reporta cuando la ruta de programas supera el l├¡mite de JavaScript (0.4043ms)
-Ô£ö incluye las dependencias est├íticas del chunk OIDC en su presupuesto (0.3181ms)
-Ô£ö falla si la implementaci├│n OIDC deja de ser una importaci├│n din├ímica del entry (0.221ms)
-Ô£ö rechaza que el laboratorio local de admisiones aparezca en el manifest de producci├│n (0.1904ms)
-Ô£ö rechaza que la experiencia estudiantil de ejemplo aparezca en el manifest de producci├│n (0.233ms)
-Ô£ö rechaza que el laboratorio local de calificaciones aparezca en el manifest de producci├│n (0.2854ms)
-Ô£ö rechaza que el laboratorio de asignaci├│n de aulas aparezca en el manifest de producci├│n (0.4612ms)
-Ô£ö rechaza que los recorridos locales de la portada aparezcan en el manifest de producci├│n (0.1649ms)
-Ô£ö rechaza que el cliente de sesi├│n de desarrollador aparezca en el manifest de producci├│n (0.3594ms)
-Ô£ö rechaza que la l├│gica de sesi├│n de desarrollador aparezca en el manifest de producci├│n (0.1907ms)
-Ô£ö dark theme gives identity status messages a readable dark surface (2.2768ms)
-Ô£ö dark theme gives identity errors a readable dark error surface (3.8842ms)
-Ô£ö dark theme gives structure audit events a readable raised surface (0.7686ms)
-Ô£ö dark theme gives space announcements a readable raised surface (1.23ms)
-Ô£ö dark theme gives identity center chrome a readable surface (0.6379ms)
-Ô£ö library page styles reference only tokens the theme defines, so dark mode can override them (2.5021ms)
-Ô£ö library page surfaces keep WCAG AA contrast in dark mode (0.7323ms)
-Ô£ö public program directory keeps its dark surfaces readable (0.9838ms)
-Ô£ö dark theme keeps academic, spaces, and catalog chrome readable (0.3351ms)
-Ô£ö dark theme keeps the room allocation demo readable (0.4037ms)
-Ô£ö dark theme keeps the public admissions calendar readable (0.5565ms)
-Ô£ö dark theme keeps admissions muted text readable on its cards (0.8024ms)
-Ô£ö dark theme keeps the visual identity editor action bar readable (0.5387ms)
-Ô£ö dark theme gives the identity status icon a readable badge (0.4587ms)
-Ô£ö dark theme keeps a disabled primary button legible (0.4694ms)
-Ô£ö the visual identity preview keeps its light-on-light labels readable (1.1592ms)
-Ô£ö dark theme keeps the curriculum catalog hero readable (2.1053ms)
-Ô£ö el chip decorativo de la barra superior se oculta en pantallas medianas (4.5657ms)
-Ô£ö la barra superior no declara un ancho minimo que impida encogerse (0.7402ms)
-Ô£ö el selector de tema conserva sus tres opciones a tamano reducido (1.0908ms)
-Ô£ö el copy de la marca se oculta con especificidad suficiente en tablet (0.5105ms)
-Ô£ö la marca del sidebar colapsado no se desborda del carril de 68 px (0.4506ms)
-Ô£ö el panel de busqueda de espacios baja a dos columnas antes de 768 px (1.3782ms)
-Ô£ö la suite declara un timeout por test acorde a un host cargado (1.6787ms)
-Ô£ö las utilidades asincronas de testing-library tienen margen propio (0.6695ms)
-Ô£ö ningun color de texto medido bajo AA vuelve a los estilos (28.1255ms)
-Ô£ö los sustitutos alcanzan AA sobre cada superficie clara (0.619ms)
-Ô£ö los enlaces de la ficha tienen area tactil de 24 px sin desplazar el diseno (2.0415ms)
-Ô£ö el campo de busqueda ocupa toda la altura de su contenedor (1.7741ms)
-Ô£ö el campo de busqueda se etiqueta con un label envolvente (0.4469ms)
+Ô£ö mide los assets est├íticos de la ruta y deja OIDC en un chunk din├ímico (5.2011ms)
+Ô£ö aplica los l├¡mites de la portada y la ruta completa de programas (0.4629ms)
+Ô£ö exige portada y directorio p├║blico como chunks din├ímicos independientes (0.4779ms)
+Ô£ö limita el JSON p├║blico y exige que el directorio lo declare como asset asociado (0.8393ms)
+Ô£ö rechaza la instant├ínea p├║blica cuando el manifest no la asocia al directorio (0.8747ms)
+Ô£ö rechaza la instant├ínea de posgrado cuando el manifest no la asocia al directorio diferido (0.4364ms)
+Ô£ö mantiene los dos niveles del directorio p├║blico en chunks diferidos (0.4223ms)
+Ô£ö mantiene la comparaci├│n curricular en un chunk din├ímico de la ruta de programas (0.4847ms)
+Ô£ö rechaza cargar la comparaci├│n curricular de forma est├ítica con la ruta de programas (0.3037ms)
+Ô£ö reporta cuando la ruta de programas supera el l├¡mite de JavaScript (0.4555ms)
+Ô£ö incluye las dependencias est├íticas del chunk OIDC en su presupuesto (0.5631ms)
+Ô£ö falla si la implementaci├│n OIDC deja de ser una importaci├│n din├ímica del entry (0.3939ms)
+Ô£ö rechaza que el laboratorio local de admisiones aparezca en el manifest de producci├│n (0.2901ms)
+Ô£ö rechaza que la experiencia estudiantil de ejemplo aparezca en el manifest de producci├│n (0.2799ms)
+Ô£ö rechaza que el laboratorio local de calificaciones aparezca en el manifest de producci├│n (0.4619ms)
+Ô£ö rechaza que el laboratorio de asignaci├│n de aulas aparezca en el manifest de producci├│n (4.6774ms)
+Ô£ö rechaza que los recorridos locales de la portada aparezcan en el manifest de producci├│n (0.2525ms)
+Ô£ö rechaza que el cliente de sesi├│n de desarrollador aparezca en el manifest de producci├│n (0.3216ms)
+Ô£ö rechaza que la l├│gica de sesi├│n de desarrollador aparezca en el manifest de producci├│n (0.2264ms)
+Ô£ö dark theme gives identity status messages a readable dark surface (3.8123ms)
+Ô£ö dark theme gives identity errors a readable dark error surface (1.0146ms)
+Ô£ö dark theme gives structure audit events a readable raised surface (1.139ms)
+Ô£ö dark theme gives space announcements a readable raised surface (1.6261ms)
+Ô£ö dark theme gives identity center chrome a readable surface (0.7694ms)
+Ô£ö library page styles reference only tokens the theme defines, so dark mode can override them (2.9886ms)
+Ô£ö library page surfaces keep WCAG AA contrast in dark mode (1.4824ms)
+Ô£ö public program directory keeps its dark surfaces readable (1.3395ms)
+Ô£ö dark theme keeps academic, spaces, and catalog chrome readable (0.9228ms)
+Ô£ö dark theme keeps the room allocation demo readable (0.8736ms)
+Ô£ö dark theme keeps the public admissions calendar readable (0.9512ms)
+Ô£ö dark theme keeps admissions muted text readable on its cards (0.8095ms)
+Ô£ö dark theme keeps the visual identity editor action bar readable (2.0507ms)
+Ô£ö dark theme gives the identity status icon a readable badge (0.4999ms)
+Ô£ö dark theme keeps a disabled primary button legible (0.5799ms)
+Ô£ö the visual identity preview keeps its light-on-light labels readable (1.5671ms)
+Ô£ö dark theme keeps the curriculum catalog hero readable (1.3024ms)
+Ô£ö el chip decorativo de la barra superior se oculta en pantallas medianas (2.7476ms)
+Ô£ö la barra superior no declara un ancho minimo que impida encogerse (1.1835ms)
+Ô£ö el selector de tema conserva sus tres opciones a tamano reducido (1.3185ms)
+Ô£ö el copy de la marca se oculta con especificidad suficiente en tablet (0.5029ms)
+Ô£ö la marca del sidebar colapsado no se desborda del carril de 68 px (0.8509ms)
+Ô£ö el panel de busqueda de espacios baja a dos columnas antes de 768 px (1.8405ms)
+Ô£ö la suite declara un timeout por test acorde a un host cargado (1.3412ms)
+Ô£ö las utilidades asincronas de testing-library tienen margen propio (0.4571ms)
+Ô£ö ningun color de texto medido bajo AA vuelve a los estilos (35.9461ms)
+Ô£ö los sustitutos alcanzan AA sobre cada superficie clara (0.9299ms)
+Ô£ö los enlaces de la ficha tienen area tactil de 24 px sin desplazar el diseno (2.2503ms)
+Ô£ö el campo de busqueda ocupa toda la altura de su contenedor (3.2717ms)
+Ô£ö el campo de busqueda se etiqueta con un label envolvente (0.473ms)
 Ôä╣ tests 49
 Ôä╣ suites 0
 Ôä╣ pass 49
@@ -272,4 +336,4 @@
 Ôä╣ cancelled 0
 Ôä╣ skipped 0
 Ôä╣ todo 0
-Ôä╣ duration_ms 808.281
+Ôä╣ duration_ms 975.1996

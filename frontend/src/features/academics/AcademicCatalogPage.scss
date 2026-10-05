@@ -43,9 +43,9 @@
 .catalog-hero h1 { max-width: 790px; margin: 0; color: #1d1f1a; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(38px, 4.4vw, 60px); font-weight: 500; letter-spacing: -.045em; line-height: .99; }
 .catalog-hero h1 em { color: #77724d; font-weight: 400; }
 .catalog-intro { max-width: 690px; margin: 18px 0 20px; color: #66675f; font-size: 13px; line-height: 1.7; }
-.catalog-hero-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 16px; color: #85867d; font-size: 9px; }
+.catalog-hero-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 16px; color: #6f7068; font-size: 9px; }
 .catalog-preview-badge { display: inline-flex; align-items: center; gap: 6px; padding: 7px 10px; border: 1px solid #dfdcc8; border-radius: 999px; background: #fffefa; color: #575844; font-size: 9px; font-weight: 700; }
-.catalog-preview-badge > span { color: #a18c31; font-size: 13px; }
+.catalog-preview-badge > span { color: #7f6e27; font-size: 13px; }
 
 .catalog-hero-art { position: relative; display: grid; width: 250px; height: 215px; place-items: center; justify-self: center; }
 .catalog-art-orbit { position: absolute; width: 194px; height: 194px; border: 1px solid #c8c4a967; border-radius: 50%; }
@@ -53,10 +53,10 @@
 .catalog-art-orbit-two { width: 224px; height: 120px; transform: rotate(-26deg); border-color: #b8a95878; }
 .catalog-art-disc { display: grid; width: 111px; height: 111px; place-items: center; border: 1px solid #e8cc52; border-radius: 38% 62% 57% 43% / 49% 43% 57% 51%; background: linear-gradient(142deg, #ffe36f, #ffcc29 62%, #efba12); box-shadow: inset -12px -12px 20px #d7a80036, 0 20px 38px #a1851f29; color: #29291f; transform: rotate(-8deg); }
 .catalog-art-disc span { font-family: Georgia, serif; font-size: 66px; font-weight: 700; line-height: 1; transform: rotate(8deg); }
-.catalog-art-spark { position: absolute; color: #8a7c42; font-size: 21px; }
+.catalog-art-spark { position: absolute; color: #7b6f3b; font-size: 21px; }
 .catalog-art-spark-one { top: 18px; right: 27px; }
 .catalog-art-spark-two { bottom: 23px; left: 14px; font-size: 14px; }
-.catalog-art-caption { position: absolute; right: 0; bottom: 8px; color: #7e7c6d; font-size: 7px; font-weight: 800; letter-spacing: .17em; line-height: 1.65; }
+.catalog-art-caption { position: absolute; right: 0; bottom: 8px; color: #717062; font-size: 7px; font-weight: 800; letter-spacing: .17em; line-height: 1.65; }
 
 .catalog-operation-note { display: flex; align-items: flex-start; gap: 11px; margin: 19px 0 24px; padding: 12px 15px; border: 1px solid #eee4be; border-radius: 11px; background: #fffdf3; color: #706b55; font-size: 10px; line-height: 1.6; }
 .catalog-operation-note p { margin: 0; }
@@ -83,8 +83,8 @@
 .catalog-empty .catalog-eyebrow { margin-bottom: 8px; }
 .catalog-empty h2 { margin: 0; color: #2a2b25; font-family: Georgia, serif; font-size: 25px; font-weight: 500; letter-spacing: -.02em; }
 .catalog-empty > p:not(.catalog-eyebrow) { max-width: 460px; margin: 10px 0 18px; color: #6f7067; font-size: 11px; line-height: 1.7; }
-.catalog-empty-footnote { display: inline-flex; align-items: center; gap: 6px; color: #98988e; font-size: 9px; }
-.catalog-empty-footnote span { color: #a08c34; font-size: 12px; }
+.catalog-empty-footnote { display: inline-flex; align-items: center; gap: 6px; color: #707068; font-size: 9px; }
+.catalog-empty-footnote span { color: #7e6f29; font-size: 12px; }
 
 .catalog-browser { display: grid; grid-template-columns: minmax(230px, .72fr) minmax(0, 1.7fr); gap: 18px; margin: 0 0 28px; }
 .catalog-programs-panel, .catalog-curricula-panel { min-width: 0; padding: 21px; border: 1px solid #e7e8e0; border-radius: 15px; background: #fff; box-shadow: 0 5px 18px #1a1a1007; }
@@ -127,9 +127,9 @@
 .catalog-curriculum-view { width: 100%; justify-content: space-between; margin-top: 12px; }
 .catalog-curriculum-view span { color: #8b7a31; }
 .catalog-no-curricula { display: flex; align-items: center; gap: 13px; min-height: 119px; padding: 18px; border: 1px dashed #e3e3d9; border-radius: 11px; background: #fdfdfa; }
-.catalog-no-curricula-icon { display: grid; flex: 0 0 40px; width: 40px; height: 40px; place-items: center; border-radius: 13px; background: #f2f2eb; color: #78796f; font-size: 21px; }
+.catalog-no-curricula-icon { display: grid; flex: 0 0 40px; width: 40px; height: 40px; place-items: center; border-radius: 13px; background: #f2f2eb; color: #6f7067; font-size: 21px; }
 .catalog-no-curricula h3 { margin: 0 0 5px; color: #45463f; font-size: 11px; }
-.catalog-no-curricula p { margin: 0; color: #85867e; font-size: 9px; line-height: 1.6; }
+.catalog-no-curricula p { margin: 0; color: #6f6f69; font-size: 9px; line-height: 1.6; }
 
 .catalog-error { display: flex; align-items: center; gap: 11px; margin: 0 0 20px; padding: 13px 15px; border: 1px solid #edc9c0; border-radius: 11px; background: #fff8f6; color: #7d4940; }
 .catalog-error-icon { display: grid; flex: 0 0 20px; width: 20px; height: 20px; place-items: center; border-radius: 50%; background: #f6dcd5; color: #894e43; font-weight: 800; }
@@ -144,14 +144,14 @@
 .catalog-admin-mark { display: grid; flex: 0 0 36px; width: 36px; height: 36px; place-items: center; border: 1px solid #dedfd8; border-radius: 11px; background: #fff; color: #505148; font-size: 18px; }
 .catalog-admin-heading .catalog-eyebrow { margin-bottom: 3px; }
 .catalog-admin-heading h2 { margin: 0; color: #363832; font-family: Georgia, serif; font-size: 17px; font-weight: 500; }
-.catalog-admin-lock { display: inline-flex; align-items: center; gap: 6px; margin-left: auto; color: #6e7066; font-size: 10px; }
+.catalog-admin-lock { display: inline-flex; align-items: center; gap: 6px; margin-left: auto; color: #6b6d63; font-size: 10px; }
 .catalog-admin-lock span { font-size: 8px; }
 .catalog-admin-locked { display: flex; align-items: center; gap: 12px; padding: 14px; border: 1px solid #e7e8e1; border-radius: 11px; background: #fff; color: #6e7068; }
-.catalog-admin-locked > span:first-child { display: grid; flex: 0 0 34px; width: 34px; height: 34px; place-items: center; border-radius: 10px; background: #f1f2ec; color: #73756a; font-size: 18px; }
+.catalog-admin-locked > span:first-child { display: grid; flex: 0 0 34px; width: 34px; height: 34px; place-items: center; border-radius: 10px; background: #f1f2ec; color: #6b6d63; font-size: 18px; }
 .catalog-admin-locked > div { flex: 1; }
 .catalog-admin-locked strong { color: #4a4b44; font-size: 10px; }
-.catalog-admin-locked p { margin: 4px 0 0; color: #85867e; font-size: 9px; line-height: 1.55; }
-.catalog-locked-tag { flex: 0 0 auto; padding: 6px 8px; border-radius: 7px; background: #f4f4f0; color: #898a82; font-size: 8px; }
+.catalog-admin-locked p { margin: 4px 0 0; color: #6f6f69; font-size: 9px; line-height: 1.55; }
+.catalog-locked-tag { flex: 0 0 auto; padding: 6px 8px; border-radius: 7px; background: #f4f4f0; color: #6f7069; font-size: 8px; }
 .catalog-template-download { width: fit-content; margin: 11px 0 0 46px; text-decoration: none; }
 .catalog-admin-grid { display: grid; grid-template-columns: minmax(230px, .75fr) minmax(0, 1.25fr); gap: 12px; }
 .catalog-upload-card, .catalog-drafts-card, .catalog-review-card { min-width: 0; padding: 16px; border: 1px solid #e6e7df; border-radius: 11px; background: #fff; }
@@ -163,14 +163,14 @@
 .catalog-preview-valid span { display: grid; width: 15px; height: 15px; place-items: center; border-radius: 50%; background: #e1f0dd; }
 .catalog-import-preview-meta { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin: 0; }
 .catalog-import-preview-meta > div { min-width: 0; padding: 9px 10px; border: 1px solid #eceee7; border-radius: 8px; background: #fff; }
-.catalog-import-preview-meta dt { margin-bottom: 4px; color: #85867d; font-size: 8px; font-weight: 700; text-transform: uppercase; }
+.catalog-import-preview-meta dt { margin-bottom: 4px; color: #6f7068; font-size: 8px; font-weight: 700; text-transform: uppercase; }
 .catalog-import-preview-meta dd { overflow-wrap: anywhere; margin: 0; color: #4c4e46; font-size: 9px; line-height: 1.45; }
 .catalog-import-preview-count { margin: 0; color: #55574f; font-size: 10px; font-weight: 750; }
 .catalog-import-preview .catalog-review-table { min-width: 820px; }
 .catalog-import-preview-note { margin: 0; color: #6e7068; font-size: 9px; line-height: 1.5; }
 .catalog-upload-card .catalog-eyebrow, .catalog-drafts-heading .catalog-eyebrow { margin-bottom: 4px; }
 .catalog-upload-card h3, .catalog-drafts-heading h3, .catalog-review-heading h3 { margin: 0; color: #3a3c34; font-family: Georgia, serif; font-size: 16px; font-weight: 500; }
-.catalog-upload-card > p:not(.catalog-eyebrow) { margin: 7px 0 12px; color: #85867d; font-size: 9px; line-height: 1.6; }
+.catalog-upload-card > p:not(.catalog-eyebrow) { margin: 7px 0 12px; color: #6f7068; font-size: 9px; line-height: 1.6; }
 .catalog-file-picker { display: flex; align-items: center; gap: 9px; min-width: 0; margin: 0 0 9px; padding: 9px; border: 1px dashed #dcded4; border-radius: 9px; background: #fcfcf9; cursor: pointer; }
 .catalog-file-icon { display: grid; flex: 0 0 29px; width: 29px; height: 29px; place-items: center; border-radius: 9px; background: #f4f0d9; color: #807337; font-size: 18px; }
 .catalog-file-picker > span:nth-child(2) { display: grid; min-width: 0; gap: 3px; }
@@ -188,7 +188,7 @@
 .catalog-button-secondary { border-color: #e3e4dc; background: #fff; color: #62645c; }
 .catalog-button-secondary:not(:disabled):hover { border-color: #d9c75d; background: #fffef6; }
 .catalog-drafts-heading { display: flex; align-items: center; justify-content: space-between; margin-bottom: 9px; }
-.catalog-drafts-empty { margin: 0; padding: 16px 0 5px; color: #85867e; font-size: 9px; }
+.catalog-drafts-empty { margin: 0; padding: 16px 0 5px; color: #6f6f69; font-size: 9px; }
 .catalog-draft-list { display: grid; gap: 5px; margin: 0; padding: 0; list-style: none; }
 .catalog-draft-row { display: flex; align-items: center; gap: 9px; min-width: 0; padding: 8px; border-radius: 8px; background: #fafaf7; }
 .catalog-draft-status { color: #b38f19; font-size: 9px; }
@@ -217,9 +217,9 @@
 .catalog-curriculum-filters input, .catalog-curriculum-filters select { width: 100%; min-height: 35px; padding: 0 10px; border: 1px solid #dedfd8; border-radius: 8px; background: #fff; color: #383a33; font: inherit; }
 .catalog-curriculum-filters input::placeholder { color: #9a9b93; }
 .catalog-curriculum-filters input:focus-visible, .catalog-curriculum-filters select:focus-visible { @include tokens.focus-ring; }
-.catalog-curriculum-filter-count { margin: 0 0 9px; color: #85867d; font-size: 8px; white-space: nowrap; }
+.catalog-curriculum-filter-count { margin: 0 0 9px; color: #6f7068; font-size: 8px; white-space: nowrap; }
 .catalog-curriculum-filter-empty { margin: 0; padding: 16px; border: 1px dashed #e3e3d9; border-radius: 9px; background: #fdfdfa; color: #6f7067; font-size: 10px; text-align: center; }
-.catalog-curriculum-pagination { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 11px; color: #85867d; font-size: 8px; }
+.catalog-curriculum-pagination { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 11px; color: #6f7068; font-size: 8px; }
 .catalog-curriculum-pagination > div { display: flex; align-items: center; gap: 9px; }
 .catalog-curriculum-pagination .catalog-button { min-height: 29px; }
 .catalog-curriculum-pagination .catalog-button:disabled { opacity: .42; }

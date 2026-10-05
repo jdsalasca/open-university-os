@@ -33,12 +33,22 @@ const SUPERFICIES = ['#f4f4f0', '#ffffff', '#fafaf6']
 // texto ilegible; la lista viene de docs/evidence/round-2026-10-05-accesibilidad.
 const SUSTITUIDOS = ['#85877d', '#989990', '#77786f', '#777970', '#7b7d72', '#797a72']
 
+// Segunda tanda, 2026-10-05: los 30 colores que la auditoria del navegador sigio
+// reportando bajo AA en tema claro, con 165 usos en el DOM. Cada sustituto sale
+// de escalar los tres canales por el mismo factor, con lo que conserva el tono.
+const SEGUNDA_TANDA = [
+  '#8a8c82', '#898b82', '#9a9b92', '#949185', '#78796f', '#8b876e', '#797762', '#8b8d84',
+  '#84857b', '#8c6c24', '#8a7c42', '#7d7f75', '#92938b', '#7a846d', '#74766d', '#a18c31',
+  '#85867d', '#7e7c6d', '#98988e', '#a08c34', '#73756a', '#85867e', '#898a82', '#61765b',
+  '#838378', '#828175', '#b2b1a4', '#8d8972', '#74756c', '#85867f',
+]
+
 test('ningun color de texto medido bajo AA vuelve a los estilos', () => {
   const reincidentes = []
   for (const file of stylesheets()) {
-    const source = readFileSync(file, 'utf8')
-    for (const color of SUSTITUIDOS) {
-      if (source.toLowerCase().includes(color)) reincidentes.push(`${file.split('/').pop()}: ${color}`)
+    const source = readFileSync(file, 'utf8').toLowerCase()
+    for (const color of [...SUSTITUIDOS, ...SEGUNDA_TANDA]) {
+      if (source.includes(color)) reincidentes.push(`${file.split('/').pop()}: ${color}`)
     }
   }
   assert.deepEqual(reincidentes, [], `colores bajo AA reintroducidos: ${reincidentes.join(', ')}`)

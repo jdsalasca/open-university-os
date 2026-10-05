@@ -31,6 +31,29 @@ inconsistencia: el tema oscuro audita en 0 y el claro acumula cientos de textos 
 
 ## Sustituciones
 
+### Segunda tanda: los 30 colores que quedaban
+
+Con el primer corte el tema claro pasó de 444 a 165 textos bajo AA. `extr-colores.cjs` extrae los
+colores de `a11y.json`, cuenta sus usos y calcula el sustituto; `gen-mapa.cjs` verifica que cada uno
+aparece realmente en los estilos. Resultado: **30 colores distintos, los 30 presentes, 165 usos de
+DOM cubiertos**. 9 archivos SCSS modificados.
+
+El método es el mismo de la primera tanda: escalar los tres canales por el mismo factor para que el
+tono se conserve, con objetivo 4,55 sobre `#f4f4f0`, `#ffffff` y `#fafaf6`.
+
+Un ajuste no salía del cálculo offline: `#6e7066` daba 4,56 sobre las tres superficies de referencia
+pero **4,47 en el navegador**, porque el fondo real de esa tarjeta es más oscuro que ninguna de ellas.
+Se oscureció a `#6b6d63` y el navegador lo confirmó. Es el motivo de medir en el DOM y no solo con
+aritmética.
+
+### Texto decorativo
+
+El último hallazgo era el glifo `i` de `.catalog-note-icon`, con ratio 1,80 en tema oscuro. Va
+envuelto en `aria-hidden="true"`: no se anuncia ni se lee, y WCAG 1.4.3 se aplica al texto del
+contenido. No es un defecto; el auditor ahora excluye lo marcado `aria-hidden`.
+
+### Primera tanda
+
 Seis colores de texto sustituidos por su equivalente accesible, escalando los tres canales por el
 mismo factor para conservar el tono:
 
@@ -56,19 +79,21 @@ Textos oscuros bajo WCAG AA, por ruta y tema:
 
 | Ruta | Claro antes | Claro después | Oscuro antes | Oscuro después |
 | --- | ---: | ---: | ---: | ---: |
-| `/#resumen` | 11 | **1** | 0 | 0 |
-| `/#programas` | 151 | **37** | 1 | 1 |
-| `/#espacios` | 195 | **88** | 0 | 0 |
-| `/#admisiones` | 40 | **31** | 0 | 0 |
+| `/#resumen` | 11 | **0** | 0 | 0 |
+| `/#programas` | 151 | **0** | 1 | **0** |
+| `/#espacios` | 195 | **0** | 0 | 0 |
+| `/#admisiones` | 40 | **0** | 0 | 0 |
 | `/#estudiantes` | 34 | **0** | 0 | 0 |
-| `/#academia` | 13 | **8** | 1 | 1 |
-| **Total** | **444** | **165** | 2 | 2 |
+| `/#academia` | 13 | **0** | 1 | **0** |
+| **Total** | **444** | **0** | **2** | **0** |
 
-Una reducción del **63 %** y el tema oscuro intacto. El rediseño es visualmente imperceptible: los
-sustitutos se separan del original entre 6 y 30 unidades por canal manteniendo el tono.
+Las doce combinaciones de ruta y tema auditan **`ok`**: cero texto bajo AA, cero control sin nombre
+accesible y cero área táctil menor de 24 px. La reducción del primer corte fue del 63 % y el de esta
+tanda deja el total en cero.
 
-Capturas revisadas: `espacios-claro.png` y `espacios-oscuro.png` mantienen jerarquía y legibilidad;
-`programas-*.png` y `estudiantes-*.png` idem.
+Capturas revisadas: `espacios-claro.png`, `espacios-oscuro.png`, `programas-claro.png`,
+`programas-oscuro.png`, `estudiantes-claro.png` y `estudiantes-oscuro.png` mantienen jerarquía,
+legibilidad e identidad visual; los tonos dorados de la marca no se alteraron.
 
 ## Verificación
 
@@ -113,10 +138,9 @@ de ficha con su margen compensatorio, el estirado del input y la etiqueta envolv
 
 ## Pendiente
 
-- Quedan 165 textos bajo AA en tema claro. Son de otro grupo: tonos khaki/beige
-  (`#8d8972`, `#8a8a7a`, `#7a7c6c`) propios de admisiones, catálogo y espacios. Mismo método
-  aplicable.
-- El tema claro carece de tokens `--ui-*`. Definirlos y migrar los componentes es la solución de
-  fondo; este corte ataca el síntoma con los colores de mayor uso.
+- El tema claro carece de tokens `--ui-*`; definirlos y migrar los componentes evitaría que la
+  siguiente tanda de colores reaparezca. Este trabajo los corrige uno a uno sobre la lista medida.
 - La auditoría no cubre foco visible por teclado ni orden de tabulación; exige recorrido manual o
- AXE, que no está en las dependencias del proyecto.
+  AXE, que no está en las dependencias del proyecto.
+- El cálculo offline de sustitutos no reproduce el fondo real de todas las superficies. Conviene
+  tratar su salida como candidata y confirmar siempre en el navegador.

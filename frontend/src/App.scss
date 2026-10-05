@@ -94,7 +94,7 @@
 
   .nav-glyph { display: grid; width: 19px; place-items: center; color: #98998f; font-size: 17px; line-height: 1; }
   .nav-status { width: 6px; height: 6px; margin-left: auto; border-radius: 50%; background: var(--brand-primary, #ffcc29); }
-  .coming-soon { margin-left: auto; color: #78796f; font-size: 9px; }
+  .coming-soon { margin-left: auto; color: #6f7067; font-size: 9px; }
 }
 
 .skip-link {
@@ -145,7 +145,7 @@
 .identity-session-button { min-height: 31px; padding: 0 11px; border: 1px solid #34362e; border-radius: 7px; background: #24251f; color: #fff; font: inherit; font-size: 9px; font-weight: 650; cursor: pointer; }
 .identity-session-button:hover:not(:disabled) { background: #414238; }
 .identity-session-button:focus-visible { outline: 3px solid var(--brand-focus, #1a1a1a); outline-offset: 2px; }
-.identity-session-button:disabled { border-color: #d4d5ce; background: #e7e8e1; color: #85867e; cursor: not-allowed; }
+.identity-session-button:disabled { border-color: #d4d5ce; background: #e7e8e1; color: #6f6f69; cursor: not-allowed; }
 .identity-session-button.secondary { border-color: #d6d7cf; background: transparent; color: #4b4d44; }
 
 .theme-selector { flex: 0 0 auto; }

@@ -99,12 +99,12 @@
 .asset-editor-card { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 13px; border: 1px solid #eaebe5; border-radius: 9px; background: #fdfdfa; }
 .asset-copy { min-width: 0; }
 .asset-copy h3, .banner-heading h3 { margin: 0; color: #33342d; font-size: 11px; font-weight: 700; }
-.asset-copy p, .banner-heading p { margin: 5px 0 9px; color: #85867e; font-size: 9px; line-height: 1.45; }
+.asset-copy p, .banner-heading p { margin: 5px 0 9px; color: #6f6f69; font-size: 9px; line-height: 1.45; }
 .file-picker { position: relative; display: inline-flex; min-height: 29px; align-items: center; justify-content: center; overflow: hidden; padding: 0 10px; border: 1px solid #dadbd4; border-radius: 6px; background: #fff; color: #484940; font-size: 9px; font-weight: 650; cursor: pointer; }
 .file-picker:hover { border-color: #bfc0b6; background: #fbfbf7; }
 .file-picker:focus-within { @include tokens.focus-ring(2px); }
 .file-picker input[type='file'] { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
-.asset-preview { display: grid; flex: 0 0 76px; width: 76px; height: 56px; place-items: center; overflow: hidden; border: 1px dashed #d9dad2; border-radius: 7px; background: #f4f4ef; color: #898a82; font-size: 8px; }
+.asset-preview { display: grid; flex: 0 0 76px; width: 76px; height: 56px; place-items: center; overflow: hidden; border: 1px dashed #d9dad2; border-radius: 7px; background: #f4f4ef; color: #6f7069; font-size: 8px; }
 .asset-preview img { width: 100%; height: 100%; object-fit: contain; }
 .asset-preview[aria-label*='Favicon'] { flex-basis: 56px; width: 56px; height: 56px; }
 .asset-preview-logoDark { border-style: solid; border-color: #41423a; background: #20211d; }
@@ -203,7 +203,7 @@
 .image-summary-icon { background: #edf0f4; color: #606878; }
 .preview-summary > div > span:last-child { display: grid; min-width: 0; gap: 3px; }
 .preview-summary strong { color: #505149; font-size: 8px; }
-.preview-summary small { overflow: hidden; color: #898a82; font-size: 7px; line-height: 1.35; }
+.preview-summary small { overflow: hidden; color: #6f7069; font-size: 7px; line-height: 1.35; }
 .preview-footnote { margin: 0; color: #82837b; font-size: 9px; line-height: 1.5; }
 
 .identity-status, .identity-alert { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 0 0 13px; padding: 10px 13px; border: 1px solid #e5e5dc; border-radius: 8px; background: #fff; color: #585950; font-size: 10px; line-height: 1.5; }

@@ -85,8 +85,12 @@ const AUDIT = String.raw`
     const cs = getComputedStyle(el)
     if (!sePinta(el) || parseFloat(cs.opacity) < 0.15) continue
     const texto = [...el.childNodes].filter((n) => n.nodeType === 3 && n.textContent.trim()).map((n) => n.textContent.trim()).join(' ')
-    if (!texto) continue
-    if (el.closest('.theme-selector-label')) continue
+if (!texto) continue
+      if (el.closest('.theme-selector-label')) continue
+      // WCAG 1.4.3 se aplica al texto del contenido. Un glifo decorativo marcado
+      // con aria-hidden no se anuncia ni se lee, como la "i" del aviso del
+      // catalogo, asi que su color no es un defecto de contraste.
+      if (el.closest('[aria-hidden="true"]')) continue
     const fg = parse(cs.color)
     if (!fg || fg.a < 0.15) continue
     const size = parseFloat(cs.fontSize)
@@ -104,6 +108,7 @@ const AUDIT = String.raw`
       contraste.push({
         etiqueta: etiqueta(el),
         texto: texto.slice(0, 42),
+        color: cs.color,
         ratio: Number(r.toFixed(2)),
         minimo,
         size,
@@ -157,7 +162,7 @@ const AUDIT = String.raw`
   }
 
   return {
-    contraste: contraste.filter((x) => x.fiable).slice(0, 20),
+    contraste: contraste.filter((x) => x.fiable),
     contrasteNoVerificable: contraste.filter((x) => !x.fiable).length,
     controles: controles.slice(0, 20),
     jerarquia,

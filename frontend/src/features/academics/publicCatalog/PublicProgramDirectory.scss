@@ -3,7 +3,7 @@
 .public-program-directory { display: grid; gap: 20px; color: #22251f; }
 .public-program-hero { position: relative; display: flex; min-height: 215px; align-items: center; justify-content: space-between; gap: 30px; overflow: hidden; padding: clamp(24px, 4vw, 42px); border: 1px solid #dfded1; border-radius: 14px; background: radial-gradient(circle at 82% 46%, #f8ecc6 0, #f8ecc6 13%, transparent 13.3%), linear-gradient(115deg, #f6f2e6, #fff 68%); }
 .public-program-hero-copy { position: relative; z-index: 1; max-width: 690px; }
-.public-program-eyebrow { margin: 0 0 10px; color: #8c6c24; font-size: 11px; font-weight: 850; letter-spacing: .14em; text-transform: uppercase; }
+.public-program-eyebrow { margin: 0 0 10px; color: #8a6a23; font-size: 11px; font-weight: 850; letter-spacing: .14em; text-transform: uppercase; }
 .public-program-hero h2 { max-width: 650px; margin: 0; color: #20211d; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(32px, 4.4vw, 50px); font-weight: 500; letter-spacing: -.045em; line-height: 1.03; }
 .public-program-hero-copy > p:not(.public-program-eyebrow) { max-width: 590px; margin: 14px 0 0; color: #65665e; font-size: 15px; line-height: 1.55; }
 .public-program-source-line { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 18px; color: #67695e; font-size: 12px; font-weight: 700; }
@@ -45,13 +45,13 @@
 .public-program-card-details dt { color: #6e7067; font-size: 11px; font-weight: 750; }
 .public-program-card-details dd { min-width: 0; margin: 0; color: #484a43; font-size: 12px; line-height: 1.35; overflow-wrap: anywhere; }
 .public-program-locations { display: grid; gap: 4px; margin: 14px 0 0; padding-top: 11px; border-top: 1px solid #ecece7; color: #565950; font-size: 11px; line-height: 1.45; }
-.public-program-locations span { color: #898b82; font-weight: 750; }
+.public-program-locations span { color: #6e7069; font-weight: 750; }
 .public-program-detail-link { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: auto; padding-top: 16px; color: #685422; font-size: 12px; font-weight: 800; text-decoration: none; text-underline-offset: 3px; }
 .public-program-detail-link:hover { text-decoration: underline; }
 .public-program-empty { display: grid; justify-items: center; gap: 8px; padding: 34px 18px; border: 1px dashed #d5d7cf; border-radius: 10px; background: #fafaf8; text-align: center; }
 .public-program-empty > span { color: #937a3e; font-size: 30px; }
 .public-program-empty h3 { margin: 0; color: #272921; font-family: Georgia, 'Times New Roman', serif; font-size: 20px; font-weight: 550; }
-.public-program-empty p { margin: 0 0 6px; color: #74766d; font-size: 13px; }
+.public-program-empty p { margin: 0 0 6px; color: #6e7068; font-size: 13px; }
 
 @media (max-width: 1180px) {
   .public-program-filters { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -85,7 +85,7 @@
 }
 
 .public-program-window { display: grid; justify-items: center; gap: 9px; padding: 18px 0 4px; }
-.public-program-window p { margin: 0; color: #74766d; font-size: 12px; }
+.public-program-window p { margin: 0; color: #6e7068; font-size: 12px; }
 .public-program-more { min-height: 40px; padding: 0 18px; border: 1px solid #c5c8be; border-radius: 7px; background: transparent; color: #4d5148; font: inherit; font-size: 12px; font-weight: 750; cursor: pointer; }
 .public-program-more:hover { background: #f1f1ec; }
 .public-program-more:focus-visible { @include tokens.focus-ring; }
