@@ -1,0 +1,27 @@
+Aviso de sesion: texto completo visible, por ruta y ancho
+
+========== movil-390 (390 px) ==========
+  #resumen: "Desarrollador local · preview activo" | 0 px visibles de 0 | alto 0 px  ok
+  #academia: "Desarrollador local · preview activo" | 0 px visibles de 0 | alto 0 px  ok
+  #programas: "Desarrollador local · preview activo" | 0 px visibles de 0 | alto 0 px  ok
+  #espacios: "Desarrollador local · preview activo" | 0 px visibles de 0 | alto 0 px  ok
+
+========== tablet-768 (768 px) ==========
+  #resumen: "Desarrollador local · preview activo" | 127 px visibles de 127 | alto 24 px  ok
+  #academia: "Desarrollador local · preview activo" | 109 px visibles de 109 | alto 24 px  ok
+  #programas: "Desarrollador local · preview activo" | 119 px visibles de 119 | alto 24 px  ok
+  #espacios: "Desarrollador local · preview activo" | 114 px visibles de 114 | alto 24 px  ok
+
+========== escritorio-1024 (1024 px) ==========
+  #resumen: "Desarrollador local · preview activo" | 138 px visibles de 138 | alto 12 px  ok
+  #academia: "Desarrollador local · preview activo" | 138 px visibles de 138 | alto 12 px  ok
+  #programas: "Desarrollador local · preview activo" | 138 px visibles de 138 | alto 12 px  ok
+  #espacios: "Desarrollador local · preview activo" | 138 px visibles de 138 | alto 12 px  ok
+
+========== ancho-1440 (1440 px) ==========
+  #resumen: "Desarrollador local · preview activo" | 138 px visibles de 138 | alto 12 px  ok
+  #academia: "Desarrollador local · preview activo" | 138 px visibles de 138 | alto 12 px  ok
+  #programas: "Desarrollador local · preview activo" | 138 px visibles de 138 | alto 12 px  ok
+  #espacios: "Desarrollador local · preview activo" | 138 px visibles de 138 | alto 12 px  ok
+
+TOTAL avisos recortados: 0

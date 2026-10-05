@@ -1,0 +1,18 @@
+  #resumen: "Desarrollador local ┬À preview activo" | 0 px visibles de 0 | alto 0 px  ok
+  #academia: "Desarrollador local ┬À preview activo" | 0 px visibles de 0 | alto 0 px  ok
+  #programas: "Desarrollador local ┬À preview activo" | 0 px visibles de 0 | alto 0 px  ok
+  #espacios: "Desarrollador local ┬À preview activo" | 0 px visibles de 0 | alto 0 px  ok
+  #resumen: "Desarrollador local ┬À preview activo" | 127 px visibles de 127 | alto 24 px  ok
+  #academia: "Desarrollador local ┬À preview activo" | 109 px visibles de 109 | alto 24 px  ok
+  #programas: "Desarrollador local ┬À preview activo" | 119 px visibles de 119 | alto 24 px  ok
+  #espacios: "Desarrollador local ┬À preview activo" | 114 px visibles de 114 | alto 24 px  ok
+  #resumen: "Desarrollador local ┬À preview activo" | 138 px visibles de 138 | alto 12 px  ok
+  #academia: "Desarrollador local ┬À preview activo" | 138 px visibles de 138 | alto 12 px  ok
+  #programas: "Desarrollador local ┬À preview activo" | 138 px visibles de 138 | alto 12 px  ok
+  #espacios: "Desarrollador local ┬À preview activo" | 138 px visibles de 138 | alto 12 px  ok
+  #resumen: "Desarrollador local ┬À preview activo" | 138 px visibles de 138 | alto 12 px  ok
+  #academia: "Desarrollador local ┬À preview activo" | 138 px visibles de 138 | alto 12 px  ok
+  #programas: "Desarrollador local ┬À preview activo" | 138 px visibles de 138 | alto 12 px  ok
+  #espacios: "Desarrollador local ┬À preview activo" | 138 px visibles de 138 | alto 12 px  ok
+TOTAL avisos recortados: 0
+captura lista

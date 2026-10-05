@@ -151,8 +151,12 @@
 .autosave-indicator > span { width: 6px; height: 6px; border-radius: 50%; background: #79b98f; }
 .topbar-divider { width: 1px; height: 18px; background: #deded7; }
 .revision-chip { color: #3d3e37; font-size: 9px; font-weight: 750; letter-spacing: .1em; }
-.identity-session-controls { display: flex; align-items: center; gap: 8px; }
-.identity-session-status { max-width: 240px; overflow: hidden; color: #686a61; font-size: 9px; text-overflow: ellipsis; white-space: nowrap; }
+.identity-session-controls { display: flex; min-width: 0; align-items: center; gap: 8px; }
+// Medido el 5 de octubre de 2026 en ocho de las diez rutas: el aviso se recortaba entre 11 y
+// 28 px, y es justamente el texto que avisa de que la sesion usa datos sinteticos. Truncarlo
+// oculta el aviso. La barra superior es una fila flex: el aviso cede ancho al resto y, si hace
+// falta, ocupa dos lineas en lugar de recortarse.
+.identity-session-status { min-width: 0; color: #686a61; font-size: 9px; line-height: 1.35; text-align: right; }
 .identity-session-status.is-authenticated { color: #397a52; }
 .identity-session-status.is-error { color: #a34336; }
 .identity-session-button { min-height: 31px; padding: 0 11px; border: 1px solid #34362e; border-radius: 7px; background: #24251f; color: #fff; font: inherit; font-size: 9px; font-weight: 650; cursor: pointer; }
