@@ -39,9 +39,32 @@ Ejecutada desde la raíz del monorepo, no desde los repositorios de origen.
 
 ## Estado de la publicación
 
-El remoto `jdsalasca/open-university-os` se crea para alojar este árbol. Los repositorios de origen
-`open-university-backend` y `Universiry-frontend` se conservan intactos: el historial del frontend no
-se replica dentro del monorepo.
+Publicado en `https://github.com/jdsalasca/open-university-os`, rama `develop`, commit `8f42c88`. La
+primera ejecución de `Platform CI` en el monorepo terminó verde en los dos jobs: `Tests, build, and
+lint` en 40 s y `Maven tests and MySQL contracts` en 1 m 36 s
+([run 37260405244](https://github.com/jdsalasca/open-university-os/actions/runs/37260405244)).
+
+El repositorio local principal se migró al monorepo: `origin` apunta ahora a `open-university-os` y
+`legacy-backend` conserva la referencia al repositorio anterior, que no se modifica. El historial
+previo del frontend tampoco se replica dentro del monorepo; queda en su repositorio de origen.
+
+## Verificación desde la raíz del monorepo
+
+Después de migrar el checkout principal, el stack se volvió a levantar y se comprobó que las cuatro
+rutas públicas responden sin alertas:
+
+| Ruta | Título | Alertas | Captura |
+| --- | --- | --- | --- |
+| `/#resumen` | Tu universidad, en un mismo lugar | ninguna | `monorepo-resumen.png` |
+| `/#programas` | Mallas curriculares de pregrado | ninguna | `monorepo-programas.png` |
+| `/#espacios` | Guía de espacios (24 de 24 espacios) | ninguna | `monorepo-espacios.png` |
+| `/#admisiones` | Pregrado presencial 2027-I | ninguna | `monorepo-admisiones.png` |
+
+El arreglo de CLS de la ronda anterior sobrevive a la migración: `/#programas` mide **0.0071** en tres
+corridas con perfil limpio, frente a 0.7503 antes del arreglo.
+
+Los cuatro servicios quedan arriba desde el monorepo: backend `UP`, frontend HTTP 200, MySQL
+`healthy` y MongoDB `healthy`.
 
 ## Lo que este cambio no decide
 
