@@ -1,0 +1,83 @@
+
+.identity-preview-surface -> {
+ "visible": 383,
+ "contenido": 383,
+ "excede": 0,
+ "overflow": "hidden",
+ "titulo": "Una experiencia coherente para toda la comun",
+ "hijos": [
+  {
+   "tag": "div",
+   "clase": "preview-brand-bar",
+   "posicion": "static",
+   "ancho": 355,
+   "texto": "UUniversidad Pedag├│gica y Te"
+  },
+  {
+   "tag": "nav",
+   "clase": "preview-navigation",
+   "posicion": "static",
+   "ancho": 383,
+   "texto": "InicioEstudiantesPr├│ximoProg"
+  },
+  {
+   "tag": "div",
+   "clase": "preview-hero",
+   "posicion": "relative",
+   "ancho": 355,
+   "texto": "UNIVERSIDAD ┬À IDENTIDAD INST"
+  },
+  {
+   "tag": "div",
+   "clase": "preview-color-swatches",
+   "posicion": "static",
+   "ancho": 355,
+   "texto": ""
+  }
+ ]
+}
+
+.catalog-empty -> {
+ "visible": 736,
+ "contenido": 839,
+ "excede": 103,
+ "overflow": "hidden",
+ "titulo": "No hay mallas publicadas en este cat├ílogo",
+ "hijos": [
+  {
+   "tag": "div",
+   "clase": "catalog-empty-art",
+   "posicion": "relative",
+   "ancho": 73,
+   "texto": "Ôîü"
+  },
+  {
+   "tag": "p",
+   "clase": "catalog-eyebrow",
+   "posicion": "static",
+   "ancho": 136,
+   "texto": "CAT├üLOGO CURRICULAR"
+  },
+  {
+   "tag": "h2",
+   "clase": "",
+   "posicion": "static",
+   "ancho": 441,
+   "texto": "No hay mallas publicadas en "
+  },
+  {
+   "tag": "p",
+   "clase": "",
+   "posicion": "static",
+   "ancho": 460,
+   "texto": "El directorio p├║blico de pro"
+  },
+  {
+   "tag": "span",
+   "clase": "catalog-empty-footnote",
+   "posicion": "static",
+   "ancho": 184,
+   "texto": "Ôùç Este cat├ílogo no usa regis"
+  }
+ ]
+}

@@ -270,8 +270,11 @@
 
 @media (max-width: 600px) {
   .role-access { padding: 19px 14px 22px; }
-  .role-access-hero { min-height: 0; grid-template-columns: minmax(0, 1fr) 78px; gap: 12px; padding: 22px 17px 17px; border-radius: 12px; }
-  .role-access-hero-mark { width: 76px; height: 76px; }
+  // Medido a 360 px el 5 de octubre de 2026: con dos columnas el titulo media 78 px visibles de
+  // 98 px de contenido y se cortaba. En un ancho de una sola columna la marca decorativa no
+  // compite con el texto.
+  .role-access-hero { min-height: 0; grid-template-columns: minmax(0, 1fr); gap: 12px; padding: 22px 17px 17px; border-radius: 12px; }
+  .role-access-hero-mark { display: none; }
   .role-access-hero-mark i { width: 51px; height: 51px; }
   .role-access-hero-mark i:last-child { width: 66px; height: 66px; }
   .role-access-hero-mark span { width: 32px; height: 32px; font-size: 16px; }

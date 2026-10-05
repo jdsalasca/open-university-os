@@ -1,0 +1,52 @@
+Barrido responsive: contenido perdido frente a decoracion
+
+========== movil-360 (360 px) ==========
+  #resumen: sin contenido perdido (0 decoraciones)
+  #estudiantes: sin contenido perdido (0 decoraciones)
+  #biblioteca: sin contenido perdido (0 decoraciones)
+  #avisos: sin contenido perdido (0 decoraciones)
+  #programas: sin contenido perdido (2 decoraciones)
+  #inicio: sin contenido perdido (1 decoraciones)
+  #academia: sin contenido perdido (0 decoraciones)
+  #admisiones: sin contenido perdido (1 decoraciones)
+  #espacios: sin contenido perdido (2 decoraciones)
+  #accesos: sin contenido perdido (1 decoraciones)
+
+========== tablet-768 (768 px) ==========
+  #resumen: sin contenido perdido (0 decoraciones)
+  #estudiantes: sin contenido perdido (0 decoraciones)
+  #biblioteca: sin contenido perdido (0 decoraciones)
+  #avisos: sin contenido perdido (0 decoraciones)
+  #programas: sin contenido perdido (1 decoraciones)
+  #inicio: sin contenido perdido (1 decoraciones)
+  #academia: sin contenido perdido (0 decoraciones)
+  #admisiones: sin contenido perdido (1 decoraciones)
+  #espacios: sin contenido perdido (0 decoraciones)
+  #accesos: sin contenido perdido (1 decoraciones)
+
+========== escritorio-1024 (1024 px) ==========
+  #resumen: sin contenido perdido (0 decoraciones)
+  #estudiantes: sin contenido perdido (0 decoraciones)
+  #biblioteca: sin contenido perdido (0 decoraciones)
+  #avisos: sin contenido perdido (0 decoraciones)
+  #programas: sin contenido perdido (1 decoraciones)
+  #inicio: sin contenido perdido (1 decoraciones)
+  #academia: sin contenido perdido (0 decoraciones)
+  #admisiones: sin contenido perdido (1 decoraciones)
+  #espacios: sin contenido perdido (0 decoraciones)
+  #accesos: sin contenido perdido (1 decoraciones)
+
+========== ancho-1440 (1440 px) ==========
+  #resumen: sin contenido perdido (0 decoraciones)
+  #estudiantes: sin contenido perdido (0 decoraciones)
+  #biblioteca: sin contenido perdido (0 decoraciones)
+  #avisos: sin contenido perdido (0 decoraciones)
+  #programas: sin contenido perdido (2 decoraciones)
+  #inicio: sin contenido perdido (1 decoraciones)
+  #academia: sin contenido perdido (0 decoraciones)
+  #admisiones: sin contenido perdido (1 decoraciones)
+  #espacios: sin contenido perdido (0 decoraciones)
+  #accesos: sin contenido perdido (1 decoraciones)
+
+TOTAL elementos con contenido perdido: 0
+TOTAL con decoracion que sobresale a proposito: 20
