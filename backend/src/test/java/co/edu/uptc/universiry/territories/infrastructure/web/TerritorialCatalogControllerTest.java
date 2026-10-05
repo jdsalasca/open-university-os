@@ -46,12 +46,33 @@ class TerritorialCatalogControllerTest {
     }
 
     @Test
-    void rejects_malformed_and_unknown_department_codes() throws Exception {
+    void returns_a_spanish_detail_for_a_malformed_department_code_by_default() throws Exception {
         mockMvc.perform(get("/api/v1/territorial-catalog/departments/1/entities"))
-                .andExpect(status().isBadRequest());
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.detail").value("El código del departamento debe contener dos dígitos."));
+    }
 
+    @Test
+    void returns_a_spanish_detail_for_a_missing_department_code_by_default() throws Exception {
         mockMvc.perform(get("/api/v1/territorial-catalog/departments/00/entities"))
-                .andExpect(status().isNotFound());
+                .andExpect(status().isNotFound())
+                .andExpect(jsonPath("$.detail").value("No se encontró el código del departamento."));
+    }
+
+    @Test
+    void returns_the_english_detail_for_a_malformed_department_code_when_requested() throws Exception {
+        mockMvc.perform(get("/api/v1/territorial-catalog/departments/1/entities")
+                        .header("Accept-Language", "en"))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.detail").value("Department code must contain two digits."));
+    }
+
+    @Test
+    void returns_the_english_detail_for_a_missing_department_code_when_requested() throws Exception {
+        mockMvc.perform(get("/api/v1/territorial-catalog/departments/00/entities")
+                        .header("Accept-Language", "en"))
+                .andExpect(status().isNotFound())
+                .andExpect(jsonPath("$.detail").value("Department code was not found."));
     }
 
     @Test
