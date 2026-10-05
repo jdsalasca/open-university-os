@@ -6,7 +6,6 @@ el estado de carga antes de que monte la aplicación.
 ## Foco visible por teclado
 La primera versión de `audit-foco.cjs` reportó 67 controles sin indicador de foco. **Era un defecto de
 la herramienta, no del portal**, y corregirlo exigía dos correcciones sobre la herramienta:
-la herramienta, no del portal**, y corregirlosaved las dos电子邮件:
 
 1. `element.focus()` desde script no siempre activa `:focus-visible`. El recorrido usa `Tab` real
    mediante `Input.dispatchKeyEvent` de CDP, como una persona tecleando.
