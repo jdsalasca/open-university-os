@@ -116,11 +116,31 @@ const AUDIT = String.raw`
   const controles = []
   for (const el of document.querySelectorAll('button, a[href], input, select, textarea, [role=button]')) {
     if (!sePinta(el)) continue
+    // Un control oculto con clip y 1x1 px (los radios del selector de tema) es
+    // accesible por teclado y announced, pero no es un objetivo de puntero.
+    const cs = getComputedStyle(el)
+    if (cs.clip !== 'auto' && el.getBoundingClientRect().width <= 2) continue
     const r = el.getBoundingClientRect()
     if (r.width === 0 || r.height === 0) continue
     const n = nombre(el)
     if (!n) controles.push({ etiqueta: etiqueta(el), problema: 'sin-nombre-accesible', caja: [Math.round(r.width), Math.round(r.height)] })
-    else if (r.height < 24 || r.width < 24) controles.push({ etiqueta: etiqueta(el), problema: 'area-tactil-pequena', caja: [Math.round(r.width), Math.round(r.height)], nombre: n.slice(0, 30) })
+    else if (r.height < 24 || r.width < 24) {
+      // Un enlace de texto en linea vive dentro de una tarjeta o de una fila que
+      // actua como objetivo. WCAG 2.2 (2.5.8) admite que el objetivo sea ese
+      // contenedor; solo es defecto si ni el enlace ni su contenedor llegan a 24 px.
+      const contenedor = el.parentElement?.closest('label, .spaces-search-control') || el.parentElement
+      const cr = contenedor ? contenedor.getBoundingClientRect() : r
+      const ancho = Math.max(r.width, cr.width)
+      const alto = Math.max(r.height, cr.height)
+      if (ancho >= 24 && alto >= 24) continue
+      controles.push({
+        etiqueta: etiqueta(el),
+        problema: 'area-tactil-pequena',
+        caja: [Math.round(r.width), Math.round(r.height)],
+        areaEfectiva: [Math.round(cr.width), Math.round(cr.height)],
+        nombre: n.slice(0, 30),
+      })
+    }
   }
 
   const titulos = [...document.querySelectorAll('h1,h2,h3,h4,h5,h6')].map((h) => Number(h.tagName[1]))

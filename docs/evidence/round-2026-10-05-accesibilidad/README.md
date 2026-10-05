@@ -76,13 +76,40 @@ Capturas revisadas: `espacios-claro.png` y `espacios-oscuro.png` mantienen jerar
   cualquiera de los seis colores sustituidos reaparece en cualquier `.scss`; la segunda comprueba por
   aritmética que los sustitutos alcanzan 4,5 sobre cada superficie. Ambas se escribieron antes del
   cambio y fallaron.
-- `npm test`: **518 pruebas Vitest en 77 archivos, más 46 guardas de Node**, todas aprobadas
-  (`vitest.txt`). El archivo se añadió al script `npm test` para que la CI lo ejecute.
+- `npm test`: **518 pruebas Vitest en 77 archivos, más 49 guardas de Node**, todas aprobadas
+  (`vitest.txt`). Los archivos se añaden al script `npm test` para que la CI los ejecute.
 - `npm run build`: aprobado, presupuestos verificados (`build.txt`); CSS de entrada 22 478 B de 22 500.
-- `npm run lint`: 0 avisos, 0 errores en 180 archivos (`lint.txt`).
+- `npm run lint`: 0 avisos, 0 errores en 181 archivos (`lint.txt`).
 
 Una corrida intermedia de `AcademicOperationsPage.test.tsx` agotó los 30 s por un pico de saturación
 del host; aislado pasa 37/37 en 19,4 s y la corrida completa registrada pasa entera.
+
+## Áreas táctiles
+
+La primera medición contaba 61 controles con área menor de 24 px. Al revisarlos uno a uno, la mayoría
+**no eran defectos**:
+**no eran defectos**:
+
+- 3 `input` de 1×1 px: los radios del selector de tema, ocultos con `clip`. Son accesibles por teclado
+  y anunciados, pero no son un objetivo de puntero. El auditor ahora los excluye.
+- 44 enlaces de texto en línea dentro de una tarjeta o fila que actúa como objetivo: la caja del
+  enlace medía 20–21 px, pero el contenedor llega a 40–48 px. WCAG 2.2 (2.5.8) admite que el objetivo
+  sea ese contenedor, así que tampoco son defectos.
+
+Dos sí lo eran, y se corrigieron:
+
+1. **Enlaces de mapa y de fuente de la ficha de espacios**: 12 px de alto sin contenedor que
+   compensara. Con `padding-block: 6px` más `margin-block: -6px` el área llega a 24 px sin mover el
+   diseño; las capturas confirman que las tarjetas quedan igual.
+2. **Campo de búsqueda**: el contenedor mide 43 px pero el input dentro solo 15 px, de modo que el clic
+   en los lados del campo no lo enfocaba. Con `align-self: stretch` el input cubre toda la altura.
+
+| Controles con área menor de 24 px | Antes | Después |
+| --- | ---: | ---: |
+| En las doce combinaciones de ruta y tema | 61 | **0** |
+
+`frontend/scripts/check-touch-targets.node-test.mjs` protege los tres cambios: el área de los enlaces
+de ficha con su margen compensatorio, el estirado del input y la etiqueta envolvente del buscador.
 
 ## Pendiente
 
@@ -91,5 +118,5 @@ del host; aislado pasa 37/37 en 19,4 s y la corrida completa registrada pasa ent
   aplicable.
 - El tema claro carece de tokens `--ui-*`. Definirlos y migrar los componentes es la solución de
   fondo; este corte ataca el síntoma con los colores de mayor uso.
-- `/#espacios` reporta 53 problemas de control (nombre accesible o área táctil menor de 24 px). Sin
-  verificar uno por uno todavía.
+- La auditoría no cubre foco visible por teclado ni orden de tabulación; exige recorrido manual o
+ AXE, que no está en las dependencias del proyecto.

@@ -49,7 +49,7 @@
 .spaces-search-field, .spaces-kind-field, .spaces-municipality-field { display: grid; min-width: 0; gap: 7px; color: #64665d; font-size: 9px; font-weight: 700; }
 .spaces-search-control { display: flex; min-height: 43px; align-items: center; gap: 9px; padding: 0 12px; border: 1px solid #ddded6; border-radius: 8px; background: #fbfbf8; color: #8a8c82; }
 .spaces-search-control > span { font-size: 20px; line-height: 1; }
-.spaces-search-control input { width: 100%; min-width: 0; padding: 0; border: 0; outline: 0; background: transparent; color: #292a24; font: inherit; font-size: 11px; }
+.spaces-search-control input { width: 100%; min-width: 0; align-self: stretch; padding: 0; border: 0; outline: 0; background: transparent; color: #292a24; font: inherit; font-size: 11px; }
 .spaces-search-control input::placeholder { color: #9a9b93; }
 .spaces-search-control:focus-within, .spaces-kind-field select:focus-visible, .spaces-municipality-field select:focus-visible { outline: 3px solid color-mix(in srgb, var(--brand-focus, #1a1a1a), transparent 74%); outline-offset: 2px; }
 .spaces-kind-field select, .spaces-municipality-field select { min-width: 0; min-height: 43px; padding: 0 12px; border: 1px solid #ddded6; border-radius: 8px; background: #fbfbf8; color: #3a3b34; font: inherit; font-size: 10px; }
@@ -115,7 +115,10 @@
 .spaces-announcement-references a:focus-visible { outline: 3px solid var(--brand-focus, #1a1a1a); outline-offset: 3px; border-radius: 3px; }
 .spaces-announcement-references .spaces-source-date { margin: 0; font-size: 8px; }
 .spaces-card-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 9px 15px; margin-top: auto; padding-top: 18px; }
-.spaces-map-link, .spaces-source-link { color: #4a4c43; font-size: 9px; font-weight: 700; text-decoration: none; }
+// Los enlaces de la ficha miden 12 px de alto con tipografia de 9 px. El padding
+// block con margen compensatorio llega a los 24 px que pide WCAG 2.2 (2.5.8 AA)
+// sin desplazar el resto de la tarjeta.
+.spaces-map-link, .spaces-source-link { display: inline-block; padding-block: 6px; margin-block: -6px; color: #4a4c43; font-size: 9px; font-weight: 700; text-decoration: none; }
 .spaces-map-link { color: #3d6746; }
 .spaces-map-link span, .spaces-source-link span { padding-left: 3px; color: #8a8c82; }
 .spaces-map-link:hover, .spaces-source-link:hover { text-decoration: underline; text-underline-offset: 3px; }

@@ -14,41 +14,13 @@
    }
   ],
   "contrasteNoVerificable": 3,
-  "controles": [
-   {
-    "etiqueta": "input",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     1,
-     1
-    ],
-    "nombre": "label-envuelto"
-   },
-   {
-    "etiqueta": "input",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     1,
-     1
-    ],
-    "nombre": "label-envuelto"
-   },
-   {
-    "etiqueta": "input",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     1,
-     1
-    ],
-    "nombre": "label-envuelto"
-   }
-  ],
+  "controles": [],
   "jerarquia": [],
   "h1": 1,
   "campos": [],
   "conteos": {
    "contraste": 1,
-   "controles": 3,
+   "controles": 0,
    "jerarquia": 0,
    "campos": 0
   }
@@ -58,41 +30,13 @@
   "tema": "oscuro",
   "contraste": [],
   "contrasteNoVerificable": 0,
-  "controles": [
-   {
-    "etiqueta": "input",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     1,
-     1
-    ],
-    "nombre": "label-envuelto"
-   },
-   {
-    "etiqueta": "input",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     1,
-     1
-    ],
-    "nombre": "label-envuelto"
-   },
-   {
-    "etiqueta": "input",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     1,
-     1
-    ],
-    "nombre": "label-envuelto"
-   }
-  ],
+  "controles": [],
   "jerarquia": [],
   "h1": 1,
   "campos": [],
   "conteos": {
    "contraste": 0,
-   "controles": 3,
+   "controles": 0,
    "jerarquia": 0,
    "campos": 0
   }
@@ -283,158 +227,13 @@
    }
   ],
   "contrasteNoVerificable": 0,
-  "controles": [
-   {
-    "etiqueta": "input",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     1,
-     1
-    ],
-    "nombre": "label-envuelto"
-   },
-   {
-    "etiqueta": "input",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     1,
-     1
-    ],
-    "nombre": "label-envuelto"
-   },
-   {
-    "etiqueta": "input",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     1,
-     1
-    ],
-    "nombre": "label-envuelto"
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     145,
-     17
-    ],
-    "nombre": "catálogo público UPTC"
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     81,
-     21
-    ],
-    "nombre": "Biología"
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     57,
-     21
-    ],
-    "nombre": "Física"
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     125,
-     21
-    ],
-    "nombre": "Matemáticas"
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     83,
-     21
-    ],
-    "nombre": "Química"
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     227,
-     21
-    ],
-    "nombre": "Ingeniería Agronómica"
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     246,
-     21
-    ],
-    "nombre": "Artes Plásticas y Visuales"
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     243,
-     21
-    ],
-    "nombre": "Licenciatura en Filosofía"
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     274,
-     21
-    ],
-    "nombre": "Licenciatura en Informática"
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     282,
-     21
-    ],
-    "nombre": "Licenciatura en Matemáticas"
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     282,
-     21
-    ],
-    "nombre": "Licenciatura en Matemáticas"
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     227,
-     21
-    ],
-    "nombre": "Licenciatura en Música"
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     91,
-     21
-    ],
-    "nombre": "Medicina"
-   }
-  ],
+  "controles": [],
   "jerarquia": [],
   "h1": 1,
   "campos": [],
   "conteos": {
    "contraste": 37,
-   "controles": 16,
+   "controles": 0,
    "jerarquia": 0,
    "campos": 0
   }
@@ -454,158 +253,13 @@
    }
   ],
   "contrasteNoVerificable": 2,
-  "controles": [
-   {
-    "etiqueta": "input",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     1,
-     1
-    ],
-    "nombre": "label-envuelto"
-   },
-   {
-    "etiqueta": "input",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     1,
-     1
-    ],
-    "nombre": "label-envuelto"
-   },
-   {
-    "etiqueta": "input",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     1,
-     1
-    ],
-    "nombre": "label-envuelto"
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     145,
-     17
-    ],
-    "nombre": "catálogo público UPTC"
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     81,
-     21
-    ],
-    "nombre": "Biología"
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     57,
-     21
-    ],
-    "nombre": "Física"
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     125,
-     21
-    ],
-    "nombre": "Matemáticas"
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     83,
-     21
-    ],
-    "nombre": "Química"
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     227,
-     21
-    ],
-    "nombre": "Ingeniería Agronómica"
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     246,
-     21
-    ],
-    "nombre": "Artes Plásticas y Visuales"
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     243,
-     21
-    ],
-    "nombre": "Licenciatura en Filosofía"
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     274,
-     21
-    ],
-    "nombre": "Licenciatura en Informática"
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     282,
-     21
-    ],
-    "nombre": "Licenciatura en Matemáticas"
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     282,
-     21
-    ],
-    "nombre": "Licenciatura en Matemáticas"
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     227,
-     21
-    ],
-    "nombre": "Licenciatura en Música"
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     91,
-     21
-    ],
-    "nombre": "Medicina"
-   }
-  ],
+  "controles": [],
   "jerarquia": [],
   "h1": 1,
   "campos": [],
   "conteos": {
    "contraste": 1,
-   "controles": 16,
+   "controles": 0,
    "jerarquia": 0,
    "campos": 0
   }
@@ -796,194 +450,13 @@
    }
   ],
   "contrasteNoVerificable": 0,
-  "controles": [
-   {
-    "etiqueta": "input",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     1,
-     1
-    ],
-    "nombre": "label-envuelto"
-   },
-   {
-    "etiqueta": "input",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     1,
-     1
-    ],
-    "nombre": "label-envuelto"
-   },
-   {
-    "etiqueta": "input",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     1,
-     1
-    ],
-    "nombre": "label-envuelto"
-   },
-   {
-    "etiqueta": "input",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     370,
-     15
-    ],
-    "nombre": "Buscar espacios"
-   },
-   {
-    "etiqueta": "a.spaces-map-link",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     219,
-     12
-    ],
-    "nombre": "Abrir búsqueda de mapa para Se"
-   },
-   {
-    "etiqueta": "a.spaces-source-link",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     122,
-     12
-    ],
-    "nombre": "Localización y sedes UPTC ↗"
-   },
-   {
-    "etiqueta": "a.spaces-map-link",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     264,
-     12
-    ],
-    "nombre": "Abrir búsqueda de mapa para Fa"
-   },
-   {
-    "etiqueta": "a.spaces-source-link",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     122,
-     12
-    ],
-    "nombre": "Localización y sedes UPTC ↗"
-   },
-   {
-    "etiqueta": "a.spaces-map-link",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     256,
-     12
-    ],
-    "nombre": "Abrir búsqueda de mapa para Fa"
-   },
-   {
-    "etiqueta": "a.spaces-source-link",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     122,
-     12
-    ],
-    "nombre": "Localización y sedes UPTC ↗"
-   },
-   {
-    "etiqueta": "a.spaces-map-link",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     275,
-     12
-    ],
-    "nombre": "Abrir búsqueda de mapa para Fa"
-   },
-   {
-    "etiqueta": "a.spaces-source-link",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     122,
-     12
-    ],
-    "nombre": "Localización y sedes UPTC ↗"
-   },
-   {
-    "etiqueta": "a.spaces-map-link",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     237,
-     12
-    ],
-    "nombre": "Abrir búsqueda de mapa para Se"
-   },
-   {
-    "etiqueta": "a.spaces-source-link",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     122,
-     12
-    ],
-    "nombre": "Localización y sedes UPTC ↗"
-   },
-   {
-    "etiqueta": "a.spaces-map-link",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     201,
-     12
-    ],
-    "nombre": "Abrir búsqueda de mapa para Pu"
-   },
-   {
-    "etiqueta": "a.spaces-source-link",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     122,
-     12
-    ],
-    "nombre": "Localización y sedes UPTC ↗"
-   },
-   {
-    "etiqueta": "a.spaces-map-link",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     203,
-     12
-    ],
-    "nombre": "Abrir búsqueda de mapa para CR"
-   },
-   {
-    "etiqueta": "a.spaces-source-link",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     122,
-     12
-    ],
-    "nombre": "Localización y sedes UPTC ↗"
-   },
-   {
-    "etiqueta": "a.spaces-map-link",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     206,
-     12
-    ],
-    "nombre": "Abrir búsqueda de mapa para CR"
-   },
-   {
-    "etiqueta": "a.spaces-source-link",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     122,
-     12
-    ],
-    "nombre": "Localización y sedes UPTC ↗"
-   }
-  ],
+  "controles": [],
   "jerarquia": [],
   "h1": 1,
   "campos": [],
   "conteos": {
    "contraste": 88,
-   "controles": 53,
+   "controles": 0,
    "jerarquia": 0,
    "campos": 0
   }
@@ -993,194 +466,13 @@
   "tema": "oscuro",
   "contraste": [],
   "contrasteNoVerificable": 1,
-  "controles": [
-   {
-    "etiqueta": "input",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     1,
-     1
-    ],
-    "nombre": "label-envuelto"
-   },
-   {
-    "etiqueta": "input",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     1,
-     1
-    ],
-    "nombre": "label-envuelto"
-   },
-   {
-    "etiqueta": "input",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     1,
-     1
-    ],
-    "nombre": "label-envuelto"
-   },
-   {
-    "etiqueta": "input",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     370,
-     15
-    ],
-    "nombre": "Buscar espacios"
-   },
-   {
-    "etiqueta": "a.spaces-map-link",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     219,
-     12
-    ],
-    "nombre": "Abrir búsqueda de mapa para Se"
-   },
-   {
-    "etiqueta": "a.spaces-source-link",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     122,
-     12
-    ],
-    "nombre": "Localización y sedes UPTC ↗"
-   },
-   {
-    "etiqueta": "a.spaces-map-link",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     264,
-     12
-    ],
-    "nombre": "Abrir búsqueda de mapa para Fa"
-   },
-   {
-    "etiqueta": "a.spaces-source-link",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     122,
-     12
-    ],
-    "nombre": "Localización y sedes UPTC ↗"
-   },
-   {
-    "etiqueta": "a.spaces-map-link",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     256,
-     12
-    ],
-    "nombre": "Abrir búsqueda de mapa para Fa"
-   },
-   {
-    "etiqueta": "a.spaces-source-link",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     122,
-     12
-    ],
-    "nombre": "Localización y sedes UPTC ↗"
-   },
-   {
-    "etiqueta": "a.spaces-map-link",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     275,
-     12
-    ],
-    "nombre": "Abrir búsqueda de mapa para Fa"
-   },
-   {
-    "etiqueta": "a.spaces-source-link",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     122,
-     12
-    ],
-    "nombre": "Localización y sedes UPTC ↗"
-   },
-   {
-    "etiqueta": "a.spaces-map-link",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     237,
-     12
-    ],
-    "nombre": "Abrir búsqueda de mapa para Se"
-   },
-   {
-    "etiqueta": "a.spaces-source-link",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     122,
-     12
-    ],
-    "nombre": "Localización y sedes UPTC ↗"
-   },
-   {
-    "etiqueta": "a.spaces-map-link",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     201,
-     12
-    ],
-    "nombre": "Abrir búsqueda de mapa para Pu"
-   },
-   {
-    "etiqueta": "a.spaces-source-link",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     122,
-     12
-    ],
-    "nombre": "Localización y sedes UPTC ↗"
-   },
-   {
-    "etiqueta": "a.spaces-map-link",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     203,
-     12
-    ],
-    "nombre": "Abrir búsqueda de mapa para CR"
-   },
-   {
-    "etiqueta": "a.spaces-source-link",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     122,
-     12
-    ],
-    "nombre": "Localización y sedes UPTC ↗"
-   },
-   {
-    "etiqueta": "a.spaces-map-link",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     206,
-     12
-    ],
-    "nombre": "Abrir búsqueda de mapa para CR"
-   },
-   {
-    "etiqueta": "a.spaces-source-link",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     122,
-     12
-    ],
-    "nombre": "Localización y sedes UPTC ↗"
-   }
-  ],
+  "controles": [],
   "jerarquia": [],
   "h1": 1,
   "campos": [],
   "conteos": {
    "contraste": 0,
-   "controles": 53,
+   "controles": 0,
    "jerarquia": 0,
    "campos": 0
   }
@@ -1371,59 +663,13 @@
    }
   ],
   "contrasteNoVerificable": 4,
-  "controles": [
-   {
-    "etiqueta": "input",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     1,
-     1
-    ],
-    "nombre": "label-envuelto"
-   },
-   {
-    "etiqueta": "input",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     1,
-     1
-    ],
-    "nombre": "label-envuelto"
-   },
-   {
-    "etiqueta": "input",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     1,
-     1
-    ],
-    "nombre": "label-envuelto"
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     156,
-     12
-    ],
-    "nombre": "Consultar Resolución 111 de 20"
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     244,
-     12
-    ],
-    "nombre": "Comunicado institucional sobre"
-   }
-  ],
+  "controles": [],
   "jerarquia": [],
   "h1": 1,
   "campos": [],
   "conteos": {
    "contraste": 31,
-   "controles": 5,
+   "controles": 0,
    "jerarquia": 0,
    "campos": 0
   }
@@ -1433,59 +679,13 @@
   "tema": "oscuro",
   "contraste": [],
   "contrasteNoVerificable": 0,
-  "controles": [
-   {
-    "etiqueta": "input",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     1,
-     1
-    ],
-    "nombre": "label-envuelto"
-   },
-   {
-    "etiqueta": "input",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     1,
-     1
-    ],
-    "nombre": "label-envuelto"
-   },
-   {
-    "etiqueta": "input",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     1,
-     1
-    ],
-    "nombre": "label-envuelto"
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     156,
-     12
-    ],
-    "nombre": "Consultar Resolución 111 de 20"
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     244,
-     12
-    ],
-    "nombre": "Comunicado institucional sobre"
-   }
-  ],
+  "controles": [],
   "jerarquia": [],
   "h1": 1,
   "campos": [],
   "conteos": {
    "contraste": 0,
-   "controles": 5,
+   "controles": 0,
    "jerarquia": 0,
    "campos": 0
   }
@@ -1495,140 +695,13 @@
   "tema": "claro",
   "contraste": [],
   "contrasteNoVerificable": 1,
-  "controles": [
-   {
-    "etiqueta": "input",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     1,
-     1
-    ],
-    "nombre": "label-envuelto"
-   },
-   {
-    "etiqueta": "input",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     1,
-     1
-    ],
-    "nombre": "label-envuelto"
-   },
-   {
-    "etiqueta": "input",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     1,
-     1
-    ],
-    "nombre": "label-envuelto"
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     180,
-     20
-    ],
-    "nombre": "Consultar Bienestar Universita"
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     180,
-     20
-    ],
-    "nombre": "Consultar Bienestar Virtual en"
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     180,
-     20
-    ],
-    "nombre": "Consultar Cultura en el portal"
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     180,
-     20
-    ],
-    "nombre": "Consultar Actividad Física en "
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     180,
-     20
-    ],
-    "nombre": "Consultar Apoyo socioeconómico"
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     180,
-     20
-    ],
-    "nombre": "Consultar Préstamo y consulta "
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     180,
-     20
-    ],
-    "nombre": "Consultar Biblioteca digital y"
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     180,
-     20
-    ],
-    "nombre": "Consultar Horarios y calificac"
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     180,
-     20
-    ],
-    "nombre": "Consultar SIRA estudiante en e"
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     180,
-     20
-    ],
-    "nombre": "Consultar Inscripción de mater"
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     180,
-     20
-    ],
-    "nombre": "Consultar Fechas académicas de"
-   }
-  ],
+  "controles": [],
   "jerarquia": [],
   "h1": 1,
   "campos": [],
   "conteos": {
    "contraste": 0,
-   "controles": 14,
+   "controles": 0,
    "jerarquia": 0,
    "campos": 0
   }
@@ -1638,140 +711,13 @@
   "tema": "oscuro",
   "contraste": [],
   "contrasteNoVerificable": 0,
-  "controles": [
-   {
-    "etiqueta": "input",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     1,
-     1
-    ],
-    "nombre": "label-envuelto"
-   },
-   {
-    "etiqueta": "input",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     1,
-     1
-    ],
-    "nombre": "label-envuelto"
-   },
-   {
-    "etiqueta": "input",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     1,
-     1
-    ],
-    "nombre": "label-envuelto"
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     180,
-     20
-    ],
-    "nombre": "Consultar Bienestar Universita"
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     180,
-     20
-    ],
-    "nombre": "Consultar Bienestar Virtual en"
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     180,
-     20
-    ],
-    "nombre": "Consultar Cultura en el portal"
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     180,
-     20
-    ],
-    "nombre": "Consultar Actividad Física en "
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     180,
-     20
-    ],
-    "nombre": "Consultar Apoyo socioeconómico"
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     180,
-     20
-    ],
-    "nombre": "Consultar Préstamo y consulta "
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     180,
-     20
-    ],
-    "nombre": "Consultar Biblioteca digital y"
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     180,
-     20
-    ],
-    "nombre": "Consultar Horarios y calificac"
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     180,
-     20
-    ],
-    "nombre": "Consultar SIRA estudiante en e"
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     180,
-     20
-    ],
-    "nombre": "Consultar Inscripción de mater"
-   },
-   {
-    "etiqueta": "a",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     180,
-     20
-    ],
-    "nombre": "Consultar Fechas académicas de"
-   }
-  ],
+  "controles": [],
   "jerarquia": [],
   "h1": 1,
   "campos": [],
   "conteos": {
    "contraste": 0,
-   "controles": 14,
+   "controles": 0,
    "jerarquia": 0,
    "campos": 0
   }
@@ -1854,41 +800,13 @@
    }
   ],
   "contrasteNoVerificable": 0,
-  "controles": [
-   {
-    "etiqueta": "input",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     1,
-     1
-    ],
-    "nombre": "label-envuelto"
-   },
-   {
-    "etiqueta": "input",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     1,
-     1
-    ],
-    "nombre": "label-envuelto"
-   },
-   {
-    "etiqueta": "input",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     1,
-     1
-    ],
-    "nombre": "label-envuelto"
-   }
-  ],
+  "controles": [],
   "jerarquia": [],
   "h1": 1,
   "campos": [],
   "conteos": {
    "contraste": 8,
-   "controles": 3,
+   "controles": 0,
    "jerarquia": 0,
    "campos": 0
   }
@@ -1898,41 +816,13 @@
   "tema": "oscuro",
   "contraste": [],
   "contrasteNoVerificable": 1,
-  "controles": [
-   {
-    "etiqueta": "input",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     1,
-     1
-    ],
-    "nombre": "label-envuelto"
-   },
-   {
-    "etiqueta": "input",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     1,
-     1
-    ],
-    "nombre": "label-envuelto"
-   },
-   {
-    "etiqueta": "input",
-    "problema": "area-tactil-pequena",
-    "caja": [
-     1,
-     1
-    ],
-    "nombre": "label-envuelto"
-   }
-  ],
+  "controles": [],
   "jerarquia": [],
   "h1": 1,
   "campos": [],
   "conteos": {
    "contraste": 0,
-   "controles": 3,
+   "controles": 0,
    "jerarquia": 0,
    "campos": 0
   }
