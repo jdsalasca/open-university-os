@@ -26,15 +26,16 @@ export const DEFAULT_BUNDLE_BUDGETS = Object.freeze({
   entryJavaScript: 286_000,
   // The public program, admissions, curriculum and visual identity screens need dark-mode surface rules
   // so their hardcoded light cards stay readable (WCAG AA); those accessibility fixes add ~1.7 kB.
-  // The programs route also reserves its measured height while the lazy chunk loads, which removes a
-  // 0.75 cumulative layout shift; that reservation costs ~0.1 kB of shell CSS.
-  // The light theme now declares --ui-text-muted once in :root instead of repeating the grey in 39
+  // The programs route also reserves its measured height while the lazy chunk loads, removing a 0.75
+  // cumulative layout shift; that reservation costs ~0.1 kB of shell CSS.
+  // The light theme declares --ui-text-muted once in :root instead of repeating the grey in 39
   // component rules; as a custom property that is ~40 B once, against ~270 B of repeated literals.
-  // index.html boots with a visible loading state so a slow network no longer shows a blank page;
-  // that rule costs ~0.1 kB of shell CSS.
-  entryStyles: 22_700,
+  // index.html boots with a visible loading state so a slow network no longer shows a blank page,
+  // costing ~0.1 kB of shell CSS.
+  // Three dark-theme badge rules repaint icon chips that were white-on-cream at ratio 1.10, measured in
+  // the browser; grouping the two that share treatment with :is() keeps them near 300 B.
+  entryStyles: 23_100,
   workspaceHomeJavaScript: 300_000,
-  workspaceHomeStyles: 30_000,
   // The route budget includes the public directory chunk but excludes the on-demand curriculum comparison panel.
   programsJavaScript: 350_000,
   programsStyles: 56_000,

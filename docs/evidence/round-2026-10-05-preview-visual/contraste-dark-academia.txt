@@ -1,0 +1,4 @@
+fondo de pagina en tema oscuro: rgb(21, 24, 20)
+
+elementos con texto medido: 17
+elementos por debajo de AA (4.5): 0
