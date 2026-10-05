@@ -41,6 +41,20 @@ test('el selector de tema conserva sus tres opciones a tamano reducido', () => {
 // 768 px el panel exigia unos 692 px dentro de un area util de 648 px, y el
 // contador de resultados empujaba el documento a 817 px de ancho. El tramo de dos
 // columnas debe activarse antes de 768 px, no despues.
+test('el copy de la marca se oculta con especificidad suficiente en tablet', () => {
+  // La regla base es .brand-lockup .brand-lockup-copy { display: grid }, con dos
+  // clases. Un .brand-lockup-copy { display: none } de una sola clase pierde por
+  // especificidad aunque el media query vaya despues: el texto seguia ocupando
+  // 66 px y empujaba el monogram a -24 px dentro del carril de 68 px.
+  const collapsed = appSource.match(/@media \(max-width: 850px\) \{([\s\S]*?)\n\}/)?.[1]
+  assert.ok(collapsed, 'debe existir el tramo de sidebar colapsado')
+  assert.match(
+    collapsed,
+    /\.brand-lockup\s+\.brand-lockup-copy[^{]*\{[^}]*display:\s*none/,
+    'el copy debe ocultarse con un selector de dos clases para ganarle a la regla base',
+  )
+})
+
 test('la marca del sidebar colapsado no se desborda del carril de 68 px', () => {
   // Medido a 768 px: el sidebar colapsa a 68 px, pero .brand-lockup conservaba
   // 115 px de ancho y su monograma quedaba en -24..14 px, cortado por el borde.

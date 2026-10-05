@@ -209,7 +209,9 @@
   // carril de 68 px; medido a 768 px quedaba en -24..14 px.
   .brand-lockup { justify-content: center; width: 100%; padding: 0; }
   .brand-monogram { flex: 0 0 38px; }
-  .brand-lockup-copy, .sidebar-caption, .sidebar-footer > span:last-child { display: none; }
+  // Dos clases para ganarle a la regla base anidada .brand-lockup .brand-lockup-copy,
+  // que declara display: grid y de otro modo deja el texto ocupando 66 px.
+  .brand-lockup .brand-lockup-copy, .sidebar-caption, .sidebar-footer > span:last-child { display: none; }
   .sidebar-group { width: 100%; margin-top: 31px; }
   .module-nav-group { margin-top: 20px; }
   .nav-item { justify-content: center; padding: 0; }
