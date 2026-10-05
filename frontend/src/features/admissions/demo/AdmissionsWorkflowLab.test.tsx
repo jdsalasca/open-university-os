@@ -1,4 +1,4 @@
-import { cleanup, render, screen, within } from '@testing-library/react'
+import { cleanup, render, screen, waitFor, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { AdmissionsWorkflowLab } from './AdmissionsWorkflowLab'
@@ -112,8 +112,12 @@ describe('AdmissionsWorkflowLab', () => {
     if (!territorialTab) return
 
     await user.click(territorialTab)
-    await user.selectOptions(await screen.findByLabelText(/departamento de referencia/i), '15')
-    await user.selectOptions(await screen.findByLabelText(/^entidad territorial$/i), '15001')
+    const select1 = await screen.findByLabelText(/departamento de referencia/i)
+    await waitFor(() => expect(select1).toBeEnabled())
+    await user.selectOptions(select1, '15')
+    const select2 = await screen.findByLabelText(/^entidad territorial$/i)
+    await waitFor(() => expect(select2).toBeEnabled())
+    await user.selectOptions(select2, '15001')
 
     expect(await screen.findByText('15001', { selector: 'strong' })).toBeVisible()
     expect(fetcher).toHaveBeenNthCalledWith(1, '/api/v1/territorial-catalog/departments',

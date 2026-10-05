@@ -173,7 +173,9 @@ describe('TerritorialCatalogSelector', () => {
       .mockRejectedValueOnce(new Error('temporary unavailable'))
       .mockResolvedValueOnce(entityLists['15']!)
     render(<TerritorialCatalogSelector client={client} />)
-    await user.selectOptions(await screen.findByLabelText('Departamento de referencia'), '15')
+    const select1 = await screen.findByLabelText('Departamento de referencia')
+    await waitFor(() => expect(select1).toBeEnabled())
+    await user.selectOptions(select1, '15')
 
     // Act
     await waitFor(() => expect(screen.getByRole('alert')).toHaveTextContent(/no se pudieron cargar las entidades/i))
@@ -188,7 +190,9 @@ describe('TerritorialCatalogSelector', () => {
     // Arrange
     const user = userEvent.setup()
     render(<TerritorialCatalogSelector client={createClient()} />)
-    await user.selectOptions(await screen.findByLabelText('Departamento de referencia'), '15')
+    const select2 = await screen.findByLabelText('Departamento de referencia')
+    await waitFor(() => expect(select2).toBeEnabled())
+    await user.selectOptions(select2, '15')
     await screen.findByRole('option', { name: /TUNJA/ })
 
     // Act

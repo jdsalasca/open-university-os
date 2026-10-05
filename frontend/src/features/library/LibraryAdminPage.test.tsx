@@ -107,7 +107,9 @@ describe('LibraryAdminPage', () => {
     render(<LibraryAdminPage client={client} authorization={{ accessToken: 'token', canRead: true, canWrite: true }} />)
 
     // Act
-    await user.selectOptions(await screen.findByLabelText('Seleccionar título'), 'title-1')
+    const select1 = await screen.findByLabelText('Seleccionar título')
+    await waitFor(() => expect(select1).toBeEnabled())
+    await user.selectOptions(select1, 'title-1')
     await screen.findByText('BC-0001')
 
     // Assert: the button is inert until a reference exists, and nothing was written.
@@ -193,7 +195,9 @@ describe('LibraryAdminPage', () => {
     render(<LibraryAdminPage client={client} authorization={{ accessToken: 'token', canRead: true, canWrite: false }} />)
 
     // Act
-    await user.selectOptions(await screen.findByLabelText('Seleccionar título'), 'title-1')
+    const select2 = await screen.findByLabelText('Seleccionar título')
+    await waitFor(() => expect(select2).toBeEnabled())
+    await user.selectOptions(select2, 'title-1')
 
     // Assert
     expect(await screen.findByRole('alert')).toHaveTextContent(/no fue posible consultar/i)
@@ -228,7 +232,9 @@ describe('LibraryAdminPage', () => {
     const client = fakeClient({ getCopies: vi.fn(async () => [ACTIVE_COPY]) })
     const user = userEvent.setup()
     render(<LibraryAdminPage client={client} authorization={{ accessToken: 'token', canRead: true, canWrite: true }} />)
-    await user.selectOptions(await screen.findByLabelText('Seleccionar título'), 'title-1')
+    const select3 = await screen.findByLabelText('Seleccionar título')
+    await waitFor(() => expect(select3).toBeEnabled())
+    await user.selectOptions(select3, 'title-1')
     await screen.findByText('BC-0001')
 
     // Act
@@ -315,7 +321,9 @@ describe('LibraryAdminPage', () => {
     const client = fakeClient({ getCopies })
     const user = userEvent.setup()
     render(<LibraryAdminPage client={client} authorization={{ accessToken: 'token', canRead: true, canWrite: true }} />)
-    await user.selectOptions(await screen.findByLabelText('Seleccionar título'), 'title-1')
+    const select4 = await screen.findByLabelText('Seleccionar título')
+    await waitFor(() => expect(select4).toBeEnabled())
+    await user.selectOptions(select4, 'title-1')
     await screen.findByText('BC-0001')
     await user.type(screen.getByLabelText('Referencia institucional del retiro'), 'Resolución 9 de 2026')
 
@@ -346,7 +354,9 @@ describe('LibraryAdminPage', () => {
     render(<LibraryAdminPage client={client} authorization={{ accessToken: 'token', canRead: true, canWrite: true }} />)
 
     // Act
-    await user.selectOptions(await screen.findByLabelText('Seleccionar título'), 'title-1')
+    const select5 = await screen.findByLabelText('Seleccionar título')
+    await waitFor(() => expect(select5).toBeEnabled())
+    await user.selectOptions(select5, 'title-1')
     await screen.findByText('BC-0001')
     await user.type(screen.getByLabelText('Referencia institucional del retiro'), 'Resolución de descarte 7 de 2026')
     await user.click(screen.getByRole('button', { name: 'Retirar' }))
