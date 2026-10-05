@@ -1,0 +1,25 @@
+Barrido de contraste en tema oscuro, nueve rutas + subrutas de App.tsx
+
+### #resumen: 0 elementos con texto bajo AA
+
+### #estudiantes: 0 elementos con texto bajo AA
+
+### #biblioteca: 0 elementos con texto bajo AA
+
+### #avisos: 0 elementos con texto bajo AA
+
+### #avisos-admin: 0 elementos con texto bajo AA
+
+### #programas: 0 elementos con texto bajo AA
+
+### #inicio: 0 elementos con texto bajo AA
+
+### #academia: 0 elementos con texto bajo AA
+
+### #admisiones: 0 elementos con texto bajo AA
+
+### #espacios: 0 elementos con texto bajo AA
+
+### #accesos: 0 elementos con texto bajo AA
+
+TOTAL: 0

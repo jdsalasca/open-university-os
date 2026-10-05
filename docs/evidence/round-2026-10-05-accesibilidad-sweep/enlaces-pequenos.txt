@@ -1,0 +1,30 @@
+
+### #estudiantes: 2 enlaces por debajo de 24 px
+  180x20  class="(sin clase)"  "Consultar fuente oficial Ôåù"
+  233x17  class="(sin clase)"  "Consultar calendario oficial en AC"
+
+### #espacios: 10 enlaces por debajo de 24 px
+  282x12  class="(sin clase)"  "Biblioteca de la Facultad de Estud"
+  282x12  class="(sin clase)"  "Biblioteca presencial UPTC ┬À Bibli"
+  282x12  class="(sin clase)"  "UPTC Radio ┬À referencia p├║blica de"
+  223x13  class="(sin clase)"  "Consultar Servicios Docente Asiste"
+  223x13  class="(sin clase)"  "Consultar Resoluci├│n 7181 de 2017 "
+  223x13  class="(sin clase)"  "Consultar Resoluci├│n 7189 de 2017 "
+  223x13  class="(sin clase)"  "Consultar Resoluciones Rector├¡a UP"
+  223x13  class="(sin clase)"  "Consultar Servicio de Aulas de Inf"
+  223x13  class="(sin clase)"  "Consultar Mesa de Servicio UPTC Ôåù"
+
+### #admisiones: 2 enlaces por debajo de 24 px
+  156x12  class="(sin clase)"  "Consultar Resoluci├│n 111 de 2026 Ôåù"
+  244x12  class="(sin clase)"  "Comunicado institucional sobre la "
+
+### #programas: 12 enlaces por debajo de 24 px
+  145x17  class="(sin clase)"  "cat├ílogo p├║blico UPTC"
+  81x21  class="(sin clase)"  "Biolog├¡a"
+  57x21  class="(sin clase)"  "F├¡sica"
+  125x21  class="(sin clase)"  "Matem├íticas"
+  83x21  class="(sin clase)"  "Qu├¡mica"
+  227x21  class="(sin clase)"  "Ingenier├¡a Agron├│mica"
+  246x21  class="(sin clase)"  "Artes Pl├ísticas y Visuales"
+  243x21  class="(sin clase)"  "Licenciatura en Filosof├¡a"
+  274x21  class="(sin clase)"  "Licenciatura en Inform├ítica"

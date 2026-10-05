@@ -105,6 +105,11 @@
 .admissions-checklist > p:not(.admissions-eyebrow), .admissions-official-source > div > p:not(.admissions-eyebrow) { margin: 9px 0 0; color: #6f7067; font-size: 10px; line-height: 1.7; }
 .admissions-checklist-footnote { display: block; margin-top: 15px; color: #73705d; font-size: 8px; }
 .admissions-official-source { display: flex; align-items: flex-start; gap: 13px; background: linear-gradient(120deg, #fffef9, #f8f7f1); }
+// Medido en el navegador el 5 de octubre de 2026: los dos enlaces de fuente de esta tarjeta
+// quedaron en 12 px de alto. padding-block mas el margen compensatorio llevan el area a 24 px
+// sin mover el texto.
+.admissions-official-source a { display: inline-flex; align-items: center; min-height: 24px; padding-block: 6px; margin-block: -6px; }
+
 .admissions-source-seal { display: grid; flex: 0 0 39px; width: 39px; height: 39px; place-items: center; border: 1px solid #e5d16f; border-radius: 13px; background: #fff7cd; color: #514c35; font-family: Georgia, serif; font-size: 23px; font-weight: 700; }
 .admissions-official-source .admissions-eyebrow { margin: 2px 0 7px; }
 .admissions-official-source a { display: inline-flex; align-items: center; gap: 7px; margin-top: 12px; color: #575139; font-size: 9px; font-weight: 750; text-decoration-thickness: 1px; text-underline-offset: 3px; }

@@ -1,0 +1,172 @@
+Foco visible, nombres accesibles y area tactil en once rutas (1440 x 900)
+
+========== TEMA LIGHT ==========
+--- #resumen (23 interactivos, REVISAR)
+    AREA < 24px  <input> "Automático"  1x1
+    AREA < 24px  <input> "Claro"  1x1
+    AREA < 24px  <input> "Oscuro"  1x1
+--- #estudiantes (35 interactivos, REVISAR)
+    AREA < 24px  <input> "Automático"  1x1
+    AREA < 24px  <input> "Claro"  1x1
+    AREA < 24px  <input> "Oscuro"  1x1
+    AREA < 24px  <a> "Consultar Bienestar Univer"  180x20
+    AREA < 24px  <a> "Consultar Bienestar Virtua"  180x20
+    AREA < 24px  <a> "Consultar Cultura en el po"  180x20
+    AREA < 24px  <a> "Consultar Actividad Física"  180x20
+    AREA < 24px  <a> "Consultar Apoyo socioeconó"  180x20
+    AREA < 24px  <a> "Consultar Préstamo y consu"  180x20
+    AREA < 24px  <a> "Consultar Biblioteca digit"  180x20
+    AREA < 24px  <a> "Consultar Horarios y calif"  180x20
+    AREA < 24px  <a> "Consultar SIRA estudiante "  180x20
+    AREA < 24px  <a> "Consultar Inscripción de m"  180x20
+    AREA < 24px  <a> "Consultar Fechas académica"  180x20
+    AREA < 24px  <a> "Consultar calendario ofici"  233x17
+--- #biblioteca (26 interactivos, REVISAR)
+    AREA < 24px  <input> "Automático"  1x1
+    AREA < 24px  <input> "Claro"  1x1
+    AREA < 24px  <input> "Oscuro"  1x1
+--- #avisos (15 interactivos, REVISAR)
+    AREA < 24px  <input> "Automático"  1x1
+    AREA < 24px  <input> "Claro"  1x1
+    AREA < 24px  <input> "Oscuro"  1x1
+--- #avisos-admin (23 interactivos, REVISAR)
+    AREA < 24px  <input> "Automático"  1x1
+    AREA < 24px  <input> "Claro"  1x1
+    AREA < 24px  <input> "Oscuro"  1x1
+--- #programas (76 interactivos, REVISAR)
+    AREA < 24px  <input> "Automático"  1x1
+    AREA < 24px  <input> "Claro"  1x1
+    AREA < 24px  <input> "Oscuro"  1x1
+    AREA < 24px  <a> "catálogo público UPTC"  145x17
+    AREA < 24px  <a> "Biología"  81x21
+    AREA < 24px  <a> "Física"  57x21
+    AREA < 24px  <a> "Matemáticas"  125x21
+    AREA < 24px  <a> "Química"  83x21
+    AREA < 24px  <a> "Ingeniería Agronómica"  227x21
+    AREA < 24px  <a> "Artes Plásticas y Visuales"  246x21
+    AREA < 24px  <a> "Licenciatura en Filosofía"  243x21
+    AREA < 24px  <a> "Licenciatura en Informátic"  274x21
+    AREA < 24px  <a> "Licenciatura en Matemática"  282x21
+    AREA < 24px  <a> "Licenciatura en Matemática"  282x21
+    AREA < 24px  <a> "Licenciatura en Música"  227x21
+    AREA < 24px  <a> "Medicina"  91x21
+    AREA < 24px  <input> "↑Seleccionar archivo CSVUT"  1x1
+--- #inicio (33 interactivos, REVISAR)
+    AREA < 24px  <input> "Automático"  1x1
+    AREA < 24px  <input> "Claro"  1x1
+    AREA < 24px  <input> "Oscuro"  1x1
+--- #academia (73 interactivos, REVISAR)
+    AREA < 24px  <input> "Automático"  1x1
+    AREA < 24px  <input> "Claro"  1x1
+    AREA < 24px  <input> "Oscuro"  1x1
+--- #admisiones (20 interactivos, REVISAR)
+    AREA < 24px  <input> "Automático"  1x1
+    AREA < 24px  <input> "Claro"  1x1
+    AREA < 24px  <input> "Oscuro"  1x1
+    AREA < 24px  <a> "Consultar Resolución 111 d"  156x12
+    AREA < 24px  <a> "Comunicado institucional s"  244x12
+--- #espacios (76 interactivos, REVISAR)
+    AREA < 24px  <input> "Automático"  1x1
+    AREA < 24px  <input> "Claro"  1x1
+    AREA < 24px  <input> "Oscuro"  1x1
+    AREA < 24px  <a> "Biblioteca de la Facultad "  282x12
+    AREA < 24px  <a> "Biblioteca presencial UPTC"  282x12
+    AREA < 24px  <a> "UPTC Radio · referencia pú"  282x12
+    AREA < 24px  <a> "Consultar Servicios Docent"  223x13
+    AREA < 24px  <a> "Consultar Resolución 7181 "  223x13
+    AREA < 24px  <a> "Consultar Resolución 7189 "  223x13
+    AREA < 24px  <a> "Consultar Resoluciones Rec"  223x13
+    AREA < 24px  <a> "Consultar Servicio de Aula"  223x13
+    AREA < 24px  <a> "Consultar Mesa de Servicio"  223x13
+    AREA < 24px  <a> "Directorio oficial de ofic"  147x14
+--- #accesos (15 interactivos, REVISAR)
+    AREA < 24px  <input> "Automático"  1x1
+    AREA < 24px  <input> "Claro"  1x1
+    AREA < 24px  <input> "Oscuro"  1x1
+
+========== TEMA DARK ==========
+--- #resumen (23 interactivos, REVISAR)
+    AREA < 24px  <input> "Automático"  1x1
+    AREA < 24px  <input> "Claro"  1x1
+    AREA < 24px  <input> "Oscuro"  1x1
+--- #estudiantes (35 interactivos, REVISAR)
+    AREA < 24px  <input> "Automático"  1x1
+    AREA < 24px  <input> "Claro"  1x1
+    AREA < 24px  <input> "Oscuro"  1x1
+    AREA < 24px  <a> "Consultar Bienestar Univer"  180x20
+    AREA < 24px  <a> "Consultar Bienestar Virtua"  180x20
+    AREA < 24px  <a> "Consultar Cultura en el po"  180x20
+    AREA < 24px  <a> "Consultar Actividad Física"  180x20
+    AREA < 24px  <a> "Consultar Apoyo socioeconó"  180x20
+    AREA < 24px  <a> "Consultar Préstamo y consu"  180x20
+    AREA < 24px  <a> "Consultar Biblioteca digit"  180x20
+    AREA < 24px  <a> "Consultar Horarios y calif"  180x20
+    AREA < 24px  <a> "Consultar SIRA estudiante "  180x20
+    AREA < 24px  <a> "Consultar Inscripción de m"  180x20
+    AREA < 24px  <a> "Consultar Fechas académica"  180x20
+    AREA < 24px  <a> "Consultar calendario ofici"  233x17
+--- #biblioteca (26 interactivos, REVISAR)
+    AREA < 24px  <input> "Automático"  1x1
+    AREA < 24px  <input> "Claro"  1x1
+    AREA < 24px  <input> "Oscuro"  1x1
+--- #avisos (15 interactivos, REVISAR)
+    AREA < 24px  <input> "Automático"  1x1
+    AREA < 24px  <input> "Claro"  1x1
+    AREA < 24px  <input> "Oscuro"  1x1
+--- #avisos-admin (23 interactivos, REVISAR)
+    AREA < 24px  <input> "Automático"  1x1
+    AREA < 24px  <input> "Claro"  1x1
+    AREA < 24px  <input> "Oscuro"  1x1
+--- #programas (76 interactivos, REVISAR)
+    AREA < 24px  <input> "Automático"  1x1
+    AREA < 24px  <input> "Claro"  1x1
+    AREA < 24px  <input> "Oscuro"  1x1
+    AREA < 24px  <a> "catálogo público UPTC"  145x17
+    AREA < 24px  <a> "Biología"  81x21
+    AREA < 24px  <a> "Física"  57x21
+    AREA < 24px  <a> "Matemáticas"  125x21
+    AREA < 24px  <a> "Química"  83x21
+    AREA < 24px  <a> "Ingeniería Agronómica"  227x21
+    AREA < 24px  <a> "Artes Plásticas y Visuales"  246x21
+    AREA < 24px  <a> "Licenciatura en Filosofía"  243x21
+    AREA < 24px  <a> "Licenciatura en Informátic"  274x21
+    AREA < 24px  <a> "Licenciatura en Matemática"  282x21
+    AREA < 24px  <a> "Licenciatura en Matemática"  282x21
+    AREA < 24px  <a> "Licenciatura en Música"  227x21
+    AREA < 24px  <a> "Medicina"  91x21
+    AREA < 24px  <input> "↑Seleccionar archivo CSVUT"  1x1
+--- #inicio (33 interactivos, REVISAR)
+    AREA < 24px  <input> "Automático"  1x1
+    AREA < 24px  <input> "Claro"  1x1
+    AREA < 24px  <input> "Oscuro"  1x1
+--- #academia (73 interactivos, REVISAR)
+    AREA < 24px  <input> "Automático"  1x1
+    AREA < 24px  <input> "Claro"  1x1
+    AREA < 24px  <input> "Oscuro"  1x1
+--- #admisiones (20 interactivos, REVISAR)
+    AREA < 24px  <input> "Automático"  1x1
+    AREA < 24px  <input> "Claro"  1x1
+    AREA < 24px  <input> "Oscuro"  1x1
+    AREA < 24px  <a> "Consultar Resolución 111 d"  156x12
+    AREA < 24px  <a> "Comunicado institucional s"  244x12
+--- #espacios (76 interactivos, REVISAR)
+    AREA < 24px  <input> "Automático"  1x1
+    AREA < 24px  <input> "Claro"  1x1
+    AREA < 24px  <input> "Oscuro"  1x1
+    AREA < 24px  <a> "Biblioteca de la Facultad "  282x12
+    AREA < 24px  <a> "Biblioteca presencial UPTC"  282x12
+    AREA < 24px  <a> "UPTC Radio · referencia pú"  282x12
+    AREA < 24px  <a> "Consultar Servicios Docent"  223x13
+    AREA < 24px  <a> "Consultar Resolución 7181 "  223x13
+    AREA < 24px  <a> "Consultar Resolución 7189 "  223x13
+    AREA < 24px  <a> "Consultar Resoluciones Rec"  223x13
+    AREA < 24px  <a> "Consultar Servicio de Aula"  223x13
+    AREA < 24px  <a> "Consultar Mesa de Servicio"  223x13
+    AREA < 24px  <a> "Directorio oficial de ofic"  147x14
+--- #accesos (15 interactivos, REVISAR)
+    AREA < 24px  <input> "Automático"  1x1
+    AREA < 24px  <input> "Claro"  1x1
+    AREA < 24px  <input> "Oscuro"  1x1
+
+TOTAL sin nombre accesible: 0
+TOTAL area tactil menor de 24px: 142
