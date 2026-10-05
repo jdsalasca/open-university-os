@@ -21,6 +21,10 @@ export default defineConfig(({ mode }) => {
       pool: 'vmThreads',
       setupFiles: ['./src/test/setup.ts'],
       maxWorkers: 4,
+      // El valor por defecto de 5 s aborta pruebas legitimas cuando la maquina
+      // esta cargada; ver scripts/check-test-timeouts.node-test.mjs.
+      testTimeout: 30000,
+      hookTimeout: 30000,
       restoreMocks: true,
       clearMocks: true,
     },
