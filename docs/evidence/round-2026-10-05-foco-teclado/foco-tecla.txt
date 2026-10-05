@@ -1,0 +1,15 @@
+Recorrido con Tab: elementos que reciben el foco sin diferencia perceptible
+
+--- #resumen: 57 con foco, 0 sin diferencia perceptible
+--- #estudiantes: 59 con foco, 0 sin diferencia perceptible
+--- #biblioteca: 58 con foco, 0 sin diferencia perceptible
+--- #avisos: 57 con foco, 0 sin diferencia perceptible
+--- #programas: 60 con foco, 0 sin diferencia perceptible
+--- #inicio: 58 con foco, 0 sin diferencia perceptible
+--- #academia: 60 con foco, 0 sin diferencia perceptible
+--- #admisiones: 58 con foco, 0 sin diferencia perceptible
+--- #espacios: 60 con foco, 0 sin diferencia perceptible
+--- #accesos: 57 con foco, 0 sin diferencia perceptible
+
+TOTAL elementos recorridos con Tab: 584
+TOTAL sin diferencia perceptible al enfocar: 0

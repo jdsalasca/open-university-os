@@ -1,0 +1,185 @@
+Orden de tabulacion frente al orden visual (retrocesos y saltos de mas de una linea)
+
+--- #resumen: 67 pasos de Tab, 6 saltos)
+    retroceso (-30)
+      desde <a class="workspace-home-card"> "◇AdmisionesGestionar Admisione"
+      hacia  <a class="nav-item active skip-link"> "Saltar al contenido principal"
+    retroceso (-22)
+      desde <a class="nav-item"> "✎Administrar avisos"
+      hacia  <input class=""> "input"
+    retroceso (-30)
+      desde <a class="workspace-home-card"> "◇AdmisionesGestionar Admisione"
+      hacia  <a class="nav-item active skip-link"> "Saltar al contenido principal"
+    retroceso (-22)
+      desde <a class="nav-item"> "✎Administrar avisos"
+      hacia  <input class=""> "input"
+    retroceso (-30)
+      desde <a class="workspace-home-card"> "◇AdmisionesGestionar Admisione"
+      hacia  <a class="nav-item active skip-link"> "Saltar al contenido principal"
+    retroceso (-22)
+      desde <a class="nav-item"> "✎Administrar avisos"
+      hacia  <input class=""> "input"
+--- #estudiantes: 69 pasos de Tab, 12 saltos)
+    retroceso (-12)
+      desde <button class=""> "Calendario académico"
+      hacia  <a class=""> "Consultar Bienestar Universitario en el portal oficial UPTC"
+    retroceso (-13)
+      desde <a class=""> "Consultar Actividad Física en el portal oficial UPTC"
+      hacia  <a class=""> "Consultar Apoyo socioeconómico en el portal oficial UPTC"
+    retroceso (-13)
+      desde <a class=""> "Consultar Horarios y calificaciones en UPTConecta en el portal oficial UPTC"
+      hacia  <a class=""> "Consultar SIRA estudiante en el portal oficial UPTC"
+    retroceso (-13)
+      desde <a class=""> "Consultar Fechas académicas de pregrado en el portal oficial UPTC"
+      hacia  <button class="student-academic-calendar-download"> "Descargar calendario (.ics)↓"
+    retroceso (-20)
+      desde <a class=""> "Consultar calendario oficial en ACRA"
+      hacia  <a class="nav-item active skip-link"> "Saltar al contenido principal"
+    retroceso (-22)
+      desde <a class="nav-item"> "✎Administrar avisos"
+      hacia  <input class=""> "input"
+--- #biblioteca: 67 pasos de Tab, 8 saltos)
+    retroceso (-12)
+      desde <button class=""> "Buscar ejemplar"
+      hacia  <input class=""> "input"
+    retroceso (-35)
+      desde <input class=""> "Referencia institucional del retiro"
+      hacia  <a class="nav-item active skip-link"> "Saltar al contenido principal"
+    retroceso (-22)
+      desde <a class="nav-item"> "✎Administrar avisos"
+      hacia  <input class=""> "input"
+    retroceso (-16)
+      desde <button class=""> "Buscar ejemplar"
+      hacia  <input class=""> "input"
+    retroceso (-35)
+      desde <input class=""> "Referencia institucional del retiro"
+      hacia  <a class="nav-item active skip-link"> "Saltar al contenido principal"
+    retroceso (-22)
+      desde <a class="nav-item"> "✎Administrar avisos"
+      hacia  <input class=""> "input"
+--- #avisos: 67 pasos de Tab, 8 saltos)
+    retroceso (-22)
+      desde <a class="nav-item"> "✎Administrar avisos"
+      hacia  <input class=""> "input"
+    salto a la izquierda (-1274)
+      desde <button class="identity-session-button"> "Salir del preview local"
+      hacia  <a class="nav-item active skip-link"> "Saltar al contenido principal"
+    retroceso (-22)
+      desde <a class="nav-item"> "✎Administrar avisos"
+      hacia  <input class=""> "input"
+    salto a la izquierda (-1274)
+      desde <button class="identity-session-button"> "Salir del preview local"
+      hacia  <a class="nav-item active skip-link"> "Saltar al contenido principal"
+    retroceso (-22)
+      desde <a class="nav-item"> "✎Administrar avisos"
+      hacia  <input class=""> "input"
+    salto a la izquierda (-1274)
+      desde <button class="identity-session-button"> "Salir del preview local"
+      hacia  <a class="nav-item active skip-link"> "Saltar al contenido principal"
+--- #programas: 69 pasos de Tab, 22 saltos)
+    retroceso (-15)
+      desde <a class=""> "Biología"
+      hacia  <a class="public-program-detail-link"> "Consultar ficha UPTC ↗"
+    retroceso (-8)
+      desde <a class="public-program-detail-link"> "Consultar ficha UPTC ↗"
+      hacia  <a class=""> "Física"
+    retroceso (-8)
+      desde <a class="public-program-detail-link"> "Consultar ficha UPTC ↗"
+      hacia  <a class=""> "Matemáticas"
+    retroceso (-8)
+      desde <a class="public-program-detail-link"> "Consultar ficha UPTC ↗"
+      hacia  <a class=""> "Ingeniería Agronómica"
+    retroceso (-8)
+      desde <a class="public-program-detail-link"> "Consultar ficha UPTC ↗"
+      hacia  <a class=""> "Medicina Veterinaria y Zootecn"
+    retroceso (-18)
+      desde <a class=""> "Artes Plásticas y Visuales"
+      hacia  <a class="public-program-detail-link"> "Consultar ficha UPTC ↗"
+--- #inicio: 69 pasos de Tab, 6 saltos)
+    retroceso (-13)
+      desde <input class=""> "Color HEX: Foco"
+      hacia  <nav class="preview-navigation"> "Vista previa de navegación"
+    retroceso (-13)
+      desde <nav class="preview-navigation"> "Vista previa de navegación"
+      hacia  <a class="nav-item active skip-link"> "Saltar al contenido principal"
+    retroceso (-22)
+      desde <a class="nav-item"> "✎Administrar avisos"
+      hacia  <input class=""> "input"
+    retroceso (-13)
+      desde <input class=""> "Color HEX: Foco"
+      hacia  <nav class="preview-navigation"> "Vista previa de navegación"
+    retroceso (-15)
+      desde <nav class="preview-navigation"> "Vista previa de navegación"
+      hacia  <a class="nav-item active skip-link"> "Saltar al contenido principal"
+    retroceso (-22)
+      desde <a class="nav-item"> "✎Administrar avisos"
+      hacia  <input class=""> "input"
+--- #academia: 70 pasos de Tab, 5 saltos)
+    retroceso (-18)
+      desde <button class=""> "Crear facultad"
+      hacia  <input class=""> "input"
+    retroceso (-18)
+      desde <select class=""> "Selecciona unidad subordinado"
+      hacia  <input class=""> "input"
+    retroceso (-5)
+      desde <input class=""> "input"
+      hacia  <input class=""> "input"
+    retroceso (-18)
+      desde <input class=""> "input"
+      hacia  <input class=""> "input"
+    retroceso (-2)
+      desde <input class=""> "input"
+      hacia  <select class=""> "Selecciona un programa"
+--- #admisiones: 66 pasos de Tab, 7 saltos)
+    retroceso (-27)
+      desde <button class="admissions-admin-primary"> "Nueva convocatoria"
+      hacia  <a class="nav-item active skip-link"> "Saltar al contenido principal"
+    retroceso (-22)
+      desde <a class="nav-item"> "✎Administrar avisos"
+      hacia  <input class=""> "input"
+    retroceso (-27)
+      desde <button class="admissions-admin-primary"> "Nueva convocatoria"
+      hacia  <a class="nav-item active skip-link"> "Saltar al contenido principal"
+    retroceso (-22)
+      desde <a class="nav-item"> "✎Administrar avisos"
+      hacia  <input class=""> "input"
+    retroceso (-27)
+      desde <button class="admissions-admin-primary"> "Nueva convocatoria"
+      hacia  <a class="nav-item active skip-link"> "Saltar al contenido principal"
+    retroceso (-22)
+      desde <a class="nav-item"> "✎Administrar avisos"
+      hacia  <input class=""> "input"
+--- #espacios: 70 pasos de Tab, 11 saltos)
+    retroceso (-11)
+      desde <a class="spaces-source-link"> "Localización y sedes UPTC ↗"
+      hacia  <a class="spaces-map-link"> "Abrir búsqueda de mapa para Fa"
+    retroceso (-14)
+      desde <a class="spaces-source-link"> "Localización y sedes UPTC ↗"
+      hacia  <a class="spaces-map-link"> "Abrir búsqueda de mapa para CR"
+    retroceso (-13)
+      desde <a class="spaces-source-link"> "Localización y sedes UPTC ↗"
+      hacia  <a class="spaces-map-link"> "Abrir búsqueda de mapa para CR"
+    retroceso (-15)
+      desde <a class="spaces-source-link"> "Normatividad, Escuela de Posgr"
+      hacia  <a class=""> "Biblioteca de la Facultad de E"
+    retroceso (-9)
+      desde <a class="spaces-source-link"> "Comunicado UPTC n.º 067 · Escu"
+      hacia  <a class=""> "UPTC Radio · referencia públic"
+    retroceso (-4)
+      desde <a class="spaces-source-link"> "Comunicado UPTC n.º 252 · espa"
+      hacia  <a class=""> "Consultar Servicios Docente As"
+--- #accesos: 66 pasos de Tab, 4 saltos)
+    retroceso (-22)
+      desde <a class="nav-item"> "✎Administrar avisos"
+      hacia  <input class=""> "input"
+    retroceso (-22)
+      desde <a class="nav-item"> "✎Administrar avisos"
+      hacia  <input class=""> "input"
+    retroceso (-22)
+      desde <a class="nav-item"> "✎Administrar avisos"
+      hacia  <input class=""> "input"
+    retroceso (-22)
+      desde <a class="nav-item"> "✎Administrar avisos"
+      hacia  <input class=""> "input"
+
+TOTAL saltos fuera del orden visual: 89

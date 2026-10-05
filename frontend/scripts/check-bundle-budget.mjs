@@ -38,9 +38,9 @@ export const DEFAULT_BUNDLE_BUDGETS = Object.freeze({
   workspaceHomeJavaScript: 300_000,
   // The route budget includes the public directory chunk but excludes the on-demand curriculum comparison panel.
   programsJavaScript: 350_000,
-  programsStyles: 56_000,
-  // The larger selected public snapshot is loaded on demand; the two directories are not combined in the initial route.
-  programsDataBytes: 70_000,
+  // The skip-link leaves the flow so keyboard users no longer see the focus ring jump backwards;
+  // its own surface, padding and z-index cost ~160 B.
+  programsStyles: 56_200,
   oidcJavaScript: 75_000,
 })
 

@@ -1,0 +1,17 @@
+orden del DOM, que es el orden en que Tab recorre:
+ 1. <a class="nav-item active skip-link"> y= -50 x=   8 "Saltar al contenido principal"
+ 2. <a class="brand-lockup"> y=  27 x=  17 "Universidad Pedag├│gica y Tecnol├│gica de Colombia, inicio"
+ 3. <a class="nav-item active"> y= 138 x=  17 "ÔîéResumen"
+ 4. <a class="nav-item"> y= 184 x=  17 "Ô£│Identidad visual"
+ 5. <a class="nav-item"> y= 230 x=  17 "ÔûºProgramas"
+ 6. <a class="nav-item"> y= 276 x=  17 "ÔùçAdmisiones ┬À Informaci├│n p├║bl"
+ 7. <a class="nav-item"> y= 322 x=  17 "ÔîûGu├¡a de espacios"
+ 8. <a class="nav-item"> y= 368 x=  17 "ÔùÄServicios estudiantiles"
+ 9. <a class="nav-item"> y= 414 x=  17 "ÔùÀEstructura y periodos"
+10. <a class="nav-item"> y= 460 x=  17 "ÔûñBiblioteca ┬À Cat├ílogo y circu"
+11. <a class="nav-item"> y= 506 x=  17 "Ô£ëMis avisos"
+12. <a class="nav-item"> y= 552 x=  17 "Ô£ÄAdministrar avisos"
+13. <input class=""> y= -34 x=1030 "input"  <- RETROCESE 586 px
+14. <input class=""> y= -34 x=1066 "input"
+15. <input class=""> y= -34 x=1102 "input"
+16. <button class="identity-session-button"> y= -50 x=1282 "Salir del preview local"

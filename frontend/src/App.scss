@@ -99,10 +99,21 @@
   .coming-soon { margin-left: auto; color: #6f7067; font-size: 9px; }
 }
 
+// Medido el 5 de octubre de 2026 recorriendo la pagina con Tab: el enlace quedaba 30 lineas
+// mas arriba del elemento anterior, es decir, la persona veia el anillo saltar hacia atras en
+// cada vuelta. Se sale del flujo con position absolute y solo se revela al recibir el foco.
 .skip-link {
-  position: fixed;
-  top: -50px;
+  position: absolute;
+  top: -60px;
+  left: 8px;
+  z-index: 40;
   width: auto;
+  padding: 7px 12px;
+  border-radius: 7px;
+  background: var(--ui-surface, #fff);
+  color: var(--ui-text-primary, #1a1a1a);
+  font-size: 11px;
+  font-weight: 700;
 
   &:focus-visible { top: 12px; }
 }
