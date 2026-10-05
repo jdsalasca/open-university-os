@@ -51,6 +51,34 @@ herramienta, no en el proyecto:
    segmentos, pero el cliente escribe `/api/v1/admin/academic-catalog/drafts` y el mapeo añade más
    segmentos. Ahora se compara por prefijo de segmentos, con `/api/v1/recurso` como base.
 
+## Alcance del bearer de preview local
+
+`check-preview-scope.mjs` emite una sesión real de `local-preview`, la usa para pedir 26 rutas y la
+revoca al terminar. El criterio es explícito: **una fuga es una ruta que devuelve 2xx aunque ese perfil
+no deba poder usarla**. Un 403 significa que la ruta existe y falta el permiso; un 404 que no existe; un
+400 que exige parámetros. Ninguno de los tres es una fuga.
+
+| Grupo | Rutas | Resultado |
+| --- | ---: | --- |
+| Públicas | 8 | Abiertas por diseño, sin sesión |
+| Dentro del allowlist de preview | 10 | Abiertas, incluidos `branding`, `notices`, `academic-structure`, `drafts`, `periods`, `role-profiles`, `admissions/calls`, `me` y la descripción de la API |
+| Fuera del allowlist | 8 | **403** en las ocho: `branding/assets`, `branding/rollback`, `academic-structure/sites`, `academic-structure/units`, `import-previews`, `imports` y el endpoint de desarrollo de asignación de aulas |
+| **Fugas** | — | **0** |
+
+La seguridad del backend es **fail-closed**: `SecurityConfiguration` cierra con
+`.requestMatchers("/api/v1/admin/**").denyAll()` y `.anyRequest().denyAll()`. Una ruta nueva que se
+añada a un controlador sin regla explícita queda denegada, no abierta.
+
+### Dos falsos positivos que hubo que desmontar
+
+1. `GET /api/v1/admin/library` devolvía 404. No es una fuga ni un endpoint roto: la ruta no existe, sus
+   endpoints reales son `/titles`, `/loans`, `/open-loans` y `/copies/...`. La ruta estaba inventada en
+   la lista de prueba.
+2. `GET /api/v1/admin/academic-structure/sites` y `/units` devolvían 403 y parecía una fuga de la
+   consola de estructura. El cliente los invoca con **POST**, no con GET: son las altas de unidad y
+   lugar. Con POST y bearer válido el backend responde **400** por validación de cuerpo, o sea que el
+   permiso se concede y la ruta existe.
+
 ## Verificación de la forma, no solo de la ruta
 
 Que la ruta exista no basta: también puede haber cambiado de forma. `GET /api/v1/spaces` se contrastó
