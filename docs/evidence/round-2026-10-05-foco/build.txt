@@ -53,6 +53,15 @@ dist/assets/identitySessionManager-HHyBh007.js                68.63 kB Ôöé gz
 dist/assets/AcademicOperationsPage-DxUJYKVy.js                96.77 kB Ôöé gzip: 20.77 kB
 dist/assets/index-DExg3acZ.js                                279.91 kB Ôöé gzip: 85.75 kB
 
-[32mÔ£ô built in 2.28s[39m
+[32mÔ£ô built in 12.20s[39m
+[PLUGIN_TIMINGS] JavaScript callbacks ran for 10.3s of this 12.2s build (84%).
+The slowest callbacks, timed inside each callback (the wait before a callback starts is excluded, the time it awaits is included):
+  - plugin vite:css-post renderChunk (49%, 6.0s, 25 calls)
+Additional callback time came from the callbacks below and from callbacks under 1s.
+2 callbacks are listed without a time. Their calls overlapped, so the time inside one call includes work from other calls. To find their cost, profile the build with `node --cpu-prof`:
+  - plugin vite:css transform (23 calls)
+  - plugin vite:asset load (2 calls)
+See https://rolldown.rs/reference/InputOptions.checks#bundlertimings for more details.
+
 Bundles: entry 281135 B JS / 22650 B CSS; #resumen 286825 B JS / 27093 B CSS; #programas 343737 B JS / 55055 B CSS / 62382 B JSON; OIDC diferido 68637 B JS.
 Presupuestos de bundle verificados.

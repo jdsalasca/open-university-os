@@ -67,6 +67,17 @@ test('la marca del sidebar colapsado no se desborda del carril de 68 px', () => 
   )
 })
 
+test('la ruta de programas reserva la altura medida mientras carga el modulo', () => {
+  // Mutacion comprobada el 5 de octubre de 2026: al borrar esta regla la suite
+  // completa pasaba igual, dejando el CLS de carga inicial en 0,75 sin avisar.
+  // El numero viene de la medicion con perfil limpio registrada en
+  // docs/evidence/round-2026-10-05-cls-clean-profile.
+  const regla = appSource.match(/\.module-loading-tall\s*\{([^}]*)\}/)?.[1]
+  assert.ok(regla, 'sin la reserva, el footer baja miles de pixeles al montar la pagina')
+  assert.match(regla, /min-height:\s*4508px/, 'la reserva debe usar la altura medida')
+  assert.match(regla, /align-content:\s*start/, 'el aviso de carga debe quedar arriba, no centrado en 4508 px')
+})
+
 test('el panel de busqueda de espacios baja a dos columnas antes de 768 px', () => {
   const spacesPath = fileURLToPath(new URL('../src/features/spaces/SpaceGuidePage.scss', import.meta.url))
   const spacesSource = readFileSync(spacesPath, 'utf8')
