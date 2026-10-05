@@ -63,6 +63,15 @@ services:
         condition: service_healthy
     ports:
       - "127.0.0.1:8080:8080"
+    healthcheck:
+      test: ["CMD-SHELL", "curl --fail --silent --output /dev/null --max-time 3 http://127.0.0.1:8080/actuator/health/readiness"]
+      interval: 5s
+      timeout: 5s
+      retries: 24
+      start_period: 60s
+    # Medido el 5 de octubre de 2026: `depends_on: - backend` solo espera a que el contenedor
+    # arranque, no a que Spring termine de migrar con Flyway. El frontend arrancaba y la primera
+    # peticion a /api/v1/me fallaba con connection refused.
     volumes:
       - maven-cache:/root/.m2
       - branding-assets:/var/branding-assets
@@ -88,7 +97,8 @@ services:
       VITE_OIDC_POST_LOGOUT_REDIRECT_URI: ${VITE_OIDC_POST_LOGOUT_REDIRECT_URI:-}
       VITE_OIDC_SCOPE: ${VITE_OIDC_SCOPE:-openid}
     depends_on:
-      - backend
+      backend:
+        condition: service_healthy
     ports:
       - "127.0.0.1:5173:5173"
     develop:
