@@ -1,0 +1,16 @@
+
+> frontend@0.0.0 lint
+> oxlint
+
+
+  ! eslint(no-useless-escape): Unnecessary escape character '@'
+    ,-[scripts/check-role-access-hero.node-test.mjs:12:16]
+ 11 | 
+ 12 | const movil = /\@media \(max-width: 600px\) \{([\s\S]*)\n\}/.exec(scss)?.[1] ?? ''
+    :                ^^
+ 13 | 
+    `----
+  help: Replace `\@` with `@`.
+
+Found 1 warning and 0 errors.
+Finished in 234ms on 198 files with 116 rules using 8 threads.

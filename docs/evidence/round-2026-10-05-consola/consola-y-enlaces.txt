@@ -1,0 +1,35 @@
+Mensajes de consola y errores por ruta
+
+--- (inicio): 1
+    [request] net::ERR_ABORTED http://localhost:5199/api/v1/branding
+--- #programas: 4
+    [request] net::ERR_ABORTED http://localhost:5199/api/v1/academic-catalog/programs
+    [request] net::ERR_ABORTED http://localhost:5199/api/v1/academic-structure
+    [request] net::ERR_ABORTED http://localhost:5199/api/v1/admin/academic-catalog/drafts?pageSize=25
+    [request] net::ERR_ABORTED http://localhost:5199/src/features/academics/publicCatalog/uptcUndergraduateCatalog.snapshot.json
+--- #academia: 5
+    [request] net::ERR_ABORTED http://localhost:5199/api/v1/admin/academic-periods
+    [request] net::ERR_ABORTED http://localhost:5199/api/v1/academic-structure
+    [request] net::ERR_ABORTED http://localhost:5199/api/v1/admin/academic-structure
+    [request] net::ERR_ABORTED http://localhost:5199/api/v1/academic-catalog/programs
+    [request] net::ERR_ABORTED http://localhost:5199/api/v1/admin/academic-structure/audit-events?limit=50
+--- #admisiones: 2
+    [request] net::ERR_ABORTED http://localhost:5199/api/v1/admissions/calls
+    [request] net::ERR_ABORTED http://localhost:5199/api/v1/admin/admissions/calls
+--- #espacios: 1
+    [request] net::ERR_ABORTED http://localhost:5199/api/v1/spaces
+
+TOTAL mensajes de consola y errores: 13
+
+Enlaces internos con hash:
+  #academia
+  #accesos
+  #admisiones
+  #avisos
+  #avisos-admin
+  #biblioteca
+  #espacios
+  #estudiantes
+  #inicio
+  #programas
+  #resumen

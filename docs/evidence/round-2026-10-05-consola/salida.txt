@@ -1,0 +1,18 @@
+--- (inicio): 1
+--- #programas: 4
+--- #academia: 5
+--- #admisiones: 2
+--- #espacios: 1
+TOTAL mensajes de consola y errores: 13
+--- hashes distintos ---
+#academia
+#accesos
+#admisiones
+#avisos
+#avisos-admin
+#biblioteca
+#espacios
+#estudiantes
+#inicio
+#programas
+#resumen
