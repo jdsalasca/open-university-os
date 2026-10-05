@@ -32,9 +32,9 @@ export const DEFAULT_BUNDLE_BUDGETS = Object.freeze({
   // component rules; as a custom property that is ~40 B once, against ~270 B of repeated literals.
   // index.html boots with a visible loading state so a slow network no longer shows a blank page,
   // costing ~0.1 kB of shell CSS.
-  // Three dark-theme badge rules repaint icon chips that were white-on-cream at ratio 1.10, measured in
-  // the browser; grouping the two that share treatment with :is() keeps them near 300 B.
-  entryStyles: 23_100,
+  // A second browser sweep over #espacios and #programas found seven more elements under AA (1.02 to 2.15);
+  // the rules repainting them add ~330 B. Six batches of dark badges are now guarded by tests.
+  entryStyles: 23_500,
   workspaceHomeJavaScript: 300_000,
   // The route budget includes the public directory chunk but excludes the on-demand curriculum comparison panel.
   programsJavaScript: 350_000,

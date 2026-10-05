@@ -1,0 +1,26 @@
+
+### #academia: 0 elementos con texto bajo AA
+
+### #inicio: 0 elementos con texto bajo AA
+
+### #espacios: 2 elementos con texto bajo AA
+  1.13  <div class="spaces-hero-art"> bg=rgba(255, 255, 255, 0.03) texto=rgb(240, 242, 235)
+        "UTUNJA ┬À BOYAC├ü"
+  1.09  <span class="spaces-search-control"> bg=rgb(251, 251, 248) texto=rgb(240, 242, 235)
+        "Ôîò"
+
+### #admisiones: 0 elementos con texto bajo AA
+
+### #programas: 5 elementos con texto bajo AA
+  1.8   <span class="catalog-note-icon"> bg=rgb(244, 230, 161) texto=rgb(168, 174, 162)
+        "i"
+  1.13  <div class="catalog-admin-mark"> bg=rgb(255, 255, 255) texto=rgb(240, 242, 235)
+        "Ôîÿ"
+  1.1   <label class="catalog-file-picker"> bg=rgb(252, 252, 249) texto=rgb(240, 242, 235)
+        "ÔåæSeleccionar archivo CSVUTF-8 ┬À m├í"
+  1.02  <span class="catalog-file-icon"> bg=rgb(244, 240, 217) texto=rgb(240, 242, 235)
+        "Ôåæ"
+  2.15  <span class="catalog-count"> bg=rgb(250, 249, 243) texto=rgb(168, 174, 162)
+        "00"
+
+### #branding: 0 elementos con texto bajo AA

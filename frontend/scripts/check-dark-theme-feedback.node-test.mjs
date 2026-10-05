@@ -8,8 +8,15 @@ const stylesheetPath = fileURLToPath(new URL('../src/styles/_theme.scss', import
 const compiledTheme = compile(stylesheetPath).css
 
 function darkRule(selector) {
-  const escapedSelector = selector.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
-  return compiledTheme.match(new RegExp(`${escapedSelector}\\s*\\{([^}]*)\\}`))?.[1]
+  // Sass parte los selectores :is() de tres o mas clases en varias lineas, asi que cada espacio
+  // del selector buscado puede ser cualquier blanco en el CSS compilado. Sin esto, una regla
+  // valida no se encontraba y el guard la daba por ausente.
+  const pattern = selector
+    .trim()
+    .split(/\s+/)
+    .map((part) => part.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
+    .join('\\s+')
+  return compiledTheme.match(new RegExp(`${pattern}\\s*\\{([^}]*)\\}`))?.[1]
 }
 
 function contrastRatio(textColor, backgroundColor) {
@@ -292,6 +299,40 @@ test('dark theme repaints the create-entry and reassignment badges together', ()
   assert.ok(declarations, 'dark create-entry and reassignment badge rule must be present')
   assert.match(declarations, /background:\s*var\(--ui-surface-raised\);/)
   assert.match(declarations, /color:\s*var\(--ui-text-primary\);/)
+  assertReadableContrast(declarations)
+})
+
+// Barrido medido en el navegador el 5 de octubre de 2026 sobre #espacios y #programas, las dos
+// rutas que faltaban por revisar. Siete elementos con texto propio quedaron entre 1,02 y 2,15 en
+// tema oscuro. La lista sale de find-dark-badges.mjs, que senala las reglas de componente con
+// fondo claro literal y color literal cuya clase el tema oscuro no repinta.
+const darkCatalogIcons = darkRule(':root[data-theme=dark] .workspace main :is(.catalog-note-icon, .catalog-file-icon)')
+const darkWhiteMarks = darkRule(':root[data-theme=dark] .workspace main :is(.catalog-admin-mark, .catalog-file-picker, .spaces-hero-art, .spaces-search-control)')
+
+test('dark theme repaints the catalog note and file icons', () => {
+  // Arrange
+  assert.ok(darkCatalogIcons, 'dark catalog icon rule must be present')
+  assert.match(darkCatalogIcons, /background:\s*#332e1d;/)
+  assert.match(darkCatalogIcons, /color:\s*var\(--ui-text-primary\);/)
+  assertReadableContrast(darkCatalogIcons)
+})
+
+test('dark theme repaints the white marks, the file picker, the spaces glyph and the hero art', () => {
+  // Arrange
+  assert.ok(darkWhiteMarks, 'dark rule for the white marks must be present')
+  assert.match(darkWhiteMarks, /background:\s*var\(--ui-surface-raised\);/)
+  assert.match(darkWhiteMarks, /color:\s*var\(--ui-text-primary\);/)
+  assertReadableContrast(darkWhiteMarks)
+})
+
+test('dark theme repaints the catalog count chip', () => {
+  // Arrange
+  const declarations = darkRule(':root[data-theme=dark] .workspace main .catalog-count')
+
+  // Assert
+  assert.ok(declarations, 'dark catalog count rule must be present')
+  assert.match(declarations, /background:\s*var\(--ui-surface-raised\);/)
+  assert.match(declarations, /color:\s*var\(--ui-text-secondary\);/)
   assertReadableContrast(declarations)
 })
 

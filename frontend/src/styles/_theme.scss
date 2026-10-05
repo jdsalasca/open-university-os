@@ -363,6 +363,19 @@
   color: var(--ui-text-primary);
 }
 
+// Segundo barrido medido en el navegador sobre #espacios y #programas: siete elementos con
+// texto propio entre 1,02 y 2,15. El script find-dark-badges.mjs los senala sin navegador.
+// El fondo es el mismo de las notas del tema (#332e1d) porque en estos chips gana el color
+// --ui-text-muted, no el que declara la regla: con #4a4322 el ratio quedaba en 4,35.
+:root[data-theme='dark'] .workspace main :is(.catalog-note-icon, .catalog-file-icon) { background: #332e1d; color: var(--ui-text-primary); }
+
+:root[data-theme='dark'] .workspace main :is(.catalog-admin-mark, .catalog-file-picker, .spaces-hero-art, .spaces-search-control) {
+  background: var(--ui-surface-raised);
+  color: var(--ui-text-primary);
+}
+
+:root[data-theme='dark'] .workspace main .catalog-count { background: var(--ui-surface-raised); color: var(--ui-text-secondary); }
+
 :root[data-theme='dark'] .workspace main .button-primary:disabled {
   background: #383d36;
   color: var(--ui-text-muted);
