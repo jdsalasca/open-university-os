@@ -1,0 +1,22 @@
+Estado de cada ruta con-backend
+
+--- #resumen: 1600 caracteres | ok
+    "PORTAL UNIVERSITARIO Tu universidad, en un mismo lugar Encuentra tus servicios, explora la vida universitaria y continúa desde donde lo necesitas. U Desarrollad"
+--- #estudiantes: 6178 caracteres | ok
+    "Desarrollador local · modo preview Permisos de demostración en este entorno; usa únicamente datos sintéticos. Esta sesión no es institucional. ✳ VIDA UNIVERSITA"
+--- #biblioteca: 826 caracteres | ok
+    "Desarrollador local · modo preview Permisos de demostración en este entorno; usa únicamente datos sintéticos. Esta sesión no es institucional. SERVICIOS BIBLIOG"
+--- #avisos: 555 caracteres | ok
+    "Desarrollador local · modo preview Permisos de demostración en este entorno; usa únicamente datos sintéticos. Esta sesión no es institucional. COMUNICACIONES IN"
+--- #programas: 7802 caracteres | ok
+    "Desarrollador local · modo preview Permisos de demostración en este entorno; usa únicamente datos sintéticos. Esta sesión no es institucional. Pregrado Posgrado"
+--- #inicio: 1475 caracteres | ok
+    "Desarrollador local · modo preview Permisos de demostración en este entorno; usa únicamente datos sintéticos. Esta sesión no es institucional. ADMINISTRACIÓN IN"
+--- #academia: 7432 caracteres | ok
+    "Desarrollador local · modo preview Permisos de demostración en este entorno; usa únicamente datos sintéticos. Esta sesión no es institucional. GESTIÓN ACADÉMICA"
+--- #admisiones: 2902 caracteres | ok
+    "Desarrollador local · modo preview Permisos de demostración en este entorno; usa únicamente datos sintéticos. Esta sesión no es institucional. No hay una convoc"
+--- #espacios: 11787 caracteres | muestra error de red crudo
+    "Desarrollador local · modo preview Permisos de demostración en este entorno; usa únicamente datos sintéticos. Esta sesión no es institucional. ORIENTACIÓN · UPT"
+--- #accesos: 487 caracteres | ok
+    "Desarrollador local · modo preview Permisos de demostración en este entorno; usa únicamente datos sintéticos. Esta sesión no es institucional. IDENTIDAD · CONTR"

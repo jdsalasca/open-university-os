@@ -1,0 +1,10 @@
+--- #resumen: 1600 caracteres | ok
+--- #estudiantes: 6178 caracteres | ok
+--- #biblioteca: 826 caracteres | ok
+--- #avisos: 555 caracteres | ok
+--- #programas: 7802 caracteres | ok
+--- #inicio: 1475 caracteres | ok
+--- #academia: 7432 caracteres | ok
+--- #admisiones: 2902 caracteres | ok
+--- #espacios: 11787 caracteres | muestra error de red crudo
+--- #accesos: 487 caracteres | ok

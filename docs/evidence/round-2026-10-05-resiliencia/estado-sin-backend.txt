@@ -1,0 +1,26 @@
+Estado de cada ruta sin-backend
+
+docker compose stop backend: ok
+
+--- #resumen: 1600 caracteres | ok
+    "PORTAL UNIVERSITARIO Tu universidad, en un mismo lugar Encuentra tus servicios, explora la vida universitaria y continúa desde donde lo necesitas. U Desarrollad"
+--- #estudiantes: 6178 caracteres | ok
+    "Desarrollador local · modo preview Permisos de demostración en este entorno; usa únicamente datos sintéticos. Esta sesión no es institucional. ✳ VIDA UNIVERSITA"
+--- #biblioteca: 705 caracteres | ok
+    "Desarrollador local · modo preview Permisos de demostración en este entorno; usa únicamente datos sintéticos. Esta sesión no es institucional. SERVICIOS BIBLIOG"
+--- #avisos: 489 caracteres | ok
+    "Desarrollador local · modo preview Permisos de demostración en este entorno; usa únicamente datos sintéticos. Esta sesión no es institucional. COMUNICACIONES IN"
+--- #programas: 7758 caracteres | ok
+    "Desarrollador local · modo preview Permisos de demostración en este entorno; usa únicamente datos sintéticos. Esta sesión no es institucional. Pregrado Posgrado"
+--- #inicio: 1475 caracteres | ok
+    "Desarrollador local · modo preview Permisos de demostración en este entorno; usa únicamente datos sintéticos. Esta sesión no es institucional. ADMINISTRACIÓN IN"
+--- #academia: 1016 caracteres | ok
+    "Desarrollador local · modo preview Permisos de demostración en este entorno; usa únicamente datos sintéticos. Esta sesión no es institucional. GESTIÓN ACADÉMICA"
+--- #admisiones: 2939 caracteres | ok
+    "Desarrollador local · modo preview Permisos de demostración en este entorno; usa únicamente datos sintéticos. Esta sesión no es institucional. No fue posible co"
+--- #espacios: 758 caracteres | ok
+    "Desarrollador local · modo preview Permisos de demostración en este entorno; usa únicamente datos sintéticos. Esta sesión no es institucional. ORIENTACIÓN · UPT"
+--- #accesos: 487 caracteres | ok
+    "Desarrollador local · modo preview Permisos de demostración en este entorno; usa únicamente datos sintéticos. Esta sesión no es institucional. IDENTIDAD · CONTR"
+
+backend arrancado de nuevo
