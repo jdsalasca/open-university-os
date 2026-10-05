@@ -1,0 +1,135 @@
+@use '../../styles/tokens' as tokens;
+
+.academic-offerings-panel {
+  display: grid;
+  gap: 13px;
+  margin-top: 14px;
+  color: var(--ui-text-primary);
+  background: var(--ui-surface);
+}
+
+.academic-offerings-panel .academic-panel-heading { margin-bottom: 0; }
+.academic-icon-offerings { background: color-mix(in srgb, var(--brand-primary, #ffcc29) 19%, var(--ui-surface)); color: #75601b; }
+.academic-offerings-panel .academic-panel-heading h2,
+.academic-offering-form h3,
+.academic-offering-list-heading h3 { color: var(--ui-text-primary); }
+.academic-offerings-panel .academic-panel-count { border-color: var(--ui-border); color: var(--ui-text-muted); }
+.academic-offerings-intro { max-width: 860px; margin: 0; color: var(--ui-text-secondary); font-size: 11px; line-height: 1.65; }
+
+.academic-offerings-period-row {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 12px 13px;
+  border: 1px solid var(--ui-border);
+  border-radius: 9px;
+  background: var(--ui-surface-subtle);
+}
+
+.academic-offerings-panel label { display: grid; min-width: 0; gap: 6px; color: var(--ui-text-secondary); font-size: 10px; font-weight: 650; }
+.academic-offerings-panel select,
+.academic-offerings-panel input {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 38px;
+  padding: 8px 10px;
+  border: 1px solid var(--ui-border-strong);
+  border-radius: 7px;
+  background: var(--ui-input-surface);
+  color: var(--ui-text-primary);
+  font: inherit;
+  font-size: 11px;
+}
+
+.academic-offerings-panel select:focus-visible,
+.academic-offerings-panel input:focus-visible,
+.academic-offerings-panel button:focus-visible { @include tokens.focus-ring(2px); }
+.academic-offerings-panel select:disabled,
+.academic-offerings-panel input:disabled,
+.academic-offerings-panel button:disabled { cursor: not-allowed; opacity: .58; }
+.academic-offerings-period-row > label { width: min(100%, 360px); }
+.academic-offerings-period-dates { padding: 0 0 10px; color: var(--ui-text-muted); font-size: 10px; font-variant-numeric: tabular-nums; }
+
+.academic-offering-form,
+.academic-offering-edit-form {
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+  border: 1px solid color-mix(in srgb, var(--brand-primary, #ffcc29) 35%, var(--ui-border));
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--brand-primary, #ffcc29) 4%, var(--ui-surface));
+}
+
+.academic-offering-form-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.academic-offering-form-heading h3 { margin: 3px 0 0; font-family: Georgia, 'Times New Roman', serif; font-size: 17px; font-weight: 500; }
+.academic-offering-status { display: inline-flex; align-items: center; width: fit-content; padding: 5px 8px; border: 1px solid #d8cfad; border-radius: 999px; background: color-mix(in srgb, #f2e5aa 30%, var(--ui-surface)); color: #6f5d1f; font-size: 9px; font-weight: 750; white-space: nowrap; }
+.academic-offering-fields { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 11px; }
+.academic-offering-reference-field { grid-column: span 2; }
+.academic-offering-form-footer { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding-top: 12px; border-top: 1px solid var(--ui-border); }
+.academic-offering-form-footer p { max-width: 620px; margin: 0; color: var(--ui-text-muted); font-size: 9px; line-height: 1.5; }
+.academic-offerings-panel button {
+  min-height: 34px;
+  padding: 7px 11px;
+  border: 1px solid var(--ui-border-strong);
+  border-radius: 7px;
+  background: var(--ui-surface);
+  color: var(--ui-text-secondary);
+  font: inherit;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.academic-offerings-panel button:hover:not(:disabled) { border-color: color-mix(in srgb, var(--brand-primary, #ffcc29) 70%, var(--ui-border-strong)); color: var(--ui-text-primary); }
+.academic-offering-form-footer button,
+.academic-offering-card-actions button:first-child { border-color: #292b24; background: #22241e; color: #fff; }
+.academic-offering-form-footer button:hover:not(:disabled),
+.academic-offering-card-actions button:first-child:hover:not(:disabled) { background: #37392f; color: #fff; }
+
+.academic-offering-message { margin: 0; padding: 10px 12px; border: 1px solid #d5e5d6; border-radius: 7px; background: color-mix(in srgb, #e8f2e8 55%, var(--ui-surface)); color: #356640; font-size: 10px; line-height: 1.5; }
+.academic-offering-message.is-error { border-color: #efd3ca; background: color-mix(in srgb, #faeae5 48%, var(--ui-surface)); color: #914d40; }
+.academic-offering-inline-status,
+.academic-offering-inline-error { margin: 0; padding: 12px 13px; border: 1px dashed var(--ui-border-strong); border-radius: 8px; color: var(--ui-text-muted); font-size: 10px; line-height: 1.55; }
+.academic-offering-inline-error { display: flex; align-items: center; justify-content: space-between; gap: 12px; border-style: solid; border-color: #efd3ca; background: color-mix(in srgb, #faeae5 38%, var(--ui-surface)); color: #914d40; }
+
+.academic-offering-list-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 5px; }
+.academic-offering-list-heading h3 { margin: 0; font-size: 12px; font-weight: 700; }
+.academic-offering-list-heading h3 span { margin-left: 5px; color: var(--ui-text-muted); font-size: 9px; font-weight: 500; }
+.academic-offering-refresh { min-height: 30px !important; padding: 5px 8px !important; font-size: 9px !important; }
+.academic-offering-draft-list { display: grid; gap: 9px; margin: 0; padding: 0; list-style: none; }
+.academic-offering-draft-card { display: grid; gap: 9px; padding: 13px 14px; border: 1px solid var(--ui-border); border-radius: 9px; background: var(--ui-surface-raised); }
+.academic-offering-draft-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
+.academic-offering-draft-heading > div { display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+.academic-offering-draft-heading strong { color: var(--ui-text-primary); font-size: 13px; letter-spacing: .02em; }
+.academic-offering-draft-heading > span { color: #78631b; font-size: 9px; font-weight: 800; }
+.academic-offering-subject { margin: 0; color: var(--ui-text-primary); font-size: 11px; font-weight: 700; }
+.academic-offering-program { margin: -5px 0 0; color: var(--ui-text-muted); font-size: 9px; }
+.academic-offering-facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 9px 13px; margin: 0; padding-top: 10px; border-top: 1px solid var(--ui-border); }
+.academic-offering-facts > div { display: grid; min-width: 0; gap: 4px; }
+.academic-offering-facts dt { color: var(--ui-text-muted); font-size: 8px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+.academic-offering-facts dd { overflow-wrap: anywhere; margin: 0; color: var(--ui-text-secondary); font-size: 9px; line-height: 1.45; }
+.academic-offering-reference-fact { grid-column: 1 / -1; }
+.academic-offering-card-actions { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 7px; }
+.academic-offering-edit-form { padding: 12px; }
+.academic-offering-edit-form h4 { margin: 0; color: var(--ui-text-primary); font-size: 11px; }
+.academic-offering-load-more { justify-self: center; }
+.academic-offering-audit-list { display: grid; gap: 8px; margin: 0; padding: 10px 0 0; border-top: 1px solid var(--ui-border); list-style: none; }
+.academic-offering-audit-list li { display: grid; gap: 5px; padding: 9px 10px; border-radius: 7px; background: var(--ui-surface-subtle); }
+.academic-offering-audit-heading { display: flex; justify-content: space-between; gap: 10px; color: var(--ui-text-primary); font-size: 9px; }
+.academic-offering-audit-heading time { color: var(--ui-text-muted); font-size: 8px; }
+.academic-offering-audit-list p { margin: 0; color: var(--ui-text-secondary); font-size: 9px; line-height: 1.5; overflow-wrap: anywhere; }
+
+@media (max-width: 800px) {
+  .academic-offering-fields { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .academic-offering-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 560px) {
+  .academic-offerings-period-row,
+  .academic-offering-form-footer { align-items: stretch; flex-direction: column; }
+  .academic-offerings-period-dates { padding: 0; }
+  .academic-offering-fields { grid-template-columns: minmax(0, 1fr); }
+  .academic-offering-reference-field { grid-column: auto; }
+  .academic-offering-draft-heading > div { align-items: flex-start; flex-direction: column; }
+  .academic-offering-audit-heading { flex-direction: column; }
+}

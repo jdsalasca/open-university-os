@@ -1,0 +1,101 @@
+@use '../../../styles/tokens' as tokens;
+
+.room-allocation-demo { display: grid; gap: 20px; max-width: 1180px; margin: 0 auto; color: #242822; }
+.room-allocation-hero { position: relative; display: flex; align-items: center; justify-content: space-between; min-height: 208px; overflow: hidden; padding: clamp(23px, 5vw, 50px); border-radius: 15px; color: #fbfbf6; background: radial-gradient(ellipse at 92% 8%, rgba(193, 218, 126, .24), transparent 35%), linear-gradient(118deg, #23352e, #31483b 58%, #1e3027); }
+.room-allocation-hero-copy { position: relative; z-index: 1; max-width: 720px; }
+.room-allocation-eyebrow { display: flex; align-items: center; gap: 8px; margin: 0 0 13px; color: #c9d9ab; font-size: 11px; font-weight: 850; letter-spacing: .13em; }
+.room-allocation-eyebrow span { font-size: 15px; }
+.room-allocation-hero h1 { margin: 0; font-size: clamp(26px, 4vw, 43px); letter-spacing: -.045em; line-height: 1.08; }
+.room-allocation-hero h1 span { color: #c9d9ab; font-size: .62em; letter-spacing: -.02em; }
+.room-allocation-hero-copy > p:last-child { max-width: 590px; margin: 14px 0 0; color: #e1e8db; font-size: 15px; line-height: 1.55; }
+.room-allocation-hero-mark { position: relative; flex: 0 0 132px; display: grid; place-items: center; width: 132px; height: 132px; margin: 0 2% 0 24px; border: 1px solid rgba(223, 237, 202, .48); border-radius: 50%; color: #d7e6c0; }
+.room-allocation-hero-mark::before, .room-allocation-hero-mark::after { position: absolute; content: ''; width: 80%; height: 1px; background: rgba(223, 237, 202, .38); transform: rotate(45deg); }
+.room-allocation-hero-mark::after { transform: rotate(-45deg); }
+.room-allocation-hero-mark span { z-index: 1; display: grid; place-items: center; width: 49px; height: 49px; border-radius: 14px; background: #d7e6c0; color: #26372e; font-size: 23px; font-weight: 900; }
+.room-allocation-hero-mark i { position: absolute; width: 8px; height: 8px; border: 1px solid #d7e6c0; border-radius: 50%; background: #30473a; }
+.room-allocation-hero-mark i:nth-of-type(1) { top: 11px; left: 61px; }
+.room-allocation-hero-mark i:nth-of-type(2) { right: 10px; bottom: 38px; }
+.room-allocation-hero-mark i:nth-of-type(3) { bottom: 16px; left: 24px; }
+.room-allocation-synthetic-note { display: grid; gap: 4px; padding: 15px 18px; border: 1px solid #d9e4c7; border-radius: 10px; background: #f1f5e9; }
+.room-allocation-synthetic-note strong { color: #304733; font-size: 13px; }
+.room-allocation-synthetic-note span { color: #596356; font-size: 12px; line-height: 1.55; }
+.room-allocation-layout { display: grid; grid-template-columns: minmax(280px, .82fr) minmax(0, 1.3fr); gap: 18px; align-items: start; }
+.room-allocation-controls, .room-allocation-results { min-width: 0; padding: clamp(17px, 3vw, 24px); border: 1px solid #e2e5dc; border-radius: 12px; background: #fff; box-shadow: 0 8px 24px rgba(40, 50, 38, .045); }
+.room-allocation-section-heading { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 20px; }
+.room-allocation-step { display: grid; flex: 0 0 32px; place-items: center; width: 32px; height: 32px; border-radius: 9px; color: #47613e; background: #edf2e7; font-size: 11px; font-weight: 900; }
+.room-allocation-section-heading h2 { margin: 1px 0 4px; color: #252922; font-size: 17px; letter-spacing: -.025em; }
+.room-allocation-section-heading p { margin: 0; color: #797d72; font-size: 12px; line-height: 1.5; }
+.room-allocation-field { display: grid; gap: 8px; color: #42473e; font-size: 12px; font-weight: 800; }
+.room-allocation-field select { width: 100%; min-width: 0; height: 43px; padding: 0 12px; border: 1px solid #d9ddd2; border-radius: 7px; color: #282c25; background: #fff; font: inherit; font-size: 13px; }
+.room-allocation-field select:focus-visible, .room-allocation-submit:focus-visible, .room-allocation-error button:focus-visible { @include tokens.focus-ring(3px); }
+.room-allocation-field small { min-height: 32px; color: #85887e; font-size: 11px; font-weight: 500; line-height: 1.5; }
+.room-allocation-input-summary { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 17px 0 16px; border: 1px solid #eaede6; border-radius: 8px; background: #fafbf8; }
+.room-allocation-input-summary > div { display: grid; gap: 3px; padding: 10px 7px; text-align: center; }
+.room-allocation-input-summary > div + div { border-left: 1px solid #eaede6; }
+.room-allocation-input-summary strong { color: #30372d; font-size: 18px; }
+.room-allocation-input-summary span { color: #83867d; font-size: 10px; }
+.room-allocation-session-needed { margin: 0 0 12px; padding: 10px 11px; border-left: 3px solid #bd9955; border-radius: 4px; color: #655537; background: #faf5e8; font-size: 11px; line-height: 1.5; }
+.room-allocation-submit { display: flex; align-items: center; justify-content: center; gap: 9px; width: 100%; min-height: 45px; border: 0; border-radius: 7px; color: #fff; background: #334b3b; font: inherit; font-size: 12px; font-weight: 800; cursor: pointer; transition: background .18s ease, transform .18s ease; }
+.room-allocation-submit:hover:not(:disabled) { transform: translateY(-1px); background: #263b2f; }
+.room-allocation-submit:disabled { color: #f4f5f0; background: #a2aa9e; cursor: not-allowed; }
+.room-allocation-submit span { font-size: 17px; }
+.room-allocation-criteria { margin-top: 22px; padding-top: 16px; border-top: 1px solid #edf0e9; }
+.room-allocation-criteria > p { margin: 0 0 10px; color: #777c71; font-size: 10px; font-weight: 850; letter-spacing: .09em; text-transform: uppercase; }
+.room-allocation-criteria ul { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.room-allocation-criteria li { display: flex; align-items: center; gap: 9px; color: #4f554b; font-size: 11px; line-height: 1.35; }
+.room-allocation-criteria li span { display: grid; flex: 0 0 19px; place-items: center; width: 19px; height: 19px; border-radius: 50%; color: #56704b; background: #edf2e7; font-size: 9px; font-weight: 900; }
+.room-allocation-empty-state { display: grid; justify-items: center; gap: 9px; min-height: 210px; align-content: center; padding: 22px; border: 1px dashed #dfe4d9; border-radius: 9px; color: #72786d; background: #fafbf8; text-align: center; }
+.room-allocation-empty-state > span { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 13px; color: #5d7651; background: #edf2e7; font-size: 21px; }
+.room-allocation-empty-state strong { color: #3c4339; font-size: 13px; }
+.room-allocation-empty-state p { max-width: 300px; margin: 0; font-size: 11px; line-height: 1.55; }
+.room-allocation-loading { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 210px; margin: 0; color: #53664c; font-size: 12px; }
+.room-allocation-loading span { font-size: 20px; animation: room-allocation-spin 1.1s linear infinite; }
+.room-allocation-error { padding: 16px; border: 1px solid #f0d3cb; border-radius: 9px; color: #6d3931; background: #fff7f4; }
+.room-allocation-error strong { font-size: 13px; }
+.room-allocation-error p { margin: 6px 0 13px; color: #805950; font-size: 11px; line-height: 1.5; }
+.room-allocation-error button { min-height: 34px; padding: 0 12px; border: 1px solid #dec1ba; border-radius: 6px; color: #663d36; background: #fff; font: inherit; font-size: 11px; font-weight: 800; cursor: pointer; }
+.room-allocation-result-summary { display: grid; gap: 4px; margin-bottom: 14px; padding: 14px 16px; border: 1px solid #d8e6cf; border-radius: 9px; background: #f1f6ed; }
+.room-allocation-result-summary strong { color: #32482f; font-size: 14px; }
+.room-allocation-result-summary span { color: #61705c; font-size: 11px; line-height: 1.45; }
+.room-allocation-metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-bottom: 14px; }
+.room-allocation-metrics > div { display: grid; gap: 4px; min-width: 0; padding: 11px 10px; border: 1px solid #e8ebe4; border-radius: 8px; background: #fff; }
+.room-allocation-metrics strong { color: #29342b; font-size: 22px; letter-spacing: -.04em; }
+.room-allocation-metrics span { color: #7a7f73; font-size: 10px; }
+.room-allocation-placement-list { display: grid; gap: 7px; margin: 0; padding: 0; list-style: none; }
+.room-allocation-placement-list li { display: flex; align-items: center; gap: 11px; min-width: 0; padding: 11px; border: 1px solid #eaede7; border-radius: 8px; }
+.room-allocation-status { display: grid; flex: 0 0 28px; place-items: center; width: 28px; height: 28px; border-radius: 9px; font-size: 13px; font-weight: 900; }
+.room-allocation-status.is-assigned { color: #38623d; background: #eaf4e8; }
+.room-allocation-status.is-unassigned { color: #9b6541; background: #faf0e5; }
+.room-allocation-placement-copy { display: grid; gap: 4px; min-width: 0; flex: 1; }
+.room-allocation-placement-copy strong { overflow-wrap: anywhere; color: #343a32; font-size: 12px; }
+.room-allocation-placement-copy span { overflow-wrap: anywhere; color: #767c70; font-size: 10px; line-height: 1.4; }
+.room-allocation-placement-copy i { color: #b0b5aa; font-style: normal; }
+.room-allocation-placement-tag { flex: 0 0 auto; color: #7b8176; font-size: 9px; font-weight: 750; }
+.room-allocation-result-footnote { margin: 12px 0 0; color: #91958c; font-size: 10px; line-height: 1.5; }
+
+@keyframes room-allocation-spin { to { transform: rotate(360deg); } }
+
+@media (max-width: 840px) {
+  .room-allocation-layout { grid-template-columns: minmax(0, 1fr); }
+  .room-allocation-controls form { display: grid; grid-template-columns: minmax(0, 1fr) minmax(230px, .85fr); gap: 0 18px; align-items: end; }
+  .room-allocation-input-summary { grid-column: 1 / -1; grid-row: 2; }
+  .room-allocation-session-needed { grid-column: 1; }
+  .room-allocation-submit { grid-column: 2; grid-row: 3; }
+  .room-allocation-criteria { display: none; }
+}
+
+@media (max-width: 560px) {
+  .room-allocation-hero { min-height: 190px; }
+  .room-allocation-hero-mark { position: absolute; right: -38px; bottom: -55px; width: 130px; height: 130px; margin: 0; opacity: .38; }
+  .room-allocation-controls form { display: grid; grid-template-columns: minmax(0, 1fr); }
+  .room-allocation-input-summary, .room-allocation-session-needed, .room-allocation-submit { grid-column: 1; grid-row: auto; }
+  .room-allocation-metrics > div { padding: 10px 7px; }
+  .room-allocation-metrics strong { font-size: 19px; }
+  .room-allocation-placement-list li { align-items: flex-start; }
+  .room-allocation-placement-tag { max-width: 64px; text-align: right; line-height: 1.35; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .room-allocation-submit { transition: none; }
+  .room-allocation-loading span { animation: none; }
+}

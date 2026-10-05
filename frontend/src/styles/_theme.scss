@@ -1,0 +1,342 @@
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --ui-canvas: #151814;
+  --ui-surface: #1e231e;
+  --ui-surface-raised: #252b25;
+  --ui-surface-subtle: #292f29;
+  --ui-text-primary: #f0f2eb;
+  --ui-text-secondary: #d0d4ca;
+  --ui-text-muted: #a8aea2;
+  --ui-border: #3c443b;
+  --ui-border-strong: #566253;
+  --ui-input-surface: #202620;
+  --ui-focus: #f6d66b;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+    --ui-canvas: #151814;
+    --ui-surface: #1e231e;
+    --ui-surface-raised: #252b25;
+    --ui-surface-subtle: #292f29;
+    --ui-text-primary: #f0f2eb;
+    --ui-text-secondary: #d0d4ca;
+    --ui-text-muted: #a8aea2;
+    --ui-border: #3c443b;
+    --ui-border-strong: #566253;
+    --ui-input-surface: #202620;
+    --ui-focus: #f6d66b;
+  }
+}
+
+:root[data-theme='dark'] body,
+:root[data-theme='dark'] #root,
+:root[data-theme='dark'] .platform-shell,
+:root[data-theme='dark'] .workspace {
+  background: var(--ui-canvas);
+  color: var(--ui-text-primary);
+}
+
+:root[data-theme='dark'] .sidebar {
+  border-color: #343b33;
+  background: #111410;
+}
+
+:root[data-theme='dark'] .nav-item.active {
+  border-color: #465044;
+  background: #252d25;
+}
+
+:root[data-theme='dark'] .topbar {
+  border-color: var(--ui-border);
+  background: rgb(30 35 30 / 94%);
+}
+
+:root[data-theme='dark'] .breadcrumbs,
+:root[data-theme='dark'] .topbar-meta,
+:root[data-theme='dark'] .identity-session-status {
+  color: var(--ui-text-muted);
+}
+
+:root[data-theme='dark'] .breadcrumbs strong,
+:root[data-theme='dark'] .revision-chip {
+  color: var(--ui-text-primary);
+}
+
+:root[data-theme='dark'] .topbar-divider {
+  background: var(--ui-border);
+}
+
+:root[data-theme='dark'] .identity-session-button.secondary {
+  border-color: var(--ui-border-strong);
+  background: var(--ui-surface);
+  color: var(--ui-text-primary);
+}
+
+:root[data-theme='dark'] .identity-session-button:disabled {
+  border-color: var(--ui-border);
+  background: var(--ui-surface-subtle);
+  color: var(--ui-text-muted);
+}
+
+:root[data-theme='dark'] .theme-selector {
+  border-color: var(--ui-border);
+  background: var(--ui-surface-subtle);
+}
+
+:root[data-theme='dark'] .theme-selector-choice:has(input:checked) {
+  background: var(--ui-surface-raised);
+  color: var(--ui-text-primary);
+  box-shadow: 0 1px 4px rgb(0 0 0 / 35%);
+}
+
+:root[data-theme='dark'] .theme-selector-choice:hover {
+  color: var(--ui-text-primary);
+}
+
+:root[data-theme='dark'] .workspace main :not(.identity-preview-surface):not(.identity-preview-surface *) {
+  color: var(--ui-text-primary);
+}
+
+:root[data-theme='dark'] .workspace main :is(
+  .surface-card,
+  .card,
+  [class*='-card'],
+  [class*='-panel'],
+  [class*='-form'],
+  [class*='-dialog'],
+  [class*='-confirmation'],
+  [class*='-empty'],
+  [class*='-list'],
+  [class*='-table-wrap'],
+  [class*='-history'],
+  [class*='-audit'],
+  [class*='-events'],
+  [class*='-results'],
+  [class*='-preview'],
+  .catalog-admin,
+  .catalog-admin-locked
+):not(.identity-preview-surface):not(.identity-preview-surface *) {
+  border-color: var(--ui-border);
+  background: var(--ui-surface);
+  box-shadow: none;
+}
+
+:root[data-theme='dark'] .workspace main .academic-structure-audit-events > li {
+  border-color: var(--ui-border);
+  background: var(--ui-surface-raised);
+  color: var(--ui-text-primary);
+}
+
+:root[data-theme='dark'] .workspace main :is(
+  .brand-hero,
+  .academic-operations-hero,
+  .admissions-hero,
+  .role-access-hero,
+  .spaces-hero
+):not(.identity-preview-surface *) {
+  border-color: var(--ui-border);
+  background: linear-gradient(135deg, #252b25, #191e19 78%);
+}
+
+:root[data-theme='dark'] .workspace main :is(
+  [class*='-intro'],
+  [class*='-kicker'],
+  [class*='-eyebrow'],
+  [class*='-caption'],
+  [class*='-hint'],
+  [class*='-footnote'],
+  [class*='-note'],
+  [class*='-meta'],
+  [class*='-date'],
+  [class*='-kind'],
+  [class*='-count'],
+  [class*='-badge'],
+  [class*='-status'],
+  [class*='-muted'],
+  [class*='-arrow'],
+  [class*='-empty']
+):not([class*='-error']):not([class*='-success']):not(.identity-preview-surface *) {
+  color: var(--ui-text-muted);
+}
+
+:root[data-theme='dark'] .workspace main :is(
+  input:not([type='checkbox']):not([type='radio']):not([type='color']),
+  select,
+  textarea
+) {
+  border-color: var(--ui-border-strong);
+  background-color: var(--ui-input-surface);
+  color: var(--ui-text-primary);
+  color-scheme: dark;
+}
+
+:root[data-theme='dark'] .workspace main :is(input, textarea)::placeholder {
+  color: var(--ui-text-muted);
+  opacity: 1;
+}
+
+:root[data-theme='dark'] .workspace main table {
+  color: var(--ui-text-primary);
+}
+
+:root[data-theme='dark'] .workspace main :is(th, td) {
+  border-color: var(--ui-border);
+}
+
+:root[data-theme='dark'] .workspace main :is(
+  [class*='-error'],
+  [class*='-invalid'],
+  [aria-invalid='true']
+):not(.identity-preview-surface *) {
+  border-color: #71413c;
+  background-color: #352320;
+  color: #ffc0b7;
+}
+
+:root[data-theme='dark'] .workspace main :is(
+  [class*='-success'],
+  [class*='-feedback']:not([class*='-error'])
+):not(.identity-preview-surface *) {
+  border-color: #426047;
+  background-color: #202e23;
+  color: #b9e0bd;
+}
+
+:root[data-theme='dark'] .workspace main :is(
+  .status-banner,
+  .academic-operations-note,
+  .admissions-operation-note,
+  .role-access-readonly-note,
+  .spaces-source-note
+):not(.identity-preview-surface *) {
+  border-color: #665a33;
+  background: #332e1d;
+  color: #f0dfa0;
+}
+
+:root[data-theme='dark'] .workspace main .visual-identity-center .identity-status {
+  border-color: #665a33;
+  background: #332e1d;
+  color: #f0dfa0;
+}
+
+:root[data-theme='dark'] .workspace main .visual-identity-center .identity-alert {
+  border-color: #71413c;
+  background: #352320;
+  color: #ffc0b7;
+}
+
+:root[data-theme='dark'] .workspace main .visual-identity-center :is(.identity-revision-chip, .contrast-hint, .preview-local-badge, .summary-icon) {
+  border-color: var(--ui-border);
+  background: var(--ui-surface-raised);
+  color: var(--ui-text-primary);
+}
+
+:root[data-theme='dark'] .workspace main :is(.academic-unit-copy strong, .academic-unit-copy small, .academic-sort-order, .spaces-type-badge, .spaces-pathway-kind, .spaces-pathway-note, .spaces-announcement, .spaces-directory-footer, .catalog-operation-note, .catalog-locked-tag, .catalog-button, .academic-load-error, .room-allocation-synthetic-note, .room-allocation-controls, .room-allocation-input-summary, .room-allocation-session-needed) {
+  border-color: var(--ui-border);
+  background: var(--ui-surface-raised);
+  color: var(--ui-text-primary);
+}
+
+:root[data-theme='dark'] .workspace main :is(a, button):focus-visible,
+:root[data-theme='dark'] button:focus-visible,
+:root[data-theme='dark'] input:focus-visible,
+:root[data-theme='dark'] select:focus-visible,
+:root[data-theme='dark'] textarea:focus-visible {
+  outline-color: var(--ui-focus);
+}
+
+:root[data-theme='dark'] ::selection {
+  background: #79691f;
+  color: #fffbed;
+}
+
+:root[data-theme='dark'] .workspace main .public-program-directory :is(
+  .public-program-hero,
+  .public-program-source-note,
+  .public-program-results-count,
+  .public-program-card,
+  .public-program-empty,
+  .public-program-more) {
+  border-color: var(--ui-border);
+  background: var(--ui-surface-raised);
+}
+
+:root[data-theme='dark'] .workspace main .public-program-directory .public-program-window p {
+  color: var(--ui-text-secondary);
+}
+
+:root[data-theme='dark'] .workspace main .public-program-directory .public-program-filters {
+  border-color: var(--ui-border);
+  background: var(--ui-surface);
+}
+
+:root[data-theme='dark'] .workspace main .public-program-directory .public-program-offer-tag {
+  background: var(--ui-surface-raised);
+  color: var(--ui-text-secondary);
+}
+
+:root[data-theme='dark'] .workspace main .public-program-directory .public-program-offer-tag.is-marked {
+  background: #29382a;
+  color: #d5e8c9;
+}
+
+:root[data-theme='dark'] .workspace main .public-program-directories .public-program-directory-switch {
+  border-color: var(--ui-border);
+  background: var(--ui-surface);
+}
+
+:root[data-theme='dark'] .workspace main .public-program-directories .public-program-directory-switch button {
+  color: var(--ui-text-secondary);
+}
+
+:root[data-theme='dark'] .workspace main .public-program-directories .public-program-directory-switch button[aria-pressed='true'] {
+  border-color: var(--ui-border-strong);
+  background: var(--ui-surface-raised);
+}
+
+:root[data-theme='dark'] .workspace main :is(
+  .admissions-fallback-status,
+  .admissions-primary-link,
+  .admissions-count,
+  .admissions-note-icon,
+  .admissions-source-seal,
+  .admissions-timeline-index,
+  .admissions-checklist,
+  .admissions-official-source) {
+  border-color: var(--ui-border);
+  background: var(--ui-surface-raised);
+  color: var(--ui-text-primary);
+}
+
+:root[data-theme='dark'] .workspace main :is(.admissions-eyebrow, .admissions-checklist-footnote) {
+  color: var(--ui-text-secondary);
+}
+
+:root[data-theme='dark'] .workspace main .catalog-hero {
+  border-color: var(--ui-border);
+  background: var(--ui-surface-raised);
+  color: var(--ui-text-primary);
+}
+
+:root[data-theme='dark'] .workspace main .catalog-intro {
+  color: var(--ui-text-secondary);
+}
+
+:root[data-theme='dark'] .workspace main .visual-identity-center :is(.editor-actions, .banner-editor-card) {
+  border-color: var(--ui-border);
+  background: var(--ui-surface-raised);
+  color: var(--ui-text-primary);
+}
+
+:root[data-theme='dark'] .workspace main .status-banner-icon {
+  background: #4a4326;
+  color: #f0dfa0;
+}
+
+:root[data-theme='dark'] .workspace main .button-primary:disabled {
+  background: #383d36;
+  color: var(--ui-text-muted);
+}

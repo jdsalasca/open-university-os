@@ -1,0 +1,225 @@
+@use '../../../styles/tokens' as tokens;
+
+.admissions-workflow-lab {
+  --lab-ink: var(--ui-ink, #20211d);
+  --lab-muted: var(--ui-muted, #73756d);
+  --lab-line: var(--ui-border, #e5e6df);
+  --lab-surface: var(--ui-surface, #fff);
+  --lab-soft: var(--ui-surface-raised, #f7f7f2);
+  --lab-accent: var(--brand-primary, #ffcc29);
+  --lab-focus: var(--ui-focus, #34382e);
+  max-width: 1510px;
+  margin: 0 auto;
+  padding: clamp(14px, 2.2vw, 28px) clamp(18px, 4vw, 62px) 52px;
+  color: var(--lab-ink);
+}
+
+.admissions-lab-shell-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 23px clamp(19px, 3vw, 36px);
+  overflow: hidden;
+  border-radius: 18px;
+  background: radial-gradient(circle at 87% 18%, #ffcc291e 0 95px, transparent 96px),
+    linear-gradient(114deg, #20231d, #171815 73%);
+  color: #fbfaf2;
+  box-shadow: 0 15px 38px #1617111a;
+}
+
+.admissions-lab-shell-copy { display: flex; align-items: center; gap: 17px; min-width: 0; }
+.admissions-lab-mark {
+  display: grid;
+  width: 43px;
+  height: 43px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid #ffcc2968;
+  border-radius: 13px;
+  background: #ffcc291a;
+  color: var(--lab-accent);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 25px;
+}
+.admissions-lab-shell-eyebrow { margin: 0 0 6px; color: #d5d5c8; font-size: 9px; font-weight: 780; letter-spacing: .16em; }
+.admissions-lab-shell-header h1 { margin: 0; color: #fbfaf2; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(21px, 3vw, 32px); font-weight: 500; letter-spacing: -.035em; }
+.admissions-lab-dev-badge { display: inline-flex; align-items: center; gap: 8px; flex: 0 0 auto; padding: 8px 11px; border: 1px solid #ffffff2c; border-radius: 99px; color: #f0eee2; font-size: 10px; font-weight: 700; }
+.admissions-lab-dev-badge > span { width: 7px; height: 7px; border-radius: 50%; background: var(--lab-accent); box-shadow: 0 0 0 4px #ffcc2925; }
+
+.admissions-lab-safety-banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  margin: 13px 0 22px;
+  padding: 9px 13px;
+  border: 1px solid color-mix(in srgb, var(--lab-accent) 45%, var(--lab-line));
+  border-radius: 11px;
+  background: color-mix(in srgb, var(--lab-accent) 14%, var(--lab-surface));
+  color: var(--lab-ink);
+  font-size: 11px;
+  line-height: 1.5;
+}
+.admissions-lab-safety-banner > span:nth-child(2) { flex: 1; }
+.admissions-lab-safety-banner strong { font-weight: 800; }
+.admissions-lab-safety-icon { display: grid; width: 19px; height: 19px; flex: 0 0 auto; place-items: center; border-radius: 50%; background: var(--lab-accent); font-family: Georgia, serif; font-size: 12px; font-weight: 800; }
+.admissions-lab-memory-indicator { display: inline-flex; align-items: center; gap: 6px; flex: 0 0 auto; color: var(--lab-muted); font-size: 9px; font-weight: 700; }
+.admissions-lab-memory-indicator > span { width: 6px; height: 6px; border-radius: 50%; background: #699579; }
+
+.admissions-lab-perspective-bar { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
+.admissions-lab-perspective-label { display: flex; flex-direction: column; gap: 5px; padding: 0 0 2px 3px; }
+.admissions-lab-perspective-label > span { color: var(--lab-muted); font-size: 8px; font-weight: 800; letter-spacing: .15em; }
+.admissions-lab-perspective-label > strong { font-family: Georgia, 'Times New Roman', serif; font-size: 17px; font-weight: 500; }
+.admissions-lab-tabs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 9px; }
+.admissions-lab-tab { display: grid; min-width: 0; min-height: 88px; grid-template-columns: auto minmax(0, 1fr) auto; align-items: start; gap: 9px; padding: 13px; border: 1px solid var(--lab-line); border-radius: 12px; background: var(--lab-surface); color: var(--lab-muted); cursor: pointer; text-align: left; font: inherit; transition: border-color .16s ease, background .16s ease, transform .16s ease; }
+.admissions-lab-tab:hover { transform: translateY(-1px); border-color: color-mix(in srgb, var(--lab-ink) 30%, var(--lab-line)); color: var(--lab-ink); }
+.admissions-lab-tab.is-active { border-color: color-mix(in srgb, var(--lab-accent) 65%, var(--lab-line)); background: color-mix(in srgb, var(--lab-accent) 9%, var(--lab-surface)); color: var(--lab-ink); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--lab-accent) 25%, transparent); }
+.admissions-lab-tab:focus-visible { z-index: 1; border-radius: 12px; @include tokens.focus-ring; }
+.admissions-lab-tab-index { padding-top: 2px; color: var(--lab-muted); font-variant-numeric: tabular-nums; font-size: 8px; letter-spacing: .06em; }
+.admissions-lab-tab-copy { display: grid; gap: 6px; }
+.admissions-lab-tab-copy strong { color: var(--lab-ink); font-size: 10px; font-weight: 780; line-height: 1.35; }
+.admissions-lab-tab-copy small { color: var(--lab-muted); font-size: 9px; font-weight: 450; line-height: 1.45; }
+.admissions-lab-tab-arrow { color: var(--lab-muted); font-size: 12px; }
+.admissions-lab-content { min-width: 0; }
+.admissions-lab-tabpanel { outline: none; }
+.admissions-lab-tabpanel:focus-visible { border-radius: 12px; outline: 3px solid var(--lab-focus); outline-offset: 3px; }
+.admissions-lab-tabpanel[hidden] { display: none; }
+
+.admissions-lab-view { min-width: 0; }
+.admissions-lab-view-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; margin: 28px 0 20px; }
+.admissions-lab-eyebrow { margin: 0 0 7px; color: var(--lab-muted); font-size: 8px; font-weight: 800; letter-spacing: .16em; }
+.admissions-lab-view-heading h2 { max-width: 780px; margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(25px, 3.2vw, 38px); font-weight: 500; letter-spacing: -.04em; line-height: 1.12; }
+.admissions-lab-view-heading > div > p:last-child { margin: 9px 0 0; color: var(--lab-muted); font-size: 11px; line-height: 1.6; }
+.admissions-lab-step-count, .admissions-lab-inbox-count { display: inline-flex; align-items: baseline; gap: 5px; flex: 0 0 auto; color: var(--lab-muted); font-size: 10px; }
+.admissions-lab-step-count { font-family: Georgia, 'Times New Roman', serif; font-size: 21px; color: var(--lab-ink); }
+.admissions-lab-step-count > span { font-family: inherit; color: var(--lab-muted); font-size: 11px; }
+.admissions-lab-inbox-count { padding: 8px 11px; border: 1px solid var(--lab-line); border-radius: 999px; background: var(--lab-surface); }
+.admissions-lab-inbox-count strong { color: var(--lab-ink); font-size: 13px; }
+
+.admissions-lab-steps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; margin: 0 0 18px; padding: 0; list-style: none; }
+.admissions-lab-steps li { display: flex; min-width: 0; align-items: center; gap: 10px; padding: 12px 14px; border-top: 1px solid var(--lab-line); border-bottom: 1px solid var(--lab-line); color: var(--lab-muted); }
+.admissions-lab-steps li:first-child { border-right: 1px solid var(--lab-line); }
+.admissions-lab-steps li > span { display: grid; width: 25px; height: 25px; flex: 0 0 auto; place-items: center; border: 1px solid var(--lab-line); border-radius: 50%; font-size: 8px; }
+.admissions-lab-steps li.is-current > span { border-color: var(--lab-ink); background: var(--lab-ink); color: var(--lab-surface); }
+.admissions-lab-steps strong, .admissions-lab-steps small { display: block; }
+.admissions-lab-steps strong { color: var(--lab-ink); font-size: 10px; }
+.admissions-lab-steps small { margin-top: 3px; color: var(--lab-muted); font-size: 9px; }
+
+.admissions-lab-notice { display: flex; flex-direction: column; gap: 3px; padding: 12px 14px; border-left: 3px solid var(--lab-accent); background: var(--lab-soft); color: var(--lab-muted); font-size: 10px; line-height: 1.55; }
+.admissions-lab-notice strong { color: var(--lab-ink); font-size: 10px; }
+.admissions-lab-notice-admin { margin-bottom: 17px; }
+.admissions-lab-form { margin-top: 20px; padding: clamp(16px, 2.7vw, 26px); border: 1px solid var(--lab-line); border-radius: 13px; background: var(--lab-surface); box-shadow: 0 7px 24px #20211d08; }
+.admissions-lab-form-heading { display: flex; align-items: center; gap: 11px; margin: 0 0 14px; }
+.admissions-lab-step-number { display: grid; width: 29px; height: 29px; flex: 0 0 auto; place-items: center; border: 1px solid var(--lab-line); border-radius: 50%; color: var(--lab-muted); font-size: 10px; font-weight: 700; }
+.admissions-lab-form-heading h3 { margin: 0; font-size: 12px; font-weight: 770; }
+.admissions-lab-form-heading p { margin: 3px 0 0; color: var(--lab-muted); font-size: 9px; }
+.admissions-lab-choice-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 13px; }
+.admissions-lab-field { display: flex; min-width: 0; flex-direction: column; gap: 6px; }
+.admissions-lab-field label { color: var(--lab-ink); font-size: 10px; font-weight: 700; }
+.admissions-lab-field input, .admissions-lab-field select { width: 100%; min-height: 43px; padding: 0 11px; border: 1px solid var(--lab-line); border-radius: 8px; background: var(--lab-surface); color: var(--lab-ink); font: inherit; font-size: 10px; }
+.admissions-lab-field input:focus-visible, .admissions-lab-field select:focus-visible, .admissions-lab-check-field input:focus-visible, .admissions-lab-primary-button:focus-visible, .admissions-lab-secondary-button:focus-visible { @include tokens.focus-ring; }
+.admissions-lab-field input[aria-invalid='true'], .admissions-lab-field select[aria-invalid='true'] { border-color: #b34e40; }
+.admissions-lab-field-error { margin: 0; color: #a1372a; font-size: 9px; line-height: 1.45; }
+.admissions-lab-confirm-heading { margin: 22px 0 11px; }
+.admissions-lab-check-field { display: flex; align-items: flex-start; gap: 9px; padding: 7px 0; color: var(--lab-ink); cursor: pointer; font-size: 10px; line-height: 1.5; }
+.admissions-lab-check-field input { width: 15px; height: 15px; flex: 0 0 auto; margin: 0; accent-color: var(--lab-ink); }
+.admissions-lab-feedback { margin: 12px 0 0; padding: 10px 12px; border-radius: 8px; background: #e8f2e8; color: #315d3a; font-size: 10px; line-height: 1.5; }
+.admissions-lab-form-actions { display: flex; align-items: center; justify-content: space-between; gap: 15px; margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--lab-line); }
+.admissions-lab-form-actions > span { color: var(--lab-muted); font-size: 9px; }
+.admissions-lab-primary-button, .admissions-lab-secondary-button { display: inline-flex; min-height: 37px; align-items: center; justify-content: center; padding: 0 13px; border: 1px solid var(--lab-ink); border-radius: 8px; background: var(--lab-ink); color: var(--lab-surface); cursor: pointer; font: inherit; font-size: 10px; font-weight: 750; transition: transform .15s ease, background .15s ease; }
+.admissions-lab-primary-button:hover, .admissions-lab-secondary-button:hover { transform: translateY(-1px); background: #34372f; }
+.admissions-lab-primary-button:disabled { cursor: wait; opacity: .65; }
+
+.admissions-lab-inbox { min-height: 170px; }
+.admissions-lab-inbox-toolbar { display: grid; grid-template-columns: minmax(180px, 1fr) minmax(210px, 1fr) auto; align-items: end; gap: 12px; margin-bottom: 14px; }
+.admissions-lab-result-count { padding-bottom: 10px; color: var(--lab-muted); font-size: 9px; white-space: nowrap; }
+.admissions-lab-review-layout { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); align-items: start; gap: 13px; }
+.admissions-lab-case-list { display: grid; grid-template-columns: 1fr; gap: 10px; }
+.admissions-lab-case-card { min-width: 0; padding: 16px; border: 1px solid var(--lab-line); border-radius: 12px; background: var(--lab-surface); box-shadow: 0 7px 20px #20211d08; }
+.admissions-lab-case-card.is-selected { border-color: var(--lab-ink); box-shadow: 0 0 0 2px color-mix(in srgb, var(--lab-ink) 12%, transparent); }
+.admissions-lab-case-topline { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
+.admissions-lab-case-reference { color: var(--lab-ink); font-family: Georgia, 'Times New Roman', serif; font-size: 17px; letter-spacing: -.025em; }
+.admissions-lab-status { display: inline-flex; align-items: center; gap: 6px; max-width: 70%; color: var(--lab-muted); font-size: 8px; line-height: 1.4; text-align: right; }
+.admissions-lab-status > span { width: 6px; height: 6px; flex: 0 0 auto; border-radius: 50%; background: #a7a89e; }
+.admissions-lab-status-demo_reviewing > span { background: #c3912d; }
+.admissions-lab-status-demo_correction_requested > span { background: #b87922; }
+.admissions-lab-status-demo_correction_submitted > span { background: #4e7591; }
+.admissions-lab-status-demo_review_complete > span { background: #54825b; }
+.admissions-lab-case-options { display: grid; grid-template-columns: minmax(0, 1fr) 22px minmax(0, 1fr); align-items: center; gap: 7px; margin: 16px 0; padding: 13px 0; border-top: 1px solid var(--lab-line); border-bottom: 1px solid var(--lab-line); }
+.admissions-lab-case-options > div { display: flex; min-width: 0; flex-direction: column; gap: 5px; }
+.admissions-lab-case-options small { color: var(--lab-muted); font-size: 8px; }
+.admissions-lab-case-options strong { font-size: 10px; line-height: 1.4; }
+.admissions-lab-choice-arrow { color: var(--lab-muted); text-align: center; }
+.admissions-lab-case-footer { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.admissions-lab-case-footer > span:first-child { color: var(--lab-muted); font-size: 8px; }
+.admissions-lab-secondary-button { min-height: 31px; padding: 0 10px; border-color: var(--lab-line); background: var(--lab-surface); color: var(--lab-ink); font-size: 9px; }
+.admissions-lab-secondary-button:hover { background: var(--lab-soft); }
+.admissions-lab-complete-mark { color: #4c7653; font-size: 9px; font-weight: 700; }
+.admissions-lab-review-detail { min-width: 0; padding: 17px; border: 1px solid var(--lab-line); border-radius: 12px; background: var(--lab-surface); }
+.admissions-lab-review-detail-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.admissions-lab-review-detail-heading h3 { margin: 2px 0 0; color: var(--lab-ink); font-family: Georgia, 'Times New Roman', serif; font-size: 20px; }
+.admissions-lab-review-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 15px 0; }
+.admissions-lab-review-options > div { min-width: 0; padding: 11px; border-radius: 8px; background: var(--lab-soft); }
+.admissions-lab-review-options dt { color: var(--lab-muted); font-size: 8px; }
+.admissions-lab-review-options dd { margin: 5px 0 0; color: var(--lab-ink); font-size: 10px; font-weight: 700; overflow-wrap: anywhere; }
+.admissions-lab-review-checklist { padding: 12px; border: 1px solid var(--lab-line); border-radius: 8px; }
+.admissions-lab-review-checklist ul { display: grid; gap: 8px; margin: 8px 0 0; padding: 0; list-style: none; }
+.admissions-lab-review-checklist li { display: flex; gap: 8px; color: var(--lab-ink); font-size: 9px; line-height: 1.45; }
+.admissions-lab-review-checklist li > span { color: #4c7653; font-weight: 800; }
+.admissions-lab-review-action { display: grid; gap: 10px; margin-top: 13px; padding-top: 12px; border-top: 1px solid var(--lab-line); }
+.admissions-lab-review-action > p, .admissions-lab-correction-form > p { margin: 0; color: var(--lab-muted); font-size: 9px; line-height: 1.5; }
+.admissions-lab-correction-form { display: grid; justify-items: start; gap: 10px; }
+.admissions-lab-correction-form > .admissions-lab-field { width: 100%; }
+.admissions-lab-empty-state { display: grid; min-height: 200px; place-content: center; justify-items: center; padding: 22px; border: 1px dashed var(--lab-line); border-radius: 12px; text-align: center; }
+.admissions-lab-empty-state > span { display: grid; width: 34px; height: 34px; place-items: center; border-radius: 50%; background: var(--lab-soft); font-size: 18px; }
+.admissions-lab-empty-state h3 { margin: 11px 0 4px; font-size: 12px; }
+.admissions-lab-empty-state p { margin: 0; color: var(--lab-muted); font-size: 10px; }
+.admissions-lab-calendar-panel { min-height: 240px; }
+
+@media (max-width: 800px) {
+  .admissions-lab-tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .admissions-lab-inbox-toolbar { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .admissions-lab-result-count { grid-column: 1 / -1; padding: 0; }
+  .admissions-lab-review-layout { grid-template-columns: 1fr; }
+  .admissions-lab-case-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 600px) {
+  .admissions-workflow-lab { padding: 12px 13px 34px; }
+  .admissions-lab-shell-header { align-items: flex-start; flex-direction: column; gap: 13px; padding: 18px; border-radius: 14px; }
+  .admissions-lab-shell-copy { align-items: flex-start; gap: 12px; }
+  .admissions-lab-mark { width: 35px; height: 35px; border-radius: 10px; font-size: 20px; }
+  .admissions-lab-shell-eyebrow { font-size: 7px; letter-spacing: .1em; }
+  .admissions-lab-shell-header h1 { font-size: 23px; }
+  .admissions-lab-dev-badge { align-self: flex-start; }
+  .admissions-lab-safety-banner { align-items: flex-start; gap: 8px; margin: 10px 0 17px; padding: 10px; font-size: 9px; }
+  .admissions-lab-memory-indicator { display: none; }
+  .admissions-lab-tabs { grid-template-columns: 1fr; gap: 7px; }
+  .admissions-lab-tab { min-height: 66px; padding: 11px; }
+  .admissions-lab-tab-copy { gap: 3px; }
+  .admissions-lab-tab-copy strong { font-size: 10px; }
+  .admissions-lab-tab-index { font-size: 7px; }
+  .admissions-lab-view-heading { align-items: flex-start; margin-top: 21px; }
+  .admissions-lab-view-heading h2 { font-size: 27px; }
+  .admissions-lab-view-heading > div > p:last-child { font-size: 10px; }
+  .admissions-lab-step-count { font-size: 17px; }
+  .admissions-lab-steps { grid-template-columns: 1fr; }
+  .admissions-lab-steps li:first-child { border-right: 0; border-bottom: 0; }
+  .admissions-lab-choice-grid, .admissions-lab-case-list { grid-template-columns: 1fr; }
+  .admissions-lab-inbox-toolbar { grid-template-columns: 1fr; }
+  .admissions-lab-result-count { grid-column: auto; }
+  .admissions-lab-review-options { grid-template-columns: 1fr; }
+  .admissions-lab-review-detail { padding: 14px; }
+  .admissions-lab-form { padding: 15px; }
+  .admissions-lab-form-actions { align-items: stretch; flex-direction: column; }
+  .admissions-lab-primary-button { width: 100%; }
+  .admissions-lab-secondary-button { width: 100%; }
+  .admissions-lab-inbox-count { padding: 6px 8px; font-size: 8px; }
+  .admissions-lab-inbox-count strong { font-size: 11px; }
+  .admissions-lab-case-footer { align-items: flex-start; flex-direction: column; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .admissions-lab-tab, .admissions-lab-primary-button, .admissions-lab-secondary-button { transition: none; }
+}

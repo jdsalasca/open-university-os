@@ -1,0 +1,12 @@
+@use '../../../styles/tokens' as tokens;
+
+.public-program-directories { display: grid; gap: 14px; }
+.public-program-directory-switch { display: flex; width: fit-content; gap: 4px; padding: 4px; border: 1px solid #dfded1; border-radius: 9px; background: #f6f4ec; }
+.public-program-directory-switch button { min-height: 38px; padding: 0 16px; border: 1px solid transparent; border-radius: 6px; background: transparent; color: #62645d; font: inherit; font-size: 13px; font-weight: 800; cursor: pointer; }
+.public-program-directory-switch button[aria-pressed='true'] { border-color: #d8c98f; background: #fffdf7; color: #5d4c1f; box-shadow: 0 1px 3px rgb(30 32 26 / 10%); }
+.public-program-directory-switch button:focus-visible { @include tokens.focus-ring; }
+
+@media (max-width: 480px) {
+  .public-program-directory-switch { width: 100%; }
+  .public-program-directory-switch button { flex: 1; }
+}

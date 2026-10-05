@@ -14,7 +14,7 @@ Lee `docs/PROJECT.md` para la misión, visión, objetivo, ficha técnica y prior
 
 - El proyecto se llama **`open-university-os`** y es un monorepo: `backend/` contiene el monolito Java/Spring Boot y `frontend/` el monolito Vite/React/TypeScript, con un único `develop` y un único CI. La decisión está registrada en [ADR-0005](docs/architecture/decisions/ADR-0005-single-repository-open-university-os.md). La visibilidad pública del código no habilita datos ni operación institucional.
 - Política de ramas remotas: conserva únicamente `origin/develop`. No crees ni publiques ramas de funcionalidad ni PRs; si se necesita aislamiento local, usa un worktree detached iniciado desde `origin/develop`. Publica solo mediante fast-forward a `develop` con autorización explícita del usuario y verificación del SHA remoto.
-- Mientras la fusión no esté publicada, el frontend sigue llegando como submódulo en `frontend/`; no elimines ese puntero hasta que el contenido real esté en el repositorio único.
+- `frontend/` es contenido versionado del mismo repositorio, no un submódulo. No reintroducir `.gitmodules` ni un puntero git en `frontend/`. El historial anterior del frontend se conserva en su repositorio de origen mientras siga disponible.
 - Backend monolítico modular organizado por capacidades del negocio. No introducir microservicios, brokers ni duplicación de bases de datos sin una decisión arquitectónica aprobada y evidencia de necesidad.
 - MySQL es la base relacional objetivo. Flyway versiona el esquema; la aplicación nunca crea ni actualiza el esquema en producción.
 - MongoDB 8 está aprovisionado en el Compose para documentos que no encajen en el modelo relacional, pero **ningún puerto Spring lo consume todavía**: no se crea una segunda fuente de verdad sin un dominio asignado y su dueño. El perfil `sqlite` de test permite ejecutar el backend sin contenedor; no sustituye a MySQL como motor objetivo.
@@ -45,7 +45,7 @@ Lee `docs/PROJECT.md` para la misión, visión, objetivo, ficha técnica y prior
 - Diseñar interfaces antes de adaptadores. Mantener alta cohesión, bajo acoplamiento y responsabilidades SOLID sin agregar capas vacías.
 - Antes de agregar entidad, endpoint, token visual o helper, revisar duplicación y reutilizar el modelo/capacidad existente cuando corresponda.
 - Ejecutar las verificaciones indicadas por el plan y reportar únicamente resultados observados.
-- Los cambios del frontend pasan por `frontend/.github/workflows/ci.yml` (`npm test`, `npm run build`, `npm run lint`); los del backend por `.github/workflows/ci.yml` (Java de `.sdkmanrc`, Maven `verify` y contratos MySQL 8.4 sobre servicio desechable). No añadir secretos ni apuntar CI a Compose, producción o datos institucionales. El perfil de latencia `<50 ms` se mide por separado con su volumen, concurrencia y muestras documentados; un runner hospedado no certifica el SLO institucional.
+- Todo el CI vive en `.github/workflows/ci.yml`, con un job `backend` (Java de `.sdkmanrc`, Maven `verify` y contratos MySQL 8.4 sobre servicio desechable) y un job `frontend` (`npm ci`, `npm test`, `npm run build`, `npm run lint` con `working-directory: frontend`). No añadir secretos ni apuntar CI a Compose, producción o datos institucionales. El perfil de latencia `<50 ms` se mide por separado con su volumen, concurrencia y muestras documentados; un runner hospedado no certifica el SLO institucional.
 
 ## Seguridad, datos y operación
 

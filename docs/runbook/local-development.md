@@ -3,13 +3,13 @@
 ## Requisitos
 
 - Docker Desktop con Docker Compose v2.23 o posterior y motor en ejecución.
-- Git y GitHub CLI configurado para los repositorios públicos `open-university-frontend` y `open-university-backend`.
+- Git y GitHub CLI configurado para el repositorio público `open-university-os`.
 - Para compilar Java directamente en el host: SDKMAN con la versión declarada en `.sdkmanrc` (`25.0.4-tem`). El flujo Docker usa una imagen Maven basada en JDK 25.
 - Para pruebas del frontend en el host: Node.js 24 y npm.
 
 ## Integración continua
 
-Cada `push` a `develop`, `pull_request` dirigido a `develop` y ejecución manual verifica el repositorio correspondiente. El workflow de `open-university-frontend` instala el lockfile con Node 24 y ejecuta `npm test`, `npm run build` y `npm run lint`. El workflow de `open-university-backend` toma Java 25 desde `.sdkmanrc`, ejecuta Maven `verify` y activa los contratos MySQL contra un servicio efímero MySQL 8.4 del runner. Los datos de prueba son sintéticos, la base no usa volumen persistente y el pipeline no recibe secretos de producción ni conecta al Compose local.
+Cada `push` a `develop`, `pull_request` dirigido a `develop` y ejecución manual ejecutan un único workflow, `.github/workflows/ci.yml`, con dos jobs independientes. El job `frontend` instala el lockfile con Node 24 y ejecuta `npm test`, `npm run build` y `npm run lint` sobre `frontend/`. El job `backend` toma Java 25 desde `.sdkmanrc`, ejecuta Maven `verify` y activa los contratos MySQL contra un servicio efímero MySQL 8.4 del runner. Los datos de prueba son sintéticos, la base no usa volumen persistente y el pipeline no recibe secretos de producción ni conecta al Compose local.
 
 El perfil MySQL de latencia se ejecuta aparte con la carga, muestras y concurrencia definidas en la sección [contrato y perfil MySQL de paginación curricular](#contrato-y-perfil-mysql-de-paginación-curricular). Sus promedios locales no certifican el SLO institucional ni se comparan directamente con un runner hospedado.
 
@@ -18,13 +18,12 @@ El helper `tools/use-sdkman-java.ps1` lee la versión exacta de `.sdkmanrc`; no 
 ## Preparar el checkout
 
 ```powershell
-gh repo clone jdsalasca/open-university-backend
-Set-Location open-university-backend
+gh repo clone jdsalasca/open-university-os
+Set-Location open-university-os
 git switch develop
-git submodule update --init --recursive
 ```
 
-El checkout integra `open-university-frontend` en `frontend/`. Después de publicar cambios del frontend en `develop`, actualiza y confirma el nuevo gitlink en el backend.
+El monorepo contiene `backend/` y `frontend/` como contenido versionado. No hay submódulos que inicializar.
 
 ## Iniciar y observar
 
@@ -102,7 +101,7 @@ El build local del 2 de octubre de 2026, después de añadir el preview temporal
 
 ### Contrato y perfil MySQL de paginación curricular
 
-Desde la raíz del repositorio backend puedes repetir el perfil local:
+Desde la raíz del monorepo puedes repetir el perfil local:
 
 ```powershell
 .\tools\verify-mysql-curriculum.ps1

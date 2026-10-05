@@ -1,0 +1,287 @@
+@use '../../styles/tokens' as tokens;
+
+.role-access {
+  width: min(100%, 1510px);
+  margin: 0 auto;
+  padding: clamp(20px, 3vw, 42px) clamp(18px, 4vw, 60px) 28px;
+  color: tokens.$identity-ink;
+}
+
+.role-access-hero {
+  position: relative;
+  display: grid;
+  min-height: 228px;
+  grid-template-columns: minmax(0, 1fr) 155px;
+  align-items: center;
+  gap: 26px;
+  overflow: hidden;
+  padding: clamp(25px, 4vw, 46px);
+  border-radius: 17px;
+  background: linear-gradient(112deg, #1b211b 0%, #293429 59%, #373a2c 100%);
+  color: #fafaf4;
+  isolation: isolate;
+
+  &::after {
+    position: absolute;
+    z-index: -1;
+    inset: auto -10% -155px 29%;
+    height: 235px;
+    transform: rotate(-8deg);
+    border: 1px solid #ffcc2921;
+    border-radius: 50%;
+    content: '';
+  }
+
+  h1 {
+    margin: 0;
+    color: #fffef6;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(31px, 4vw, 49px);
+    font-weight: 500;
+    letter-spacing: -.045em;
+    line-height: 1.05;
+  }
+
+  > div:first-child > p:last-child {
+    max-width: 660px;
+    margin: 13px 0 0;
+    color: #c6cbc0;
+    font-size: 12px;
+    line-height: 1.65;
+  }
+}
+
+.role-access-kicker {
+  margin: 0 0 12px;
+  color: #c3c4ad;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: .18em;
+}
+
+.role-access-hero-mark {
+  position: relative;
+  display: grid;
+  width: 132px;
+  height: 132px;
+  place-items: center;
+  border: 1px solid #ffffff24;
+  border-radius: 46% 54% 46% 54%;
+  background: #ffffff08;
+  color: var(--brand-primary, #ffcc29);
+
+  span {
+    display: grid;
+    width: 43px;
+    height: 43px;
+    place-items: center;
+    border: 1px solid var(--brand-primary, #ffcc29);
+    border-radius: 50%;
+    background: #222920;
+    font-size: 21px;
+    box-shadow: 0 0 0 8px #ffcc2918;
+  }
+
+  i {
+    position: absolute;
+    width: 84px;
+    height: 84px;
+    border: 1px solid #ffcc2940;
+    border-radius: 50%;
+
+    &:last-child { width: 112px; height: 112px; border-style: dashed; border-color: #ffffff26; }
+  }
+}
+
+.role-access-hero-meta {
+  display: flex;
+  grid-column: 1 / -1;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: -5px;
+
+  span {
+    display: inline-flex;
+    min-height: 25px;
+    align-items: center;
+    padding: 0 9px;
+    border: 1px solid #ffffff28;
+    border-radius: 5px;
+    color: #d4d5c9;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: .035em;
+  }
+}
+
+.role-access-locked,
+.role-access-loading,
+.role-access-feedback,
+.role-access-error {
+  margin: 18px 0 0;
+  padding: 13px 15px;
+  border: 1px solid tokens.$identity-border;
+  border-radius: 9px;
+  background: #fff;
+  color: #676a60;
+  font-size: 10px;
+  line-height: 1.55;
+}
+
+.role-access-locked { border-color: #e8dfc4; background: #faf7eb; color: #695c37; }
+.role-access-feedback.is-success { border-color: #d6e5d8; background: #f3f8f2; color: #376549; }
+.role-access-feedback.is-info { border-color: #e8dfc4; background: #faf7eb; color: #695c37; }
+.role-access-feedback.is-error { border-color: #ecd8d3; background: #fff8f6; color: #84564b; }
+
+.role-access-error { display: flex; align-items: center; justify-content: space-between; gap: 18px; border-color: #ecd8d3; color: #84564b; }
+.role-access-error p { margin: 0; }
+.role-access-error button { min-height: 33px; padding: 0 12px; border: 1px solid #d8c2bb; border-radius: 6px; background: #fff; color: #684c43; font-size: 9px; font-weight: 700; cursor: pointer; }
+
+.role-access-grid { display: grid; grid-template-columns: minmax(0, 1.04fr) minmax(0, .96fr); align-items: start; gap: 15px; margin-top: 17px; }
+
+.role-access-card {
+  min-width: 0;
+  padding: clamp(16px, 2vw, 23px);
+  border: 1px solid #e4e6dd;
+  border-radius: 13px;
+  background: #fff;
+  box-shadow: 0 6px 20px #282b1b08;
+}
+
+.role-access-card-heading { display: flex; align-items: center; gap: 11px; margin-bottom: 19px; }
+.role-access-step { display: grid; width: 32px; height: 32px; flex: 0 0 auto; place-items: center; border: 1px solid #ece3c6; border-radius: 9px; background: #fbf7e9; color: #8a742c; font-size: 9px; font-weight: 800; }
+.role-access-card-heading p { margin: 0 0 4px; color: #92948a; font-size: 7px; font-weight: 800; letter-spacing: .14em; }
+.role-access-card-heading h2 { margin: 0; color: #30332b; font-family: Georgia, 'Times New Roman', serif; font-size: 19px; font-weight: 500; letter-spacing: -.025em; }
+
+.role-access-search { display: grid; gap: 7px; }
+.role-access-search > label,
+.role-access-grant-form > label,
+.role-access-grant-form .role-access-form-row label,
+.role-access-revoke-confirmation > label {
+  display: grid;
+  min-width: 0;
+  gap: 6px;
+  color: #606359;
+  font-size: 8px;
+  font-weight: 750;
+  line-height: 1.4;
+}
+
+.role-access-search-row { display: flex; gap: 7px; }
+.role-access-search input,
+.role-access-grant-form input,
+.role-access-grant-form select,
+.role-access-revoke-confirmation input {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  min-height: 39px;
+  padding: 8px 10px;
+  border: 1px solid #dcded6;
+  border-radius: 7px;
+  background: #fcfcf9;
+  color: #292b24;
+  font: inherit;
+  font-size: 10px;
+}
+
+.role-access-search input { flex: 1; }
+.role-access-search-row button,
+.role-access-submit,
+.role-access-revoke-confirmation button {
+  min-height: 39px;
+  padding: 0 13px;
+  border: 1px solid #344537;
+  border-radius: 7px;
+  background: #334536;
+  color: #fff;
+  font: inherit;
+  font-size: 9px;
+  font-weight: 750;
+  cursor: pointer;
+  transition: transform .15s ease, background-color .15s ease;
+}
+
+.role-access-search-row button:hover:not(:disabled),
+.role-access-submit:hover:not(:disabled),
+.role-access-revoke-confirmation button:hover:not(:disabled) { transform: translateY(-1px); background: #27372a; }
+.role-access-search-row button:disabled,
+.role-access-submit:disabled,
+.role-access-revoke-confirmation button:disabled { opacity: .55; cursor: wait; }
+.role-access-search small,
+.role-access-grant-form small,
+.role-access-revoke-confirmation p { color: #92948b; font-size: 8px; line-height: 1.5; }
+
+.role-access-identity-results,
+.role-access-assignment-list > ul { display: grid; gap: 7px; margin: 13px 0 0; padding: 0; list-style: none; }
+.role-access-identity-results > li > button { display: flex; width: 100%; min-width: 0; align-items: center; gap: 10px; padding: 10px; border: 1px solid #e8e9e2; border-radius: 8px; background: #fdfdfa; color: #3b3d35; text-align: left; cursor: pointer; transition: border-color .15s ease, background-color .15s ease; }
+.role-access-identity-results > li > button:hover,
+.role-access-identity-results > li > button.is-selected { border-color: #cfc291; background: #fffdf5; }
+.role-access-identity-results > li > button > span:nth-child(2) { display: grid; min-width: 0; gap: 4px; }
+.role-access-identity-results strong { overflow: hidden; color: #363830; font-size: 10px; text-overflow: ellipsis; white-space: nowrap; }
+.role-access-identity-results small { overflow: hidden; color: #92948b; font-size: 8px; text-overflow: ellipsis; white-space: nowrap; }
+.role-access-identity-mark { display: grid; width: 29px; height: 29px; flex: 0 0 auto; place-items: center; border: 1px solid #e8e5d9; border-radius: 8px; background: #faf8ef; color: #927b2d; font-size: 15px; }
+.role-access-select-arrow { margin-left: auto; color: #9b9b8f; font-size: 12px; }
+
+.role-access-assignment-list { margin-top: 17px; padding-top: 15px; border-top: 1px solid #eff0eb; }
+.role-access-subheading { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.role-access-subheading h3 { margin: 0; color: #4b4d44; font-size: 10px; font-weight: 750; }
+.role-access-subheading span { color: #888a80; font-size: 8px; }
+.role-access-assignment-list > ul > li { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; align-items: center; gap: 9px; padding: 10px 0; border-bottom: 1px solid #f0f1ec; }
+.role-access-assignment-copy { display: grid; min-width: 0; gap: 4px; }
+.role-access-assignment-copy strong { color: #393b33; font-size: 9px; }
+.role-access-assignment-copy span,
+.role-access-assignment-copy small { overflow: hidden; color: #87897f; font-size: 8px; text-overflow: ellipsis; white-space: nowrap; }
+.role-access-state { padding: 4px 6px; border-radius: 4px; background: #edf5ed; color: #4e7856; font-size: 7px; font-weight: 750; }
+.role-access-state.is-revoked { background: #f4ece9; color: #8a5f50; }
+.role-access-revoke-button { min-height: 28px; padding: 0 8px; border: 1px solid #ddd8d0; border-radius: 5px; background: #fff; color: #77584b; font-size: 8px; font-weight: 750; cursor: pointer; }
+.role-access-revoke-button:disabled { opacity: .55; cursor: wait; }
+.role-access-revoke-confirmation { display: grid; grid-column: 1 / -1; gap: 8px; padding: 11px; border: 1px solid #e7dfc7; border-radius: 8px; background: #fbf8ee; }
+.role-access-revoke-confirmation p { margin: 0; color: #6c6248; }
+.role-access-revoke-confirmation > div { display: flex; flex-wrap: wrap; gap: 7px; }
+.role-access-revoke-confirmation button { min-height: 31px; padding: 0 10px; font-size: 8px; }
+.role-access-revoke-confirmation button.secondary { border-color: #d9d9d1; background: #fff; color: #55564e; }
+
+.role-access-empty,
+.role-access-inline-error,
+.role-access-form-placeholder,
+.role-access-hint,
+.role-access-readonly-note { margin: 13px 0 0; padding: 11px; border: 1px dashed #e2e3db; border-radius: 7px; background: #fbfbf8; color: #797b72; font-size: 9px; line-height: 1.55; }
+.role-access-inline-error { border-style: solid; border-color: #ecd8d3; background: #fff8f6; color: #895a4d; }
+.role-access-readonly-note { border-style: solid; border-color: #e8dfc4; background: #faf7eb; color: #6f6038; }
+
+.role-access-grant-form { display: grid; gap: 10px; }
+.role-access-selected-target { display: flex; align-items: center; gap: 9px; padding: 10px; border: 1px solid #e9e9e1; border-radius: 8px; background: #fbfbf8; }
+.role-access-selected-target > span:last-child { display: grid; min-width: 0; gap: 4px; }
+.role-access-selected-target small { color: #92948a; font-size: 7px; font-weight: 800; letter-spacing: .12em; }
+.role-access-selected-target strong { overflow: hidden; color: #363830; font-size: 9px; text-overflow: ellipsis; white-space: nowrap; }
+.role-access-grant-form .role-access-form-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+.role-access-permission-note { margin: -3px 0 0; padding: 8px 9px; border-left: 2px solid #ddc75e; background: #fcfaef; color: #756b47; font-size: 8px; line-height: 1.55; }
+.role-access-form-footnote { margin: 0; color: #92948b; font-size: 8px; line-height: 1.55; }
+.role-access-submit { justify-self: start; min-width: 128px; margin-top: 2px; }
+
+.role-access :is(button, input, select):focus-visible { @include tokens.focus-ring; }
+.role-access input:disabled,
+.role-access select:disabled { background: #f1f2ee; color: #77786f; }
+
+@media (max-width: 950px) {
+  .role-access-grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .role-access { padding: 19px 14px 22px; }
+  .role-access-hero { min-height: 0; grid-template-columns: minmax(0, 1fr) 78px; gap: 12px; padding: 22px 17px 17px; border-radius: 12px; }
+  .role-access-hero-mark { width: 76px; height: 76px; }
+  .role-access-hero-mark i { width: 51px; height: 51px; }
+  .role-access-hero-mark i:last-child { width: 66px; height: 66px; }
+  .role-access-hero-mark span { width: 32px; height: 32px; font-size: 16px; }
+  .role-access-hero-meta { gap: 5px; margin-top: 0; }
+  .role-access-hero-meta span { min-height: 22px; font-size: 7px; }
+  .role-access-card { padding: 15px; }
+  .role-access-search-row { align-items: stretch; flex-direction: column; }
+  .role-access-search-row button { min-height: 36px; }
+  .role-access-grant-form .role-access-form-row { grid-template-columns: minmax(0, 1fr); }
+  .role-access-assignment-list > ul > li { grid-template-columns: minmax(0, 1fr) auto; }
+  .role-access-state { grid-column: 2; grid-row: 1; }
+  .role-access-revoke-button { grid-column: 2; grid-row: 2; }
+}

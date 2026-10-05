@@ -1,0 +1,33 @@
+@use '../../styles/tokens' as tokens;
+
+.academic-period-history { margin-top: 7px; }
+.academic-period-history-toggle { min-height: 27px; padding: 0 8px; border: 1px solid #d8ddd4; border-radius: 5px; background: #fff; color: #465947; font: inherit; font-size: 8px; font-weight: 700; cursor: pointer; }
+.academic-period-history-toggle:focus-visible, .academic-period-history-error button:focus-visible { @include tokens.focus-ring; }
+.academic-period-history-content { display: grid; gap: 12px; margin-top: 9px; padding: 11px; border: 1px solid #e8e9e2; border-radius: 7px; background: #fafbf8; }
+.academic-period-history-content[hidden] { display: none; }
+.academic-period-history-section { display: grid; gap: 7px; }
+.academic-period-history-section h4 { margin: 0; color: #35382f; font-size: 9px; }
+.academic-period-history-revisions, .academic-period-history-events { display: grid; gap: 7px; margin: 0; padding: 0; list-style: none; }
+.academic-period-history-revisions > li, .academic-period-history-events > li { display: grid; gap: 4px; min-width: 0; padding: 8px; border: 1px solid #e8e9e2; border-radius: 6px; background: #fff; color: #55564e; font-size: 8px; line-height: 1.45; }
+.academic-period-history-revisions > li > p { margin: 0; overflow-wrap: anywhere; color: #77786f; }
+.academic-period-history-state { width: fit-content; padding: 2px 5px; border-radius: 4px; background: #f1f1ed; color: #73746d; font-size: 7px; font-weight: 700; }
+.academic-period-history-state.revision-published { background: #edf5ec; color: #528058; }
+.academic-period-history-revisions ul { display: grid; gap: 4px; margin: 2px 0 0; padding: 6px 0 0; border-top: 1px solid #efefe9; list-style: none; }
+.academic-period-history-revisions ul li { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 8px; }
+.academic-period-history-revisions time, .academic-period-history-events time { color: #77786f; font-size: 7px; }
+.academic-period-history-events span { overflow-wrap: anywhere; color: #77786f; }
+.academic-period-history-footnote, .academic-period-history-empty, .academic-period-history-message { margin: 0; color: #77786f; font-size: 8px; line-height: 1.45; }
+.academic-period-history-error { display: grid; gap: 7px; }
+.academic-period-history-error p { margin: 0; color: #965347; font-size: 8px; line-height: 1.5; }
+.academic-period-history-error button { width: fit-content; min-height: 26px; padding: 0 8px; border: 1px solid #d8c6c0; border-radius: 5px; background: #fff; color: #63463f; font: inherit; font-size: 8px; font-weight: 700; cursor: pointer; }
+.academic-period-history-feedback { margin: 0; font-size: 8px; line-height: 1.5; }
+.academic-period-history-feedback.is-success { color: #356148; }
+.academic-period-history-feedback.is-error { color: #965347; }
+.academic-period-history-actions { display: grid; gap: 7px; }
+.academic-period-publish-row { display: flex; flex-wrap: wrap; gap: 7px; }
+.academic-period-history-actions button, .academic-period-publish-confirmation button { min-height: 28px; padding: 0 9px; border: 1px solid #465947; border-radius: 5px; background: #465947; color: #fff; font: inherit; font-size: 8px; font-weight: 700; cursor: pointer; }
+.academic-period-history-actions button.secondary, .academic-period-publish-confirmation button.secondary { border-color: #d3d7ce; background: #fff; color: #55564e; }
+.academic-period-history-actions button:focus-visible, .academic-period-publish-confirmation button:focus-visible { @include tokens.focus-ring; }
+.academic-period-history-actions button:disabled, .academic-period-publish-confirmation button:disabled { opacity: .55; cursor: wait; }
+.academic-period-publish-confirmation { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; width: 100%; padding: 8px; border: 1px solid #e8dfc6; border-radius: 6px; background: #faf7ed; }
+.academic-period-publish-confirmation p { flex-basis: 100%; margin: 0; color: #625c49; font-size: 8px; line-height: 1.45; }

@@ -1,0 +1,252 @@
+@use '../../styles/tokens' as tokens;
+
+.academic-operations {
+  width: min(100% - clamp(36px, 6.4vw, 96px), 1510px);
+  margin: 0 auto;
+  padding: 30px 0 20px;
+  color: tokens.$identity-ink;
+}
+
+.academic-operations-hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  min-height: 238px;
+  overflow: hidden;
+  padding: 27px 32px 20px;
+  border-radius: 17px;
+  background: #191b17;
+  color: #f9f8ef;
+  isolation: isolate;
+
+  &::before {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background: radial-gradient(ellipse at 86% 2%, #715e153c, transparent 34%),
+      linear-gradient(112deg, #191b17 5%, #262820 100%);
+    content: '';
+  }
+}
+
+.academic-operations-hero-copy { position: relative; z-index: 1; max-width: 690px; }
+.academic-operations-eyebrow { display: flex; align-items: center; gap: 8px; margin: 0 0 15px; color: #c9c2a4; font-size: 9px; font-weight: 750; letter-spacing: .14em; }
+.academic-operations-eyebrow > span:first-child { width: 7px; height: 7px; transform: rotate(45deg); background: var(--brand-primary, #ffcc29); }
+.academic-operations-hero h1 { max-width: 600px; margin: 0; color: #fff; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(28px, 3vw, 39px); font-weight: 500; letter-spacing: -.04em; line-height: 1.1; }
+.academic-operations-hero-copy > p:not(.academic-operations-eyebrow) { max-width: 570px; margin: 11px 0 17px; color: #b9bab0; font-size: 12px; line-height: 1.6; }
+.academic-preview-chip { display: inline-flex; align-items: center; gap: 7px; padding: 7px 10px; border: 1px solid #ffffff24; border-radius: 7px; background: #ffffff08; color: #d3d1c5; font-size: 9px; }
+.academic-preview-chip > span { color: var(--brand-primary, #ffcc29); font-size: 13px; }
+.academic-hero-mark { position: relative; align-self: center; justify-self: end; display: grid; width: 175px; height: 156px; place-items: center; }
+.academic-hero-ring { position: absolute; width: 139px; height: 139px; border: 1px solid #ffcc2935; border-radius: 50%; }
+.academic-hero-ring-one { transform: rotateX(63deg) rotate(38deg); }
+.academic-hero-ring-two { width: 115px; height: 115px; transform: rotateX(63deg) rotate(-38deg); border-color: #ffffff24; }
+.academic-hero-emblem { display: grid; width: 66px; height: 66px; place-items: center; border: 1px solid var(--brand-primary, #ffcc29); border-radius: 50%; color: var(--brand-primary, #ffcc29); font-family: Georgia, serif; font-size: 30px; box-shadow: 0 0 32px #ffcc2918; }
+.academic-operations-stats { grid-column: 1 / -1; display: flex; align-items: center; gap: clamp(20px, 5vw, 64px); padding-top: 14px; border-top: 1px solid #ffffff1b; }
+.academic-operations-stats > div { display: grid; gap: 3px; }
+.academic-operations-stats strong { color: #f1d977; font-family: Georgia, serif; font-size: 19px; font-weight: 500; }
+.academic-operations-stats span { color: #a9aaa0; font-size: 9px; }
+
+.academic-operations-note { display: flex; align-items: flex-start; gap: 10px; margin: 16px 0 18px; padding: 11px 14px; border: 1px solid #e9e3c9; border-radius: 9px; background: #fffdf4; color: #706849; font-size: 10px; line-height: 1.55; }
+.academic-operations-note > span { display: grid; flex: 0 0 19px; width: 19px; height: 19px; place-items: center; border-radius: 50%; background: #f1e7bd; color: #6d5a19; font-size: 11px; font-weight: 800; }
+.academic-operations-note p { margin: 0; }
+.academic-operations-note strong { color: #48401f; }
+
+.academic-structure-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(280px, .8fr); gap: 14px; }
+.academic-panel { min-width: 0; padding: 18px 19px 14px; border: 1px solid #e5e6df; border-radius: 12px; background: #fff; box-shadow: 0 3px 12px #282a1b05; }
+.academic-panel-heading { display: flex; align-items: center; gap: 11px; min-height: 38px; margin-bottom: 17px; }
+.academic-panel-heading > div { min-width: 0; }
+.academic-panel-heading h2 { margin: 2px 0 0; color: #24251f; font-family: Georgia, 'Times New Roman', serif; font-size: 19px; font-weight: 500; letter-spacing: -.02em; }
+.academic-panel-kicker { margin: 0; color: #8d8e84; font-size: 8px; font-weight: 750; letter-spacing: .13em; }
+.academic-panel-icon { display: grid; flex: 0 0 33px; width: 33px; height: 33px; place-items: center; border-radius: 9px; font-size: 16px; }
+.academic-icon-units { background: #f5efda; color: #74621e; }
+.academic-icon-sites { background: #eaf2ec; color: #50745d; }
+.academic-icon-periods { background: #eaf0f5; color: #48667d; }
+.academic-panel-count { display: grid; width: 26px; height: 26px; place-items: center; margin-left: auto; border: 1px solid #e8e8e1; border-radius: 7px; color: #73746d; font-size: 9px; font-weight: 700; }
+.academic-panel-footnote { margin: 15px 0 0; padding-top: 11px; border-top: 1px solid #f0f0eb; color: #92938b; font-size: 8px; line-height: 1.5; }
+.academic-empty-state { margin: 0; padding: 22px 15px; border: 1px dashed #dedfd7; border-radius: 8px; background: #fafaf7; color: #84857b; font-size: 10px; line-height: 1.55; text-align: center; }
+
+.academic-tree, .academic-tree-children, .academic-site-tree, .academic-site-tree ul, .academic-period-list, .academic-unattached-programs ul { margin: 0; padding: 0; list-style: none; }
+.academic-tree-wrap { min-height: 64px; }
+.academic-tree { display: grid; gap: 8px; }
+.academic-tree-node { min-width: 0; }
+.academic-unit-row { display: flex; align-items: center; gap: 10px; min-height: 52px; padding: 8px 10px; border: 1px solid #e9e9e2; border-radius: 8px; background: #fff; }
+.academic-unit-type { display: inline-flex; flex: 0 0 auto; min-width: 61px; justify-content: center; padding: 5px 6px; border-radius: 5px; background: #f7f2e3; color: #71601e; font-size: 8px; font-weight: 700; }
+.academic-unit-type-school { background: #eef3eb; color: #4b7053; }
+.academic-unit-type-academic_unit { background: #edf1f4; color: #596d7c; }
+.academic-unit-copy { display: grid; min-width: 0; gap: 4px; }
+.academic-unit-copy strong, .academic-site-row strong { overflow: hidden; color: #34352e; font-size: 10px; font-weight: 650; text-overflow: ellipsis; white-space: nowrap; }
+.academic-unit-copy small, .academic-site-row small { color: #94958c; font-size: 8px; letter-spacing: .04em; }
+.academic-sort-order { display: grid; flex: 0 0 23px; width: 23px; height: 23px; place-items: center; margin-left: auto; border-radius: 6px; background: #f5f5f1; color: #86877e; font-size: 8px; font-weight: 700; }
+.academic-tree-children { display: grid; gap: 6px; margin: 7px 0 1px 20px; padding-left: 12px; border-left: 1px solid #dedfd5; }
+.academic-program-node { display: flex; align-items: center; gap: 7px; min-height: 31px; color: #53554c; font-size: 9px; }
+.academic-program-mark { color: #9c9d94; font-size: 13px; }
+.academic-program-code { flex: 0 0 auto; color: #74621e; font-size: 8px; font-weight: 750; letter-spacing: .025em; }
+.academic-program-node small { margin-left: auto; color: #9a9b93; font-size: 8px; }
+.academic-unattached-programs { margin-top: 14px; padding: 11px 12px; border: 1px dashed #e5d8aa; border-radius: 8px; background: #fffcf1; }
+.academic-unattached-programs > p { margin: 0 0 5px; color: #7b6a30; font-size: 8px; font-weight: 700; }
+.academic-affiliation-timeline { margin-top: 15px; padding-top: 13px; border-top: 1px solid #ecece6; }
+.academic-affiliation-timeline h3 { margin: 0 0 9px; color: #4a4b43; font-family: Georgia, 'Times New Roman', serif; font-size: 14px; font-weight: 500; }
+.academic-affiliation-timeline ul { display: grid; gap: 7px; margin: 0; padding: 0; list-style: none; }
+.academic-affiliation-timeline li { display: grid; gap: 5px; padding: 10px 11px; border: 1px solid #e9e9e2; border-radius: 8px; background: #fcfcf9; color: #686960; font-size: 9px; }
+.academic-affiliation-row-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.academic-affiliation-row-heading strong { color: #34352e; font-size: 10px; font-weight: 650; }
+.academic-affiliation-row-heading > span { flex: 0 0 auto; padding: 4px 6px; border-radius: 5px; background: #edf3ed; color: #4c6f55; font-size: 7px; font-weight: 700; }
+.academic-affiliation-row-heading > span.is-outside-current { background: #f4f1e6; color: #77662e; }
+.academic-affiliation-timeline li p, .academic-affiliation-timeline li small { margin: 0; color: #77786f; font-size: 8px; line-height: 1.5; }
+.academic-affiliation-timeline li small { color: #92938b; }
+
+.academic-site-tree { display: grid; gap: 8px; }
+.academic-site-node > ul { display: grid; gap: 6px; margin: 6px 0 0 21px; padding-left: 13px; border-left: 1px solid #dfe7e0; }
+.academic-site-row { display: flex; align-items: center; gap: 9px; min-height: 53px; padding: 8px 9px; border: 1px solid #e9e9e2; border-radius: 8px; }
+.academic-site-pin { display: grid; flex: 0 0 28px; width: 28px; height: 28px; place-items: center; border-radius: 7px; background: #eef4ef; color: #57725e; font-size: 14px; }
+.academic-site-row > div { display: grid; min-width: 0; gap: 4px; }
+
+.academic-order-editor { flex: 0 1 auto; min-width: 0; }
+.academic-order-edit-button { min-height: 29px; padding: 0 9px; border: 1px solid #d9dfd6; border-radius: 6px; background: #f7f9f6; color: #435c48; font: inherit; font-size: 8px; font-weight: 700; cursor: pointer; }
+.academic-order-edit-button:hover { border-color: #9db3a0; background: #eef4ee; }
+.academic-order-form { display: grid; gap: 6px; width: min(100%, 260px); min-width: 0; padding: 10px; border: 1px solid #dce4d9; border-radius: 8px; background: #fbfcfa; box-shadow: 0 5px 16px #20211d0a; }
+.academic-order-form label { color: #52574d; font-size: 8px; font-weight: 700; line-height: 1.4; }
+.academic-order-form input { box-sizing: border-box; width: 100%; min-width: 0; min-height: 32px; padding: 6px 8px; border: 1px solid #d9ddd5; border-radius: 5px; background: #fff; color: tokens.$identity-ink; font: inherit; font-size: 10px; }
+.academic-order-form input:disabled { background: #f1f2ee; color: #77786f; }
+.academic-order-actions { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 3px; }
+.academic-order-actions button { min-height: 29px; padding: 0 9px; border: 1px solid #465947; border-radius: 5px; background: #465947; color: #fff; font: inherit; font-size: 8px; font-weight: 700; cursor: pointer; }
+.academic-order-actions button.secondary { border-color: #d3d7ce; background: #fff; color: #55564e; }
+.academic-order-edit-button:focus-visible, .academic-order-form input:focus-visible, .academic-order-actions button:focus-visible { @include tokens.focus-ring; }
+.academic-order-edit-button:disabled, .academic-order-actions button:disabled { opacity: .55; cursor: wait; }
+.academic-order-form [role='alert'] { margin: 2px 0 0; color: #965347; font-size: 8px; line-height: 1.5; }
+
+.academic-create-entry { margin-top: 17px; padding: 14px 13px 12px; border: 1px solid #e4e6dd; border-radius: 10px; background: #fbfcf8; }
+.academic-create-entry-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.academic-create-entry-heading h3 { margin: 3px 0 0; color: #30342c; font-family: Georgia, 'Times New Roman', serif; font-size: 15px; font-weight: 500; }
+.academic-create-entry-heading > span { display: grid; width: 28px; height: 28px; place-items: center; border: 1px solid #e7dfc5; border-radius: 8px; background: #fffdf6; color: #907a2a; font-size: 18px; }
+.academic-create-entry-intro { margin: 8px 0 12px; color: #77796f; font-size: 9px; line-height: 1.55; }
+.academic-create-entry-form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px 10px; }
+.academic-create-entry-form label { display: grid; min-width: 0; gap: 5px; color: #52574d; font-size: 8px; font-weight: 700; line-height: 1.4; }
+.academic-create-entry-form input, .academic-create-entry-form select { box-sizing: border-box; width: 100%; min-width: 0; min-height: 34px; padding: 7px 8px; border: 1px solid #d9ddd5; border-radius: 6px; background: #fff; color: tokens.$identity-ink; font: inherit; font-size: 10px; }
+.academic-create-entry-form input:disabled, .academic-create-entry-form select:disabled { background: #f1f2ee; color: #77786f; }
+.academic-create-entry-form input:focus-visible, .academic-create-entry-form select:focus-visible, .academic-create-entry-actions button:focus-visible { @include tokens.focus-ring; }
+.academic-create-entry-reference, .academic-create-entry-actions { grid-column: 1 / -1; }
+.academic-create-entry-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-top: 2px; }
+.academic-create-entry-actions button { min-height: 33px; padding: 0 11px; border: 1px solid #465947; border-radius: 6px; background: #465947; color: #fff; font: inherit; font-size: 9px; font-weight: 700; cursor: pointer; }
+.academic-create-entry-actions button:disabled { opacity: .6; cursor: wait; }
+.academic-create-entry-actions p { margin: 0; color: #77796f; font-size: 8px; line-height: 1.45; }
+.academic-create-entry-feedback { margin: 10px 0 0; font-size: 9px; line-height: 1.5; }
+.academic-create-entry-feedback.is-success { color: #356148; }
+.academic-create-entry-feedback.is-warning { color: #816324; }
+.academic-create-entry-feedback.is-error { color: #965347; }
+
+.academic-periods-panel { margin-top: 14px; }
+.academic-period-form-panel { display: grid; gap: 10px; margin-top: 15px; padding: 13px; border: 1px solid #e4e6dd; border-radius: 10px; background: #fbfcf8; }
+.academic-period-form-panel > header h3, .academic-period-form-panel > header h4 { margin: 3px 0 0; color: #30342c; font-size: 13px; font-weight: 650; }
+.academic-period-form-intro { margin: 0; color: #77796f; font-size: 9px; line-height: 1.55; }
+.academic-period-form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 9px 10px; }
+.academic-period-form-field { display: grid; min-width: 0; gap: 5px; color: #52574d; font-size: 9px; font-weight: 700; line-height: 1.4; }
+.academic-period-form-select { box-sizing: border-box; width: 100%; min-width: 0; min-height: 34px; padding: 7px 9px; border: 1px solid #d9ddd5; border-radius: 6px; background: #fff; color: #33352f; font: inherit; font-size: 10px; }
+.academic-period-form-select:focus-visible, .academic-period-form-field select:focus-visible { outline: 3px solid var(--brand-focus, #1a1a1a); outline-offset: 2px; }
+.academic-period-form-field [role='alert'], .academic-period-form-field-error { color: #965347; font-size: 8px; font-weight: 500; }
+.academic-period-form-actions { display: flex; grid-column: 1 / -1; flex-wrap: wrap; align-items: center; gap: 8px; }
+.academic-period-form-actions button, .academic-period-form-remove { min-height: 32px; padding: 0 11px; border: 1px solid #465947; border-radius: 6px; background: #465947; color: #fff; font: inherit; font-size: 9px; font-weight: 700; cursor: pointer; }
+.academic-period-form-actions button.secondary { border-color: #d3d7ce; background: #fff; color: #55564e; }
+.academic-period-form-actions button:focus-visible, .academic-period-form-remove:focus-visible { outline: 3px solid var(--brand-focus, #1a1a1a); outline-offset: 2px; }
+.academic-period-form-actions button:disabled, .academic-period-form-remove:disabled { opacity: .55; cursor: wait; }
+.academic-period-form-actions > span { color: #77796f; font-size: 8px; line-height: 1.45; }
+.academic-period-form-feedback { margin: 0; font-size: 9px; line-height: 1.5; }
+.academic-period-form-feedback.is-success { color: #356148; }
+.academic-period-form-feedback.is-warning { color: #816324; }
+.academic-period-form-feedback.is-error { color: #965347; }
+.academic-calendar-create-panel, .academic-period-approval-panel { margin-top: 12px; padding: 11px; }
+.academic-calendar-activity { display: grid; grid-column: 1 / -1; min-width: 0; gap: 9px; margin: 0; padding: 10px; border: 1px solid #e7e8df; border-radius: 8px; background: #fff; }
+.academic-calendar-activity legend { padding: 0 5px; color: #465947; font-size: 9px; font-weight: 750; }
+.academic-calendar-activity .academic-period-form-grid { width: 100%; }
+.academic-period-form-remove { width: fit-content; border-color: #d3d7ce; background: #fff; color: #76544c; }
+.academic-calendar-create-panel .academic-period-form-actions { justify-content: flex-start; }
+.academic-open-badge { display: inline-flex; align-items: center; gap: 7px; margin-left: auto; padding: 6px 8px; border: 1px solid #dbe8dd; border-radius: 6px; color: #597861; font-size: 8px; white-space: nowrap; }
+.academic-open-badge > span { width: 5px; height: 5px; border-radius: 50%; background: #78b184; }
+.academic-period-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.academic-period-card { display: flex; align-items: center; gap: 13px; min-width: 0; padding: 12px; border: 1px solid #e8e9e2; border-radius: 9px; background: #fff; transition: border-color .18s ease, transform .18s ease; }
+.academic-period-card:hover { transform: translateY(-1px); border-color: #d7d4c2; }
+.academic-period-date { display: grid; flex: 0 0 49px; width: 49px; height: 48px; place-content: center; gap: 2px; border-radius: 8px; background: #f5f1e3; text-align: center; }
+.academic-period-date span { color: #85806a; font-size: 8px; }
+.academic-period-date strong { color: #5a4d22; font-size: 12px; letter-spacing: .02em; }
+.academic-period-copy { min-width: 0; flex: 1; }
+.academic-period-title-row { display: flex; align-items: center; gap: 7px; }
+.academic-period-title-row h3 { overflow: hidden; margin: 0; color: #34352e; font-size: 10px; font-weight: 700; text-overflow: ellipsis; white-space: nowrap; }
+.academic-period-state { padding: 3px 6px; border-radius: 4px; background: #edf5ec; color: #528058; font-size: 7px; font-weight: 750; }
+.academic-period-state.state-draft { background: #f1f1ed; color: #73746d; }
+.academic-period-state.state-approved { background: #edf2fa; color: #506f9d; }
+.academic-period-state.state-closed, .academic-period-state.state-cancelled { background: #f4eae7; color: #956254; }
+.academic-period-copy p { display: flex; flex-wrap: wrap; gap: 5px; margin: 5px 0 0; color: #77786f; font-size: 8px; }
+.academic-period-copy p strong { color: #55564e; }
+.academic-period-copy > small { display: block; overflow: hidden; margin-top: 4px; color: #999a92; font-size: 8px; line-height: 1.5; text-overflow: ellipsis; }
+.academic-period-action { min-height: 28px; margin-top: 9px; padding: 0 10px; border: 1px solid #465947; border-radius: 6px; background: #465947; color: #fff; font: inherit; font-size: 8px; font-weight: 700; cursor: pointer; }
+.academic-period-action.action-close { border-color: #d9d9d1; background: #fff; color: #55564e; }
+.academic-period-action:focus-visible, .academic-period-confirmation button:focus-visible { outline: 3px solid var(--brand-focus, #1a1a1a); outline-offset: 2px; }
+.academic-period-action:disabled, .academic-period-confirmation button:disabled { opacity: .55; cursor: wait; }
+.academic-period-confirmation { display: grid; gap: 8px; margin-top: 9px; padding: 10px; border: 1px solid #e8dfc6; border-radius: 7px; background: #faf7ed; }
+.academic-period-confirmation > p { margin: 0; color: #625c49; font-size: 8px; line-height: 1.55; }
+.academic-period-confirmation > div { display: flex; flex-wrap: wrap; gap: 6px; }
+.academic-period-confirmation button { min-height: 27px; padding: 0 9px; border: 1px solid #465947; border-radius: 5px; background: #465947; color: #fff; font: inherit; font-size: 8px; font-weight: 700; cursor: pointer; }
+.academic-period-confirmation button.secondary { border-color: #d3d1c7; background: #fff; color: #55564e; }
+.academic-relation-close-current { grid-column: 1 / -1; margin: 0; color: #77796f; font-size: 8px; line-height: 1.5; }
+.academic-relation-close-confirmation { display: grid; gap: 8px; margin-top: 11px; padding: 11px; border: 1px solid #e8dfc6; border-radius: 8px; background: #faf7ed; }
+.academic-relation-close-confirmation h4 { margin: 0; color: #30342c; font-size: 10px; }
+.academic-relation-close-confirmation p { margin: 0; color: #625c49; font-size: 8px; line-height: 1.6; }
+.academic-relation-close-confirmation > div { display: flex; flex-wrap: wrap; gap: 7px; }
+.academic-relation-close-confirmation button { min-height: 29px; padding: 0 10px; border: 1px solid #465947; border-radius: 6px; background: #465947; color: #fff; font: inherit; font-size: 8px; font-weight: 700; cursor: pointer; }
+.academic-relation-close-confirmation button.secondary { border-color: #d3d1c7; background: #fff; color: #55564e; }
+.academic-relation-close-confirmation button:focus-visible { @include tokens.focus-ring; }
+.academic-relation-close-confirmation button:disabled { opacity: .55; cursor: wait; }
+.academic-period-action-message { margin: 12px 0; padding: 10px 12px; border: 1px solid #dbe8dd; border-radius: 7px; background: #f3f8f2; color: #47714c; font-size: 9px; line-height: 1.5; }
+.academic-period-action-message.is-error { border-color: #efd8d0; background: #fbf3f0; color: #965347; }
+
+.academic-loading { display: flex; align-items: center; gap: 10px; min-height: 115px; padding: 20px; border: 1px solid #e6e7df; border-radius: 11px; background: #fff; color: #77786f; font-size: 11px; }
+.academic-loading-mark { width: 15px; height: 15px; border: 2px solid #e7e4d8; border-top-color: #a58c31; border-radius: 50%; animation: academic-spin .7s linear infinite; }
+.academic-load-error { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 17px 18px; border: 1px solid #ecd8d3; border-radius: 10px; background: #fff8f6; color: #714c44; font-size: 10px; }
+.academic-load-error p { margin: 5px 0 0; color: #927b74; }
+.academic-load-error button { min-height: 35px; padding: 0 12px; border: 1px solid #d9c2bc; border-radius: 7px; background: #fff; color: #63463f; font: inherit; font-size: 9px; font-weight: 700; cursor: pointer; }
+.academic-load-error button:focus-visible { @include tokens.focus-ring; }
+
+@keyframes academic-spin { to { transform: rotate(360deg); } }
+
+@media (max-width: 1050px) {
+  .academic-structure-grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 650px) {
+  .academic-operations { width: auto; margin: 0 15px; padding: 20px 0 12px; }
+  .academic-operations-hero { grid-template-columns: minmax(0, 1fr) 80px; min-height: 0; padding: 21px 17px 16px; border-radius: 13px; }
+  .academic-operations-eyebrow { flex-wrap: wrap; gap: 6px; font-size: 7px; }
+  .academic-operations-hero h1 { font-size: 27px; }
+  .academic-operations-hero-copy > p:not(.academic-operations-eyebrow) { font-size: 10px; }
+  .academic-preview-chip { font-size: 8px; }
+  .academic-hero-mark { width: 77px; height: 105px; }
+  .academic-hero-ring { width: 80px; height: 80px; }
+  .academic-hero-ring-two { width: 66px; height: 66px; }
+  .academic-hero-emblem { width: 43px; height: 43px; font-size: 22px; }
+  .academic-operations-stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 13px; padding-top: 12px; }
+  .academic-operations-stats strong { font-size: 16px; }
+  .academic-operations-note { margin-block: 13px; font-size: 9px; }
+  .academic-panel { padding: 15px 13px 12px; }
+  .academic-panel-heading h2 { font-size: 17px; }
+  .academic-panel-kicker { font-size: 7px; }
+  .academic-panel-count { width: 23px; height: 23px; }
+  .academic-period-list { grid-template-columns: minmax(0, 1fr); }
+  .academic-open-badge { padding: 5px 6px; font-size: 7px; }
+  .academic-load-error { align-items: stretch; flex-direction: column; }
+  .academic-load-error button { width: 100%; }
+  .academic-unit-row, .academic-site-row, .academic-program-node { flex-wrap: wrap; }
+  .academic-order-editor { max-width: 100%; }
+  .academic-order-form { width: min(100%, 260px); }
+  .academic-create-entry-form { grid-template-columns: minmax(0, 1fr); }
+  .academic-create-entry-reference, .academic-create-entry-actions { grid-column: auto; }
+  .academic-period-form-grid { grid-template-columns: minmax(0, 1fr); }
+  .academic-period-form-actions { grid-column: auto; }
+  .academic-calendar-activity { grid-column: auto; }
+  .academic-program-node small { margin-left: 0; }
+  .academic-affiliation-row-heading { flex-wrap: wrap; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .academic-loading-mark { animation-duration: .01ms; }
+  .academic-period-card { transition-duration: .01ms; }
+}

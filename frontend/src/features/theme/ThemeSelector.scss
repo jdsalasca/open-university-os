@@ -1,0 +1,53 @@
+@use '../../styles/tokens' as tokens;
+
+.theme-selector {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  margin: 0;
+  padding: 3px;
+  border: 1px solid var(--ui-border, #dedfd7);
+  border-radius: 10px;
+  background: var(--ui-surface-subtle, #f4f5ef);
+}
+
+.theme-selector-choice {
+  position: relative;
+  display: grid;
+  width: 34px;
+  height: 32px;
+  place-items: center;
+  border-radius: 7px;
+  color: var(--ui-text-muted, #77786f);
+  cursor: pointer;
+  transition: background-color .16s ease, color .16s ease;
+
+  input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+
+  &:has(input:checked) {
+    background: var(--ui-surface, #fff);
+    color: var(--ui-text-primary, #252620);
+    box-shadow: 0 1px 3px #1718151a;
+  }
+
+  &:has(input:focus-visible) {
+    @include tokens.focus-ring(1px);
+  }
+
+  &:hover { color: var(--ui-text-primary, #252620); }
+}
+
+.theme-selector-icon { display: grid; width: 16px; height: 16px; place-items: center; }
+.theme-selector-icon svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7; }
+.theme-selector-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-selector-choice { transition: none; }
+}

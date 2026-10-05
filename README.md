@@ -1,14 +1,13 @@
-# Universiry — Open University, checkout de integración
+# Universiry — Open University, monorepo `open-university-os`
 
-Plataforma para apoyar la digitalización de la UPTC y de otras universidades mediante servicios digitales robustos y confiables. El código se publica en dos repositorios coordinados: [`open-university-frontend`](https://github.com/jdsalasca/open-university-frontend) y [`open-university-backend`](https://github.com/jdsalasca/open-university-backend), ambos con `develop` como rama de integración. Este repositorio contiene el backend Spring Boot, `compose.yaml`, documentación y el frontend como submódulo para desarrollo local. La publicación del código no acredita aprobación institucional ni habilita datos o trámites reales.
+Plataforma para apoyar la digitalización de la UPTC y de otras universidades mediante servicios digitales robustos y confiables. El código se publica en un único repositorio, [`open-university-os`](https://github.com/jdsalasca/open-university-os), con `develop` como rama de integración: el backend Spring Boot en `backend/`, el frontend Vite/React/TypeScript en `frontend/` y `compose.yaml` en la raíz. La publicación del código no acredita aprobación institucional ni habilita datos o trámites reales.
 
 ## Clonar y levantar
 
 ```powershell
-gh repo clone jdsalasca/open-university-backend
-Set-Location open-university-backend
+gh repo clone jdsalasca/open-university-os
+Set-Location open-university-os
 git switch develop
-git submodule update --init --recursive
 docker compose up --build -d --wait
 ```
 
@@ -44,8 +43,8 @@ En `/#academia`, el panel protegido administra grupos en borrador para un period
 ## Estructura
 
 - `backend/`: Java 25 y Spring Boot; `.sdkmanrc` fija `25.0.4-tem` para el entorno host.
-- `frontend/`: submódulo al repositorio `open-university-frontend`, Vite, React, TypeScript y SCSS.
-- `compose.yaml`: servicios locales frontend, backend y MySQL 8.4 con Compose Watch.
+- `frontend/`: Vite, React, TypeScript y SCSS. Contenido del mismo repositorio, sin submódulo.
+- `compose.yaml`: servicios locales frontend, backend, MySQL 8.4 y MongoDB 8 con Compose Watch.
 - `docs/`: cronograma, alcance, modelo de datos, procesos, arquitectura C4 y runbooks.
 
 Consulta [el README del backend](backend/README.md) para su arquitectura, comandos SDKMAN y límites operativos.

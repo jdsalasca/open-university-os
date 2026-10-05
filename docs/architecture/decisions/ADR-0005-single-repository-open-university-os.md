@@ -26,13 +26,22 @@ llamaban `universiry_*` y renombrar cualquier servicio habría huérfano los dat
   dominio asignado y su dueño.
 - El perfil Spring `sqlite` permite ejecutar el backend sin contenedor para pruebas. MySQL 8.4 sigue
   siendo el motor relacional objetivo y Flyway versiona el esquema.
-- Hasta que el contenido real del frontend esté en el repositorio único, el submódulo se conserva en
-  `frontend/` y no se elimina su puntero.
+## Aplicación (5 de octubre de 2026)
+
+- `frontend/` pasó a ser contenido versionado del mismo repositorio: se retiró el puntero git y
+  `.gitmodules`. No hay submódulos que inicializar tras clonar.
+- El historial previo del frontend no se replica dentro del monorepo; se conserva en su
+  repositorio de origen mientras ese repositorio siga disponible.
+- Los dos workflows se unificaron en `.github/workflows/ci.yml` con dos jobs, `backend` y `frontend`.
+  El workflow del frontend anterior ejecutaba `npm ci` sin `working-directory`, lo que solo funcionaba
+  porque la raíz de aquel repositorio era el frontend; en el monorepo se fija `frontend/` y
+  `cache-dependency-path: frontend/package-lock.json`.
+- `compose.yaml` no necesitó cambios: sus contextos de construcción ya eran `./backend` y `./frontend`.
 
 ## Consecuencias
 
 - Un cambio que cruza frontend y backend entra en un solo commit y un solo CI.
-- Los dos remotos actuales se conservan intactos como origen y respaldo durante la transición.
+- Los dos remotos anteriores se conservan intactos como origen y respaldo durante la transición.
 - La base y el usuario MySQL develop mantienen sus nombres históricos: renombrarlos invalidaría los
   permisos ya concedidos dentro del volumen copiado.
 - MongoDB disponible no equivale a funcionalidad NoSQL; cada dominio que lo consuma debe registrar su

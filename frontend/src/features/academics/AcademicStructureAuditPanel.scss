@@ -1,0 +1,51 @@
+@use '../../styles/tokens' as tokens;
+
+.academic-structure-audit {
+  display: grid;
+  gap: 12px;
+  margin-top: 14px;
+  padding: 14px;
+  border: 1px solid #e4e6df;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgb(33 40 31 / 4%);
+}
+
+.academic-structure-audit-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.academic-structure-audit-heading h2 { margin: 0; color: #30342d; font-size: 15px; }
+.academic-structure-audit-heading p:not(.academic-structure-audit-kicker) { max-width: 72ch; margin: 6px 0 0; color: #77786f; font-size: 12px; line-height: 1.5; }
+.academic-structure-audit-kicker { margin: 0 0 4px; color: #79846a; font-size: 12px; font-weight: 800; letter-spacing: .12em; }
+.academic-structure-audit-badge { flex: 0 0 auto; padding: 5px 8px; border: 1px solid #e3e9df; border-radius: 999px; background: #f2f6ef; color: #48614a; font-size: 12px; font-weight: 800; }
+
+.academic-structure-audit-filters { display: grid; grid-template-columns: minmax(220px, 1.5fr) minmax(180px, 1fr) auto; align-items: end; gap: 9px; padding: 10px; border: 1px solid #eceee8; border-radius: 8px; background: #fafbf8; }
+.academic-structure-audit-filters label { display: grid; gap: 5px; color: #66695f; font-size: 11px; font-weight: 700; }
+.academic-structure-audit-filters input, .academic-structure-audit-filters select { width: 100%; min-height: 38px; padding: 0 9px; border: 1px solid #d9ddd4; border-radius: 6px; background: #fff; color: #35382f; font: inherit; font-size: 12px; }
+.academic-structure-audit-filters input:focus-visible, .academic-structure-audit-filters select:focus-visible, .academic-structure-audit-filters button:focus-visible, .academic-structure-audit-error button:focus-visible, .academic-structure-audit-more:focus-visible { @include tokens.focus-ring; }
+.academic-structure-audit-filters button, .academic-structure-audit-error button, .academic-structure-audit-more { min-height: 38px; padding: 0 12px; border: 1px solid #465947; border-radius: 6px; background: #465947; color: #fff; font: inherit; font-size: 11px; font-weight: 800; cursor: pointer; }
+.academic-structure-audit-filters button:disabled, .academic-structure-audit-more:disabled { opacity: .55; cursor: wait; }
+.academic-structure-audit-filters .academic-structure-audit-error { grid-column: 1 / -1; }
+.academic-structure-audit-status, .academic-structure-audit-empty { margin: 0; color: #77786f; font-size: 12px; }
+.academic-structure-audit-error { display: grid; justify-items: start; gap: 7px; margin: 0; color: #965347; font-size: 12px; line-height: 1.5; }
+.academic-structure-audit-error p { margin: 0; }
+.academic-structure-audit-events { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.academic-structure-audit-events > li { display: grid; gap: 7px; min-width: 0; padding: 10px; border: 1px solid #e8e9e2; border-radius: 7px; background: #fff; }
+.academic-structure-audit-event-heading { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 5px 12px; color: #53614b; font-size: 12px; font-weight: 800; }
+.academic-structure-audit-event-heading time { color: #77786f; font-size: 11px; font-weight: 500; }
+.academic-structure-audit-events > li > p { margin: 0; color: #3f423a; font-size: 13px; line-height: 1.45; }
+.academic-structure-audit-events dl { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 7px; margin: 0; }
+.academic-structure-audit-events dl > div { display: grid; gap: 3px; min-width: 0; }
+.academic-structure-audit-events dt { color: #8a8b82; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
+.academic-structure-audit-events dd { margin: 0; overflow-wrap: anywhere; color: #66695f; font-size: 12px; line-height: 1.4; }
+.academic-structure-audit-more { justify-self: center; }
+
+@media (max-width: 700px) {
+  .academic-structure-audit { padding: 11px; }
+  .academic-structure-audit-filters { grid-template-columns: 1fr; }
+  .academic-structure-audit-events dl { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,86 @@
+@use '../../../styles/tokens' as tokens;
+
+.grade-entry-demo {
+  --grade-ink: var(--ui-ink, #{tokens.$identity-ink});
+  --grade-muted: var(--ui-muted, #{tokens.$identity-muted});
+  --grade-line: var(--ui-border, #{tokens.$identity-border});
+  --grade-surface: var(--ui-surface, #fff);
+  --grade-soft: var(--ui-surface-raised, #f7f7f2);
+  --grade-accent: var(--brand-primary, #ffcc29);
+  width: min(100%, 1220px);
+  margin: 0 auto;
+  padding: clamp(18px, 3vw, 38px) clamp(16px, 4vw, 58px) 54px;
+  color: var(--grade-ink);
+}
+
+.grade-entry-hero {
+  display: flex;
+  min-height: 205px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  padding: clamp(23px, 4vw, 44px);
+  border: 1px solid color-mix(in srgb, var(--grade-accent) 24%, #3b3d34);
+  border-radius: 19px;
+  background: radial-gradient(circle at 92% 20%, color-mix(in srgb, var(--grade-accent) 20%, transparent) 0 98px, transparent 99px),
+    linear-gradient(112deg, #22241e, #151611 76%);
+  color: #fbfaf3;
+  box-shadow: 0 17px 42px #1517111c;
+}
+
+.grade-entry-hero > div { max-width: 700px; }
+.grade-entry-eyebrow { margin: 0 0 9px; color: var(--grade-muted); font-size: 9px; font-weight: 820; letter-spacing: .16em; }
+.grade-entry-hero .grade-entry-eyebrow { color: #d7d7c9; }
+.grade-entry-hero h1 { margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(26px, 3.7vw, 42px); font-weight: 500; letter-spacing: -.04em; line-height: 1.08; }
+.grade-entry-hero > div > p:last-child { max-width: 500px; margin: 12px 0 0; color: #c2c3b9; font-size: 13px; line-height: 1.6; }
+.grade-entry-hero-mark { display: grid; width: clamp(70px, 9vw, 104px); height: clamp(70px, 9vw, 104px); flex: 0 0 auto; place-items: center; transform: rotate(6deg); border: 1px solid #ffcc295c; border-radius: 31px; background: #ffcc2917; color: var(--grade-accent); font-family: Georgia, serif; font-size: clamp(37px, 5vw, 52px); }
+
+.grade-entry-notice { display: flex; align-items: flex-start; gap: 11px; margin: 15px 0 24px; padding: 13px 15px; border: 1px solid color-mix(in srgb, var(--grade-accent) 48%, var(--grade-line)); border-radius: 11px; background: color-mix(in srgb, var(--grade-accent) 12%, var(--grade-surface)); font-size: 11px; line-height: 1.55; }
+.grade-entry-notice-mark { display: grid; width: 21px; height: 21px; flex: 0 0 auto; place-items: center; border-radius: 50%; background: var(--grade-accent); font-family: Georgia, serif; font-size: 13px; font-weight: 800; }
+.grade-entry-notice strong { font-weight: 820; }
+.grade-entry-notice p { margin: 3px 0 0; color: var(--grade-muted); }
+
+.grade-entry-group-panel { display: grid; grid-template-columns: minmax(260px, 1.1fr) minmax(220px, .9fr); gap: 14px; margin-bottom: 14px; }
+.grade-entry-group-select, .grade-entry-group-detail { display: grid; min-width: 0; align-content: center; gap: 7px; padding: 15px 17px; border: 1px solid var(--grade-line); border-radius: 13px; background: var(--grade-surface); }
+.grade-entry-group-select > span, .grade-entry-group-detail > span, .grade-entry-student-ref > span { color: var(--grade-muted); font-size: 8px; font-weight: 820; letter-spacing: .12em; text-transform: uppercase; }
+.grade-entry-group-select select { width: 100%; min-height: 43px; padding: 0 12px; border: 1px solid var(--grade-line); border-radius: 8px; background: var(--grade-soft); color: var(--grade-ink); font: inherit; font-size: 11px; }
+.grade-entry-group-detail strong { font-size: 12px; }
+.grade-entry-group-detail small { color: var(--grade-muted); font-size: 9px; line-height: 1.5; }
+
+.grade-entry-form { padding: clamp(16px, 2.4vw, 25px); border: 1px solid var(--grade-line); border-radius: 15px; background: var(--grade-surface); }
+.grade-entry-form-heading { display: flex; align-items: end; justify-content: space-between; gap: 14px; padding-bottom: 17px; border-bottom: 1px solid var(--grade-line); }
+.grade-entry-form-heading .grade-entry-eyebrow { margin-bottom: 6px; }
+.grade-entry-form-heading h2 { margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(20px, 2.7vw, 27px); font-weight: 500; letter-spacing: -.035em; }
+.grade-entry-count { flex: 0 0 auto; padding: 7px 10px; border: 1px solid var(--grade-line); border-radius: 999px; color: var(--grade-muted); font-size: 9px; font-weight: 700; }
+
+.grade-entry-roster { display: grid; gap: 8px; margin: 0; padding: 13px 0 0; list-style: none; }
+.grade-entry-roster > li { display: grid; grid-template-columns: minmax(190px, 1fr) minmax(180px, .65fr); align-items: center; gap: 15px; padding: 12px 13px; border: 1px solid var(--grade-line); border-radius: 10px; background: var(--grade-surface); }
+.grade-entry-student-ref, .grade-entry-score-field { display: grid; min-width: 0; gap: 6px; }
+.grade-entry-student-ref strong { font-size: 12px; letter-spacing: .04em; }
+.grade-entry-score-field > span:first-child { color: var(--grade-muted); font-size: 9px; font-weight: 700; }
+.grade-entry-score-field input { width: 100%; min-height: 42px; padding: 0 11px; border: 1px solid var(--grade-line); border-radius: 8px; background: var(--grade-soft); color: var(--grade-ink); font: inherit; font-size: 12px; font-variant-numeric: tabular-nums; }
+.grade-entry-score-field input[aria-invalid='true'] { border-color: var(--ui-danger, #a13b31); }
+.grade-entry-score-field input:focus-visible, .grade-entry-group-select select:focus-visible { @include tokens.focus-ring(3px); }
+.grade-entry-field-error { color: var(--ui-danger, #a13b31); font-size: 9px; line-height: 1.4; }
+
+.grade-entry-submit-row { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-top: 17px; }
+.grade-entry-submit-row p { max-width: 500px; margin: 0; color: var(--grade-muted); font-size: 10px; line-height: 1.5; }
+.grade-entry-save { min-height: 43px; flex: 0 0 auto; padding: 0 15px; border: 1px solid #2d3428; border-radius: 9px; background: #273025; color: #fff; cursor: pointer; font: inherit; font-size: 10px; font-weight: 750; }
+.grade-entry-save:hover { background: #394538; }
+.grade-entry-save:focus-visible { @include tokens.focus-ring(3px); }
+.grade-entry-saved, .grade-entry-submit-error { margin: 14px 0 0; padding: 11px 13px; border: 1px solid var(--grade-line); border-radius: 9px; font-size: 10px; line-height: 1.5; }
+.grade-entry-saved { border-color: color-mix(in srgb, #557b58 40%, var(--grade-line)); background: color-mix(in srgb, #78a277 12%, var(--grade-surface)); color: var(--grade-ink); }
+.grade-entry-submit-error { border-color: color-mix(in srgb, var(--ui-danger, #a13b31) 38%, var(--grade-line)); background: color-mix(in srgb, var(--ui-danger, #a13b31) 9%, var(--grade-surface)); color: var(--ui-danger, #a13b31); }
+
+@media (max-width: 640px) {
+  .grade-entry-demo { padding-inline: 12px; }
+  .grade-entry-hero { min-height: 184px; padding: 22px 18px; }
+  .grade-entry-hero-mark { width: 58px; height: 58px; border-radius: 18px; font-size: 34px; }
+  .grade-entry-group-panel, .grade-entry-roster > li { grid-template-columns: 1fr; }
+  .grade-entry-form-heading, .grade-entry-submit-row { align-items: flex-start; flex-direction: column; }
+  .grade-entry-save { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grade-entry-save { transition: none; }
+}

@@ -1,0 +1,116 @@
+@use '../../styles/tokens' as tokens;
+
+.my-notices {
+  display: grid;
+  gap: 1.25rem;
+
+  .my-notices-heading {
+    p {
+      margin: 0.35rem 0 0;
+      color: var(--ui-text-secondary);
+      max-width: 62ch;
+    }
+  }
+
+  .my-notices-kicker {
+    margin: 0;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ui-text-muted);
+  }
+
+  .my-notices-status,
+  .my-notices-empty {
+    margin: 0;
+    color: var(--ui-text-muted);
+  }
+
+  .my-notices-error {
+    display: grid;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--ui-border-strong);
+    border-radius: 0.6rem;
+    background: var(--ui-surface-raised);
+    color: var(--ui-text-primary);
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .my-notices-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .my-notices-item {
+    display: grid;
+    gap: 0.5rem;
+    padding: 1rem 1.15rem;
+    border: 1px solid var(--ui-border);
+    border-radius: 0.75rem;
+    background: var(--ui-surface);
+  }
+
+  .my-notices-item-heading {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.6rem;
+
+    h3 {
+      margin: 0;
+      font-size: 1.05rem;
+    }
+  }
+
+  .my-notices-window {
+    color: var(--ui-text-muted);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .my-notices-body {
+    margin: 0;
+    color: var(--ui-text-primary);
+    white-space: pre-line;
+  }
+
+  .my-notices-audiences {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+
+    .my-notices-audience {
+      padding: 0.15rem 0.55rem;
+      border: 1px solid var(--ui-border);
+      border-radius: 999px;
+      background: var(--ui-surface-subtle);
+      color: var(--ui-text-secondary);
+      font-size: 0.78rem;
+    }
+  }
+
+  button {
+    justify-self: start;
+    min-height: 44px;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--ui-border-strong);
+    background: var(--ui-surface-raised);
+    color: var(--ui-text-primary);
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  button:focus-visible {
+    @include tokens.focus-ring;
+  }
+}

@@ -1,0 +1,177 @@
+.student-services-page-content {
+  padding: clamp(1rem, 3vw, 2.5rem);
+}
+
+.student-services-page {
+  display: grid;
+  gap: clamp(1.75rem, 4vw, 3rem);
+  margin-inline: auto;
+  max-width: 76rem;
+  color: var(--ui-text-primary, #20211d);
+}
+
+.student-services-hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 15rem;
+  align-items: center;
+  gap: clamp(1rem, 4vw, 3rem);
+  min-height: 18rem;
+  overflow: hidden;
+  padding: clamp(1.5rem, 5vw, 4rem);
+  border: 1px solid var(--ui-border, #e7e8e1);
+  border-radius: 1.5rem;
+  background:
+    radial-gradient(circle at 84% 5%, color-mix(in srgb, var(--brand-primary, #ffcc29) 35%, transparent), transparent 19rem),
+    linear-gradient(130deg, var(--ui-surface, #fff) 20%, var(--ui-surface-subtle, #f3f1e9));
+}
+
+.student-services-hero-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 52rem;
+}
+
+.student-services-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0 0 0.9rem;
+  color: var(--ui-text-secondary, #5d6157);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.student-services-eyebrow span { color: var(--brand-primary, #ffcc29); font-size: 1.15rem; }
+
+.student-services-hero h1 {
+  max-width: 16ch;
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(2.1rem, 4.5vw, 4.2rem);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 1.02;
+}
+
+.student-services-intro {
+  max-width: 60ch;
+  margin: 1.25rem 0 0;
+  color: var(--ui-text-secondary, #5d6157);
+  font-size: clamp(0.98rem, 1.2vw, 1.1rem);
+  line-height: 1.65;
+}
+
+.student-services-hero-mark {
+  position: relative;
+  display: grid;
+  align-content: space-between;
+  justify-self: end;
+  width: 13rem;
+  min-height: 13rem;
+  padding: 1.25rem;
+  border-radius: 1.1rem;
+  background: var(--institution-dark, #171815);
+  color: #fff;
+  box-shadow: 0 1.25rem 2.75rem rgb(15 20 14 / 17%);
+  transform: rotate(2deg);
+}
+
+.student-services-hero-mark span { color: var(--brand-primary, #ffcc29); font-size: 0.7rem; font-weight: 850; letter-spacing: 0.2em; }
+.student-services-hero-mark strong { font-family: Georgia, 'Times New Roman', serif; font-size: 1.5rem; font-weight: 500; line-height: 1.08; }
+.student-services-hero-mark i { position: absolute; right: -1.3rem; bottom: -1.1rem; width: 4rem; aspect-ratio: 1; border: 0.65rem solid var(--brand-primary, #ffcc29); border-radius: 50%; }
+
+.student-services-explorer { display: grid; gap: 1.25rem; }
+
+.student-services-search-row {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.student-services-search-field { display: grid; gap: 0.55rem; width: min(100%, 36rem); }
+.student-services-search-field label { color: var(--ui-text-secondary, #5d6157); font-size: 0.8rem; font-weight: 750; }
+
+.student-services-search-control {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0 1rem;
+  border: 1px solid var(--ui-border-strong, #b7bbad);
+  border-radius: 0.9rem;
+  background: var(--ui-input-surface, #fff);
+  transition: border-color 140ms ease, box-shadow 140ms ease;
+}
+
+.student-services-search-control:focus-within {
+  border-color: var(--brand-primary, #ffcc29);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand-primary, #ffcc29) 35%, transparent);
+}
+
+.student-services-search-control > span { color: var(--ui-text-muted, #77786f); font-size: 1.6rem; line-height: 1; }
+.student-services-search-control input { width: 100%; min-height: 3.15rem; border: 0; outline: 0; background: transparent; color: var(--ui-text-primary, #20211d); font: inherit; }
+.student-services-search-control input::placeholder { color: var(--ui-text-muted, #77786f); }
+
+.student-services-count { display: flex; align-items: baseline; gap: 0.55rem; padding: 0.65rem 0.9rem; border-radius: 0.8rem; background: var(--ui-surface-subtle, #f3f1e9); color: var(--ui-text-secondary, #5d6157); font-size: 0.85rem; white-space: nowrap; }
+.student-services-count strong { color: var(--ui-text-primary, #20211d); font-size: 1.1rem; }
+
+.student-services-categories { display: flex; flex-wrap: wrap; gap: 0.55rem; }
+.student-services-categories button, .student-services-empty button { min-height: 2.6rem; padding: 0.55rem 0.9rem; border: 1px solid var(--ui-border-strong, #b7bbad); border-radius: 999px; background: var(--ui-surface, #fff); color: var(--ui-text-secondary, #5d6157); font: inherit; font-size: 0.82rem; font-weight: 700; cursor: pointer; }
+.student-services-categories button[aria-pressed='true'] { border-color: var(--institution-dark, #171815); background: var(--institution-dark, #171815); color: #fff; }
+.student-services-categories button:focus-visible, .student-services-empty button:focus-visible { outline: 3px solid var(--ui-focus, var(--brand-focus, #1a1a1a)); outline-offset: 3px; }
+
+.student-services-privacy { display: flex; align-items: start; gap: 0.6rem; margin: 0; color: var(--ui-text-muted, #77786f); font-size: 0.82rem; line-height: 1.5; }
+.student-services-privacy span { color: var(--ui-text-secondary, #5d6157); }
+
+.student-services-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+
+.student-services-empty { display: grid; justify-items: start; gap: 0.75rem; padding: clamp(1.25rem, 4vw, 2rem); border: 1px dashed var(--ui-border-strong, #b7bbad); border-radius: 1rem; background: var(--ui-surface-subtle, #f3f1e9); }
+.student-services-empty h2 { margin: 0; font-size: 1.2rem; }
+.student-services-empty p { margin: 0; color: var(--ui-text-secondary, #5d6157); line-height: 1.5; }
+.student-services-empty button { border-color: var(--institution-dark, #171815); background: var(--institution-dark, #171815); color: #fff; }
+
+.student-service-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 18rem;
+  padding: clamp(1.1rem, 2vw, 1.6rem);
+  border: 1px solid var(--ui-border, #e7e8e1);
+  border-radius: 1.05rem;
+  background: var(--ui-surface, #fff);
+  box-shadow: 0 0.6rem 1.4rem rgb(30 35 20 / 4%);
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+}
+
+.student-service-card:hover { transform: translateY(-3px); border-color: var(--ui-border-strong, #c6cabc); box-shadow: 0 1rem 2rem rgb(30 35 20 / 8%); }
+
+.student-service-card-topline { display: flex; align-items: center; gap: 0.7rem; }
+.student-service-symbol { display: grid; width: 2.45rem; aspect-ratio: 1; place-items: center; border-radius: 0.75rem; background: color-mix(in srgb, var(--brand-primary, #ffcc29) 24%, var(--ui-surface, #fff)); color: var(--ui-text-primary, #20211d); font-size: 1.35rem; }
+.student-service-card--biblioteca .student-service-symbol { background: var(--ui-surface-subtle, #f3f1e9); }
+.student-service-category { color: var(--ui-text-secondary, #5d6157); font-size: 0.75rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+.student-service-card h2 { margin: 1.1rem 0 0.55rem; font-size: 1.2rem; line-height: 1.25; }
+.student-service-description { margin: 0 0 1.5rem; color: var(--ui-text-secondary, #5d6157); line-height: 1.55; }
+.student-service-card-bottom { display: grid; gap: 0.7rem; margin-top: auto; }
+.student-service-card-bottom a { display: inline-flex; align-items: center; justify-content: space-between; gap: 0.75rem; width: fit-content; color: var(--ui-text-primary, #20211d); font-size: 0.9rem; font-weight: 750; text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
+.student-service-card-bottom a span { color: var(--ui-text-muted, #77786f); }
+.student-service-card-bottom a:focus-visible { outline: 3px solid var(--ui-focus, var(--brand-focus, #1a1a1a)); outline-offset: 4px; border-radius: 0.2rem; }
+.student-service-card-bottom small { color: var(--ui-text-muted, #77786f); font-size: 0.73rem; line-height: 1.45; }
+
+@media (max-width: 760px) {
+  .student-services-hero { grid-template-columns: minmax(0, 1fr); }
+  .student-services-hero-mark { display: none; }
+  .student-services-grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 500px) {
+  .student-services-search-row { align-items: stretch; flex-direction: column; }
+  .student-services-count { align-self: start; }
+  .student-service-card { min-height: 16rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .student-service-card, .student-services-search-control { transition: none; }
+  .student-service-card:hover { transform: none; }
+}
