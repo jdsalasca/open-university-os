@@ -1,0 +1,32 @@
+OK  200  /api/v1/branding
+OK  401  /api/v1/me
+OK  401  /api/v1/notices
+OK  200  /api/v1/spaces
+OK  200  /api/v1/academic-structure
+OK  200  /api/v1/academic-periods
+OK  200  /api/v1/academic-catalog/programs
+OK  200  /api/v1/territorial-catalog/departments
+OK  200  /api/v1/admissions/calls
+OK  401  /api/v1/admin/branding
+OK  401  /api/v1/admin/branding/assets
+OK  401  /api/v1/admin/branding/rollback
+OK  401  /api/v1/admin/library
+OK  401  /api/v1/admin/notices
+OK  401  /api/v1/admin/academic-structure
+OK  401  /api/v1/admin/academic-structure/audit-events
+OK  401  /api/v1/admin/academic-structure/sites
+OK  401  /api/v1/admin/academic-structure/units
+OK  401  /api/v1/admin/academic-catalog/drafts
+OK  401  /api/v1/admin/academic-catalog/import-previews
+OK  401  /api/v1/admin/academic-catalog/imports
+OK  401  /api/v1/admin/academic-offerings
+OK  401  /api/v1/admin/academic-periods
+OK  401  /api/v1/admin/access/assignments
+OK  401  /api/v1/admin/access/identities
+OK  401  /api/v1/admin/access/role-profiles
+OK  401  /api/v1/admin/admissions/calls
+OK  401  /api/v1/dev/local-preview-session
+OK  401  /api/v1/dev/room-allocation/proposals
+---
+total 29, existentes 29, faltantes 0
+{"codigo":0}
