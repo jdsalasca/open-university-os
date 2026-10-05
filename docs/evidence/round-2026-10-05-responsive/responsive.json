@@ -1,0 +1,189 @@
+[
+ {
+  "viewport": "movil",
+  "ruta": "resumen",
+  "vw": 390,
+  "scrollX": false,
+  "anchoTotal": 390,
+  "desbordes": [],
+  "recorte": [],
+  "alertas": []
+ },
+ {
+  "viewport": "movil",
+  "ruta": "programas",
+  "vw": 390,
+  "scrollX": false,
+  "anchoTotal": 390,
+  "desbordes": [],
+  "recorte": [],
+  "alertas": []
+ },
+ {
+  "viewport": "movil",
+  "ruta": "espacios",
+  "vw": 390,
+  "scrollX": false,
+  "anchoTotal": 390,
+  "desbordes": [
+   {
+    "etiqueta": "div.spaces-hero-art",
+    "izquierda": 278,
+    "derecha": 423
+   },
+   {
+    "etiqueta": "span.spaces-map-orbit.spaces-map-orbit-one",
+    "izquierda": 297,
+    "derecha": 405
+   },
+   {
+    "etiqueta": "span.spaces-map-orbit.spaces-map-orbit-two",
+    "izquierda": 278,
+    "derecha": 424
+   },
+   {
+    "etiqueta": "span.spaces-map-line.spaces-map-line-one",
+    "izquierda": 267,
+    "derecha": 434
+   },
+   {
+    "etiqueta": "span.spaces-map-line.spaces-map-line-two",
+    "izquierda": 270,
+    "derecha": 431
+   },
+   {
+    "etiqueta": "span.spaces-map-caption",
+    "izquierda": 279,
+    "derecha": 422
+   }
+  ],
+  "recorte": [],
+  "alertas": []
+ },
+ {
+  "viewport": "movil",
+  "ruta": "admisiones",
+  "vw": 390,
+  "scrollX": false,
+  "anchoTotal": 390,
+  "desbordes": [],
+  "recorte": [],
+  "alertas": []
+ },
+ {
+  "viewport": "movil",
+  "ruta": "estudiantes",
+  "vw": 390,
+  "scrollX": false,
+  "anchoTotal": 390,
+  "desbordes": [],
+  "recorte": [],
+  "alertas": []
+ },
+ {
+  "viewport": "movil",
+  "ruta": "academia",
+  "vw": 390,
+  "scrollX": false,
+  "anchoTotal": 390,
+  "desbordes": [],
+  "recorte": [],
+  "alertas": []
+ },
+ {
+  "viewport": "tablet",
+  "ruta": "resumen",
+  "vw": 768,
+  "scrollX": false,
+  "anchoTotal": 768,
+  "desbordes": [
+   {
+    "etiqueta": "span.brand-monogram",
+    "izquierda": -24,
+    "derecha": 14
+   }
+  ],
+  "recorte": [],
+  "alertas": []
+ },
+ {
+  "viewport": "tablet",
+  "ruta": "programas",
+  "vw": 768,
+  "scrollX": false,
+  "anchoTotal": 768,
+  "desbordes": [
+   {
+    "etiqueta": "span.brand-monogram",
+    "izquierda": -24,
+    "derecha": 14
+   }
+  ],
+  "recorte": [],
+  "alertas": []
+ },
+ {
+  "viewport": "tablet",
+  "ruta": "espacios",
+  "vw": 768,
+  "scrollX": false,
+  "anchoTotal": 768,
+  "desbordes": [
+   {
+    "etiqueta": "span.brand-monogram",
+    "izquierda": -24,
+    "derecha": 14
+   }
+  ],
+  "recorte": [],
+  "alertas": []
+ },
+ {
+  "viewport": "tablet",
+  "ruta": "admisiones",
+  "vw": 768,
+  "scrollX": false,
+  "anchoTotal": 768,
+  "desbordes": [
+   {
+    "etiqueta": "span.brand-monogram",
+    "izquierda": -24,
+    "derecha": 14
+   }
+  ],
+  "recorte": [],
+  "alertas": []
+ },
+ {
+  "viewport": "tablet",
+  "ruta": "estudiantes",
+  "vw": 768,
+  "scrollX": false,
+  "anchoTotal": 768,
+  "desbordes": [
+   {
+    "etiqueta": "span.brand-monogram",
+    "izquierda": -24,
+    "derecha": 14
+   }
+  ],
+  "recorte": [],
+  "alertas": []
+ },
+ {
+  "viewport": "tablet",
+  "ruta": "academia",
+  "vw": 768,
+  "scrollX": false,
+  "anchoTotal": 768,
+  "desbordes": [
+   {
+    "etiqueta": "span.brand-monogram",
+    "izquierda": -24,
+    "derecha": 14
+   }
+  ],
+  "recorte": [],
+  "alertas": []
+ }
+]

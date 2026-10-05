@@ -197,12 +197,17 @@
   .platform-shell { grid-template-columns: 220px minmax(0, 1fr); }
   .topbar { padding-inline: 26px; }
   .page-content { padding-inline: 26px; }
+  // El chip repite el contexto que ya da el breadcrumb; a 768 px la barra completa
+  // empujaba el boton de sesion fuera del viewport y generaba scroll horizontal.
+  .revision-chip { display: none; }
 }
 
 @media (max-width: 850px) {
   .platform-shell { grid-template-columns: 68px minmax(0, 1fr); }
   .sidebar { align-items: center; padding: 18px 8px 14px; }
-  .brand-lockup { justify-content: center; padding: 0; }
+  // Sin width el enlace conserva el ancho del texto y el monograma se sale del
+  // carril de 68 px; medido a 768 px quedaba en -24..14 px.
+  .brand-lockup { justify-content: center; width: 100%; padding: 0; }
   .brand-monogram { flex: 0 0 38px; }
   .brand-lockup-copy, .sidebar-caption, .sidebar-footer > span:last-child { display: none; }
   .sidebar-group { width: 100%; margin-top: 31px; }
