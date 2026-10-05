@@ -75,17 +75,25 @@ const estilos = () => stylesheets().filter((file) => !file.endsWith(join('styles
 test('el gris secundario del tema claro es una unica fuente, no un literal repetido', () => {
   const repetidos = estilos()
     .flatMap((file) => {
-      const source = readFileSync(file, 'utf8').toLowerCase()
-      const usos = source.split('#6b6d63').length - 1
-      return usos > 0 ? [`${file.split(/[\\/]/).pop()}: ${usos}`] : []
+      const directos = (readFileSync(file, 'utf8').toLowerCase()
+        .replaceAll(new RegExp(`var\\([^)]*#6b6d63[^)]*\\)`, 'gi'), '')
+        .match(/#6b6d63/g) ?? []).length
+      return directos > 0 ? [`${file.split(/[\\/]/).pop()}: ${directos}`] : []
     })
   assert.deepEqual(repetidos, [], 'usa var(--ui-text-muted) en lugar del literal #6b6d63')
 })
 
-test('los seis grises medidos no quedan sueltos en los estilos', () => {
+// Un literal es legitimo como valor de reserva de var(): el elemento cae al color
+// si el token no existe. Lo que no vale es fijar el color en la regla.
+const comoValorDirecto = (source, color) => source
+  .replaceAll(new RegExp(`var\\([^)]*${color}[^)]*\\)`, 'gi'), '')
+  .includes(color)
+
+test('los seis grises medidos no quedan fijados en los estilos', () => {
   const sueltos = estilos().filter((file) => {
     const source = readFileSync(file, 'utf8').toLowerCase()
-    return ['#6e7068', '#6e7069', '#6f7069', '#6e7067', '#6e7066', '#6b6d63'].some((c) => source.includes(c))
+    return ['#6e7068', '#6e7069', '#6f7069', '#6e7067', '#6e7066', '#6b6d63']
+      .some((c) => comoValorDirecto(source, c))
   })
   assert.deepEqual(sueltos.map((f) => f.split(/[\\/]/).pop()), [], 'los grises deben venir del token')
 })

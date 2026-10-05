@@ -1,0 +1,34 @@
+[
+ {
+  "tema": "claro",
+  "ruta": "resumen",
+  "marcador": 0,
+  "shell": 1,
+  "titulo": "Tu universidad, en un mismo lugar",
+  "alto": 800
+ },
+ {
+  "tema": "claro",
+  "ruta": "espacios",
+  "marcador": 0,
+  "shell": 1,
+  "titulo": "Guía de espacios",
+  "alto": 4440
+ },
+ {
+  "tema": "oscuro",
+  "ruta": "resumen",
+  "marcador": 0,
+  "shell": 1,
+  "titulo": "Tu universidad, en un mismo lugar",
+  "alto": 800
+ },
+ {
+  "tema": "oscuro",
+  "ruta": "espacios",
+  "marcador": 0,
+  "shell": 1,
+  "titulo": "Guía de espacios",
+  "alto": 4440
+ }
+]

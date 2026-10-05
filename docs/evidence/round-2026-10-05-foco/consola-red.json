@@ -1,0 +1,91 @@
+[
+ {
+  "ruta": "resumen",
+  "errores": 0,
+  "avisos": 0,
+  "peticionesFallidas": 0,
+  "detalleConsola": [],
+  "detalleRed": [
+   {
+    "url": "31708.41",
+    "error": "net::ERR_ABORTED"
+   }
+  ]
+ },
+ {
+  "ruta": "programas",
+  "errores": 0,
+  "avisos": 0,
+  "peticionesFallidas": 0,
+  "detalleConsola": [],
+  "detalleRed": [
+   {
+    "url": "31708.50",
+    "error": "net::ERR_ABORTED"
+   },
+   {
+    "url": "31708.51",
+    "error": "net::ERR_ABORTED"
+   },
+   {
+    "url": "31708.61",
+    "error": "net::ERR_ABORTED"
+   }
+  ]
+ },
+ {
+  "ruta": "espacios",
+  "errores": 0,
+  "avisos": 0,
+  "peticionesFallidas": 0,
+  "detalleConsola": [],
+  "detalleRed": [
+   {
+    "url": "31708.67",
+    "error": "net::ERR_ABORTED"
+   }
+  ]
+ },
+ {
+  "ruta": "admisiones",
+  "errores": 0,
+  "avisos": 0,
+  "peticionesFallidas": 0,
+  "detalleConsola": [],
+  "detalleRed": [
+   {
+    "url": "31708.77",
+    "error": "net::ERR_ABORTED"
+   }
+  ]
+ },
+ {
+  "ruta": "estudiantes",
+  "errores": 0,
+  "avisos": 0,
+  "peticionesFallidas": 0,
+  "detalleConsola": [],
+  "detalleRed": []
+ },
+ {
+  "ruta": "academia",
+  "errores": 0,
+  "avisos": 0,
+  "peticionesFallidas": 0,
+  "detalleConsola": [],
+  "detalleRed": [
+   {
+    "url": "31708.98",
+    "error": "net::ERR_ABORTED"
+   },
+   {
+    "url": "31708.99",
+    "error": "net::ERR_ABORTED"
+   },
+   {
+    "url": "31708.100",
+    "error": "net::ERR_ABORTED"
+   }
+  ]
+ }
+]

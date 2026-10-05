@@ -7,7 +7,12 @@
     <title>Plataforma Universitaria</title>
   </head>
   <body>
-    <div id="root"></div>
+    <!-- Estado de carga inicial: React lo sustituye al montar. Sin el, el root
+         arranca vacio y con una red lenta la portada queda en blanco hasta que
+         descargan los ~280 kB del bundle. Ver docs/evidence/round-2026-10-05-foco. -->
+    <div id="root">
+      <div class="app-boot" role="status" aria-live="polite">Cargando la plataforma universitaria…</div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

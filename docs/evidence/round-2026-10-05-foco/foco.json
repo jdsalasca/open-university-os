@@ -1,0 +1,82 @@
+[
+ {
+  "ruta": "resumen",
+  "controles": 15,
+  "sinIndicador": 0,
+  "detalle": [],
+  "primero": {
+   "etiqueta": "a.nav-item",
+   "texto": "Saltar al contenido principal",
+   "outlineEstilo": "solid",
+   "sombra": "",
+   "indicador": "2px rgb(255, 204, 41)",
+   "caja": [
+    172,
+    42
+   ],
+   "visible": true,
+   "paso": 1
+  },
+  "saltoEsPrimero": true
+ },
+ {
+  "ruta": "programas",
+  "controles": 24,
+  "sinIndicador": 0,
+  "detalle": [],
+  "primero": {
+   "etiqueta": "a.nav-item",
+   "texto": "Saltar al contenido principal",
+   "outlineEstilo": "solid",
+   "sombra": "",
+   "indicador": "2px rgb(255, 204, 41)",
+   "caja": [
+    172,
+    42
+   ],
+   "visible": true,
+   "paso": 1
+  },
+  "saltoEsPrimero": true
+ },
+ {
+  "ruta": "espacios",
+  "controles": 24,
+  "sinIndicador": 0,
+  "detalle": [],
+  "primero": {
+   "etiqueta": "a.nav-item",
+   "texto": "Saltar al contenido principal",
+   "outlineEstilo": "solid",
+   "sombra": "",
+   "indicador": "2px rgb(255, 204, 41)",
+   "caja": [
+    172,
+    42
+   ],
+   "visible": true,
+   "paso": 1
+  },
+  "saltoEsPrimero": true
+ },
+ {
+  "ruta": "admisiones",
+  "controles": 15,
+  "sinIndicador": 0,
+  "detalle": [],
+  "primero": {
+   "etiqueta": "a.nav-item",
+   "texto": "Saltar al contenido principal",
+   "outlineEstilo": "solid",
+   "sombra": "",
+   "indicador": "2px rgb(255, 204, 41)",
+   "caja": [
+    172,
+    42
+   ],
+   "visible": true,
+   "paso": 1
+  },
+  "saltoEsPrimero": true
+ }
+]

@@ -43,4 +43,17 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 
 #root { min-height: 100vh; }
 
+// Marcador de arranque que React sustituye al montar. El texto es plano a
+// proposito: hasta que llega el CSS del bundle este bloque se ve sin estilo, y
+// una linea de texto legible es mejor que un elemento grafico suelto. El
+// repositorio prohibe estilos en linea, asi que aqui no se puede compensar.
+.app-boot {
+  display: grid;
+  min-height: 100vh;
+  place-content: center;
+  color: var(--ui-text-muted, #6b6d63);
+  font-size: 13px;
+  text-align: center;
+}
+
 ::selection { background: #ffcc29aa; color: #1a1a1a; }

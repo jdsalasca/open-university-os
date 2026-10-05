@@ -1,0 +1,69 @@
+[
+ {
+  "ruta": "resumen",
+  "carga": {
+   "estados": [
+    {
+     "rol": "status",
+     "texto": "Cargando la plataforma universitaria…",
+     "alto": 18
+    }
+   ],
+   "altoBody": 18
+  }
+ },
+ {
+  "ruta": "espacios",
+  "carga": {
+   "estados": [
+    {
+     "rol": "polite",
+     "texto": "Acceso institucional pendiente de configuración",
+     "alto": 12
+    },
+    {
+     "rol": "status",
+     "texto": "Cargando guía de espacios…",
+     "alto": 432
+    }
+   ],
+   "altoBody": 812
+  }
+ },
+ {
+  "ruta": "estudiantes",
+  "carga": {
+   "estados": [
+    {
+     "rol": "polite",
+     "texto": "Acceso institucional pendiente de configuración",
+     "alto": 12
+    },
+    {
+     "rol": "status",
+     "texto": "Cargando directorio de servicios estudiantiles…",
+     "alto": 432
+    }
+   ],
+   "altoBody": 800
+  }
+ },
+ {
+  "ruta": "academia",
+  "carga": {
+   "estados": [
+    {
+     "rol": "polite",
+     "texto": "Acceso institucional pendiente de configuración",
+     "alto": 12
+    },
+    {
+     "rol": "status",
+     "texto": "Cargando módulo académico…",
+     "alto": 4508
+    }
+   ],
+   "altoBody": 4644
+  }
+ }
+]
