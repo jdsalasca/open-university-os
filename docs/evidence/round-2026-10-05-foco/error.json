@@ -1,0 +1,90 @@
+[
+ {
+  "ruta": "resumen",
+  "regiones": [],
+  "altoBody": 800,
+  "shell": 1,
+  "mensajePrincipal": "PORTAL UNIVERSITARIO Tu universidad, en un mismo lugar Encuentra tus servicios, explora la vida universitaria y continúa desde donde lo necesitas. U VIDA UNIVERSITARIA Explora la universidad Servicios y recursos ◇ INFORM",
+  "textoTotal": "Saltar al contenido principal U Universidad Pedagógica y Tecnológica de Colombia PLATAFORMA UNIVERSITARIA ESPACIO DE TRABAJO ⌂ Resumen ✳ Identidad visual ▧ Programas ◇ Admisiones · Información pública ⌖ Guía de espacios ◎ Servicios estudiantiles ◷ Estructura y periodos Entorno de desarrollo Sin datos estudiantiles reales Portal universitario / Resumen Inicio institucional PORTAL UNIVERSITARIO Auto",
+  "tecnico": false,
+  "alertas": 0
+ },
+ {
+  "ruta": "programas",
+  "regiones": [
+   {
+    "rol": "status",
+    "texto": "79 resultados de 79"
+   },
+   {
+    "rol": "alert",
+    "texto": "!No se pudo cargar el catálogoNo se pudo cargar el catálogo y la adscripción académica vigente. Comprueba la conexión e "
+   },
+   {
+    "rol": "status",
+    "texto": "◌Funciones administrativas cerradasLa revisión de borradores y las acciones de publicación requieren acceso y permisos i"
+   }
+  ],
+  "altoBody": 4335,
+  "shell": 1,
+  "mensajePrincipal": "Pregrado Posgrado OFERTA ACADÉMICA · PREGRADO Programas de pregrado UPTC Busca por programa, facultad, modalidad y lugar de desarrollo en el catálogo público de la Universidad. 79 programas en la consulta · 72 con la mar",
+  "textoTotal": "Saltar al contenido principal U Universidad Pedagógica y Tecnológica de Colombia PLATAFORMA UNIVERSITARIA ESPACIO DE TRABAJO ⌂ Resumen ✳ Identidad visual ▧ Programas ◇ Admisiones · Información pública ⌖ Guía de espacios ◎ Servicios estudiantiles ◷ Estructura y periodos Entorno de desarrollo Sin datos estudiantiles reales Vida universitaria / Programas Consulta de programas PREGRADO · PRESENCIAL Au",
+  "tecnico": false,
+  "alertas": 1
+ },
+ {
+  "ruta": "espacios",
+  "regiones": [
+   {
+    "rol": "alert",
+    "texto": "No se pudo cargar la guía de espacios en este momento.Reintentar"
+   }
+  ],
+  "altoBody": 800,
+  "shell": 1,
+  "mensajePrincipal": "ORIENTACIÓN · UPTC Guía de espacios Consulta ubicaciones publicadas y encuentra los canales oficiales para préstamo, asignación o alquiler de algunos espacios. Consulta las fuentes oficiales antes de desplazarte; esta gu",
+  "textoTotal": "Saltar al contenido principal U Universidad Pedagógica y Tecnológica de Colombia PLATAFORMA UNIVERSITARIA ESPACIO DE TRABAJO ⌂ Resumen ✳ Identidad visual ▧ Programas ◇ Admisiones · Información pública ⌖ Guía de espacios ◎ Servicios estudiantiles ◷ Estructura y periodos Entorno de desarrollo Sin datos estudiantiles reales Vida universitaria / Guía de espacios Consulta de espacios SEDES · CREAD Auto",
+  "tecnico": false,
+  "alertas": 1
+ },
+ {
+  "ruta": "admisiones",
+  "regiones": [
+   {
+    "rol": "status",
+    "texto": "No fue posible consultar la agenda versionada. Se conserva la información pública de referencia."
+   }
+  ],
+  "altoBody": 1509,
+  "shell": 1,
+  "mensajePrincipal": "No fue posible consultar la agenda versionada. Se conserva la información pública de referencia. Reintentar INFORMACIÓN PÚBLICA · UPTC Pregrado presencial 2027-I Una guía de fechas para seguir la convocatoria de la UPTC.",
+  "textoTotal": "Saltar al contenido principal U Universidad Pedagógica y Tecnológica de Colombia PLATAFORMA UNIVERSITARIA ESPACIO DE TRABAJO ⌂ Resumen ✳ Identidad visual ▧ Programas ◇ Admisiones · Información pública ⌖ Guía de espacios ◎ Servicios estudiantiles ◷ Estructura y periodos Entorno de desarrollo Sin datos estudiantiles reales Vida universitaria / Admisiones Consulta de admisiones ADMISIONES · PREGRADO ",
+  "tecnico": false,
+  "alertas": 0
+ },
+ {
+  "ruta": "estudiantes",
+  "regiones": [],
+  "altoBody": 2719,
+  "shell": 1,
+  "mensajePrincipal": "✳ VIDA UNIVERSITARIA · ORIENTACIÓN Servicios para acompañar tu vida universitaria Encuentra información pública sobre rutas académicas, bienestar y recursos de aprendizaje. Cada enlace continúa en el portal oficial de la",
+  "textoTotal": "Saltar al contenido principal U Universidad Pedagógica y Tecnológica de Colombia PLATAFORMA UNIVERSITARIA ESPACIO DE TRABAJO ⌂ Resumen ✳ Identidad visual ▧ Programas ◇ Admisiones · Información pública ⌖ Guía de espacios ◎ Servicios estudiantiles ◷ Estructura y periodos Entorno de desarrollo Sin datos estudiantiles reales Vida universitaria / Servicios estudiantiles Directorio público REV. 01 Autom",
+  "tecnico": false,
+  "alertas": 0
+ },
+ {
+  "ruta": "academia",
+  "regiones": [
+   {
+    "rol": "alert",
+    "texto": "No fue posible cargar la información académica.Comprueba la conexión y vuelve a intentarlo.Intentar de nuevo"
+   }
+  ],
+  "altoBody": 800,
+  "shell": 1,
+  "mensajePrincipal": "GESTIÓN ACADÉMICA / ORGANIZACIÓN Y PERIODOS Estructura y periodos académicos Una vista ordenada de las unidades académicas, sus sedes y el estado de los periodos regulares e intersemestrales. ◌ Consulta de desarrollo · S",
+  "textoTotal": "Saltar al contenido principal U Universidad Pedagógica y Tecnológica de Colombia PLATAFORMA UNIVERSITARIA ESPACIO DE TRABAJO ⌂ Resumen ✳ Identidad visual ▧ Programas ◇ Admisiones · Información pública ⌖ Guía de espacios ◎ Servicios estudiantiles ◷ Estructura y periodos Entorno de desarrollo Sin datos estudiantiles reales Vida universitaria / Estructura y periodos Consulta académica ESTRUCTURA · PE",
+  "tecnico": false,
+  "alertas": 1
+ }
+]

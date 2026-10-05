@@ -53,6 +53,6 @@ dist/assets/identitySessionManager-HHyBh007.js                68.63 kB Ôöé gz
 dist/assets/AcademicOperationsPage-DxUJYKVy.js                96.77 kB Ôöé gzip: 20.77 kB
 dist/assets/index-DExg3acZ.js                                279.91 kB Ôöé gzip: 85.75 kB
 
-[32mÔ£ô built in 945ms[39m
+[32mÔ£ô built in 2.28s[39m
 Bundles: entry 281135 B JS / 22650 B CSS; #resumen 286825 B JS / 27093 B CSS; #programas 343737 B JS / 55055 B CSS / 62382 B JSON; OIDC diferido 68637 B JS.
 Presupuestos de bundle verificados.

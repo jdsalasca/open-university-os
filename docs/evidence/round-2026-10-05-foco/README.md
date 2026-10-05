@@ -73,6 +73,36 @@ y oscuro, en dos rutas.
 Capturas: `carga-resumen.png` con el texto legible sobre el arranque, y `montado-*.png` con el shell
 completo tras el montaje.
 
+## Estado de error con el backend caído
+
+`audit-error.cjs` detiene el contenedor backend y recorre las seis rutas públicas. Ninguna queda rota
+y ninguna muestra detalle de infraestructura.
+
+| Ruta | Shell | Regiones de estado | Comportamiento |
+| --- | --- | --- | --- |
+| `/#resumen` | presente | 0 | Degrada a la identidad de respaldo: nombre, navegación y accesos siguen visibles. Es informativa y no necesita la API. |
+| `/#programas` | presente | 3 | El directorio público sobrevive porque viene de una instantánea local (79 programas); solo el catálogo curricular avisa con «No se pudo cargar el catálogo». |
+| `/#espacios` | presente | 1 | «No se pudo cargar la guía de espacios en este momento.» con botón **Reintentar**. |
+| `/#admisiones` | presente | 1 | Degrada a la agenda pública de referencia: «No fue posible consultar la agenda versionada. Se conserva la información pública de referencia.» con **Reintentar**. |
+| `/#estudiantes` | presente | 0 | Contenido editorial estático, no depende de la API. |
+| `/#academia` | presente | 1 | «No fue posible cargar la información académica. Comprueba la conexión y vuelve a intentarlo.» con **Intentar de nuevo**. |
+
+Capturas en `error-*.png`.
+
+### Lo que la auditoría révélé sobre el diseño
+
+Hay dos patrones distintos y ambos correctos:
+
+- **Fallo bloqueante** (`/#espacios`, `/#academia`, el catálogo curricular): no hay nada que mostrar,
+  así que se anuncia con `role="alert"` e interrumpe a quien está leyendo.
+- **Degradación** (`/#admisiones`): la vista sigue siendo útil con la agenda pública de respaldo, así
+  que usa `role="status"` (polite). Poner `alert` ahí sería interrumpir sin motivo.
+
+La primera versión del guard exigía `role="alert"` en las cuatro vistas y fallaba con admisiones: el
+guard estaba mal, no el producto. También buscaba el botón con la palabra «Reintentar» y la vista
+académica escribe «Intentar de nuevo». `check-error-states.node-test.mjs` refleja los dos patrones y
+las cuatro variantes de rótulo que usa el proyecto.
+
 ## Verificación
 
 - `frontend/scripts/check-boot-state.node-test.mjs`: 5 guardas. Exigen contenido inicial en `#root`,
@@ -81,15 +111,14 @@ completo tras el montaje.
 - `frontend/scripts/check-theme-palette.node-test.mjs`: se ajustó para distinguir un literal **fijado
   en una regla** de un literal usado como **valor de reserva de `var()`**. El `index.scss` usa
   `var(--ui-text-muted, #6b6d63)` y la guarda lo rechaza como si fuera un color suelto.
-- `npm test`: **521 pruebas Vitest en 77 archivos, más 61 guardas de Node**, todas aprobadas
+- `npm test`: **521 pruebas Vitest en 77 archivos, más 72 guardas de Node**, todas aprobadas
   (`vitest.txt`).
 - `npm run build`: aprobado; el CSS de entrada sube a 22 650 B de 22 700 (`build.txt`).
-- `npm run lint`: 0 avisos, 0 errores en 183 archivos (`lint.txt`).
+- `npm run lint`: 0 avisos, 0 errores en 184 archivos (`lint.txt`).
 
 ## Pendiente
 
 - El arranque sin estilo solo puede mejorarse con estilos en línea o con una hoja crítica aparte, y el
   repositorio prohíbe lo primero. Cargar una hoja crítica mínima resolvería el centrado sin romper la
   regla, pero suma una petición de red al arranque.
-- El estado de error con el backend caído sigue sin captura; requiere cortar el servicio durante la
-  medición.
+
