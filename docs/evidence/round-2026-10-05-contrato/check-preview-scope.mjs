@@ -25,7 +25,7 @@ const PREVIEW = new Set([
   '/api/v1/admin/branding', '/api/v1/admin/notices',
   '/api/v1/admin/academic-structure', '/api/v1/admin/academic-structure/audit-events',
   '/api/v1/admin/academic-catalog/drafts', '/api/v1/admin/academic-periods',
-  '/api/v1/admin/access/role-profiles', '/api/v1/admin/admissions/calls',
+  '/api/v1/admin/admissions/calls',
   '/v3/api-docs',
 ])
 
@@ -35,6 +35,10 @@ const CERRADAS = [
   '/api/v1/admin/academic-structure/sites', '/api/v1/admin/academic-structure/units',
   '/api/v1/admin/academic-catalog/import-previews', '/api/v1/admin/academic-catalog/imports',
   '/api/v1/dev/room-allocation/proposals',
+  // La gestion de roles sale del preview desde el 5 de octubre de 2026: asignar un rol es
+  // una operacion institucional que sigue sin aprobar y el portador del bearer de preview
+  // no debe alcanzarla. Sigue exigiendo `identity:roles:read`, que la allowlist no concede.
+  '/api/v1/admin/access/role-profiles',
 ]
 
 const pedir = async (ruta) => {
