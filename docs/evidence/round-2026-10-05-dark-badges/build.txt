@@ -8,7 +8,7 @@ transforming...
 rendering chunks...
 computing gzip size...
 dist/index.html                                                0.92 kB Ôöé gzip:  0.54 kB
-dist/.vite/manifest.json                                      10.67 kB Ôöé gzip:  1.50 kB
+dist/.vite/manifest.json                                      10.67 kB Ôöé gzip:  1.51 kB
 dist/assets/uptcUndergraduateCatalog.snapshot-CVmnO0Qv.json   37.82 kB Ôöé gzip:  2.99 kB
 dist/assets/uptcPostgraduateCatalog.snapshot-BNWYrz44.json    62.38 kB Ôöé gzip:  4.68 kB
 dist/assets/PublicProgramDirectories-7Btx2Wen.css              0.78 kB Ôöé gzip:  0.39 kB
@@ -25,35 +25,35 @@ dist/assets/SpaceGuidePage-DzWEF0ks.css                       13.24 kB Ôöé gz
 dist/assets/AdmissionsExperience-BdM15tec.css                 15.81 kB Ôöé gzip:  3.72 kB
 dist/assets/VisualIdentityCenter-sEO06m17.css                 17.24 kB Ôöé gzip:  4.44 kB
 dist/assets/AcademicCatalogPage-BgD5eaW_.css                  23.13 kB Ôöé gzip:  5.11 kB
-dist/assets/index-DzLKqOls.css                                23.44 kB Ôöé gzip:  5.10 kB
+dist/assets/index-DuX5xzM-.css                                23.30 kB Ôöé gzip:  5.07 kB
 dist/assets/AcademicOperationsPage-Cr0IFHmL.css               34.24 kB Ôöé gzip:  6.05 kB
 dist/assets/PublicProgramDirectory-CXQwJWKc.js                 0.99 kB Ôöé gzip:  0.57 kB
 dist/assets/preload-helper-BZ1Pz5am.js                         1.21 kB Ôöé gzip:  0.69 kB
-dist/assets/PublicProgramDirectories-BUCiWy2c.js               1.57 kB Ôöé gzip:  0.67 kB
-dist/assets/MobileNavigation-DT3w3nkk.js                       1.74 kB Ôöé gzip:  0.64 kB
-dist/assets/curriculumVersionComparisonContract-CoIYDs-2.js    2.48 kB Ôöé gzip:  0.90 kB
+dist/assets/PublicProgramDirectories-BIJ-5bdQ.js               1.57 kB Ôöé gzip:  0.67 kB
+dist/assets/MobileNavigation-CiDw9KdD.js                       1.74 kB Ôöé gzip:  0.64 kB
+dist/assets/curriculumVersionComparisonContract-ib7fIgR5.js    2.48 kB Ôöé gzip:  0.90 kB
 dist/assets/calendarIcs-DkYHNygJ.js                            2.83 kB Ôöé gzip:  1.44 kB
-dist/assets/CurriculumVersionComparisonPanel-Di8nYOau.js       2.95 kB Ôöé gzip:  1.13 kB
-dist/assets/MyNoticesPage-Bi2Sfv9Z.js                          2.97 kB Ôöé gzip:  1.31 kB
-dist/assets/academicPeriodClient-Cq9jgCmy.js                   3.77 kB Ôöé gzip:  1.44 kB
-dist/assets/WorkspaceHomePage-rp9B8Nuf.js                      5.69 kB Ôöé gzip:  1.96 kB
-dist/assets/InstitutionalNoticesAdminPage-X6hyldLx.js          7.29 kB Ôöé gzip:  2.46 kB
-dist/assets/PublicPostgraduateDirectory-B32tsxMZ.js            9.90 kB Ôöé gzip:  2.90 kB
-dist/assets/PublicUndergraduateDirectory-Crwulr1r.js          10.53 kB Ôöé gzip:  3.11 kB
-dist/assets/LibraryAdminPage-BX8baTDU.js                      12.97 kB Ôöé gzip:  3.42 kB
-dist/assets/RoleAccessPage-D_VPy5eu.js                        14.61 kB Ôöé gzip:  4.52 kB
-dist/assets/SpaceGuidePage-BVNCpSVE.js                        15.67 kB Ôöé gzip:  4.51 kB
-dist/assets/StudentServicesPage-Ca0wrejg.js                   16.92 kB Ôöé gzip:  4.59 kB
-dist/assets/academicOperationsClient-UMnl9vF_.js              17.21 kB Ôöé gzip:  4.50 kB
-dist/assets/VisualIdentityCenter-CQaT0afA.js                  24.82 kB Ôöé gzip:  7.67 kB
-dist/assets/AcademicOfferingDraftPanel-nbkrg_q3.js            25.69 kB Ôöé gzip:  6.91 kB
-dist/assets/AdmissionsExperience-BvwsD1dG.js                  25.97 kB Ôöé gzip:  7.39 kB
-dist/assets/AcademicCatalogPage-Dj85ISJ_.js                   32.28 kB Ôöé gzip:  7.96 kB
-dist/assets/index.esm-Ba72w0vm.js                             36.55 kB Ôöé gzip: 12.89 kB
+dist/assets/CurriculumVersionComparisonPanel-CqY8bHdt.js       2.95 kB Ôöé gzip:  1.13 kB
+dist/assets/MyNoticesPage-RF0KAIRl.js                          2.97 kB Ôöé gzip:  1.31 kB
+dist/assets/academicPeriodClient-D_bZXi0P.js                   3.77 kB Ôöé gzip:  1.45 kB
+dist/assets/WorkspaceHomePage-BiQp7nuE.js                      5.69 kB Ôöé gzip:  1.97 kB
+dist/assets/InstitutionalNoticesAdminPage-BCZlgJXM.js          7.29 kB Ôöé gzip:  2.46 kB
+dist/assets/PublicPostgraduateDirectory-CxkfgZ23.js            9.90 kB Ôöé gzip:  2.90 kB
+dist/assets/PublicUndergraduateDirectory-S2fxzvdN.js          10.53 kB Ôöé gzip:  3.12 kB
+dist/assets/LibraryAdminPage-BBUOFJCq.js                      12.97 kB Ôöé gzip:  3.43 kB
+dist/assets/RoleAccessPage-Bp0KtSbi.js                        14.61 kB Ôöé gzip:  4.52 kB
+dist/assets/SpaceGuidePage-kn7jND-z.js                        15.67 kB Ôöé gzip:  4.51 kB
+dist/assets/StudentServicesPage-aCAVijkD.js                   16.92 kB Ôöé gzip:  4.59 kB
+dist/assets/academicOperationsClient-CMwJj-i4.js              17.21 kB Ôöé gzip:  4.50 kB
+dist/assets/VisualIdentityCenter-SLtZqxz1.js                  24.82 kB Ôöé gzip:  7.67 kB
+dist/assets/AcademicOfferingDraftPanel-DYvqCbJg.js            25.69 kB Ôöé gzip:  6.91 kB
+dist/assets/AdmissionsExperience-BAfWry2B.js                  25.97 kB Ôöé gzip:  7.39 kB
+dist/assets/AcademicCatalogPage-TjAYGMbX.js                   32.28 kB Ôöé gzip:  7.97 kB
+dist/assets/index.esm-q-7OUy2b.js                             36.55 kB Ôöé gzip: 12.89 kB
 dist/assets/identitySessionManager-HHyBh007.js                68.63 kB Ôöé gzip: 17.41 kB
-dist/assets/AcademicOperationsPage-lmBPvcxa.js                96.77 kB Ôöé gzip: 20.76 kB
-dist/assets/index-DcE2v_g0.js                                279.95 kB Ôöé gzip: 85.77 kB
+dist/assets/AcademicOperationsPage-BLn2VD1l.js                97.03 kB Ôöé gzip: 20.79 kB
+dist/assets/index-DC9UrYM7.js                                279.95 kB Ôöé gzip: 85.77 kB
 
-[32mÔ£ô built in 1.39s[39m
-Bundles: entry 281174 B JS / 23448 B CSS; #resumen 286864 B JS / 27891 B CSS; #programas 343776 B JS / 55853 B CSS / 62382 B JSON; OIDC diferido 68637 B JS.
+[32mÔ£ô built in 1.68s[39m
+Bundles: entry 281174 B JS / 23305 B CSS; #resumen 286864 B JS / 27748 B CSS; #programas 343776 B JS / 55710 B CSS / 62382 B JSON; OIDC diferido 68637 B JS.
 Presupuestos de bundle verificados.

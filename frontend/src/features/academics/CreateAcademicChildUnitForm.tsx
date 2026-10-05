@@ -172,7 +172,7 @@ export function CreateAcademicChildUnitForm({
           <p className="academic-panel-kicker">ALTA JERÁRQUICA AUDITADA</p>
           <h3 id="academic-create-child-unit-title">Crear unidad hija</h3>
         </div>
-        <span aria-hidden="true">↳</span>
+        <span className="academic-operation-icon" aria-hidden="true">↳</span>
       </div>
       <p className="academic-create-entry-intro">
         Crea la unidad y su vínculo con una unidad superior en una sola operación. La vigencia y el orden quedan auditados.

@@ -355,7 +355,7 @@ export function AcademicOperationsPage({
       </section>
 
       <div className="academic-operations-note" role="note">
-        <span aria-hidden="true">i</span>
+        <span className="academic-operation-icon" aria-hidden="true">i</span>
         <p><strong>{authorization?.canWrite ? 'Control explícito del periodo.' : 'Vista de consulta.'}</strong> {authorization?.canWrite
           ? 'Abrir o cerrar solo cambia el estado del periodo; no publica oferta de asignaturas ni abre matrícula. El semestre de una malla curricular es distinto del periodo académico real.'
           : 'Los cambios de estado requieren permiso institucional de escritura. El semestre de una malla curricular es distinto del periodo académico real.'} {canManageStructure

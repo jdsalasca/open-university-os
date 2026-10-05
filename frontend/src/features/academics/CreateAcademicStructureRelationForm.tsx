@@ -146,7 +146,7 @@ export function CreateAcademicStructureRelationForm(props: RelationFormProps) {
           <p className="academic-panel-kicker">VÍNCULO AUDITADO</p>
           <h3 id={`academic-create-${kind}-relation-title`}>{title}</h3>
         </div>
-        <span aria-hidden="true">↳</span>
+        <span className="academic-operation-icon" aria-hidden="true">↳</span>
       </div>
       <p className="academic-create-entry-intro">
         Vincula dos {pluralEntryLabel} existentes con orden, vigencia y referencia institucional. La jerarquía se valida en el servidor.

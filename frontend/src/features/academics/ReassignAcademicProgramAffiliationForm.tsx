@@ -238,7 +238,7 @@ export function ReassignAcademicProgramAffiliationForm({
           <p className="academic-panel-kicker">CAMBIO DE ADSCRIPCIÓN</p>
           <h3 id="academic-reassign-title">Reasignar programa entre unidades y sedes</h3>
         </div>
-        <span aria-hidden="true">⇢</span>
+        <span className="academic-operation-icon" aria-hidden="true">⇢</span>
       </div>
       <p className="academic-reassign-intro">
         El sistema conserva la historia del programa: cierra su adscripción actual el día anterior y registra la nueva desde la fecha efectiva.

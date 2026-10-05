@@ -263,7 +263,7 @@ export function CloseAcademicStructureRelationForm(props: CloseAcademicStructure
           <p className="academic-panel-kicker">VIGENCIA Y AUDITORÍA</p>
           <h3 id={titleId}>{sectionTitle}</h3>
         </div>
-        <span aria-hidden="true">⌁</span>
+        <span className="academic-operation-icon" aria-hidden="true">⌁</span>
       </div>
       <p className="academic-create-entry-intro">
         Acorta el vínculo entre dos registros sin eliminar ninguno. El último día indicado es inclusivo y la referencia queda auditada.

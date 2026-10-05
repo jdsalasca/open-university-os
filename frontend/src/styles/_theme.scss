@@ -351,17 +351,10 @@
   color: #f0dfa0;
 }
 
-// Los badges siguientes fijan su fondo y su color con literales de poca especificidad. La
-// regla puerta de index.scss aplica `color: var(--ui-text-primary)` a todo `.workspace main`
-// con especificidad 0-5-1, gana frente a un `> span` de 0-1-1 y deja el glifo blanco sobre un
-// fondo crema: medido en el navegador, ratio 1,10. Estos son los tres casos medidos.
-:root[data-theme='dark'] .workspace main .academic-operations-note > span { background: #4a4326; color: #f0dfa0; }
-
-:root[data-theme='dark'] .workspace main :is(.academic-create-entry-heading, .academic-reassign-heading) > span {
-  border-color: var(--ui-border);
-  background: var(--ui-surface-raised);
-  color: var(--ui-text-primary);
-}
+// Los glifos academicos llevan una clase propia en vez de depender de `> span`: el mismo badge
+// aparece en siete componentes con encabezados distintos, y un selector de hijo se rompe en
+// cuanto uno cambia su marcado. Se integra en el grupo de superficies elevadas de mas arriba.
+:root[data-theme='dark'] .workspace main .academic-operation-icon { background: var(--ui-surface-raised); color: var(--ui-text-primary); }
 
 // Segundo barrido medido en el navegador sobre #espacios y #programas: siete elementos con
 // texto propio entre 1,02 y 2,15. El script find-dark-badges.mjs los senala sin navegador.

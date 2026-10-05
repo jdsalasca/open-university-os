@@ -157,7 +157,7 @@ function AcademicStructureEntryForm({
           <p className="academic-panel-kicker">ALTA AUDITADA</p>
           <h3 id={`academic-create-${kind}-title`}>{title}</h3>
         </div>
-        <span aria-hidden="true">＋</span>
+        <span className="academic-operation-icon" aria-hidden="true">＋</span>
       </div>
       <p className="academic-create-entry-intro">
         Registra un {displayEntityTitle} con código, vigencia y referencia institucional. No se cargan registros de ejemplo.

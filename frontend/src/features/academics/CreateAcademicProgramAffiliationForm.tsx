@@ -152,7 +152,7 @@ export function CreateAcademicProgramAffiliationForm({
           <p className="academic-panel-kicker">ADSCRIPCIÓN AUDITADA</p>
           <h3 id="academic-create-program-affiliation-title">Adscribir programa publicado</h3>
         </div>
-        <span aria-hidden="true">↗</span>
+        <span className="academic-operation-icon" aria-hidden="true">↗</span>
       </div>
       <p className="academic-create-entry-intro">
         Relaciona el programa con una unidad y un lugar existentes, con vigencia, orden y referencia institucional.

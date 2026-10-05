@@ -279,27 +279,36 @@ test('dark theme gives the identity status icon a readable badge', () => {
 // index.scss (`:root[data-theme=dark] .workspace main :not(...)`) aplica
 // `color: var(--ui-text-primary)` con especificidad 0-5-1 y gana sobre un `> span` de
 // 0-1-1, asi que el glifo quedaba blanco sobre crema con ratio 1,10: invisible.
-test('dark theme repaints the identity note badge that carries a literal cream background', () => {
+test('dark theme repaints the shared academic operation icon', () => {
   // Arrange
-  const declarations = darkRule(':root[data-theme=dark] .workspace main .academic-operations-note > span')
+  const declarations = darkRule(':root[data-theme=dark] .workspace main .academic-operation-icon')
 
   // Assert
-  assert.ok(declarations, 'dark identity note badge rule must be present')
-  assert.match(declarations, /background:\s*#4a4326;/)
-  assert.match(declarations, /color:\s*#f0dfa0;/)
-  assertReadableContrast(declarations)
-})
-
-test('dark theme repaints the create-entry and reassignment badges together', () => {
-  // Arrange: los dos comparten tratamiento, asi que la regla los agrupa con :is().
-  const declarations = darkRule(
-    ':root[data-theme=dark] .workspace main :is(.academic-create-entry-heading, .academic-reassign-heading) > span')
-
-  // Assert
-  assert.ok(declarations, 'dark create-entry and reassignment badge rule must be present')
+  assert.ok(declarations, 'dark academic operation icon rule must be present')
   assert.match(declarations, /background:\s*var\(--ui-surface-raised\);/)
   assert.match(declarations, /color:\s*var\(--ui-text-primary\);/)
   assertReadableContrast(declarations)
+})
+
+test('every academic operation glyph uses the shared theme class', () => {
+  // Arrange: los siete componentes renderizan el mismo badge. Si uno se olvida de la clase,
+  // su glifo vuelve a quedar blanco sobre crema sin que ningun otro test lo note.
+  const componentes = [
+    '../src/features/academics/AcademicOperationsPage.tsx',
+    '../src/features/academics/CloseAcademicStructureRelationForm.tsx',
+    '../src/features/academics/CreateAcademicChildUnitForm.tsx',
+    '../src/features/academics/CreateAcademicProgramAffiliationForm.tsx',
+    '../src/features/academics/CreateAcademicStructureRelationForm.tsx',
+    '../src/features/academics/CreateFacultyForm.tsx',
+    '../src/features/academics/ReassignAcademicProgramAffiliationForm.tsx',
+  ]
+
+  // Act
+  const sinClase = componentes.filter((ruta) =>
+    !readFileSync(fileURLToPath(new URL(ruta, import.meta.url)), 'utf8').includes('className="academic-operation-icon"'))
+
+  // Assert
+  assert.deepEqual(sinClase, [], 'todo glifo de operacion academica debe usar la clase compartida del tema')
 })
 
 // Barrido medido en el navegador el 5 de octubre de 2026 sobre #espacios y #programas, las dos
