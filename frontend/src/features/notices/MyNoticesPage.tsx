@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { noticesClient as defaultNoticesClient } from './noticesClient'
 import type { NoticesClient } from './noticesClient'
 import type { NoticeAudienceKind, VisibleNotice } from './noticesContracts'
@@ -27,6 +27,7 @@ function MyNoticesPageContent({ client, accessToken }: { client: NoticesClient; 
   const [notices, setNotices] = useState<VisibleNotice[]>([])
   const [loadState, setLoadState] = useState<'loading' | 'ready' | 'error'>('loading')
   const [loadError, setLoadError] = useState<string | null>(null)
+  const requestControllerRef = useRef<AbortController | null>(null)
 
   const fetchNotices = useCallback(async (signal: AbortSignal) => {
     try {
@@ -42,20 +43,29 @@ function MyNoticesPageContent({ client, accessToken }: { client: NoticesClient; 
     }
   }, [accessToken, client])
 
-  useEffect(() => {
+  const loadNotices = useCallback(() => {
+    requestControllerRef.current?.abort()
     const controller = new AbortController()
+    requestControllerRef.current = controller
+    return fetchNotices(controller.signal).finally(() => {
+      if (requestControllerRef.current === controller) requestControllerRef.current = null
+    })
+  }, [fetchNotices])
+
+  useEffect(() => {
     // Deferred so the initial load is not a synchronous setState inside the effect.
-    const handle = setTimeout(() => { void fetchNotices(controller.signal) }, 0)
+    const handle = setTimeout(() => { void loadNotices() }, 0)
     return () => {
       clearTimeout(handle)
-      controller.abort()
+      requestControllerRef.current?.abort()
+      requestControllerRef.current = null
     }
-  }, [fetchNotices])
+  }, [loadNotices])
 
   function reload() {
     setLoadState('loading')
     setLoadError(null)
-    void fetchNotices(new AbortController().signal)
+    void loadNotices()
   }
 
   return (

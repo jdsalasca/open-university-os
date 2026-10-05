@@ -1,4 +1,4 @@
-import { cleanup, render, screen } from '@testing-library/react'
+import { cleanup, render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { MyNoticesPage } from './MyNoticesPage'
@@ -53,6 +53,26 @@ describe('MyNoticesPage', () => {
 
     // Assert
     expect(getMyNotices).toHaveBeenCalledTimes(2)
+  })
+
+  it('aborts a pending manual retry when the inbox unmounts', async () => {
+    // Arrange
+    let retrySignal: AbortSignal | undefined
+    const getMyNotices = vi.fn(async (_accessToken: string, signal?: AbortSignal) => {
+      if (getMyNotices.mock.calls.length === 1) throw new Error('offline')
+      retrySignal = signal
+      return new Promise<VisibleNotice[]>(() => {})
+    })
+    const user = userEvent.setup()
+    const { unmount } = render(<MyNoticesPage client={fakeClient({ getMyNotices })} accessToken="token" />)
+
+    // Act
+    await user.click(await screen.findByRole('button', { name: 'Reintentar avisos' }))
+    await waitFor(() => expect(retrySignal).toBeDefined())
+    unmount()
+
+    // Assert
+    expect(retrySignal?.aborted).toBe(true)
   })
 
   it('does not ask for notices without a session', () => {

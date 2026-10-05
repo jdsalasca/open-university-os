@@ -80,4 +80,57 @@ describe('InstitutionalNoticesAdminPage', () => {
       'token',
     ))
   })
+
+  it('aborts a pending manual retry when the administrative view unmounts', async () => {
+    // Arrange
+    let retrySignal: AbortSignal | undefined
+    const getRecent = vi.fn(async (_accessToken: string, signal?: AbortSignal) => {
+      if (getRecent.mock.calls.length === 1) throw new Error('offline')
+      retrySignal = signal
+      return new Promise<AdminNotice[]>(() => {})
+    })
+    const user = userEvent.setup()
+    const { unmount } = render(<InstitutionalNoticesAdminPage
+      client={fakeClient({ getRecent })}
+      authorization={{ accessToken: 'token', canRead: true, canWrite: false }}
+    />)
+
+    // Act
+    await user.click(await screen.findByRole('button', { name: 'Reintentar avisos' }))
+    await waitFor(() => expect(retrySignal).toBeDefined())
+    unmount()
+
+    // Assert
+    expect(retrySignal?.aborted).toBe(true)
+  })
+
+  it('cancels an older read before refreshing after publish and aborts the refresh on unmount', async () => {
+    // Arrange
+    const signals: AbortSignal[] = []
+    const getRecent = vi.fn(async (_accessToken: string, signal?: AbortSignal) => {
+      if (signal) signals.push(signal)
+      return new Promise<AdminNotice[]>(() => {})
+    })
+    const user = userEvent.setup()
+    const { unmount } = render(<InstitutionalNoticesAdminPage
+      client={fakeClient({ getRecent })}
+      authorization={{ accessToken: 'token', canRead: true, canWrite: true }}
+    />)
+    const form = await screen.findByRole('form', { name: 'Publicar aviso institucional' })
+
+    // Act
+    await waitFor(() => expect(getRecent).toHaveBeenCalledTimes(1))
+    await user.type(within(form).getByLabelText('Título'), 'Aviso de sede')
+    await user.type(within(form).getByLabelText('Cuerpo'), 'La sede cierra el viernes.')
+    await user.type(within(form).getByLabelText('Referencia institucional'), 'Resolución 5 de 2026')
+    await user.type(within(form).getByLabelText('Vigente desde'), '2026-10-01')
+    await user.type(within(form).getByLabelText('Vigente hasta'), '2026-10-31')
+    await user.click(within(form).getByRole('button', { name: 'Publicar aviso' }))
+    await waitFor(() => expect(getRecent).toHaveBeenCalledTimes(2))
+
+    // Assert
+    expect(signals[0]?.aborted).toBe(true)
+    unmount()
+    expect(signals[1]?.aborted).toBe(true)
+  })
 })

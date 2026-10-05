@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import type { FormEvent } from 'react'
 import { noticesAdminClient as defaultClient } from './noticesAdminClient'
 import type { NoticesAdminClient } from './noticesAdminClient'
@@ -55,6 +55,7 @@ function InstitutionalNoticesAdminPageContent({
   const [actionMessage, setActionMessage] = useState<string | null>(null)
   const [publishing, setPublishing] = useState(false)
   const [audiences, setAudiences] = useState<AudienceDraft[]>([{ kind: 'UNIVERSITY', reference: '' }])
+  const requestControllerRef = useRef<AbortController | null>(null)
 
   const fetchNotices = useCallback(async (signal: AbortSignal) => {
     try {
@@ -70,20 +71,29 @@ function InstitutionalNoticesAdminPageContent({
     }
   }, [accessToken, client])
 
-  useEffect(() => {
+  const loadNotices = useCallback(() => {
+    requestControllerRef.current?.abort()
     const controller = new AbortController()
+    requestControllerRef.current = controller
+    return fetchNotices(controller.signal).finally(() => {
+      if (requestControllerRef.current === controller) requestControllerRef.current = null
+    })
+  }, [fetchNotices])
+
+  useEffect(() => {
     // Deferred so the initial load is not a synchronous setState inside the effect.
-    const handle = setTimeout(() => { void fetchNotices(controller.signal) }, 0)
+    const handle = setTimeout(() => { void loadNotices() }, 0)
     return () => {
       clearTimeout(handle)
-      controller.abort()
+      requestControllerRef.current?.abort()
+      requestControllerRef.current = null
     }
-  }, [fetchNotices])
+  }, [loadNotices])
 
   function reload() {
     setLoadState('loading')
     setLoadError(null)
-    void fetchNotices(new AbortController().signal)
+    void loadNotices()
   }
 
   async function publish(event: FormEvent<HTMLFormElement>) {
@@ -113,7 +123,7 @@ function InstitutionalNoticesAdminPageContent({
     formElement.reset()
     setAudiences([{ kind: 'UNIVERSITY', reference: '' }])
     setActionMessage('Aviso publicado. Queda inmutable; una corrección es otro aviso.')
-    await fetchNotices(new AbortController().signal)
+    await loadNotices()
   }
 
   return (
