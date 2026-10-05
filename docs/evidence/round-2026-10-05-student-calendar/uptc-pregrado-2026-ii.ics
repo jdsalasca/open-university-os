@@ -1,0 +1,229 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Universiry//Agenda pública UPTC Pregrado · II semestre académi
+ co de 2026//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:UPTC · Pregrado · II semestre académico de 2026
+BEGIN:VEVENT
+UID:pregrado-2026-ii-inscripcion-asignaturas@universiry.local
+DTSTAMP:20261005T104930Z
+DTSTART;VALUE=DATE:20260622
+DTEND;VALUE=DATE:20260711
+SUMMARY:Inscripción de asignaturas por web
+DESCRIPTION:Programas presenciales y FESAD.\nFuente oficial: https://uptc.e
+ du.co/sitio/portal/sitios/universidad/vic_aca/adm_reg/2estu/est_pre.html\n
+ Instantánea informativa consultada el 5 de octubre de 2026\; confirma cam
+ bios directamente con ACRA.
+CATEGORIES:Inscripción de asignaturas
+END:VEVENT
+BEGIN:VEVENT
+UID:pregrado-2026-ii-pago-derechos-presencial-fesad@universiry.local
+DTSTAMP:20261005T104930Z
+DTSTART;VALUE=DATE:20260722
+DTEND;VALUE=DATE:20260825
+SUMMARY:Pago de derechos pecuniarios y/o matrícula
+DESCRIPTION:Programas presenciales y FESAD.\nFuente oficial: https://uptc.e
+ du.co/sitio/portal/sitios/universidad/vic_aca/adm_reg/2estu/est_pre.html\n
+ Instantánea informativa consultada el 5 de octubre de 2026\; confirma cam
+ bios directamente con ACRA.
+CATEGORIES:Matrícula
+END:VEVENT
+BEGIN:VEVENT
+UID:pregrado-2026-ii-inicio-clases-presencial@universiry.local
+DTSTAMP:20261005T104930Z
+DTSTART;VALUE=DATE:20260810
+DTEND;VALUE=DATE:20260811
+SUMMARY:Inicio de clases
+DESCRIPTION:Programas presenciales.\nFuente oficial: https://uptc.edu.co/si
+ tio/portal/sitios/universidad/vic_aca/adm_reg/2estu/est_pre.html\nInstant
+ ánea informativa consultada el 5 de octubre de 2026\; confirma cambios di
+ rectamente con ACRA.
+CATEGORIES:Actividad académica
+END:VEVENT
+BEGIN:VEVENT
+UID:pregrado-2026-ii-inicio-clases-fesad@universiry.local
+DTSTAMP:20261005T104930Z
+DTSTART;VALUE=DATE:20260815
+DTEND;VALUE=DATE:20260816
+SUMMARY:Inicio de clases
+DESCRIPTION:FESAD.\nFuente oficial: https://uptc.edu.co/sitio/portal/sitios
+ /universidad/vic_aca/adm_reg/2estu/est_pre.html\nInstantánea informativa
+  consultada el 5 de octubre de 2026\; confirma cambios directamente con AC
+ RA.
+CATEGORIES:Actividad académica
+END:VEVENT
+BEGIN:VEVENT
+UID:pregrado-2026-ii-grados-primera-fecha@universiry.local
+DTSTAMP:20261005T104930Z
+DTSTART;VALUE=DATE:20260907
+DTEND;VALUE=DATE:20260912
+SUMMARY:Grados · primera fecha
+DESCRIPTION:Fecha publicada por ACRA para programas de pregrado.\nFuente of
+ icial: https://uptc.edu.co/sitio/portal/sitios/universidad/vic_aca/adm_reg
+ /2estu/est_pre.html\nInstantánea informativa consultada el 5 de octubre d
+ e 2026\; confirma cambios directamente con ACRA.
+CATEGORIES:Grados
+END:VEVENT
+BEGIN:VEVENT
+UID:pregrado-2026-ii-matricula-terminacion-ordinaria@universiry.local
+DTSTAMP:20261005T104930Z
+DTSTART;VALUE=DATE:20261008
+DTEND;VALUE=DATE:20261009
+SUMMARY:Derechos pecuniarios y/o matrícula · terminación académica · o
+ rdinaria
+DESCRIPTION:Fecha límite: hasta el 8 de octubre de 2026.\nFuente oficial:
+  https://uptc.edu.co/sitio/portal/sitios/universidad/vic_aca/adm_reg/2estu
+ /est_pre.html\nInstantánea informativa consultada el 5 de octubre de 2026
+ \; confirma cambios directamente con ACRA.
+CATEGORIES:Matrícula
+END:VEVENT
+BEGIN:VEVENT
+UID:pregrado-2026-ii-matricula-sin-gratuidad-ordinaria@universiry.local
+DTSTAMP:20261005T104930Z
+DTSTART;VALUE=DATE:20261008
+DTEND;VALUE=DATE:20261009
+SUMMARY:Matrícula · estudiantes sin beneficio de gratuidad · ordinaria
+DESCRIPTION:Fecha límite: hasta el 8 de octubre de 2026.\nFuente oficial:
+  https://uptc.edu.co/sitio/portal/sitios/universidad/vic_aca/adm_reg/2estu
+ /est_pre.html\nInstantánea informativa consultada el 5 de octubre de 2026
+ \; confirma cambios directamente con ACRA.
+CATEGORIES:Matrícula
+END:VEVENT
+BEGIN:VEVENT
+UID:pregrado-2026-ii-matricula-terminacion-extraordinaria@universiry.local
+DTSTAMP:20261005T104930Z
+DTSTART;VALUE=DATE:20261009
+DTEND;VALUE=DATE:20261014
+SUMMARY:Derechos pecuniarios y/o matrícula · terminación académica · e
+ xtraordinaria
+DESCRIPTION:Estudiantes en terminación académica.\nFuente oficial: https:
+ //uptc.edu.co/sitio/portal/sitios/universidad/vic_aca/adm_reg/2estu/est_pr
+ e.html\nInstantánea informativa consultada el 5 de octubre de 2026\; conf
+ irma cambios directamente con ACRA.
+CATEGORIES:Matrícula
+END:VEVENT
+BEGIN:VEVENT
+UID:pregrado-2026-ii-matricula-sin-gratuidad-extraordinaria@universiry.loca
+ l
+DTSTAMP:20261005T104930Z
+DTSTART;VALUE=DATE:20261009
+DTEND;VALUE=DATE:20261014
+SUMMARY:Matrícula · estudiantes sin beneficio de gratuidad · extraordina
+ ria
+DESCRIPTION:Estudiantes sin beneficio de gratuidad.\nFuente oficial: https:
+ //uptc.edu.co/sitio/portal/sitios/universidad/vic_aca/adm_reg/2estu/est_pr
+ e.html\nInstantánea informativa consultada el 5 de octubre de 2026\; conf
+ irma cambios directamente con ACRA.
+CATEGORIES:Matrícula
+END:VEVENT
+BEGIN:VEVENT
+UID:pregrado-2026-ii-reporte-men-ordinario@universiry.local
+DTSTAMP:20261005T104930Z
+DTSTART;VALUE=DATE:20261019
+DTEND;VALUE=DATE:20261110
+SUMMARY:Reporte MEN 2026-2 · no beneficiarios de gratuidad · ordinario
+DESCRIPTION:Estudiantes no beneficiarios de gratuidad reportados al MEN.\nF
+ uente oficial: https://uptc.edu.co/sitio/portal/sitios/universidad/vic_aca
+ /adm_reg/2estu/est_pre.html\nInstantánea informativa consultada el 5 de o
+ ctubre de 2026\; confirma cambios directamente con ACRA.
+CATEGORIES:Matrícula
+END:VEVENT
+BEGIN:VEVENT
+UID:pregrado-2026-ii-cancelacion-presencial@universiry.local
+DTSTAMP:20261005T104930Z
+DTSTART;VALUE=DATE:20261030
+DTEND;VALUE=DATE:20261031
+SUMMARY:Cancelación de asignaturas y semestre · presencial
+DESCRIPTION:Acuerdo 032 de 2020.\nFuente oficial: https://uptc.edu.co/sitio
+ /portal/sitios/universidad/vic_aca/adm_reg/2estu/est_pre.html\nInstantáne
+ a informativa consultada el 5 de octubre de 2026\; confirma cambios direct
+ amente con ACRA.
+CATEGORIES:Cancelaciones
+END:VEVENT
+BEGIN:VEVENT
+UID:pregrado-2026-ii-cancelacion-con-requisitos@universiry.local
+DTSTAMP:20261005T104930Z
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261101
+SUMMARY:Cancelación de semestre con requisitos
+DESCRIPTION:Fecha límite publicada: hasta el 31 de octubre de 2026.\nFuent
+ e oficial: https://uptc.edu.co/sitio/portal/sitios/universidad/vic_aca/adm
+ _reg/2estu/est_pre.html\nInstantánea informativa consultada el 5 de octub
+ re de 2026\; confirma cambios directamente con ACRA.
+CATEGORIES:Cancelaciones
+END:VEVENT
+BEGIN:VEVENT
+UID:pregrado-2026-ii-cancelacion-distancia@universiry.local
+DTSTAMP:20261005T104930Z
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261101
+SUMMARY:Cancelación de asignaturas y semestre · distancia
+DESCRIPTION:Acuerdo 032 de 2020.\nFuente oficial: https://uptc.edu.co/sitio
+ /portal/sitios/universidad/vic_aca/adm_reg/2estu/est_pre.html\nInstantáne
+ a informativa consultada el 5 de octubre de 2026\; confirma cambios direct
+ amente con ACRA.
+CATEGORIES:Cancelaciones
+END:VEVENT
+BEGIN:VEVENT
+UID:pregrado-2026-ii-grados-segunda-fecha@universiry.local
+DTSTAMP:20261005T104930Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261107
+SUMMARY:Grados · segunda fecha
+DESCRIPTION:Fecha publicada por ACRA para programas de pregrado.\nFuente of
+ icial: https://uptc.edu.co/sitio/portal/sitios/universidad/vic_aca/adm_reg
+ /2estu/est_pre.html\nInstantánea informativa consultada el 5 de octubre d
+ e 2026\; confirma cambios directamente con ACRA.
+CATEGORIES:Grados
+END:VEVENT
+BEGIN:VEVENT
+UID:pregrado-2026-ii-evaluacion-profesorado@universiry.local
+DTSTAMP:20261005T104930Z
+DTSTART;VALUE=DATE:20261103
+DTEND;VALUE=DATE:20261108
+SUMMARY:Evaluación estudiantil al profesorado
+DESCRIPTION:Fecha publicada por ACRA.\nFuente oficial: https://uptc.edu.co/
+ sitio/portal/sitios/universidad/vic_aca/adm_reg/2estu/est_pre.html\nInstan
+ tánea informativa consultada el 5 de octubre de 2026\; confirma cambios d
+ irectamente con ACRA.
+CATEGORIES:Evaluación
+END:VEVENT
+BEGIN:VEVENT
+UID:pregrado-2026-ii-reporte-men-extraordinario@universiry.local
+DTSTAMP:20261005T104930Z
+DTSTART;VALUE=DATE:20261110
+DTEND;VALUE=DATE:20261114
+SUMMARY:Reporte MEN 2026-2 · no beneficiarios de gratuidad · extraordinar
+ io
+DESCRIPTION:Estudiantes no beneficiarios de gratuidad reportados al MEN.\nF
+ uente oficial: https://uptc.edu.co/sitio/portal/sitios/universidad/vic_aca
+ /adm_reg/2estu/est_pre.html\nInstantánea informativa consultada el 5 de o
+ ctubre de 2026\; confirma cambios directamente con ACRA.
+CATEGORIES:Matrícula
+END:VEVENT
+BEGIN:VEVENT
+UID:pregrado-2026-ii-fin-clases-presencial@universiry.local
+DTSTAMP:20261005T104930Z
+DTSTART;VALUE=DATE:20261127
+DTEND;VALUE=DATE:20261128
+SUMMARY:Terminación de clases · presencial
+DESCRIPTION:Programas presenciales.\nFuente oficial: https://uptc.edu.co/si
+ tio/portal/sitios/universidad/vic_aca/adm_reg/2estu/est_pre.html\nInstant
+ ánea informativa consultada el 5 de octubre de 2026\; confirma cambios di
+ rectamente con ACRA.
+CATEGORIES:Actividad académica
+END:VEVENT
+BEGIN:VEVENT
+UID:pregrado-2026-ii-fin-clases-distancia@universiry.local
+DTSTAMP:20261005T104930Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:Terminación de clases · distancia
+DESCRIPTION:Programas a distancia.\nFuente oficial: https://uptc.edu.co/sit
+ io/portal/sitios/universidad/vic_aca/adm_reg/2estu/est_pre.html\nInstantá
+ nea informativa consultada el 5 de octubre de 2026\; confirma cambios dire
+ ctamente con ACRA.
+CATEGORIES:Actividad académica
+END:VEVENT
+END:VCALENDAR

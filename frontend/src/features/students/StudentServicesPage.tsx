@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react'
+import { StudentAcademicCalendar2026II } from './StudentAcademicCalendar2026II'
 import './StudentServicesPage.scss'
 
 type StudentServiceCategory =
@@ -266,6 +267,7 @@ export function StudentServicesPage() {
           </div>
         )}
       </section>
+      <StudentAcademicCalendar2026II />
     </section>
   )
 }

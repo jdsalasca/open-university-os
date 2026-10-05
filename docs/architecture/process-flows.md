@@ -1465,7 +1465,7 @@ El [registro de procedencia](../discovery/uptc-undergraduate-directory-snapshot-
 
 ## Directorio público de servicios estudiantiles
 
-El directorio `/#estudiantes` presenta nueve fichas estáticas de Bienestar, Biblioteca, sistemas institucionales, gestiones académicas y calendario de pregrado. Bienestar Virtual y Apoyo socioeconómico permanecen como servicios separados. La búsqueda y el filtro por categoría operan en memoria del navegador; ningún texto se envía al backend o se persiste. Cada ficha documenta su procedencia y alcance en la [ficha del directorio](../discovery/uptc-student-services-directory-2026-10.md); la persona abre una fuente UPTC solo al activar su enlace.
+El directorio `/#estudiantes` presenta once fichas estáticas de Bienestar, Biblioteca, sistemas institucionales, gestiones académicas y calendario de pregrado. Bienestar Virtual y Apoyo socioeconómico permanecen como servicios separados. La búsqueda y el filtro por categoría operan en memoria del navegador; ningún texto se envía al backend o se persiste. La misma página muestra los 18 hitos publicados por ACRA para pregrado 2026-II y permite descargar una copia `.ics`. La ficha de fuentes registra las fechas, la fecha de actualización visible y el alcance de la instantánea. La agenda conserva las poblaciones/modalidades publicadas, distingue su fecha de consulta (5 de octubre de 2026) y enlaza a ACRA para verificar modificaciones.
 
 ```mermaid
 sequenceDiagram
@@ -1474,8 +1474,14 @@ sequenceDiagram
   participant Source as Portal oficial UPTC
 
   Visitor->>React: abre el directorio
-  React->>React: presenta nueve fichas tipadas con fuente y fecha
+  React->>React: presenta once fichas tipadas con fuente y fecha
   React-->>Visitor: muestra servicios institucionales en cinco categorías
+  React->>React: presenta 18 fechas de pregrado 2026-II como una instantánea pública
+  opt La persona guarda las fechas en su calendario personal
+    Visitor->>React: solicita la descarga .ics
+    React->>React: valida identificadores y fechas; serializa los 18 hitos y la fuente ACRA
+    React-->>Visitor: descarga eventos de día completo con límites inclusivos
+  end
   Visitor->>React: escribe texto o elige una categoría
   React->>React: normaliza tildes y mayúsculas, filtra localmente
   React-->>Visitor: anuncia el total de coincidencias
@@ -1486,9 +1492,11 @@ sequenceDiagram
   end
   Visitor->>Source: activa el enlace HTTPS de una ficha
   Source-->>Visitor: presenta la información institucional vigente
+  Visitor->>Source: abre la fuente ACRA desde la agenda
+  Source-->>Visitor: muestra el calendario y sus cambios vigentes
 ```
 
-Las fichas orientan y no confirman requisitos, cupos ni disponibilidad. Aunque el título mencione préstamo o consulta, Universiry no presta recursos ni reserva espacios. El navegador abre las páginas públicas en otra pestaña con `noopener noreferrer`. La revisión del 3 de octubre se apoyó en resultados indexados oficiales; algunas páginas no se pudieron recuperar directamente. Las áreas de Bienestar y Biblioteca deben validar el catálogo y su mantenimiento antes de tratarlo como contenido institucional vigente. Ver [el registro de fuentes](../discovery/uptc-student-services-directory-2026-10.md).
+Las fichas orientan y no confirman requisitos, cupos ni disponibilidad. Aunque el título mencione préstamo o consulta, Universiry no presta recursos ni reserva espacios. El navegador abre las páginas públicas en otra pestaña con `noopener noreferrer`. La agenda es una copia estática: no consulta API ni determina si una fecha aplica a una persona. Cuando ACRA solo publica una fecha límite («hasta»), la vista no inventa el comienzo del intervalo; la fuente confirma los cambios y el estado actual. La serialización `.ics` reutiliza el adaptador compartido con admisiones, conserva las fechas finales inclusivas de la publicación y las codifica como `DTEND` exclusivo. Las áreas de Bienestar y Biblioteca deben validar el catálogo y su mantenimiento antes de tratarlo como contenido institucional vigente. Ver [el registro de fuentes](../discovery/uptc-student-services-directory-2026-10.md).
 
 ## Catálogo y circulación de biblioteca
 

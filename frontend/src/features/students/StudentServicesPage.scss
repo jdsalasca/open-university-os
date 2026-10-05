@@ -159,16 +159,78 @@
 .student-service-card-bottom a:focus-visible { outline: 3px solid var(--ui-focus, var(--brand-focus, #1a1a1a)); outline-offset: 4px; border-radius: 0.2rem; }
 .student-service-card-bottom small { color: var(--ui-text-muted, #6f7067); font-size: 0.73rem; line-height: 1.45; }
 
+.student-academic-calendar {
+  display: grid;
+  gap: 1.25rem;
+  padding: clamp(1.1rem, 3vw, 2rem);
+  border: 1px solid var(--ui-border, #e7e8e1);
+  border-radius: 1.25rem;
+  background:
+    radial-gradient(circle at 100% 0, color-mix(in srgb, var(--brand-primary, #ffcc29) 16%, transparent), transparent 21rem),
+    var(--ui-surface-subtle, #f3f1e9);
+}
+
+.student-academic-calendar-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1.25rem;
+}
+
+.student-academic-calendar-heading h2 { max-width: 30ch; margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(1.65rem, 3vw, 2.4rem); font-weight: 500; letter-spacing: -0.025em; line-height: 1.1; }
+.student-academic-calendar-heading .student-services-eyebrow { margin-bottom: 0.6rem; }
+.student-academic-calendar-summary { max-width: 66ch; margin: 0.75rem 0 0; color: var(--ui-text-secondary, #5d6157); line-height: 1.55; }
+
+.student-academic-calendar-download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  min-height: 2.9rem;
+  flex: 0 0 auto;
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--institution-dark, #171815);
+  border-radius: 0.75rem;
+  background: var(--institution-dark, #171815);
+  color: #fff;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.student-academic-calendar-download span { color: var(--brand-primary, #ffcc29); font-size: 1.1rem; }
+.student-academic-calendar-download:hover { background: color-mix(in srgb, var(--institution-dark, #171815) 88%, var(--brand-primary, #ffcc29)); }
+.student-academic-calendar-download:focus-visible { outline: 3px solid var(--ui-focus, var(--brand-focus, #1a1a1a)); outline-offset: 3px; }
+
+.student-academic-calendar-provenance { display: flex; flex-wrap: wrap; align-items: center; gap: 0.55rem 1rem; padding: 0.85rem 1rem; border: 1px solid var(--ui-border, #e7e8e1); border-radius: 0.85rem; background: var(--ui-surface, #fff); }
+.student-academic-calendar-provenance p, .student-academic-calendar-provenance small { margin: 0; color: var(--ui-text-secondary, #5d6157); font-size: 0.8rem; }
+.student-academic-calendar-provenance p { font-weight: 750; }
+.student-academic-calendar-provenance a { color: var(--ui-text-primary, #20211d); font-size: 0.8rem; font-weight: 750; text-underline-offset: 0.2em; }
+.student-academic-calendar-provenance a:focus-visible { outline: 3px solid var(--ui-focus, var(--brand-focus, #1a1a1a)); outline-offset: 3px; border-radius: 0.2rem; }
+
+.student-academic-calendar-events { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; margin: 0; padding: 0; list-style: none; }
+.student-academic-calendar-event { display: grid; align-content: start; gap: 0.45rem; min-width: 0; padding: 1rem 1.1rem; border: 1px solid var(--ui-border, #e7e8e1); border-radius: 0.9rem; background: var(--ui-surface, #fff); }
+.student-academic-calendar-category { color: var(--ui-text-secondary, #5d6157); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+.student-academic-calendar-event h3 { margin: 0; font-size: 0.96rem; line-height: 1.35; overflow-wrap: anywhere; }
+.student-academic-calendar-event p { margin: 0; color: var(--ui-text-secondary, #5d6157); font-size: 0.83rem; line-height: 1.45; }
+.student-academic-calendar-event .student-academic-calendar-date { margin-top: 0.2rem; color: var(--ui-text-primary, #20211d); font-weight: 750; }
+.student-academic-calendar-disclaimer { margin: 0; color: var(--ui-text-muted, #6f7067); font-size: 0.78rem; line-height: 1.5; }
+
 @media (max-width: 760px) {
   .student-services-hero { grid-template-columns: minmax(0, 1fr); }
   .student-services-hero-mark { display: none; }
   .student-services-grid { grid-template-columns: minmax(0, 1fr); }
+  .student-academic-calendar-heading { align-items: start; flex-direction: column; }
+  .student-academic-calendar-events { grid-template-columns: minmax(0, 1fr); }
 }
 
 @media (max-width: 500px) {
   .student-services-search-row { align-items: stretch; flex-direction: column; }
   .student-services-count { align-self: start; }
   .student-service-card { min-height: 16rem; }
+  .student-academic-calendar-download { width: 100%; }
+  .student-academic-calendar-provenance { align-items: start; flex-direction: column; }
 }
 
 @media (prefers-reduced-motion: reduce) {

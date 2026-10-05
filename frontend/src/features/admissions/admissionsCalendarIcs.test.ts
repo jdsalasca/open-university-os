@@ -92,7 +92,9 @@ describe('downloadAdmissionsCalendar', () => {
     // Arrange
     const createObjectURL = vi.fn().mockReturnValue('blob:uptc-calendar')
     const revokeObjectURL = vi.fn()
-    vi.stubGlobal('URL', { createObjectURL, revokeObjectURL })
+    const MockURL = class extends URL {}
+    Object.assign(MockURL, { createObjectURL, revokeObjectURL })
+    vi.stubGlobal('URL', MockURL)
     vi.useFakeTimers()
 
     let downloadedName = ''
@@ -125,7 +127,9 @@ describe('downloadAdmissionsCalendar', () => {
     // Arrange
     const createObjectURL = vi.fn().mockReturnValue('blob:uptc-calendar')
     const revokeObjectURL = vi.fn()
-    vi.stubGlobal('URL', { createObjectURL, revokeObjectURL })
+    const MockURL = class extends URL {}
+    Object.assign(MockURL, { createObjectURL, revokeObjectURL })
+    vi.stubGlobal('URL', MockURL)
     vi.useFakeTimers()
     let downloadedName = ''
     const click = vi.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(function (this: HTMLAnchorElement) {
@@ -151,7 +155,9 @@ describe('downloadAdmissionsCalendar', () => {
     // Arrange
     const createObjectURL = vi.fn().mockReturnValue('blob:uptc-calendar')
     const revokeObjectURL = vi.fn()
-    vi.stubGlobal('URL', { createObjectURL, revokeObjectURL })
+    const MockURL = class extends URL {}
+    Object.assign(MockURL, { createObjectURL, revokeObjectURL })
+    vi.stubGlobal('URL', MockURL)
     vi.useFakeTimers()
     let downloadedName = ''
     const click = vi.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(function (this: HTMLAnchorElement) {
@@ -177,7 +183,9 @@ describe('downloadAdmissionsCalendar', () => {
     // Arrange
     const createObjectURL = vi.fn().mockReturnValue('blob:uptc-calendar')
     const revokeObjectURL = vi.fn()
-    vi.stubGlobal('URL', { createObjectURL, revokeObjectURL })
+    const MockURL = class extends URL {}
+    Object.assign(MockURL, { createObjectURL, revokeObjectURL })
+    vi.stubGlobal('URL', MockURL)
     const unnamedCalendar = {
       ...OFFICIAL_ADMISSIONS_CALENDAR_2027_I,
       title: '',

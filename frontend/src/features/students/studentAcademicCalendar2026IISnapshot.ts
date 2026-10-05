@@ -1,0 +1,163 @@
+import type { CalendarIcsDocument, CalendarIcsEvent } from '../../shared/calendar/calendarIcs'
+
+export const UPTC_ACRA_UNDERGRADUATE_CALENDAR_URL =
+  'https://uptc.edu.co/sitio/portal/sitios/universidad/vic_aca/adm_reg/2estu/est_pre.html'
+
+export const STUDENT_ACADEMIC_CALENDAR_2026_II_UPDATED_ON = '2026-09-17'
+export const STUDENT_ACADEMIC_CALENDAR_2026_II_CHECKED_ON = '2026-10-05'
+
+export const STUDENT_ACADEMIC_CALENDAR_2026_II_EVENTS: readonly CalendarIcsEvent[] = [
+  {
+    id: 'inscripcion-asignaturas',
+    title: 'Inscripción de asignaturas por web',
+    description: 'Programas presenciales y FESAD.',
+    startsOn: '2026-06-22',
+    endsOn: '2026-07-10',
+    category: 'Inscripción de asignaturas',
+  },
+  {
+    id: 'pago-derechos-presencial-fesad',
+    title: 'Pago de derechos pecuniarios y/o matrícula',
+    description: 'Programas presenciales y FESAD.',
+    startsOn: '2026-07-22',
+    endsOn: '2026-08-24',
+    category: 'Matrícula',
+  },
+  {
+    id: 'inicio-clases-presencial',
+    title: 'Inicio de clases',
+    description: 'Programas presenciales.',
+    startsOn: '2026-08-10',
+    endsOn: '2026-08-10',
+    category: 'Actividad académica',
+  },
+  {
+    id: 'inicio-clases-fesad',
+    title: 'Inicio de clases',
+    description: 'FESAD.',
+    startsOn: '2026-08-15',
+    endsOn: '2026-08-15',
+    category: 'Actividad académica',
+  },
+  {
+    id: 'grados-primera-fecha',
+    title: 'Grados · primera fecha',
+    description: 'Fecha publicada por ACRA para programas de pregrado.',
+    startsOn: '2026-09-07',
+    endsOn: '2026-09-11',
+    category: 'Grados',
+  },
+  {
+    id: 'matricula-terminacion-ordinaria',
+    title: 'Derechos pecuniarios y/o matrícula · terminación académica · ordinaria',
+    description: 'Fecha límite: hasta el 8 de octubre de 2026.',
+    startsOn: '2026-10-08',
+    endsOn: '2026-10-08',
+    category: 'Matrícula',
+  },
+  {
+    id: 'matricula-sin-gratuidad-ordinaria',
+    title: 'Matrícula · estudiantes sin beneficio de gratuidad · ordinaria',
+    description: 'Fecha límite: hasta el 8 de octubre de 2026.',
+    startsOn: '2026-10-08',
+    endsOn: '2026-10-08',
+    category: 'Matrícula',
+  },
+  {
+    id: 'matricula-terminacion-extraordinaria',
+    title: 'Derechos pecuniarios y/o matrícula · terminación académica · extraordinaria',
+    description: 'Estudiantes en terminación académica.',
+    startsOn: '2026-10-09',
+    endsOn: '2026-10-13',
+    category: 'Matrícula',
+  },
+  {
+    id: 'matricula-sin-gratuidad-extraordinaria',
+    title: 'Matrícula · estudiantes sin beneficio de gratuidad · extraordinaria',
+    description: 'Estudiantes sin beneficio de gratuidad.',
+    startsOn: '2026-10-09',
+    endsOn: '2026-10-13',
+    category: 'Matrícula',
+  },
+  {
+    id: 'reporte-men-ordinario',
+    title: 'Reporte MEN 2026-2 · no beneficiarios de gratuidad · ordinario',
+    description: 'Estudiantes no beneficiarios de gratuidad reportados al MEN.',
+    startsOn: '2026-10-19',
+    endsOn: '2026-11-09',
+    category: 'Matrícula',
+  },
+  {
+    id: 'cancelacion-presencial',
+    title: 'Cancelación de asignaturas y semestre · presencial',
+    description: 'Acuerdo 032 de 2020.',
+    startsOn: '2026-10-30',
+    endsOn: '2026-10-30',
+    category: 'Cancelaciones',
+  },
+  {
+    id: 'cancelacion-con-requisitos',
+    title: 'Cancelación de semestre con requisitos',
+    description: 'Fecha límite publicada: hasta el 31 de octubre de 2026.',
+    startsOn: '2026-10-31',
+    endsOn: '2026-10-31',
+    category: 'Cancelaciones',
+  },
+  {
+    id: 'cancelacion-distancia',
+    title: 'Cancelación de asignaturas y semestre · distancia',
+    description: 'Acuerdo 032 de 2020.',
+    startsOn: '2026-10-31',
+    endsOn: '2026-10-31',
+    category: 'Cancelaciones',
+  },
+  {
+    id: 'grados-segunda-fecha',
+    title: 'Grados · segunda fecha',
+    description: 'Fecha publicada por ACRA para programas de pregrado.',
+    startsOn: '2026-11-02',
+    endsOn: '2026-11-06',
+    category: 'Grados',
+  },
+  {
+    id: 'evaluacion-profesorado',
+    title: 'Evaluación estudiantil al profesorado',
+    description: 'Fecha publicada por ACRA.',
+    startsOn: '2026-11-03',
+    endsOn: '2026-11-07',
+    category: 'Evaluación',
+  },
+  {
+    id: 'reporte-men-extraordinario',
+    title: 'Reporte MEN 2026-2 · no beneficiarios de gratuidad · extraordinario',
+    description: 'Estudiantes no beneficiarios de gratuidad reportados al MEN.',
+    startsOn: '2026-11-10',
+    endsOn: '2026-11-13',
+    category: 'Matrícula',
+  },
+  {
+    id: 'fin-clases-presencial',
+    title: 'Terminación de clases · presencial',
+    description: 'Programas presenciales.',
+    startsOn: '2026-11-27',
+    endsOn: '2026-11-27',
+    category: 'Actividad académica',
+  },
+  {
+    id: 'fin-clases-distancia',
+    title: 'Terminación de clases · distancia',
+    description: 'Programas a distancia.',
+    startsOn: '2026-11-28',
+    endsOn: '2026-11-28',
+    category: 'Actividad académica',
+  },
+]
+
+export const STUDENT_ACADEMIC_CALENDAR_2026_II_ICS: CalendarIcsDocument = {
+  name: 'Pregrado · II semestre académico de 2026',
+  uidScope: 'pregrado-2026-ii',
+  filename: 'uptc-pregrado-2026-ii.ics',
+  sourceUrl: UPTC_ACRA_UNDERGRADUATE_CALENDAR_URL,
+  sourceNotice: 'Instantánea informativa consultada el 5 de octubre de 2026; confirma cambios directamente con ACRA.',
+  events: STUDENT_ACADEMIC_CALENDAR_2026_II_EVENTS,
+}

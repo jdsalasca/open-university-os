@@ -1,6 +1,6 @@
-import { cleanup, render, screen, within } from '@testing-library/react'
+import { cleanup, fireEvent, render, screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { afterEach, describe, expect, it } from 'vitest'
+import { afterEach, describe, expect, it, vi } from 'vitest'
 import { App } from '../../App'
 import { BrandingProvider } from '../branding/BrandingProvider'
 import { DEFAULT_BRANDING } from '../branding/contracts'
@@ -15,6 +15,9 @@ function renderStudentServicesPage() {
 }
 
 afterEach(() => {
+  vi.useRealTimers()
+  vi.unstubAllGlobals()
+  vi.restoreAllMocks()
   cleanup()
   window.history.replaceState(null, '', '#inicio')
 })
@@ -105,6 +108,46 @@ describe('StudentServicesPage', () => {
 
     expect(screen.queryAllByRole('form')).toHaveLength(0)
     expect(screen.queryByLabelText(/contraseña|documento|código estudiantil/i)).not.toBeInTheDocument()
+  })
+
+  it('shows the source-attributed 2026-II student academic calendar and lets the visitor download it', async () => {
+    // Arrange
+    renderStudentServicesPage()
+
+    // Act
+    const agenda = await screen.findByRole('region', { name: 'Fechas académicas de pregrado · II semestre de 2026' })
+
+    // Assert
+    expect(within(agenda).getByText('Instantánea informativa consultada el 5 de octubre de 2026.')).toBeVisible()
+    expect(within(agenda).getByText('actualizada 17 sep 2026')).toHaveAttribute('datetime', '2026-09-17')
+    expect(within(agenda).getByRole('list', { name: 'Hitos publicados por ACRA' }).querySelectorAll('li')).toHaveLength(18)
+    expect(within(agenda).getByRole('heading', { name: 'Matrícula · estudiantes sin beneficio de gratuidad · ordinaria' })).toBeVisible()
+    const cancellationHeading = within(agenda).getByRole('heading', { name: 'Cancelación de asignaturas y semestre · presencial' })
+    expect(cancellationHeading).toBeVisible()
+    expect(within(cancellationHeading.closest('li')!).getByText('Acuerdo 032 de 2020.')).toBeVisible()
+    expect(within(agenda).getByRole('link', { name: /consultar calendario oficial en acra/i })).toHaveAttribute(
+      'href',
+      'https://uptc.edu.co/sitio/portal/sitios/universidad/vic_aca/adm_reg/2estu/est_pre.html',
+    )
+    expect(within(agenda).queryByRole('form')).not.toBeInTheDocument()
+
+    const createObjectURL = vi.fn().mockReturnValue('blob:student-calendar')
+    const revokeObjectURL = vi.fn()
+    const MockURL = class extends URL {}
+    Object.assign(MockURL, { createObjectURL, revokeObjectURL })
+    vi.stubGlobal('URL', MockURL)
+    vi.useFakeTimers()
+    const click = vi.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(() => {})
+
+    // Act
+    fireEvent.click(within(agenda).getByRole('button', { name: 'Descargar calendario (.ics)' }))
+
+    // Assert
+    expect(click).toHaveBeenCalledOnce()
+    expect(createObjectURL).toHaveBeenCalledOnce()
+    expect((createObjectURL.mock.calls[0][0] as Blob).type).toBe('text/calendar;charset=utf-8')
+    vi.advanceTimersByTime(0)
+    expect(revokeObjectURL).toHaveBeenCalledWith('blob:student-calendar')
   })
 
   it('finds the new wellbeing lines by distinct accent-insensitive terms', async () => {
