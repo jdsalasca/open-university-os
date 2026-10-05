@@ -1,0 +1,79 @@
+[
+ {
+  "original": "#85877d",
+  "ratioAntes": 3.31,
+  "accesible": "#6e7067",
+  "ratioDespues": 4.57,
+  "factor": 0.828
+ },
+ {
+  "original": "#989990",
+  "ratioAntes": 2.61,
+  "accesible": "#6f7069",
+  "ratioDespues": 4.55,
+  "factor": 0.73
+ },
+ {
+  "original": "#77786f",
+  "ratioAntes": 4.05,
+  "accesible": "#6f7067",
+  "ratioDespues": 4.55,
+  "factor": 0.932
+ },
+ {
+  "original": "#777970",
+  "ratioAntes": 4.01,
+  "accesible": "#6e7068",
+  "ratioDespues": 4.55,
+  "factor": 0.926
+ },
+ {
+  "original": "#7b7d72",
+  "ratioAntes": 3.79,
+  "accesible": "#6e7066",
+  "ratioDespues": 4.56,
+  "factor": 0.896
+ },
+ {
+  "original": "#797a72",
+  "ratioAntes": 3.94,
+  "accesible": "#6f7068",
+  "ratioDespues": 4.55,
+  "factor": 0.916
+ },
+ {
+  "original": "#8a8b83",
+  "ratioAntes": 3.12,
+  "accesible": "#6f6f69",
+  "ratioDespues": 4.57,
+  "factor": 0.802
+ },
+ {
+  "original": "#8d8972",
+  "ratioAntes": 3.2,
+  "accesible": "#73705d",
+  "ratioDespues": 4.56,
+  "factor": 0.814
+ },
+ {
+  "original": "#8a8a7a",
+  "ratioAntes": 3.18,
+  "accesible": "#707063",
+  "ratioDespues": 4.56,
+  "factor": 0.81
+ },
+ {
+  "original": "#7a7c6c",
+  "ratioAntes": 3.87,
+  "accesible": "#6f7062",
+  "ratioDespues": 4.56,
+  "factor": 0.906
+ },
+ {
+  "original": "#88866a",
+  "ratioAntes": 3.36,
+  "accesible": "#727059",
+  "ratioDespues": 4.56,
+  "factor": 0.836
+ }
+]

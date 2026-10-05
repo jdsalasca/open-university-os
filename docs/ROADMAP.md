@@ -343,3 +343,13 @@ La medición de latencia local observada en esta ronda quedó en 60,5767 ms fren
 | El test nuevo tiene dientes | Se elimino la clase de `AcademicOperationsPage.tsx` y el guard fallo nombrando el componente. Se restauro y quedo verde. | Un componente nuevo que olvide la clase no lo detectaria ningun otro test: su glifo volveria a quedar blanco sobre crema. |
 | Verificacion | 527 pruebas en 78 archivos, 22 guardas de dark theme, lint sin avisos, presupuestos verificados. El CSS de entrada bajo de 23.448 a 23.305 B al consolidar. | Navegador, seis rutas en tema oscuro: **0 elementos bajo AA**. Once glifos con la clase en el DOM; color `#f0f2eb` sobre fondo `#252b25`. |
 | Limpieza | `git worktree list` sin worktrees pendientes, `git branch --no-merged develop` vacio, `git status` limpio. | Pendiente: revisar los 63 candidatos de `find-dark-badges.mjs`. Ver [evidencia](evidence/round-2026-10-05-dark-badges/README.md). |
+
+#### Limpieza del checkpoint 20 - notas
+
+| Residuo | Estado |
+| --- | --- |
+| `.worktrees/academic-dark-icons-20261005` | Worktree registrado, eliminado con `git worktree remove`. Su idea (clase compartida `academic-operation-icon`) quedo integrada en `8172eab`; el directorio sin registro tambien se borro. |
+| `.worktrees/local-preview-permissions-20261005` | Worktree registrado, eliminado. Duplicaba el trabajo ya commiteado en `2310664`. |
+| `.worktrees/frontend-integrate-curriculum-20261003` | Directorio sin worktree registrado: su `.git` apunta a `.git/worktrees/codex-functional-followup/...`, ruta que ya no existe. Se verifico archivo por archivo contra `develop`: **0 archivos exclusivos**, las 173 diferencias son versiones anteriores de archivos que develop ya tiene mas actual. Eliminado. |
+| `.worktrees/contraste-reemplazos.json` y `fix-colors.cjs` | Scripts de una ronda de contraste ya cerrada. Copiados a `docs/evidence/round-2026-10-05-accesibilidad/` antes de borrar. |
+| `.worktrees/student-calendar-2026-ii-20261005` | **Bloqueado por el sistema**: un proceso mantiene el handle del directorio y `Remove-Item` falla incluso tras detener los dos Vite que lo usaban. Se vacio su contenido (`solo queda el directorio vacio`). No bloquea el trabajo: el calendario 2026-II ya esta integrado en `2461444` y no hay commits ni archivos propios que recuperar. Se eliminara cuando Windows libere el handle. |
