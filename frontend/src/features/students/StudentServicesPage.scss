@@ -111,9 +111,9 @@
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand-primary, #ffcc29) 35%, transparent);
 }
 
-.student-services-search-control > span { color: var(--ui-text-muted, #77786f); font-size: 1.6rem; line-height: 1; }
+.student-services-search-control > span { color: var(--ui-text-muted, #6f7067); font-size: 1.6rem; line-height: 1; }
 .student-services-search-control input { width: 100%; min-height: 3.15rem; border: 0; outline: 0; background: transparent; color: var(--ui-text-primary, #20211d); font: inherit; }
-.student-services-search-control input::placeholder { color: var(--ui-text-muted, #77786f); }
+.student-services-search-control input::placeholder { color: var(--ui-text-muted, #6f7067); }
 
 .student-services-count { display: flex; align-items: baseline; gap: 0.55rem; padding: 0.65rem 0.9rem; border-radius: 0.8rem; background: var(--ui-surface-subtle, #f3f1e9); color: var(--ui-text-secondary, #5d6157); font-size: 0.85rem; white-space: nowrap; }
 .student-services-count strong { color: var(--ui-text-primary, #20211d); font-size: 1.1rem; }
@@ -123,7 +123,7 @@
 .student-services-categories button[aria-pressed='true'] { border-color: var(--institution-dark, #171815); background: var(--institution-dark, #171815); color: #fff; }
 .student-services-categories button:focus-visible, .student-services-empty button:focus-visible { outline: 3px solid var(--ui-focus, var(--brand-focus, #1a1a1a)); outline-offset: 3px; }
 
-.student-services-privacy { display: flex; align-items: start; gap: 0.6rem; margin: 0; color: var(--ui-text-muted, #77786f); font-size: 0.82rem; line-height: 1.5; }
+.student-services-privacy { display: flex; align-items: start; gap: 0.6rem; margin: 0; color: var(--ui-text-muted, #6f7067); font-size: 0.82rem; line-height: 1.5; }
 .student-services-privacy span { color: var(--ui-text-secondary, #5d6157); }
 
 .student-services-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
@@ -155,9 +155,9 @@
 .student-service-description { margin: 0 0 1.5rem; color: var(--ui-text-secondary, #5d6157); line-height: 1.55; }
 .student-service-card-bottom { display: grid; gap: 0.7rem; margin-top: auto; }
 .student-service-card-bottom a { display: inline-flex; align-items: center; justify-content: space-between; gap: 0.75rem; width: fit-content; color: var(--ui-text-primary, #20211d); font-size: 0.9rem; font-weight: 750; text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
-.student-service-card-bottom a span { color: var(--ui-text-muted, #77786f); }
+.student-service-card-bottom a span { color: var(--ui-text-muted, #6f7067); }
 .student-service-card-bottom a:focus-visible { outline: 3px solid var(--ui-focus, var(--brand-focus, #1a1a1a)); outline-offset: 4px; border-radius: 0.2rem; }
-.student-service-card-bottom small { color: var(--ui-text-muted, #77786f); font-size: 0.73rem; line-height: 1.45; }
+.student-service-card-bottom small { color: var(--ui-text-muted, #6f7067); font-size: 0.73rem; line-height: 1.45; }
 
 @media (max-width: 760px) {
   .student-services-hero { grid-template-columns: minmax(0, 1fr); }

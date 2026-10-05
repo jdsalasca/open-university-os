@@ -1,0 +1,1940 @@
+[
+ {
+  "ruta": "resumen",
+  "tema": "claro",
+  "contraste": [
+   {
+    "etiqueta": "p.workspace-home-eyebrow",
+    "texto": "VIDA UNIVERSITARIA",
+    "ratio": 3.56,
+    "minimo": 4.5,
+    "size": 9,
+    "fiable": true,
+    "lumTexto": 0.217
+   }
+  ],
+  "contrasteNoVerificable": 3,
+  "controles": [
+   {
+    "etiqueta": "input",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     1,
+     1
+    ],
+    "nombre": "label-envuelto"
+   },
+   {
+    "etiqueta": "input",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     1,
+     1
+    ],
+    "nombre": "label-envuelto"
+   },
+   {
+    "etiqueta": "input",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     1,
+     1
+    ],
+    "nombre": "label-envuelto"
+   }
+  ],
+  "jerarquia": [],
+  "h1": 1,
+  "campos": [],
+  "conteos": {
+   "contraste": 1,
+   "controles": 3,
+   "jerarquia": 0,
+   "campos": 0
+  }
+ },
+ {
+  "ruta": "resumen",
+  "tema": "oscuro",
+  "contraste": [],
+  "contrasteNoVerificable": 0,
+  "controles": [
+   {
+    "etiqueta": "input",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     1,
+     1
+    ],
+    "nombre": "label-envuelto"
+   },
+   {
+    "etiqueta": "input",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     1,
+     1
+    ],
+    "nombre": "label-envuelto"
+   },
+   {
+    "etiqueta": "input",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     1,
+     1
+    ],
+    "nombre": "label-envuelto"
+   }
+  ],
+  "jerarquia": [],
+  "h1": 1,
+  "campos": [],
+  "conteos": {
+   "contraste": 0,
+   "controles": 3,
+   "jerarquia": 0,
+   "campos": 0
+  }
+ },
+ {
+  "ruta": "programas",
+  "tema": "claro",
+  "contraste": [
+   {
+    "etiqueta": "p.public-program-eyebrow",
+    "texto": "OFERTA ACADÉMICA · PREGRADO",
+    "ratio": 4.44,
+    "minimo": 4.5,
+    "size": 11,
+    "fiable": true,
+    "lumTexto": 0.164
+   },
+   {
+    "etiqueta": "p.public-program-eyebrow",
+    "texto": "DIRECTORIO PÚBLICO",
+    "ratio": 4.44,
+    "minimo": 4.5,
+    "size": 11,
+    "fiable": true,
+    "lumTexto": 0.164
+   },
+   {
+    "etiqueta": "span",
+    "texto": "Lugares asociados",
+    "ratio": 3.45,
+    "minimo": 4.5,
+    "size": 11,
+    "fiable": true,
+    "lumTexto": 0.254
+   },
+   {
+    "etiqueta": "span",
+    "texto": "Lugares asociados",
+    "ratio": 3.45,
+    "minimo": 4.5,
+    "size": 11,
+    "fiable": true,
+    "lumTexto": 0.254
+   },
+   {
+    "etiqueta": "span",
+    "texto": "Lugares asociados",
+    "ratio": 3.45,
+    "minimo": 4.5,
+    "size": 11,
+    "fiable": true,
+    "lumTexto": 0.254
+   },
+   {
+    "etiqueta": "span",
+    "texto": "Lugares asociados",
+    "ratio": 3.45,
+    "minimo": 4.5,
+    "size": 11,
+    "fiable": true,
+    "lumTexto": 0.254
+   },
+   {
+    "etiqueta": "span",
+    "texto": "Lugares asociados",
+    "ratio": 3.45,
+    "minimo": 4.5,
+    "size": 11,
+    "fiable": true,
+    "lumTexto": 0.254
+   },
+   {
+    "etiqueta": "span",
+    "texto": "Lugares asociados",
+    "ratio": 3.45,
+    "minimo": 4.5,
+    "size": 11,
+    "fiable": true,
+    "lumTexto": 0.254
+   },
+   {
+    "etiqueta": "span",
+    "texto": "Lugares asociados",
+    "ratio": 3.45,
+    "minimo": 4.5,
+    "size": 11,
+    "fiable": true,
+    "lumTexto": 0.254
+   },
+   {
+    "etiqueta": "span",
+    "texto": "Lugares asociados",
+    "ratio": 3.45,
+    "minimo": 4.5,
+    "size": 11,
+    "fiable": true,
+    "lumTexto": 0.254
+   },
+   {
+    "etiqueta": "span",
+    "texto": "Lugares asociados",
+    "ratio": 3.45,
+    "minimo": 4.5,
+    "size": 11,
+    "fiable": true,
+    "lumTexto": 0.254
+   },
+   {
+    "etiqueta": "span",
+    "texto": "Lugares asociados",
+    "ratio": 3.45,
+    "minimo": 4.5,
+    "size": 11,
+    "fiable": true,
+    "lumTexto": 0.254
+   },
+   {
+    "etiqueta": "span",
+    "texto": "Lugares asociados",
+    "ratio": 3.45,
+    "minimo": 4.5,
+    "size": 11,
+    "fiable": true,
+    "lumTexto": 0.254
+   },
+   {
+    "etiqueta": "span",
+    "texto": "Lugares asociados",
+    "ratio": 3.45,
+    "minimo": 4.5,
+    "size": 11,
+    "fiable": true,
+    "lumTexto": 0.254
+   },
+   {
+    "etiqueta": "span",
+    "texto": "Lugares asociados",
+    "ratio": 3.45,
+    "minimo": 4.5,
+    "size": 11,
+    "fiable": true,
+    "lumTexto": 0.254
+   },
+   {
+    "etiqueta": "span",
+    "texto": "Lugares asociados",
+    "ratio": 3.45,
+    "minimo": 4.5,
+    "size": 11,
+    "fiable": true,
+    "lumTexto": 0.254
+   },
+   {
+    "etiqueta": "span",
+    "texto": "Lugares asociados",
+    "ratio": 3.45,
+    "minimo": 4.5,
+    "size": 11,
+    "fiable": true,
+    "lumTexto": 0.254
+   },
+   {
+    "etiqueta": "span",
+    "texto": "Lugares asociados",
+    "ratio": 3.45,
+    "minimo": 4.5,
+    "size": 11,
+    "fiable": true,
+    "lumTexto": 0.254
+   },
+   {
+    "etiqueta": "span",
+    "texto": "Lugares asociados",
+    "ratio": 3.45,
+    "minimo": 4.5,
+    "size": 11,
+    "fiable": true,
+    "lumTexto": 0.254
+   },
+   {
+    "etiqueta": "span",
+    "texto": "Lugares asociados",
+    "ratio": 3.45,
+    "minimo": 4.5,
+    "size": 11,
+    "fiable": true,
+    "lumTexto": 0.254
+   }
+  ],
+  "contrasteNoVerificable": 0,
+  "controles": [
+   {
+    "etiqueta": "input",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     1,
+     1
+    ],
+    "nombre": "label-envuelto"
+   },
+   {
+    "etiqueta": "input",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     1,
+     1
+    ],
+    "nombre": "label-envuelto"
+   },
+   {
+    "etiqueta": "input",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     1,
+     1
+    ],
+    "nombre": "label-envuelto"
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     145,
+     17
+    ],
+    "nombre": "catálogo público UPTC"
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     81,
+     21
+    ],
+    "nombre": "Biología"
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     57,
+     21
+    ],
+    "nombre": "Física"
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     125,
+     21
+    ],
+    "nombre": "Matemáticas"
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     83,
+     21
+    ],
+    "nombre": "Química"
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     227,
+     21
+    ],
+    "nombre": "Ingeniería Agronómica"
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     246,
+     21
+    ],
+    "nombre": "Artes Plásticas y Visuales"
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     243,
+     21
+    ],
+    "nombre": "Licenciatura en Filosofía"
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     274,
+     21
+    ],
+    "nombre": "Licenciatura en Informática"
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     282,
+     21
+    ],
+    "nombre": "Licenciatura en Matemáticas"
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     282,
+     21
+    ],
+    "nombre": "Licenciatura en Matemáticas"
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     227,
+     21
+    ],
+    "nombre": "Licenciatura en Música"
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     91,
+     21
+    ],
+    "nombre": "Medicina"
+   }
+  ],
+  "jerarquia": [],
+  "h1": 1,
+  "campos": [],
+  "conteos": {
+   "contraste": 37,
+   "controles": 16,
+   "jerarquia": 0,
+   "campos": 0
+  }
+ },
+ {
+  "ruta": "programas",
+  "tema": "oscuro",
+  "contraste": [
+   {
+    "etiqueta": "span.catalog-note-icon",
+    "texto": "i",
+    "ratio": 1.8,
+    "minimo": 4.5,
+    "size": 11,
+    "fiable": true,
+    "lumTexto": 0.412
+   }
+  ],
+  "contrasteNoVerificable": 2,
+  "controles": [
+   {
+    "etiqueta": "input",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     1,
+     1
+    ],
+    "nombre": "label-envuelto"
+   },
+   {
+    "etiqueta": "input",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     1,
+     1
+    ],
+    "nombre": "label-envuelto"
+   },
+   {
+    "etiqueta": "input",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     1,
+     1
+    ],
+    "nombre": "label-envuelto"
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     145,
+     17
+    ],
+    "nombre": "catálogo público UPTC"
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     81,
+     21
+    ],
+    "nombre": "Biología"
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     57,
+     21
+    ],
+    "nombre": "Física"
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     125,
+     21
+    ],
+    "nombre": "Matemáticas"
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     83,
+     21
+    ],
+    "nombre": "Química"
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     227,
+     21
+    ],
+    "nombre": "Ingeniería Agronómica"
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     246,
+     21
+    ],
+    "nombre": "Artes Plásticas y Visuales"
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     243,
+     21
+    ],
+    "nombre": "Licenciatura en Filosofía"
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     274,
+     21
+    ],
+    "nombre": "Licenciatura en Informática"
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     282,
+     21
+    ],
+    "nombre": "Licenciatura en Matemáticas"
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     282,
+     21
+    ],
+    "nombre": "Licenciatura en Matemáticas"
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     227,
+     21
+    ],
+    "nombre": "Licenciatura en Música"
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     91,
+     21
+    ],
+    "nombre": "Medicina"
+   }
+  ],
+  "jerarquia": [],
+  "h1": 1,
+  "campos": [],
+  "conteos": {
+   "contraste": 1,
+   "controles": 16,
+   "jerarquia": 0,
+   "campos": 0
+  }
+ },
+ {
+  "ruta": "espacios",
+  "tema": "claro",
+  "contraste": [
+   {
+    "etiqueta": "span",
+    "texto": "UBICACIÓN PUBLICADA",
+    "ratio": 2.81,
+    "minimo": 4.5,
+    "size": 7,
+    "fiable": true,
+    "lumTexto": 0.324
+   },
+   {
+    "etiqueta": "span",
+    "texto": "↗",
+    "ratio": 3.41,
+    "minimo": 4.5,
+    "size": 9,
+    "fiable": true,
+    "lumTexto": 0.258
+   },
+   {
+    "etiqueta": "span",
+    "texto": "↗",
+    "ratio": 3.41,
+    "minimo": 4.5,
+    "size": 9,
+    "fiable": true,
+    "lumTexto": 0.258
+   },
+   {
+    "etiqueta": "span",
+    "texto": "UBICACIÓN PUBLICADA",
+    "ratio": 2.81,
+    "minimo": 4.5,
+    "size": 7,
+    "fiable": true,
+    "lumTexto": 0.324
+   },
+   {
+    "etiqueta": "span",
+    "texto": "↗",
+    "ratio": 3.41,
+    "minimo": 4.5,
+    "size": 9,
+    "fiable": true,
+    "lumTexto": 0.258
+   },
+   {
+    "etiqueta": "span",
+    "texto": "↗",
+    "ratio": 3.41,
+    "minimo": 4.5,
+    "size": 9,
+    "fiable": true,
+    "lumTexto": 0.258
+   },
+   {
+    "etiqueta": "span",
+    "texto": "UBICACIÓN PUBLICADA",
+    "ratio": 2.81,
+    "minimo": 4.5,
+    "size": 7,
+    "fiable": true,
+    "lumTexto": 0.324
+   },
+   {
+    "etiqueta": "span",
+    "texto": "↗",
+    "ratio": 3.41,
+    "minimo": 4.5,
+    "size": 9,
+    "fiable": true,
+    "lumTexto": 0.258
+   },
+   {
+    "etiqueta": "span",
+    "texto": "↗",
+    "ratio": 3.41,
+    "minimo": 4.5,
+    "size": 9,
+    "fiable": true,
+    "lumTexto": 0.258
+   },
+   {
+    "etiqueta": "span",
+    "texto": "UBICACIÓN PUBLICADA",
+    "ratio": 2.81,
+    "minimo": 4.5,
+    "size": 7,
+    "fiable": true,
+    "lumTexto": 0.324
+   },
+   {
+    "etiqueta": "span",
+    "texto": "↗",
+    "ratio": 3.41,
+    "minimo": 4.5,
+    "size": 9,
+    "fiable": true,
+    "lumTexto": 0.258
+   },
+   {
+    "etiqueta": "span",
+    "texto": "↗",
+    "ratio": 3.41,
+    "minimo": 4.5,
+    "size": 9,
+    "fiable": true,
+    "lumTexto": 0.258
+   },
+   {
+    "etiqueta": "span",
+    "texto": "UBICACIÓN PUBLICADA",
+    "ratio": 2.81,
+    "minimo": 4.5,
+    "size": 7,
+    "fiable": true,
+    "lumTexto": 0.324
+   },
+   {
+    "etiqueta": "span",
+    "texto": "↗",
+    "ratio": 3.41,
+    "minimo": 4.5,
+    "size": 9,
+    "fiable": true,
+    "lumTexto": 0.258
+   },
+   {
+    "etiqueta": "span",
+    "texto": "↗",
+    "ratio": 3.41,
+    "minimo": 4.5,
+    "size": 9,
+    "fiable": true,
+    "lumTexto": 0.258
+   },
+   {
+    "etiqueta": "span",
+    "texto": "UBICACIÓN PUBLICADA",
+    "ratio": 2.81,
+    "minimo": 4.5,
+    "size": 7,
+    "fiable": true,
+    "lumTexto": 0.324
+   },
+   {
+    "etiqueta": "span",
+    "texto": "↗",
+    "ratio": 3.41,
+    "minimo": 4.5,
+    "size": 9,
+    "fiable": true,
+    "lumTexto": 0.258
+   },
+   {
+    "etiqueta": "span",
+    "texto": "↗",
+    "ratio": 3.41,
+    "minimo": 4.5,
+    "size": 9,
+    "fiable": true,
+    "lumTexto": 0.258
+   },
+   {
+    "etiqueta": "span",
+    "texto": "UBICACIÓN PUBLICADA",
+    "ratio": 2.81,
+    "minimo": 4.5,
+    "size": 7,
+    "fiable": true,
+    "lumTexto": 0.324
+   },
+   {
+    "etiqueta": "span",
+    "texto": "↗",
+    "ratio": 3.41,
+    "minimo": 4.5,
+    "size": 9,
+    "fiable": true,
+    "lumTexto": 0.258
+   }
+  ],
+  "contrasteNoVerificable": 0,
+  "controles": [
+   {
+    "etiqueta": "input",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     1,
+     1
+    ],
+    "nombre": "label-envuelto"
+   },
+   {
+    "etiqueta": "input",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     1,
+     1
+    ],
+    "nombre": "label-envuelto"
+   },
+   {
+    "etiqueta": "input",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     1,
+     1
+    ],
+    "nombre": "label-envuelto"
+   },
+   {
+    "etiqueta": "input",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     370,
+     15
+    ],
+    "nombre": "Buscar espacios"
+   },
+   {
+    "etiqueta": "a.spaces-map-link",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     219,
+     12
+    ],
+    "nombre": "Abrir búsqueda de mapa para Se"
+   },
+   {
+    "etiqueta": "a.spaces-source-link",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     122,
+     12
+    ],
+    "nombre": "Localización y sedes UPTC ↗"
+   },
+   {
+    "etiqueta": "a.spaces-map-link",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     264,
+     12
+    ],
+    "nombre": "Abrir búsqueda de mapa para Fa"
+   },
+   {
+    "etiqueta": "a.spaces-source-link",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     122,
+     12
+    ],
+    "nombre": "Localización y sedes UPTC ↗"
+   },
+   {
+    "etiqueta": "a.spaces-map-link",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     256,
+     12
+    ],
+    "nombre": "Abrir búsqueda de mapa para Fa"
+   },
+   {
+    "etiqueta": "a.spaces-source-link",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     122,
+     12
+    ],
+    "nombre": "Localización y sedes UPTC ↗"
+   },
+   {
+    "etiqueta": "a.spaces-map-link",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     275,
+     12
+    ],
+    "nombre": "Abrir búsqueda de mapa para Fa"
+   },
+   {
+    "etiqueta": "a.spaces-source-link",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     122,
+     12
+    ],
+    "nombre": "Localización y sedes UPTC ↗"
+   },
+   {
+    "etiqueta": "a.spaces-map-link",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     237,
+     12
+    ],
+    "nombre": "Abrir búsqueda de mapa para Se"
+   },
+   {
+    "etiqueta": "a.spaces-source-link",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     122,
+     12
+    ],
+    "nombre": "Localización y sedes UPTC ↗"
+   },
+   {
+    "etiqueta": "a.spaces-map-link",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     201,
+     12
+    ],
+    "nombre": "Abrir búsqueda de mapa para Pu"
+   },
+   {
+    "etiqueta": "a.spaces-source-link",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     122,
+     12
+    ],
+    "nombre": "Localización y sedes UPTC ↗"
+   },
+   {
+    "etiqueta": "a.spaces-map-link",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     203,
+     12
+    ],
+    "nombre": "Abrir búsqueda de mapa para CR"
+   },
+   {
+    "etiqueta": "a.spaces-source-link",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     122,
+     12
+    ],
+    "nombre": "Localización y sedes UPTC ↗"
+   },
+   {
+    "etiqueta": "a.spaces-map-link",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     206,
+     12
+    ],
+    "nombre": "Abrir búsqueda de mapa para CR"
+   },
+   {
+    "etiqueta": "a.spaces-source-link",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     122,
+     12
+    ],
+    "nombre": "Localización y sedes UPTC ↗"
+   }
+  ],
+  "jerarquia": [],
+  "h1": 1,
+  "campos": [],
+  "conteos": {
+   "contraste": 88,
+   "controles": 53,
+   "jerarquia": 0,
+   "campos": 0
+  }
+ },
+ {
+  "ruta": "espacios",
+  "tema": "oscuro",
+  "contraste": [],
+  "contrasteNoVerificable": 1,
+  "controles": [
+   {
+    "etiqueta": "input",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     1,
+     1
+    ],
+    "nombre": "label-envuelto"
+   },
+   {
+    "etiqueta": "input",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     1,
+     1
+    ],
+    "nombre": "label-envuelto"
+   },
+   {
+    "etiqueta": "input",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     1,
+     1
+    ],
+    "nombre": "label-envuelto"
+   },
+   {
+    "etiqueta": "input",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     370,
+     15
+    ],
+    "nombre": "Buscar espacios"
+   },
+   {
+    "etiqueta": "a.spaces-map-link",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     219,
+     12
+    ],
+    "nombre": "Abrir búsqueda de mapa para Se"
+   },
+   {
+    "etiqueta": "a.spaces-source-link",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     122,
+     12
+    ],
+    "nombre": "Localización y sedes UPTC ↗"
+   },
+   {
+    "etiqueta": "a.spaces-map-link",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     264,
+     12
+    ],
+    "nombre": "Abrir búsqueda de mapa para Fa"
+   },
+   {
+    "etiqueta": "a.spaces-source-link",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     122,
+     12
+    ],
+    "nombre": "Localización y sedes UPTC ↗"
+   },
+   {
+    "etiqueta": "a.spaces-map-link",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     256,
+     12
+    ],
+    "nombre": "Abrir búsqueda de mapa para Fa"
+   },
+   {
+    "etiqueta": "a.spaces-source-link",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     122,
+     12
+    ],
+    "nombre": "Localización y sedes UPTC ↗"
+   },
+   {
+    "etiqueta": "a.spaces-map-link",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     275,
+     12
+    ],
+    "nombre": "Abrir búsqueda de mapa para Fa"
+   },
+   {
+    "etiqueta": "a.spaces-source-link",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     122,
+     12
+    ],
+    "nombre": "Localización y sedes UPTC ↗"
+   },
+   {
+    "etiqueta": "a.spaces-map-link",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     237,
+     12
+    ],
+    "nombre": "Abrir búsqueda de mapa para Se"
+   },
+   {
+    "etiqueta": "a.spaces-source-link",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     122,
+     12
+    ],
+    "nombre": "Localización y sedes UPTC ↗"
+   },
+   {
+    "etiqueta": "a.spaces-map-link",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     201,
+     12
+    ],
+    "nombre": "Abrir búsqueda de mapa para Pu"
+   },
+   {
+    "etiqueta": "a.spaces-source-link",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     122,
+     12
+    ],
+    "nombre": "Localización y sedes UPTC ↗"
+   },
+   {
+    "etiqueta": "a.spaces-map-link",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     203,
+     12
+    ],
+    "nombre": "Abrir búsqueda de mapa para CR"
+   },
+   {
+    "etiqueta": "a.spaces-source-link",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     122,
+     12
+    ],
+    "nombre": "Localización y sedes UPTC ↗"
+   },
+   {
+    "etiqueta": "a.spaces-map-link",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     206,
+     12
+    ],
+    "nombre": "Abrir búsqueda de mapa para CR"
+   },
+   {
+    "etiqueta": "a.spaces-source-link",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     122,
+     12
+    ],
+    "nombre": "Localización y sedes UPTC ↗"
+   }
+  ],
+  "jerarquia": [],
+  "h1": 1,
+  "campos": [],
+  "conteos": {
+   "contraste": 0,
+   "controles": 53,
+   "jerarquia": 0,
+   "campos": 0
+  }
+ },
+ {
+  "ruta": "admisiones",
+  "tema": "claro",
+  "contraste": [
+   {
+    "etiqueta": "span",
+    "texto": "Fuente Calendario oficial de ACRA · actual",
+    "ratio": 3.47,
+    "minimo": 4.5,
+    "size": 9,
+    "fiable": true,
+    "lumTexto": 0.224
+   },
+   {
+    "etiqueta": "p.admissions-download-note",
+    "texto": "Copia personal de las fechas publicadas. V",
+    "ratio": 3.56,
+    "minimo": 4.5,
+    "size": 9,
+    "fiable": true,
+    "lumTexto": 0.217
+   },
+   {
+    "etiqueta": "span.admissions-call-card-note",
+    "texto": "Calendario publicado por la Universidad",
+    "ratio": 1.96,
+    "minimo": 4.5,
+    "size": 8,
+    "fiable": true,
+    "lumTexto": 0.436
+   },
+   {
+    "etiqueta": "span.admissions-milestone-kind",
+    "texto": "Inscripción",
+    "ratio": 3.16,
+    "minimo": 4.5,
+    "size": 8,
+    "fiable": true,
+    "lumTexto": 0.282
+   },
+   {
+    "etiqueta": "p",
+    "texto": "ACRA publica este intervalo para los progr",
+    "ratio": 4.41,
+    "minimo": 4.5,
+    "size": 9,
+    "fiable": true,
+    "lumTexto": 0.188
+   },
+   {
+    "etiqueta": "span.admissions-milestone-arrow",
+    "texto": "↗",
+    "ratio": 3.63,
+    "minimo": 4.5,
+    "size": 10,
+    "fiable": true,
+    "lumTexto": 0.239
+   },
+   {
+    "etiqueta": "span.admissions-milestone-kind",
+    "texto": "Inscripción",
+    "ratio": 3.16,
+    "minimo": 4.5,
+    "size": 8,
+    "fiable": true,
+    "lumTexto": 0.282
+   },
+   {
+    "etiqueta": "p",
+    "texto": "La fecha de cierre publicada para registra",
+    "ratio": 4.41,
+    "minimo": 4.5,
+    "size": 9,
+    "fiable": true,
+    "lumTexto": 0.188
+   },
+   {
+    "etiqueta": "span.admissions-milestone-arrow",
+    "texto": "↗",
+    "ratio": 3.63,
+    "minimo": 4.5,
+    "size": 10,
+    "fiable": true,
+    "lumTexto": 0.239
+   },
+   {
+    "etiqueta": "span.admissions-timeline-index",
+    "texto": "03",
+    "ratio": 4.12,
+    "minimo": 4.5,
+    "size": 8,
+    "fiable": true,
+    "lumTexto": 0.181
+   },
+   {
+    "etiqueta": "span.admissions-milestone-kind",
+    "texto": "Selección",
+    "ratio": 3.16,
+    "minimo": 4.5,
+    "size": 8,
+    "fiable": true,
+    "lumTexto": 0.282
+   },
+   {
+    "etiqueta": "p",
+    "texto": "ACRA anuncia pruebas para Artes Plásticas ",
+    "ratio": 4.41,
+    "minimo": 4.5,
+    "size": 9,
+    "fiable": true,
+    "lumTexto": 0.188
+   },
+   {
+    "etiqueta": "span.admissions-milestone-arrow",
+    "texto": "↗",
+    "ratio": 3.63,
+    "minimo": 4.5,
+    "size": 10,
+    "fiable": true,
+    "lumTexto": 0.239
+   },
+   {
+    "etiqueta": "span.admissions-timeline-index",
+    "texto": "04",
+    "ratio": 4.12,
+    "minimo": 4.5,
+    "size": 8,
+    "fiable": true,
+    "lumTexto": 0.181
+   },
+   {
+    "etiqueta": "span.admissions-milestone-kind",
+    "texto": "Selección",
+    "ratio": 3.16,
+    "minimo": 4.5,
+    "size": 8,
+    "fiable": true,
+    "lumTexto": 0.282
+   },
+   {
+    "etiqueta": "p",
+    "texto": "Fecha publicada para los resultados de pre",
+    "ratio": 4.41,
+    "minimo": 4.5,
+    "size": 9,
+    "fiable": true,
+    "lumTexto": 0.188
+   },
+   {
+    "etiqueta": "span.admissions-milestone-arrow",
+    "texto": "↗",
+    "ratio": 3.63,
+    "minimo": 4.5,
+    "size": 10,
+    "fiable": true,
+    "lumTexto": 0.239
+   },
+   {
+    "etiqueta": "span.admissions-timeline-index",
+    "texto": "05",
+    "ratio": 4.12,
+    "minimo": 4.5,
+    "size": 8,
+    "fiable": true,
+    "lumTexto": 0.181
+   },
+   {
+    "etiqueta": "span.admissions-milestone-kind",
+    "texto": "Registro y matrícula",
+    "ratio": 3.16,
+    "minimo": 4.5,
+    "size": 8,
+    "fiable": true,
+    "lumTexto": 0.282
+   },
+   {
+    "etiqueta": "p",
+    "texto": "Ventana informada por ACRA después de la p",
+    "ratio": 4.41,
+    "minimo": 4.5,
+    "size": 9,
+    "fiable": true,
+    "lumTexto": 0.188
+   }
+  ],
+  "contrasteNoVerificable": 4,
+  "controles": [
+   {
+    "etiqueta": "input",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     1,
+     1
+    ],
+    "nombre": "label-envuelto"
+   },
+   {
+    "etiqueta": "input",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     1,
+     1
+    ],
+    "nombre": "label-envuelto"
+   },
+   {
+    "etiqueta": "input",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     1,
+     1
+    ],
+    "nombre": "label-envuelto"
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     156,
+     12
+    ],
+    "nombre": "Consultar Resolución 111 de 20"
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     244,
+     12
+    ],
+    "nombre": "Comunicado institucional sobre"
+   }
+  ],
+  "jerarquia": [],
+  "h1": 1,
+  "campos": [],
+  "conteos": {
+   "contraste": 31,
+   "controles": 5,
+   "jerarquia": 0,
+   "campos": 0
+  }
+ },
+ {
+  "ruta": "admisiones",
+  "tema": "oscuro",
+  "contraste": [],
+  "contrasteNoVerificable": 0,
+  "controles": [
+   {
+    "etiqueta": "input",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     1,
+     1
+    ],
+    "nombre": "label-envuelto"
+   },
+   {
+    "etiqueta": "input",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     1,
+     1
+    ],
+    "nombre": "label-envuelto"
+   },
+   {
+    "etiqueta": "input",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     1,
+     1
+    ],
+    "nombre": "label-envuelto"
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     156,
+     12
+    ],
+    "nombre": "Consultar Resolución 111 de 20"
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     244,
+     12
+    ],
+    "nombre": "Comunicado institucional sobre"
+   }
+  ],
+  "jerarquia": [],
+  "h1": 1,
+  "campos": [],
+  "conteos": {
+   "contraste": 0,
+   "controles": 5,
+   "jerarquia": 0,
+   "campos": 0
+  }
+ },
+ {
+  "ruta": "estudiantes",
+  "tema": "claro",
+  "contraste": [],
+  "contrasteNoVerificable": 1,
+  "controles": [
+   {
+    "etiqueta": "input",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     1,
+     1
+    ],
+    "nombre": "label-envuelto"
+   },
+   {
+    "etiqueta": "input",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     1,
+     1
+    ],
+    "nombre": "label-envuelto"
+   },
+   {
+    "etiqueta": "input",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     1,
+     1
+    ],
+    "nombre": "label-envuelto"
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     180,
+     20
+    ],
+    "nombre": "Consultar Bienestar Universita"
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     180,
+     20
+    ],
+    "nombre": "Consultar Bienestar Virtual en"
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     180,
+     20
+    ],
+    "nombre": "Consultar Cultura en el portal"
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     180,
+     20
+    ],
+    "nombre": "Consultar Actividad Física en "
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     180,
+     20
+    ],
+    "nombre": "Consultar Apoyo socioeconómico"
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     180,
+     20
+    ],
+    "nombre": "Consultar Préstamo y consulta "
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     180,
+     20
+    ],
+    "nombre": "Consultar Biblioteca digital y"
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     180,
+     20
+    ],
+    "nombre": "Consultar Horarios y calificac"
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     180,
+     20
+    ],
+    "nombre": "Consultar SIRA estudiante en e"
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     180,
+     20
+    ],
+    "nombre": "Consultar Inscripción de mater"
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     180,
+     20
+    ],
+    "nombre": "Consultar Fechas académicas de"
+   }
+  ],
+  "jerarquia": [],
+  "h1": 1,
+  "campos": [],
+  "conteos": {
+   "contraste": 0,
+   "controles": 14,
+   "jerarquia": 0,
+   "campos": 0
+  }
+ },
+ {
+  "ruta": "estudiantes",
+  "tema": "oscuro",
+  "contraste": [],
+  "contrasteNoVerificable": 0,
+  "controles": [
+   {
+    "etiqueta": "input",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     1,
+     1
+    ],
+    "nombre": "label-envuelto"
+   },
+   {
+    "etiqueta": "input",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     1,
+     1
+    ],
+    "nombre": "label-envuelto"
+   },
+   {
+    "etiqueta": "input",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     1,
+     1
+    ],
+    "nombre": "label-envuelto"
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     180,
+     20
+    ],
+    "nombre": "Consultar Bienestar Universita"
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     180,
+     20
+    ],
+    "nombre": "Consultar Bienestar Virtual en"
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     180,
+     20
+    ],
+    "nombre": "Consultar Cultura en el portal"
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     180,
+     20
+    ],
+    "nombre": "Consultar Actividad Física en "
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     180,
+     20
+    ],
+    "nombre": "Consultar Apoyo socioeconómico"
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     180,
+     20
+    ],
+    "nombre": "Consultar Préstamo y consulta "
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     180,
+     20
+    ],
+    "nombre": "Consultar Biblioteca digital y"
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     180,
+     20
+    ],
+    "nombre": "Consultar Horarios y calificac"
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     180,
+     20
+    ],
+    "nombre": "Consultar SIRA estudiante en e"
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     180,
+     20
+    ],
+    "nombre": "Consultar Inscripción de mater"
+   },
+   {
+    "etiqueta": "a",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     180,
+     20
+    ],
+    "nombre": "Consultar Fechas académicas de"
+   }
+  ],
+  "jerarquia": [],
+  "h1": 1,
+  "campos": [],
+  "conteos": {
+   "contraste": 0,
+   "controles": 14,
+   "jerarquia": 0,
+   "campos": 0
+  }
+ },
+ {
+  "ruta": "academia",
+  "tema": "claro",
+  "contraste": [
+   {
+    "etiqueta": "p.academic-panel-kicker",
+    "texto": "EJE ORGANIZACIONAL",
+    "ratio": 3.31,
+    "minimo": 4.5,
+    "size": 8,
+    "fiable": true,
+    "lumTexto": 0.267
+   },
+   {
+    "etiqueta": "p.academic-empty-state",
+    "texto": "No hay unidades cargadas en la estructura ",
+    "ratio": 3.57,
+    "minimo": 4.5,
+    "size": 10,
+    "fiable": true,
+    "lumTexto": 0.231
+   },
+   {
+    "etiqueta": "p.academic-panel-footnote",
+    "texto": "La jerarquía y el orden vienen de relacion",
+    "ratio": 3.1,
+    "minimo": 4.5,
+    "size": 8,
+    "fiable": true,
+    "lumTexto": 0.288
+   },
+   {
+    "etiqueta": "p.academic-panel-kicker",
+    "texto": "EJE TERRITORIAL",
+    "ratio": 3.31,
+    "minimo": 4.5,
+    "size": 8,
+    "fiable": true,
+    "lumTexto": 0.267
+   },
+   {
+    "etiqueta": "p.academic-empty-state",
+    "texto": "No hay sedes cargadas en la estructura vig",
+    "ratio": 3.57,
+    "minimo": 4.5,
+    "size": 10,
+    "fiable": true,
+    "lumTexto": 0.231
+   },
+   {
+    "etiqueta": "p.academic-panel-footnote",
+    "texto": "Las sedes se administran aparte de las fac",
+    "ratio": 3.1,
+    "minimo": 4.5,
+    "size": 8,
+    "fiable": true,
+    "lumTexto": 0.288
+   },
+   {
+    "etiqueta": "p.academic-panel-kicker",
+    "texto": "CALENDARIO VIGENTE",
+    "ratio": 3.31,
+    "minimo": 4.5,
+    "size": 8,
+    "fiable": true,
+    "lumTexto": 0.267
+   },
+   {
+    "etiqueta": "p.academic-empty-state",
+    "texto": "No hay periodos académicos abiertos para c",
+    "ratio": 3.57,
+    "minimo": 4.5,
+    "size": 10,
+    "fiable": true,
+    "lumTexto": 0.231
+   }
+  ],
+  "contrasteNoVerificable": 0,
+  "controles": [
+   {
+    "etiqueta": "input",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     1,
+     1
+    ],
+    "nombre": "label-envuelto"
+   },
+   {
+    "etiqueta": "input",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     1,
+     1
+    ],
+    "nombre": "label-envuelto"
+   },
+   {
+    "etiqueta": "input",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     1,
+     1
+    ],
+    "nombre": "label-envuelto"
+   }
+  ],
+  "jerarquia": [],
+  "h1": 1,
+  "campos": [],
+  "conteos": {
+   "contraste": 8,
+   "controles": 3,
+   "jerarquia": 0,
+   "campos": 0
+  }
+ },
+ {
+  "ruta": "academia",
+  "tema": "oscuro",
+  "contraste": [],
+  "contrasteNoVerificable": 1,
+  "controles": [
+   {
+    "etiqueta": "input",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     1,
+     1
+    ],
+    "nombre": "label-envuelto"
+   },
+   {
+    "etiqueta": "input",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     1,
+     1
+    ],
+    "nombre": "label-envuelto"
+   },
+   {
+    "etiqueta": "input",
+    "problema": "area-tactil-pequena",
+    "caja": [
+     1,
+     1
+    ],
+    "nombre": "label-envuelto"
+   }
+  ],
+  "jerarquia": [],
+  "h1": 1,
+  "campos": [],
+  "conteos": {
+   "contraste": 0,
+   "controles": 3,
+   "jerarquia": 0,
+   "campos": 0
+  }
+ }
+]

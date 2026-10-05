@@ -9,14 +9,14 @@
 .academic-period-history-section h4 { margin: 0; color: #35382f; font-size: 9px; }
 .academic-period-history-revisions, .academic-period-history-events { display: grid; gap: 7px; margin: 0; padding: 0; list-style: none; }
 .academic-period-history-revisions > li, .academic-period-history-events > li { display: grid; gap: 4px; min-width: 0; padding: 8px; border: 1px solid #e8e9e2; border-radius: 6px; background: #fff; color: #55564e; font-size: 8px; line-height: 1.45; }
-.academic-period-history-revisions > li > p { margin: 0; overflow-wrap: anywhere; color: #77786f; }
+.academic-period-history-revisions > li > p { margin: 0; overflow-wrap: anywhere; color: #6f7067; }
 .academic-period-history-state { width: fit-content; padding: 2px 5px; border-radius: 4px; background: #f1f1ed; color: #73746d; font-size: 7px; font-weight: 700; }
 .academic-period-history-state.revision-published { background: #edf5ec; color: #528058; }
 .academic-period-history-revisions ul { display: grid; gap: 4px; margin: 2px 0 0; padding: 6px 0 0; border-top: 1px solid #efefe9; list-style: none; }
 .academic-period-history-revisions ul li { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 8px; }
-.academic-period-history-revisions time, .academic-period-history-events time { color: #77786f; font-size: 7px; }
-.academic-period-history-events span { overflow-wrap: anywhere; color: #77786f; }
-.academic-period-history-footnote, .academic-period-history-empty, .academic-period-history-message { margin: 0; color: #77786f; font-size: 8px; line-height: 1.45; }
+.academic-period-history-revisions time, .academic-period-history-events time { color: #6f7067; font-size: 7px; }
+.academic-period-history-events span { overflow-wrap: anywhere; color: #6f7067; }
+.academic-period-history-footnote, .academic-period-history-empty, .academic-period-history-message { margin: 0; color: #6f7067; font-size: 8px; line-height: 1.45; }
 .academic-period-history-error { display: grid; gap: 7px; }
 .academic-period-history-error p { margin: 0; color: #965347; font-size: 8px; line-height: 1.5; }
 .academic-period-history-error button { width: fit-content; min-height: 26px; padding: 0 8px; border: 1px solid #d8c6c0; border-radius: 5px; background: #fff; color: #63463f; font: inherit; font-size: 8px; font-weight: 700; cursor: pointer; }

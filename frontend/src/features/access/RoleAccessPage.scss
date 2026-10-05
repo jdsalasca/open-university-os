@@ -262,7 +262,7 @@
 
 .role-access :is(button, input, select):focus-visible { @include tokens.focus-ring; }
 .role-access input:disabled,
-.role-access select:disabled { background: #f1f2ee; color: #77786f; }
+.role-access select:disabled { background: #f1f2ee; color: #6f7067; }
 
 @media (max-width: 950px) {
   .role-access-grid { grid-template-columns: minmax(0, 1fr); }

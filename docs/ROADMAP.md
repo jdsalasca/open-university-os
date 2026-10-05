@@ -217,3 +217,11 @@ La medición de latencia local observada en esta ronda quedó en 60,5767 ms fren
 | --- | --- | --- |
 | Marca del sidebar colapsado | La causa era de especificidad, no de ancho: la regla anidada `.brand-lockup .brand-lockup-copy` declara `display: grid` con dos clases y ganaba al `display: none` del tramo de 850 px. El selector del tramo usa ahora dos clases. | El monogram queda dentro del carril de 68 px. Las seis rutas de tablet y las cinco de movil que no dependen del arte decorativo auditan en `ok`. |
 | Suite estable en host cargado | `testTimeout` y `hookTimeout` pasan a 30 000 ms en `vite.config.ts` y `asyncUtilTimeout` a 15 000 ms en `src/test/setup.ts`. | Antes: 13 pruebas en rojo en cinco corridas, siempre en un archivo distinto y siempre el mas pesado. Despues: 0 fallos en tres corridas seguidas. No era una regresion del arreglo de responsive; la CI alojada pasaba entera. Dos guardas nuevas impiden que los timeouts vuelvan al valor por defecto. |
+
+### Contraste de texto en tema claro - 5 de octubre de 2026
+
+| Entrega | Resultado verificable | Estado y siguiente paso |
+| --- | --- | --- |
+| Texto secundario accesible | Seis colores de texto sustituidos por su equivalente accesible, escalando los tres canales por el mismo factor para conservar el tono. Ninguno se usaba como fondo ni borde. | Textos oscuros bajo WCAG AA: 444 -> 165, una reduccion del 63 %. El tema oscuro audita en 0 antes y despues, sin regresion. Ver [evidencia](evidence/round-2026-10-05-accesibilidad/README.md). |
+| Causa raiz identificada | `_theme.scss` define tokens `--ui-*` solo para el tema oscuro; el claro codifica grises a mano en cada componente. | Definir tokens para el tema claro y migrar componentes es la solucion de fondo. Este corte ataca el sintoma en los colores de mayor uso. |
+| Guarda de regresion de contraste | `frontend/scripts/check-text-contrast-tokens.node-test.mjs` falla si reaparece cualquiera de los seis colores sustituidos y comprueba por aritmetica que los sustitutos alcanzan 4,5 sobre las tres superficies claras. | Esta en el script `npm test`, asi que la CI lo ejecuta. Verificado: 518 pruebas Vitest en 77 archivos y 46 guardas de Node aprobadas, build con presupuestos verificados y lint sin avisos. |

@@ -2,7 +2,7 @@
 
 .visual-identity-center {
   --identity-ink: #20211d;
-  --identity-muted: #77786f;
+  --identity-muted: #6f7067;
   --identity-line: #e7e8e1;
   --identity-surface: #fff;
   max-width: 1510px;
@@ -71,7 +71,7 @@
     border: 0;
     border-bottom: 2px solid transparent;
     background: transparent;
-    color: #77786f;
+    color: #6f7067;
     font: inherit;
     font-size: 10px;
     font-weight: 600;
@@ -93,7 +93,7 @@
 .color-input-row input[type='color'] { flex: 0 0 35px; width: 35px; height: 34px; padding: 3px; border: 1px solid #dfe0d9; border-radius: 7px; background: white; cursor: pointer; }
 .color-input-row input[type='text'] { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .03em; }
 .color-field small { color: #8a8b83; font-size: 9px; font-weight: 450; }
-.contrast-hint, .asset-security-note, .module-security-note { margin: 16px 0 0; padding: 10px 11px; border-radius: 7px; background: #f7f7f3; color: #77786f; font-size: 9px; line-height: 1.5; }
+.contrast-hint, .asset-security-note, .module-security-note { margin: 16px 0 0; padding: 10px 11px; border-radius: 7px; background: #f7f7f3; color: #6f7067; font-size: 9px; line-height: 1.5; }
 
 .asset-list, .module-editor-list, .banner-editor-list { display: grid; gap: 10px; }
 .asset-editor-card { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 13px; border: 1px solid #eaebe5; border-radius: 9px; background: #fdfdfa; }
@@ -108,7 +108,7 @@
 .asset-preview img { width: 100%; height: 100%; object-fit: contain; }
 .asset-preview[aria-label*='Favicon'] { flex-basis: 56px; width: 56px; height: 56px; }
 .asset-preview-logoDark { border-style: solid; border-color: #41423a; background: #20211d; }
-.text-button { padding: 4px 0; border: 0; background: transparent; color: #77786f; font: inherit; font-size: 9px; font-weight: 600; text-decoration: underline; text-decoration-color: #c5c6be; text-underline-offset: 3px; cursor: pointer; }
+.text-button { padding: 4px 0; border: 0; background: transparent; color: #6f7067; font: inherit; font-size: 9px; font-weight: 600; text-decoration: underline; text-decoration-color: #c5c6be; text-underline-offset: 3px; cursor: pointer; }
 .text-button:hover:not(:disabled) { color: #252620; text-decoration-color: currentColor; }
 .text-button:disabled { color: #aaa; text-decoration: none; cursor: not-allowed; }
 .asset-copy .text-button { display: block; margin-top: 7px; }
