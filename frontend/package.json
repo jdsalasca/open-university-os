@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build --manifest && node scripts/check-bundle-budget.mjs",
-    "test": "vitest run && node --test scripts/check-bundle-budget.node-test.mjs scripts/check-dark-theme-feedback.node-test.mjs scripts/check-responsive-shell.node-test.mjs scripts/check-test-timeouts.node-test.mjs scripts/check-text-contrast-tokens.node-test.mjs scripts/check-touch-targets.node-test.mjs",
+    "test": "vitest run && node --test scripts/check-bundle-budget.node-test.mjs scripts/check-dark-theme-feedback.node-test.mjs scripts/check-responsive-shell.node-test.mjs scripts/check-test-timeouts.node-test.mjs scripts/check-text-contrast-tokens.node-test.mjs scripts/check-touch-targets.node-test.mjs scripts/check-theme-palette.node-test.mjs",
     "test:watch": "vitest",
     "lint": "oxlint",
     "preview": "vite preview"

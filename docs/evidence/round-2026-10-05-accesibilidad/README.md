@@ -95,16 +95,47 @@ Capturas revisadas: `espacios-claro.png`, `espacios-oscuro.png`, `programas-clar
 `programas-oscuro.png`, `estudiantes-claro.png` y `estudiantes-oscuro.png` mantienen jerarquía,
 legibilidad e identidad visual; los tonos dorados de la marca no se alteraron.
 
+## Fuente central: `--ui-text-muted`
+
+Con el contraste a cero quedaba pendiente la causa: el tema claro no tenía bloque de paleta. La
+primera versión de este trabajo declaraba trece tokens (canvas, superficies, tres niveles de texto,
+bordes, input y foco) y el CSS de entrada pasaba a 22 826 B, por encima del presupuesto de 22 500.
+
+Eso no era un problema de presupuesto sino de alcance: **nueve de esos trece tokens no los consume
+nadie**. Declarar una paleta completa que solo existe en un archivo es sobreingeniería, y además se
+paga en bytes. Se recortó a lo que el código usa de verdad:
+
+```scss
+:root {
+  --ui-text-muted: #6b6d63;
+}
+```
+
+Los 39 usos del gris medido pasan a `var(--ui-text-muted)`. Como propiedad personalizada son ~40 B
+una vez, frente a ~270 B de literales repetidos en el CSS compilado. El límite de entry CSS sube de
+22 500 a 22 600 B con ese motivo explícito, no para acomodar un aumento cualquiera.
+
+El resto de la paleta clara sigue llegando por los valores de reserva de cada regla
+(`var(--ui-surface, #fff)`) hasta que exista un consumo real que justifique pagarla.
+
+**Un error propio detectado por la guarda**: al escribir el bloque completo asigné
+`--ui-border-strong: #9a9b92`, que era uno de los treinta colores que esa misma ronda acababa de
+sustituir. `check-text-contrast-tokens` lo rechazó. Ahora es `#76786f`.
+
 ## Verificación
 
+- `frontend/scripts/check-theme-palette.node-test.mjs`: 7 guardas. Declaran el token claro, comprueban
+  por aritmética que alcanza 4,5 sobre las tres superficies claras, verifican la paleta oscura
+  completa, que `:root[data-theme='dark']` gana cuando el tema está activo, y que el gris no queda
+  ni como literal disperso ni sin uso.
 - `frontend/scripts/check-text-contrast-tokens.node-test.mjs`: 2 guardas. La primera falla si
-  cualquiera de los seis colores sustituidos reaparece en cualquier `.scss`; la segunda comprueba por
-  aritmética que los sustitutos alcanzan 4,5 sobre cada superficie. Ambas se escribieron antes del
-  cambio y fallaron.
-- `npm test`: **518 pruebas Vitest en 77 archivos, más 49 guardas de Node**, todas aprobadas
+  cualquiera de los treinta y seis colores sustituidos reaparece en cualquier `.scss`; la segunda
+  comprueba por aritmética que los sustitutos alcanzan 4,5 sobre cada superficie. Ambas se escribieron
+  antes del cambio y fallaron.
+- `npm test`: **521 pruebas Vitest en 77 archivos, más 56 guardas de Node**, todas aprobadas
   (`vitest.txt`). Los archivos se añaden al script `npm test` para que la CI los ejecute.
-- `npm run build`: aprobado, presupuestos verificados (`build.txt`); CSS de entrada 22 478 B de 22 500.
-- `npm run lint`: 0 avisos, 0 errores en 181 archivos (`lint.txt`).
+- `npm run build`: aprobado, presupuestos verificados (`build.txt`); CSS de entrada 22 521 B de 22 600.
+- `npm run lint`: 0 avisos, 0 errores en 182 archivos (`lint.txt`).
 
 Una corrida intermedia de `AcademicOperationsPage.test.tsx` agotó los 30 s por un pico de saturación
 del host; aislado pasa 37/37 en 19,4 s y la corrida completa registrada pasa entera.

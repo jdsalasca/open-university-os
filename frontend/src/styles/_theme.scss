@@ -1,3 +1,13 @@
+// Hasta el 5 de octubre de 2026 el tema claro no tenia bloque propio: cada
+// componente codificaba sus grises y 444 textos quedaron bajo WCAG AA. Se declara
+// unicamente el token que los componentes consumen; el resto de la paleta clara
+// sigue llegando por los valores de reserva de cada regla hasta que exista un
+// consumo real que justifique pagarlo en el presupuesto de CSS.
+// Ver docs/evidence/round-2026-10-05-accesibilidad/README.md.
+:root {
+  --ui-text-muted: #6b6d63;
+}
+
 :root[data-theme='dark'] {
   color-scheme: dark;
   --ui-canvas: #151814;

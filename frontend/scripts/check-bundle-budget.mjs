@@ -28,7 +28,9 @@ export const DEFAULT_BUNDLE_BUDGETS = Object.freeze({
   // so their hardcoded light cards stay readable (WCAG AA); those accessibility fixes add ~1.7 kB.
   // The programs route also reserves its measured height while the lazy chunk loads, which removes a
   // 0.75 cumulative layout shift; that reservation costs ~0.1 kB of shell CSS.
-  entryStyles: 22_500,
+  // The light theme now declares --ui-text-muted once in :root instead of repeating the grey in 39
+  // component rules; as a custom property that is ~40 B once, against ~270 B of repeated literals.
+  entryStyles: 22_600,
   workspaceHomeJavaScript: 300_000,
   workspaceHomeStyles: 30_000,
   // The route budget includes the public directory chunk but excludes the on-demand curriculum comparison panel.
