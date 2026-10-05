@@ -1,0 +1,101 @@
+  #resumen: 3 recortes, 1 controles pequenos
+      RECORTA 45px  class="theme-selector-label"  "Autom├ítico"
+      RECORTA 20px  class="theme-selector-label"  "Claro"
+      RECORTA 27px  class="theme-selector-label"  "Oscuro"
+      CONTROL 1px  <input> "input"
+  #estudiantes: 3 recortes, 1 controles pequenos
+      RECORTA 45px  class="theme-selector-label"  "Autom├ítico"
+      RECORTA 20px  class="theme-selector-label"  "Claro"
+      RECORTA 27px  class="theme-selector-label"  "Oscuro"
+      CONTROL 1px  <input> "input"
+  #biblioteca: 3 recortes, 1 controles pequenos
+      RECORTA 45px  class="theme-selector-label"  "Autom├ítico"
+      RECORTA 20px  class="theme-selector-label"  "Claro"
+      RECORTA 27px  class="theme-selector-label"  "Oscuro"
+      CONTROL 1px  <input> "input"
+  #avisos: 3 recortes, 1 controles pequenos
+      RECORTA 45px  class="theme-selector-label"  "Autom├ítico"
+      RECORTA 20px  class="theme-selector-label"  "Claro"
+      RECORTA 27px  class="theme-selector-label"  "Oscuro"
+      CONTROL 1px  <input> "input"
+  #programas: 5 recortes, 1 controles pequenos
+      RECORTA 45px  class="theme-selector-label"  "Autom├ítico"
+      RECORTA 20px  class="theme-selector-label"  "Claro"
+      RECORTA 27px  class="theme-selector-label"  "Oscuro"
+      CONTROL 1px  <input> "input"
+  #inicio: 5 recortes, 1 controles pequenos
+      RECORTA 45px  class="theme-selector-label"  "Autom├ítico"
+      RECORTA 20px  class="theme-selector-label"  "Claro"
+      RECORTA 27px  class="theme-selector-label"  "Oscuro"
+      CONTROL 1px  <input> "input"
+  #academia: 3 recortes, 1 controles pequenos
+      RECORTA 45px  class="theme-selector-label"  "Autom├ítico"
+      RECORTA 20px  class="theme-selector-label"  "Claro"
+      RECORTA 27px  class="theme-selector-label"  "Oscuro"
+      CONTROL 1px  <input> "input"
+  #admisiones: 4 recortes, 1 controles pequenos
+      RECORTA 45px  class="theme-selector-label"  "Autom├ítico"
+      RECORTA 20px  class="theme-selector-label"  "Claro"
+      RECORTA 27px  class="theme-selector-label"  "Oscuro"
+      CONTROL 1px  <input> "input"
+  #espacios: 5 recortes, 1 controles pequenos
+      RECORTA 45px  class="theme-selector-label"  "Autom├ítico"
+      RECORTA 20px  class="theme-selector-label"  "Claro"
+      RECORTA 27px  class="theme-selector-label"  "Oscuro"
+      CONTROL 1px  <input> "input"
+  #accesos: 4 recortes, 1 controles pequenos
+      RECORTA 45px  class="theme-selector-label"  "Autom├ítico"
+      RECORTA 20px  class="theme-selector-label"  "Claro"
+      RECORTA 27px  class="theme-selector-label"  "Oscuro"
+      CONTROL 1px  <input> "input"
+  #resumen: 14 recortes, 1 controles pequenos
+      RECORTA 47px  class="(sin clase)"  "Resumen"
+      RECORTA 82px  class="(sin clase)"  "Identidad visual"
+      RECORTA 56px  class="(sin clase)"  "Programas"
+      CONTROL 1px  <input> "input"
+  #estudiantes: 14 recortes, 1 controles pequenos
+      RECORTA 47px  class="(sin clase)"  "Resumen"
+      RECORTA 82px  class="(sin clase)"  "Identidad visual"
+      RECORTA 56px  class="(sin clase)"  "Programas"
+      CONTROL 1px  <input> "input"
+  #biblioteca: 14 recortes, 1 controles pequenos
+      RECORTA 47px  class="(sin clase)"  "Resumen"
+      RECORTA 82px  class="(sin clase)"  "Identidad visual"
+      RECORTA 56px  class="(sin clase)"  "Programas"
+      CONTROL 1px  <input> "input"
+  #avisos: 14 recortes, 1 controles pequenos
+      RECORTA 47px  class="(sin clase)"  "Resumen"
+      RECORTA 82px  class="(sin clase)"  "Identidad visual"
+      RECORTA 56px  class="(sin clase)"  "Programas"
+      CONTROL 1px  <input> "input"
+  #programas: 15 recortes, 1 controles pequenos
+      RECORTA 47px  class="(sin clase)"  "Resumen"
+      RECORTA 82px  class="(sin clase)"  "Identidad visual"
+      RECORTA 56px  class="(sin clase)"  "Programas"
+      CONTROL 1px  <input> "input"
+  #inicio: 16 recortes, 1 controles pequenos
+      RECORTA 47px  class="(sin clase)"  "Resumen"
+      RECORTA 82px  class="(sin clase)"  "Identidad visual"
+      RECORTA 56px  class="(sin clase)"  "Programas"
+      CONTROL 1px  <input> "input"
+  #academia: 14 recortes, 1 controles pequenos
+      RECORTA 47px  class="(sin clase)"  "Resumen"
+      RECORTA 82px  class="(sin clase)"  "Identidad visual"
+      RECORTA 56px  class="(sin clase)"  "Programas"
+      CONTROL 1px  <input> "input"
+  #admisiones: 15 recortes, 1 controles pequenos
+      RECORTA 47px  class="(sin clase)"  "Resumen"
+      RECORTA 82px  class="(sin clase)"  "Identidad visual"
+      RECORTA 56px  class="(sin clase)"  "Programas"
+      CONTROL 1px  <input> "input"
+  #espacios: 14 recortes, 1 controles pequenos
+      RECORTA 47px  class="(sin clase)"  "Resumen"
+      RECORTA 82px  class="(sin clase)"  "Identidad visual"
+      RECORTA 56px  class="(sin clase)"  "Programas"
+      CONTROL 1px  <input> "input"
+  #accesos: 15 recortes, 1 controles pequenos
+      RECORTA 47px  class="(sin clase)"  "Resumen"
+      RECORTA 82px  class="(sin clase)"  "Identidad visual"
+      RECORTA 56px  class="(sin clase)"  "Programas"
+      CONTROL 1px  <input> "input"
+TOTAL anomalias: 203

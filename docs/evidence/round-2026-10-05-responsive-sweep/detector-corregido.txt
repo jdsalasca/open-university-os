@@ -1,0 +1,63 @@
+
+=== movil-360 (360 px) ===
+  #resumen: ok
+  #estudiantes: ok
+  #biblioteca: ok
+  #avisos: ok
+  #programas: 2 recortes reales
+      RECORTA 6px class="catalog-hero" "VIDA UNIVERSITARIA / MALLAS CURRICUL"
+      RECORTA 103px class="catalog-empty" "ÔîüCAT├üLOGO CURRICULARNo hay mallas pu"
+  #inicio: 1 recortes reales
+      RECORTA 36px class="preview-hero" "UNIVERSIDAD ┬À IDENTIDAD INSTITUCIONA"
+  #academia: ok
+  #admisiones: 1 recortes reales
+      RECORTA 48px class="admissions-call-card" "CONVOCATORIA ┬À PREGRADO PRESENCIAL20"
+  #espacios: 2 recortes reales
+      RECORTA 46px class="spaces-hero" "ORIENTACI├ôN ┬À UPTCGu├¡a de espaciosCo"
+      RECORTA 12px class="spaces-hero-art" "UTUNJA ┬À BOYAC├ü"
+  #accesos: 1 recortes reales
+      RECORTA 48px class="role-access-hero" "IDENTIDAD ┬À CONTROL DE ACCESOAccesos"
+
+=== tablet-768 (768 px) ===
+  #resumen: 1 recortes reales
+      RECORTA 11px class="identity-session-status is-authenticated" "Desarrollador local ┬À preview activo"
+  #estudiantes: 1 recortes reales
+      RECORTA 28px class="identity-session-status is-authenticated" "Desarrollador local ┬À preview activo"
+  #biblioteca: 1 recortes reales
+      RECORTA 17px class="identity-session-status is-authenticated" "Desarrollador local ┬À preview activo"
+  #avisos: 1 recortes reales
+      RECORTA 15px class="identity-session-status is-authenticated" "Desarrollador local ┬À preview activo"
+  #programas: 2 recortes reales
+      RECORTA 19px class="identity-session-status is-authenticated" "Desarrollador local ┬À preview activo"
+      RECORTA 103px class="catalog-empty" "ÔîüCAT├üLOGO CURRICULARNo hay mallas pu"
+  #inicio: 2 recortes reales
+      RECORTA 23px class="identity-session-status is-authenticated" "Desarrollador local ┬À preview activo"
+      RECORTA 36px class="preview-hero" "UNIVERSIDAD ┬À IDENTIDAD INSTITUCIONA"
+  #academia: 1 recortes reales
+      RECORTA 29px class="identity-session-status is-authenticated" "Desarrollador local ┬À preview activo"
+  #admisiones: 2 recortes reales
+      RECORTA 21px class="identity-session-status is-authenticated" "Desarrollador local ┬À preview activo"
+      RECORTA 48px class="admissions-call-card" "CONVOCATORIA ┬À PREGRADO PRESENCIAL20"
+  #espacios: 1 recortes reales
+      RECORTA 24px class="identity-session-status is-authenticated" "Desarrollador local ┬À preview activo"
+  #accesos: 2 recortes reales
+      RECORTA 25px class="identity-session-status is-authenticated" "Desarrollador local ┬À preview activo"
+      RECORTA 77px class="role-access-hero" "IDENTIDAD ┬À CONTROL DE ACCESOAccesos"
+
+=== escritorio-1024 (1024 px) ===
+  #resumen: ok
+  #estudiantes: ok
+  #biblioteca: ok
+  #avisos: ok
+  #programas: 1 recortes reales
+      RECORTA 103px class="catalog-empty" "ÔîüCAT├üLOGO CURRICULARNo hay mallas pu"
+  #inicio: 1 recortes reales
+      RECORTA 36px class="preview-hero" "UNIVERSIDAD ┬À IDENTIDAD INSTITUCIONA"
+  #academia: ok
+  #admisiones: 1 recortes reales
+      RECORTA 48px class="admissions-call-card" "CONVOCATORIA ┬À PREGRADO PRESENCIAL20"
+  #espacios: ok
+  #accesos: 1 recortes reales
+      RECORTA 86px class="role-access-hero" "IDENTIDAD ┬À CONTROL DE ACCESOAccesos"
+
+TOTAL recortes reales: 25

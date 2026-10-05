@@ -54,13 +54,15 @@
     display: grid;
     gap: 4px;
 
+    // Medido a 1024 px el 5 de octubre de 2026: con max-width fijo y text-overflow el nombre
+    // de la institucion se recortaba a 156 px en las diez rutas. El sidebar tiene ancho para dos
+    // lineas y el nombre completo cabe en dos.
     strong {
-      max-width: 165px;
-      overflow: hidden;
       font-size: 11px;
+      line-height: 1.25;
       letter-spacing: .04em;
-      text-overflow: ellipsis;
-      white-space: nowrap;
+      white-space: normal;
+      overflow-wrap: break-word;
     }
     small { color: #aaa99f; font-size: 8px; letter-spacing: .11em; }
   }

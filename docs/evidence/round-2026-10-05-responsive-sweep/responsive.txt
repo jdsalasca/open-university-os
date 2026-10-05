@@ -1,0 +1,63 @@
+Desborde horizontal y elementos fuera de viewport por ruta y ancho
+
+========== movil-360 (360 x 780) ==========
+  #resumen: ok
+  #estudiantes: ok
+  #biblioteca: ok
+  #avisos: ok
+  #programas: ok
+  #inicio: ok
+  #academia: ok
+  #admisiones: ok
+  #espacios: ok
+  #accesos: ok
+
+========== movil-390 (390 x 844) ==========
+  #resumen: ok
+  #estudiantes: ok
+  #biblioteca: ok
+  #avisos: ok
+  #programas: ok
+  #inicio: ok
+  #academia: ok
+  #admisiones: ok
+  #espacios: ok
+  #accesos: ok
+
+========== tablet-768 (768 x 1024) ==========
+  #resumen: ok
+  #estudiantes: ok
+  #biblioteca: ok
+  #avisos: ok
+  #programas: ok
+  #inicio: ok
+  #academia: ok
+  #admisiones: ok
+  #espacios: ok
+  #accesos: ok
+
+========== tablet-1024 (1024 x 768) ==========
+  #resumen: ok
+  #estudiantes: ok
+  #biblioteca: ok
+  #avisos: ok
+  #programas: ok
+  #inicio: ok
+  #academia: ok
+  #admisiones: ok
+  #espacios: ok
+  #accesos: ok
+
+========== escritorio-1440 (1440 x 900) ==========
+  #resumen: ok
+  #estudiantes: ok
+  #biblioteca: ok
+  #avisos: ok
+  #programas: ok
+  #inicio: ok
+  #academia: ok
+  #admisiones: ok
+  #espacios: ok
+  #accesos: ok
+
+TOTAL rutas con desborde horizontal: 0
