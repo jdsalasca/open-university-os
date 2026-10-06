@@ -171,6 +171,42 @@ function publicSpaceGuideClient(): SpaceGuideClient {
 }
 
 describe('App', () => {
+  // Estos dos tests afirman un estado transitorio: el marcador que se ve mientras llega el chunk perezoso
+  // de la ruta. Ese estado solo existe mientras la importacion sigue en vuelo, asi que dependen del
+  // orden del archivo: en cuanto cualquier test anterior carga el chunk, el modulo queda resuelto y
+  // estos dos empiezan a fallar sin que nadie haya tocado nada. Por eso van los primeros del bloque,
+  // que es el unico punto donde la precondicion se cumple sin depender de los demas.
+  it('announces the selected academic module while its route chunk loads', () => {
+    // Arrange
+    window.history.replaceState(null, '', '#programas')
+    const catalogClient = emptyAcademicCatalogClient()
+
+    // Act
+    render(
+      <BrandingProvider loader={async () => DEFAULT_BRANDING}>
+        <App catalogClient={catalogClient} />
+      </BrandingProvider>,
+    )
+
+    // Assert
+    expect(screen.getByText('Cargando módulo académico…')).toBeVisible()
+  })
+  it('reserves the catalog height while the programs route chunk loads', () => {
+    // Arrange
+    window.history.replaceState(null, '', '#programas')
+    const catalogClient = emptyAcademicCatalogClient()
+
+    // Act
+    render(
+      <BrandingProvider loader={async () => DEFAULT_BRANDING}>
+        <App catalogClient={catalogClient} />
+      </BrandingProvider>,
+    )
+
+    // Assert: el footer no debe bajar miles de pixeles al montar la pagina.
+    expect(screen.getByRole('status')).toHaveClass('module-loading-tall')
+  })
+
   it('lets keyboard users skip the application shell and focus the main region', async () => {
     // Arrange
     const user = userEvent.setup()
@@ -202,6 +238,37 @@ describe('App', () => {
     expect(mainContent).toHaveFocus()
   })
 
+  // Medido en el navegador el 6 de octubre de 2026: al pulsar un enlace de la barra lateral el foco
+  // se quedaba en el propio enlace en 6 de 8 rutas, y con teclado o lector de pantalla el contenido
+  // nuevo no llegaba a anunciarse. El foco aterriza ahora en el titulo de la pagina, o en la region si
+  // la vista todavia no lo tiene porque su chunk sigue cargando.
+  it('moves focus into the content when the route changes from the shell navigation', async () => {
+    // Arrange
+    const user = userEvent.setup()
+    window.history.replaceState(null, '', '#resumen')
+    render(
+      <BrandingProvider loader={async () => DEFAULT_BRANDING}>
+        <App
+          oidcConfiguration={{ status: 'unconfigured' }}
+          currentIdentityClient={identityClientWithPermissions([])}
+          localPreviewSessionClient={null}
+        />
+      </BrandingProvider>,
+    )
+    const enlace = within(screen.getByRole('navigation', { name: 'Principal' }))
+      .getByRole('link', { name: 'Programas' })
+    enlace.focus()
+    expect(enlace).toHaveFocus()
+
+    // Act
+    await user.keyboard('{Enter}')
+    const mainContent = await screen.findByRole('main')
+
+    // Assert: el foco entra en el contenido, no se queda en el menu.
+    await waitFor(() => expect(mainContent.contains(document.activeElement)).toBe(true))
+    // Y aterriza en el titulo, que es lo que un lector de pantalla anuncia al entrar en la pagina.
+    await waitFor(() => expect(document.activeElement?.tagName).toBe('H1'))
+  })
   it('opens student services from the portal home and keeps the identity center on its own route', async () => {
     // Arrange
     const user = userEvent.setup()
@@ -470,71 +537,6 @@ describe('App', () => {
     expect(screen.getByRole('status')).toHaveTextContent('La publicación requiere acceso institucional')
     expect(screen.getByRole('link', { name: 'Identidad visual' })).toBeVisible()
   })
-
-  it('announces the selected academic module while its route chunk loads', () => {
-    // Arrange
-    window.history.replaceState(null, '', '#programas')
-    const catalogClient = emptyAcademicCatalogClient()
-
-    // Act
-    render(
-      <BrandingProvider loader={async () => DEFAULT_BRANDING}>
-        <App catalogClient={catalogClient} />
-      </BrandingProvider>,
-    )
-
-    // Assert
-    expect(screen.getByText('Cargando módulo académico…')).toBeVisible()
-  })
-
-  it('reserves the catalog height while the programs route chunk loads', () => {
-    // Arrange
-    window.history.replaceState(null, '', '#programas')
-    const catalogClient = emptyAcademicCatalogClient()
-
-    // Act
-    render(
-      <BrandingProvider loader={async () => DEFAULT_BRANDING}>
-        <App catalogClient={catalogClient} />
-      </BrandingProvider>,
-    )
-
-    // Assert: el footer no debe bajar miles de pixeles al montar la pagina.
-    expect(screen.getByRole('status')).toHaveClass('module-loading-tall')
-  })
-
-  // Medido en el navegador el 6 de octubre de 2026: al pulsar un enlace de la barra lateral el foco
-  // se quedaba en el propio enlace en 6 de 8 rutas, y con teclado o lector de pantalla el contenido
-  // nuevo no llegaba a anunciarse. El foco aterriza ahora en el titulo de la pagina, o en la region si
-  // la vista todavia no lo tiene porque su chunk sigue cargando.
-  it('moves focus into the content when the route changes from the shell navigation', async () => {
-    // Arrange
-    const user = userEvent.setup()
-    window.history.replaceState(null, '', '#resumen')
-    render(
-      <BrandingProvider loader={async () => DEFAULT_BRANDING}>
-        <App
-          oidcConfiguration={{ status: 'unconfigured' }}
-          currentIdentityClient={identityClientWithPermissions([])}
-          localPreviewSessionClient={null}
-        />
-      </BrandingProvider>,
-    )
-    const enlace = within(screen.getByRole('navigation', { name: 'Principal' }))
-      .getByRole('link', { name: 'Programas' })
-    enlace.focus()
-    expect(enlace).toHaveFocus()
-
-    // Act
-    await user.keyboard('{Enter}')
-    const mainContent = await screen.findByRole('main')
-
-    // Assert: el foco entra en el contenido, no se queda en el menu.
-    await waitFor(() => expect(mainContent.contains(document.activeElement)).toBe(true))
-    // Y aterriza en el titulo, que es lo que un lector de pantalla anuncia al entrar en la pagina.
-    await waitFor(() => expect(document.activeElement?.tagName).toBe('H1'))
-  })
-
   it('updates the skip link target when the active route changes', async () => {
     // Arrange
     const user = userEvent.setup()
