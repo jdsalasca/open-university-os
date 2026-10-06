@@ -14,6 +14,9 @@ import type {
   CurriculumVersionComparisonSample,
 } from './contracts'
 
+// Mirrors AcademicCatalogLimits.MAX_CURRICULUM_ENTRIES in the backend domain.
+const MAX_REFERENCE_CURRICULUM_ENTRIES = 10_000
+
 export function parseCurriculumVersionComparison(input: unknown, entryCount: number): CurriculumVersionComparison {
   if (!isRecord(input)
     || !Array.isArray(input.addedSamples)
@@ -49,6 +52,7 @@ export function parseCurriculumVersionComparison(input: unknown, entryCount: num
     || !isRecord(input.counts)
     || !isNonNegativeInteger(input.counts.added)
     || !isNonNegativeInteger(input.counts.removed)
+    || input.counts.removed > MAX_REFERENCE_CURRICULUM_ENTRIES
     || !isNonNegativeInteger(input.counts.modified)
     || !isNonNegativeInteger(input.counts.unchanged)) throw malformedResponse()
 

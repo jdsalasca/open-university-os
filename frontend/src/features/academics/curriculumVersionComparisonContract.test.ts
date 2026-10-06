@@ -165,6 +165,30 @@ describe('parseCurriculumImportPreview comparison contract', () => {
     await expect(parseCurriculumImportPreview(tooManySamples)).rejects.toThrow()
   })
 
+  it('enforces the removed reference curriculum entry limit', async () => {
+    // Arrange
+    const atLimit = {
+      ...preview,
+      comparison: {
+        ...compared,
+        counts: { ...compared.counts, removed: 10_000 },
+      },
+    }
+    const aboveLimit = {
+      ...atLimit,
+      comparison: {
+        ...atLimit.comparison,
+        counts: { ...atLimit.comparison.counts, removed: 10_001 },
+      },
+    }
+
+    // Act & Assert
+    await expect(parseCurriculumImportPreview(atLimit)).resolves.toMatchObject({
+      comparison: { counts: { removed: 10_000 } },
+    })
+    await expect(parseCurriculumImportPreview(aboveLimit)).rejects.toThrow()
+  })
+
   it('rejects an added or removed sample that carries changed fields', async () => {
     // Arrange: added/removed rows are field-less by contract; only modified rows carry a diff.
     const addedWithFields = {
