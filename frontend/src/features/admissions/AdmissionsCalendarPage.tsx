@@ -116,6 +116,7 @@ export function AdmissionsCalendarPage({
             <p className="admissions-eyebrow">FUENTE Y SEGUIMIENTO</p>
             <h2 id="admissions-source-title">Mantente al día con UPTC</h2>
             <p>Las fechas pueden tener ajustes. Consulta la Resolución 111 de 2026 y el comunicado institucional en sus enlaces oficiales antes de realizar cualquier trámite.</p>
+            {calendar.sourceNote && <p className="admissions-source-note" role="note">{calendar.sourceNote}</p>}
             {calendar.officialActSource && (
               <a href={calendar.officialActSource.url} target="_blank" rel="noreferrer">
                 Consultar {calendar.officialActSource.label} <span aria-hidden="true">↗</span>

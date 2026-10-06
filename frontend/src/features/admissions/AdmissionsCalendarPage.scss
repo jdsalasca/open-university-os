@@ -152,6 +152,7 @@
 .admissions-source-seal { display: grid; flex: 0 0 39px; width: 39px; height: 39px; place-items: center; border: 1px solid #e5d16f; border-radius: 13px; background: #fff7cd; color: #514c35; font-family: Georgia, serif; font-size: 23px; font-weight: 700; }
 .admissions-official-source .admissions-eyebrow { margin: 2px 0 7px; }
 .admissions-official-source a { display: inline-flex; align-items: center; gap: 7px; margin-top: 12px; color: #575139; font-size: 9px; font-weight: 750; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.admissions-source-note { margin: 10px 0 0; padding: 9px 11px; border-left: 3px solid var(--brand-primary, #ffcc29); border-radius: 0 7px 7px 0; background: var(--brand-surface, #ffffff); color: var(--brand-text, #1a1a1a); font-size: 10px; line-height: 1.55; }
 
 @media (max-width: 900px) {
   .admissions-hero { grid-template-columns: minmax(0, 1fr) 210px; padding: 28px; }

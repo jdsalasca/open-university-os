@@ -534,4 +534,12 @@ cuenta; no se tocan desde aqui. El unico residuo que no se puede quitar es
 | --- | --- | --- |
 | Fuente historica identificada | La FAQ de registro contiene fechas de 2010/2011, valor de PIN, bancos, dos opciones de programa y umbral de examen anterior a 2000. | Estos datos se registran como históricos y quedan excluidos de requisitos, validadores y modelos para 2027-I. |
 | Fuente actual separada | ACRA publica su calendario 2027-I y enlaza la Resolución 111 de 2026 para pregrado presencial. | La página pública no basta para confirmar costo, opciones, cupos ni regla de selección. |
-| Gate | La consulta por buscador devolvió el contenido, mientras que abrir directamente las páginas dio HTTP 502. | El texto íntegro del acto y la validación institucional siguen pendientes; no se implementan reglas a partir de la FAQ antigua. |
+| Resolución contrastada | Se consultó el registro normativo 9906 y el PDF escaneado de tres páginas; el artículo 1 proporciona las fechas de 2027-I y revela una discrepancia de semestre en un considerando. | Esto confirma fechas públicas, no costos, cupos, puntajes, reglas de selección, dueño funcional ni sistema de registro. |
+
+### Completar agenda pública 2027-I desde la Resolución 111 - 6 de octubre de 2026
+
+| Entrega | Resultado verificable | Estado y siguiente paso |
+| --- | --- | --- |
+| Agenda pública | `/#admisiones` incorpora los hitos del artículo 1 para inscripción, pruebas, resultados, ISE, derechos pecuniarios y opcionados. | Es informativa y de solo lectura; no recolecta datos ni automatiza decisiones. |
+| Aclaración de fechas | La interfaz distingue el plazo de derechos pecuniarios del pago de matrícula, cuya fecha depende del calendario académico 2027-I separado; también identifica la diferencia entre considerando 2026-II y título/artículo 1 2027-I. | Contrastar futuros cambios con el registro normativo y la página pública ACRA. |
+| Verificación | Vitest 538/538 en 78 archivos, guardas Node 117/117, lint y build con presupuesto aprobados; se revisó captura de escritorio y móvil de `/#admisiones`. | Cualquier formulario, campo, cupo o regla de selección sigue detrás de validación institucional y técnica. |

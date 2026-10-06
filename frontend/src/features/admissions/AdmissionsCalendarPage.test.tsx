@@ -19,12 +19,40 @@ describe('AdmissionsCalendarPage', () => {
     // Assert
     expect(page).toHaveTextContent('Primer semestre académico de 2027')
     expect(page).toHaveTextContent('21 sep – 21 oct 2026')
+    expect(page).toHaveTextContent('21 sep – 23 oct 2026')
     expect(page).toHaveTextContent('Hasta el 23 oct 2026')
+    expect(page).toHaveTextContent('27 oct 2026')
     expect(page).toHaveTextContent('28 y 29 oct 2026')
+    expect(page).toHaveTextContent('La prueba de aptitud se realiza en la sede del programa.')
+    expect(page).toHaveTextContent('11–12 nov 2026')
     expect(page).toHaveTextContent('13 nov 2026')
     expect(page).toHaveTextContent('17–27 nov 2026')
+    expect(page).toHaveTextContent('18 nov – 4 dic 2026')
     expect(page).toHaveTextContent('23 nov – 10 dic 2026')
+    expect(page).toHaveTextContent('9–14 dic 2026')
     expect(page).toHaveTextContent('9–15 dic 2026')
+    expect(page).toHaveTextContent('10–16 dic 2026')
+    expect(page).toHaveTextContent('10–17 dic 2026')
+    expect(page).toHaveTextContent('10–18 dic 2026')
+    expect(page.querySelectorAll('.admissions-timeline-item')).toHaveLength(22)
+    expect(page).toHaveTextContent('Promoción en página web y emisoras')
+    expect(page).toHaveTextContent('Registro de inscripción por internet')
+    expect(page).toHaveTextContent('Valoración médica para aspirantes con discapacidad')
+    expect(page).toHaveTextContent('Prueba de lengua de señas para aspirantes sordos')
+    expect(page).toHaveTextContent('Exámenes médicos y físicos asociados')
+    expect(page).toHaveTextContent('Verificación de información ICFES')
+    expect(page).toHaveTextContent('Corrección o anulación de información errónea')
+    expect(page).toHaveTextContent('Proceso de admisión en SIRA')
+    expect(page).toHaveTextContent('Corrección o subsanación de ISE y documentos')
+    expect(page).toHaveTextContent('Registro de asignaturas por las Escuelas')
+    expect(page).toHaveTextContent('ISE y entrega de documentos para opcionados')
+    expect(page).toHaveTextContent('Corrección de ISE y documentos para opcionados')
+    expect(page).toHaveTextContent('Pago de derechos pecuniarios para opcionados')
+    expect(page).toHaveTextContent('Registro de asignaturas para opcionados')
+    expect(page).toHaveTextContent('Asignación de cupo especial de segunda opción')
+    expect(page).toHaveTextContent('Pago de derechos pecuniarios')
+    expect(page).not.toHaveTextContent('Derechos pecuniarios y matrícula')
+    expect(page).toHaveTextContent(/el pago de matrícula.*calendario académico/i)
     expect(page).toHaveTextContent('Esta pantalla informa; no recibe inscripciones')
     expect(page.querySelector('form')).toBeNull()
     expect(page.querySelector('input')).toBeNull()
@@ -42,6 +70,17 @@ describe('AdmissionsCalendarPage', () => {
     expect(page).not.toHaveTextContent(/\bACRA\b/i)
   })
 
+  it('orders published milestones by their start date', () => {
+    // Arrange
+    const calendar = OFFICIAL_ADMISSIONS_CALENDAR_2027_I
+
+    // Act
+    const startDates = calendar.milestones.map((milestone) => milestone.startsOn)
+
+    // Assert
+    expect(startDates).toEqual([...startDates].sort())
+  })
+
   it('links to the official UPTC admissions calendar and identifies when its dates were checked', () => {
     // Arrange
     render(<AdmissionsCalendarPage />)
@@ -57,11 +96,22 @@ describe('AdmissionsCalendarPage', () => {
     expect(officialCalendar).toHaveAttribute('target', '_blank')
     expect(officialCalendar).toHaveAttribute('rel', 'noreferrer')
     expect(screen.getByText(/fuente.*admisiones publicado por la uptc.*actualizada el 15 de septiembre de 2026/i)).toBeVisible()
-    expect(screen.getByText(/consultada el 4 de octubre de 2026/i)).toBeVisible()
+    expect(screen.getByText(/consultada el 6 de octubre de 2026/i)).toBeVisible()
     expect(screen.getByRole('link', { name: /comunicado institucional.*2027-i/i })).toHaveAttribute(
       'href',
       'https://dsp.uptc.edu.co/sitio/portal/cal_not_eve/noticias/det/UPTC-abre-inscripciones-para-estudiar-un-pregrado-presencial-a-distancia-o-virtual-el-proximo-semestre/',
     )
+  })
+
+  it('explains the 2026-II recital and the operative 2027-I calendar wording', () => {
+    // Arrange
+    render(<AdmissionsCalendarPage />)
+
+    // Act
+    const page = screen.getByRole('region', { name: /admisiones.*pregrado presencial/i })
+
+    // Assert
+    expect(page).toHaveTextContent(/el considerando menciona 2026-ii.*título y el artículo 1.*2027-i/i)
   })
 
   it('links the 2027-I public calendar to its official Resolution 111 source safely', () => {

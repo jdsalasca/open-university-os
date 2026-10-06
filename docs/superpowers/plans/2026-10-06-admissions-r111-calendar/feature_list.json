@@ -1,0 +1,11 @@
+{
+  "feature": "Agenda pública de hitos de admisión pregrado presencial 2027-I",
+  "status": "validated",
+  "items": [
+    { "id": "calendar-operative-dates", "description": "Renderizar los hitos con fechas del artículo 1 de la Resolución 111 de 2026", "verified": true },
+    { "id": "payment-date-separation", "description": "Separar derechos pecuniarios del pago de matrícula cuyo calendario es independiente", "verified": true },
+    { "id": "resolution-discrepancy-note", "description": "Indicar discrepancia entre considerando 2026-II y título/artículo 1 para 2027-I", "verified": true },
+    { "id": "read-only-boundary", "description": "Conservar la agenda como lectura pública sin formularios de aspirantes", "verified": true },
+    { "id": "frontend-verification", "description": "Pasar suite, lint y build, y revisar captura visual de la ruta", "verified": true }
+  ]
+}

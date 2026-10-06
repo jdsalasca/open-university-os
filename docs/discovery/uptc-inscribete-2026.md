@@ -22,6 +22,37 @@ El [comunicado UPTC n.º 240 del 22 de septiembre de 2026](https://www.uptc.edu.
 
 Esta observación confirma que la página actual de ACRA enlaza una ruta pública de inscripción; no identifica el producto o backend que procesa la convocatoria 2027-I, ni prueba que la página con fecha de 2024 sea la fuente operativa autorizada. No se enviaron formularios ni se ingresaron datos personales. La navegación visible tampoco demuestra si «Inscríbete», SIRA y la Fase III comparten componentes o registros.
 
+## Resolución 111: calendario detallado de pregrado presencial 2027-I
+
+El 6 de octubre de 2026 se consultó el [registro normativo UPTC de la Resolución 111 de 2026](https://apps3.uptc.edu.co/compilacion-normativa-web/#/compilaciones-normativas/detalle-documento/9906), identificador 9906, expedida el 10 de septiembre de 2026. El PDF publicado contiene tres páginas escaneadas; se contrastó visualmente el texto del artículo 1 y se usó ese artículo como fuente de las fechas siguientes:
+
+| Hito publicado | Fecha del artículo 1 |
+| --- | --- |
+| Promoción por página web y emisoras | 21 de septiembre–23 de octubre de 2026 |
+| Venta de PIN | 21 de septiembre–21 de octubre de 2026 |
+| Registro de inscripción por internet | 21 de septiembre–23 de octubre de 2026 |
+| Valoración médica para aspirantes con discapacidad | 27 de octubre de 2026 |
+| Prueba de lengua de señas para aspirantes sordos | 27 de octubre de 2026 |
+| Pruebas de aptitud para Artes Plásticas y Visuales, Educación Física, Recreación y Deporte, y Música | 28–29 de octubre de 2026; la prueba de aptitud se realiza en la sede del programa |
+| Exámenes médicos y físicos asociados a esas pruebas | 28–29 de octubre de 2026 |
+| Verificación de información ICFES | 28–29 de octubre de 2026 |
+| Corrección o anulación de información errónea en la inscripción | Hasta el 10 de noviembre de 2026 |
+| Proceso de admisión en SIRA | 11–12 de noviembre de 2026 |
+| Publicación de resultados | 13 de noviembre de 2026 |
+| Registro de información ISE y entrega de documentos | 17–27 de noviembre de 2026 |
+| Corrección o subsanación de ISE y documentos | 18 de noviembre–4 de diciembre de 2026 |
+| Pago de derechos pecuniarios | 23 de noviembre–10 de diciembre de 2026 |
+| Registro de asignaturas por las Escuelas para admitidos | 9–14 de diciembre de 2026 |
+| Llamado de opcionados y entrega de su ISE/documentos | 9–15 de diciembre de 2026 |
+| Corrección o subsanación de ISE/documentos de opcionados | 10–16 de diciembre de 2026 |
+| Pago de derechos pecuniarios de opcionados | 10–17 de diciembre de 2026 |
+| Registro de asignaturas de opcionados | 10–18 de diciembre de 2026 |
+| Asignación del cupo especial de segunda opción referido a la Resolución 5362 de 2025 | 14 de diciembre de 2026 |
+
+El considerando menciona el segundo semestre de 2026, mientras que el título y el artículo 1 establecen el calendario del primer semestre académico de 2027. La agenda pública usa únicamente las fechas operativas del artículo 1 y muestra la discrepancia. El artículo 1 separa el pago de derechos pecuniarios del pago de matrícula y remite este último al calendario académico 2027-I; no se presenta el intervalo de derechos pecuniarios como fecha de pago de matrícula. Aunque la página ACRA resume ambos conceptos en un mismo rótulo, el calendario público conserva esta distinción.
+
+Estas fechas solo describen el calendario publicado. La mención del proceso en SIRA y de la Resolución 5362 de 2025 no establece en esta plataforma criterios, puntajes, cupos ni resultados de selección; no habilita formularios ni captura de datos.
+
 ## Vigencia de las preguntas frecuentes de registro
 
 En la revisión del 6 de octubre de 2026, el índice público de la [página de preguntas frecuentes de admisiones de pregrado](https://registro.uptc.edu.co/preguntas_frecuentes.htm) devolvió contenido con fechas de 2010 y 2011. Ese mismo contenido incluye un valor de PIN de $78.600, una lista de bancos, dos opciones de programa y un umbral de 220 puntos para exámenes anteriores a 2000. Son datos de la FAQ histórica, no requisitos confirmados para 2027-I; no trasladarlos al producto, sus formularios, validadores ni modelos.
