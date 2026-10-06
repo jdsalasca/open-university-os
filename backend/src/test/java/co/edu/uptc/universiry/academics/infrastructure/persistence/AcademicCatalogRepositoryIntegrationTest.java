@@ -5,6 +5,7 @@ import co.edu.uptc.universiry.academics.application.AcademicCurriculumDetails;
 import co.edu.uptc.universiry.academics.application.AcademicCurriculumDraftsPage;
 import co.edu.uptc.universiry.academics.application.AcademicProgramSummary;
 import co.edu.uptc.universiry.academics.application.CurriculumImportService;
+import co.edu.uptc.universiry.academics.application.CurriculumProgramIdentity;
 import co.edu.uptc.universiry.academics.application.CurriculumDraftsPageQuery;
 import co.edu.uptc.universiry.academics.application.CurriculumPublishResult;
 import co.edu.uptc.universiry.academics.application.CurriculumSummary;
@@ -13,6 +14,8 @@ import co.edu.uptc.universiry.academics.application.ParsedCurriculum;
 import co.edu.uptc.universiry.academics.application.ParsedCurriculumRow;
 import co.edu.uptc.universiry.academics.application.ValidatedCurriculum;
 import co.edu.uptc.universiry.academics.domain.AcademicCatalogLimits;
+import co.edu.uptc.universiry.academics.domain.AcademicLevel;
+import co.edu.uptc.universiry.academics.domain.StudyModality;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -49,6 +52,40 @@ class AcademicCatalogRepositoryIntegrationTest {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
+
+    @Test
+    void finds_the_latest_published_curriculum_for_the_exact_program_and_campus() {
+        // Arrange
+        String targetProgramCode = programCode();
+        String otherProgramCode = programCode();
+        String actor = actorSub();
+        CurriculumSummary exactReference = publishAt(
+                curriculum(targetProgramCode, "V1", "Programa sintético", "Facultad de prueba", "Tunja",
+                        subjectCode(), "Asignatura de referencia", "3", sourceHash()),
+                actor,
+                LocalDateTime.of(2037, 1, 1, 10, 0));
+        publishAt(
+                curriculum(targetProgramCode, AcademicLevel.PREGRADO.name(), StudyModality.PRESENCIAL.name(),
+                        "DUITAMA", "V2", "Programa sintético", "Facultad de prueba", "Duitama",
+                        subjectCode(), "Asignatura de otra sede", "3", sourceHash()),
+                actor,
+                LocalDateTime.of(2037, 2, 1, 10, 0));
+        publishAt(
+                curriculum(otherProgramCode, "V1", "Otro programa sintético", "Facultad de prueba", "Tunja",
+                        subjectCode(), "Asignatura de otro programa", "3", sourceHash()),
+                actor,
+                LocalDateTime.of(2037, 3, 1, 10, 0));
+        CurriculumProgramIdentity identity = new CurriculumProgramIdentity(
+                targetProgramCode, AcademicLevel.PREGRADO, StudyModality.PRESENCIAL, "TUNJA");
+
+        // Act
+        AcademicCurriculumDetails reference = repository.findLatestPublishedCurriculum(identity).orElseThrow();
+
+        // Assert
+        assertEquals(exactReference.id(), reference.curriculum().id());
+        assertEquals(targetProgramCode, reference.curriculum().programCode());
+        assertEquals("TUNJA", reference.curriculum().campusCode());
+    }
 
     @Test
     void creates_a_draft_with_linked_revisions_entries_and_import_audit_atomically() {
@@ -312,14 +349,32 @@ class AcademicCatalogRepositoryIntegrationTest {
             String credits,
             String hash
     ) {
+        return curriculum(programCode, AcademicLevel.PREGRADO.name(), StudyModality.PRESENCIAL.name(), "TUNJA",
+                version, programName, faculty, campusName, subjectCode, subjectName, credits, hash);
+    }
+
+    private ValidatedCurriculum curriculum(
+            String programCode,
+            String academicLevel,
+            String studyModality,
+            String campusCode,
+            String version,
+            String programName,
+            String faculty,
+            String campusName,
+            String subjectCode,
+            String subjectName,
+            String credits,
+            String hash
+    ) {
         Map<String, String> values = new HashMap<>();
         values.put("program_code", programCode);
-        values.put("academic_level", "PREGRADO");
-        values.put("study_modality", "PRESENCIAL");
+        values.put("academic_level", academicLevel);
+        values.put("study_modality", studyModality);
         values.put("snies_code", "12345");
         values.put("program_name", programName);
         values.put("faculty", faculty);
-        values.put("campus_code", "TUNJA");
+        values.put("campus_code", campusCode);
         values.put("campus_name", campusName);
         values.put("curriculum_version", version);
         values.put("cohort_from", "2026-1");
@@ -334,6 +389,19 @@ class AcademicCatalogRepositoryIntegrationTest {
         values.put("choice_group", "");
         return importService.validate(new ParsedCurriculum(
                 List.of(new ParsedCurriculumRow(2, values)), hash));
+    }
+
+    private CurriculumSummary publishAt(
+            ValidatedCurriculum curriculum,
+            String actor,
+            LocalDateTime publishedAt
+    ) {
+        CurriculumSummary draft = repository.createDraft(curriculum, actor);
+        assertEquals(CurriculumPublishResult.PUBLISHED, repository.publishDraft(draft.id(), actor));
+        // Test-only timestamp control makes the newer mismatched references deterministic.
+        assertEquals(1, jdbcTemplate.update("UPDATE academic_curriculum SET published_at = ? WHERE curriculum_id = ?",
+                publishedAt, draft.id().toString()));
+        return repository.findCurriculum(draft.id()).orElseThrow().curriculum();
     }
 
     private int count(String table, String column, String value) {
