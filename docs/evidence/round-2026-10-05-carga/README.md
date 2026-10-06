@@ -102,13 +102,19 @@ de entorno para poder recalibrarla contra la concurrencia real de la institució
 
 ## Lo que este número NO dice
 
+> **Corrección del 6 de octubre, más tarde.** La tabla anterior se midió con el host al **100 % de
+> CPU** por sesiones ajenas a esta (113 procesos `node`). `medir-carga.mjs` ahora lee la utilización del
+> host y avisa cuando supera el 80 %. Los **0 de 12** de esta tabla no son un número del código: en
+> repeticiones posteriores con el heap por defecto se obtuvieron 4 de 12 y 2 de 12 sobre el mismo
+> código. La mejora del pool es real y está en las tres mediciones —los tres bloques con pool 24 dan
+> menos endpoints por encima del objetivo que el bloque con pool 10—, pero **el 0 de 12 no debe citarse**.
+
 No declara el objetivo institucional cumplido, y el script lo dice en su propia salida.
 
-- La corrida anterior con **la misma configuración** dio 2 de 12 por encima. El margen es fino: entre
-  corridas el host mueve un par de endpoints de un lado a otro. La mediana entre repeticiones reduce esa
-  variación, no la elimina.
-- Es un Compose de desarrollo en una máquina, con 44 tablas y **sin datos institucionales**. No es una
-  medición representativa de la carga real.
+- El margen es fino y el host lo mueve: entre corridas cambian un par de endpoints de un lado a otro.
+  La mediana entre repeticiones reduce esa variación, no la elimina.
+- Es un Compose de desarrollo en una máquina compartida, con 44 tablas y **sin datos institucionales**.
+  No es una medición representativa de la carga real.
 - Los p95 siguen entre 30 y 180 ms. Un promedio bajo 50 con un p95 de 180 significa cola: hay
   peticiones que se sienten lentas aunque el promedio cumpla.
 
