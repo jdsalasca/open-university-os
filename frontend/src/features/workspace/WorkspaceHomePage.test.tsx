@@ -154,6 +154,11 @@ describe('WorkspaceHomePage', () => {
 
     expect(screen.queryByRole('region', { name: /laboratorios locales de muestra/i })).not.toBeInTheDocument()
     expect(screen.queryByRole('link', { name: /aspirante y equipo|mi semana y mis materias|registro de calificaciones/i })).not.toBeInTheDocument()
-    expect(screen.getByRole('status')).toHaveTextContent(/no representa un rol institucional/i)
+    // El aviso ya no declara `role="status"`: sobre un `<aside>` ese rol pisa el landmark
+    // `complementary` y axe-core lo marca como `aria-allowed-role`. Se consulta por su nombre y se
+    // comprueba que sigue siendo una region viva.
+    const aviso = screen.getByRole('complementary', { name: /vista previa con datos sintéticos/i })
+    expect(aviso).toHaveTextContent(/no representa un rol institucional/i)
+    expect(aviso).toHaveAttribute('aria-live', 'polite')
   })
 })

@@ -119,7 +119,7 @@
 .academic-create-entry-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .academic-create-entry-heading h3 { margin: 3px 0 0; color: #30342c; font-family: Georgia, 'Times New Roman', serif; font-size: 15px; font-weight: 500; }
 .academic-create-entry-heading > span { display: grid; width: 28px; height: 28px; place-items: center; border: 1px solid #e7dfc5; border-radius: 8px; background: #fffdf6; color: #907a2a; font-size: 18px; }
-.academic-create-entry-intro { margin: 8px 0 12px; color: #77796f; font-size: 9px; line-height: 1.55; }
+.academic-create-entry-intro { margin: 8px 0 12px; color: #6f7168; font-size: 9px; line-height: 1.55; }
 .academic-create-entry-form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px 10px; }
 .academic-create-entry-form label { display: grid; min-width: 0; gap: 5px; color: #52574d; font-size: 8px; font-weight: 700; line-height: 1.4; }
 .academic-create-entry-form input, .academic-create-entry-form select { box-sizing: border-box; width: 100%; min-width: 0; min-height: 34px; padding: 7px 8px; border: 1px solid #d9ddd5; border-radius: 6px; background: #fff; color: tokens.$identity-ink; font: inherit; font-size: 10px; }
@@ -129,7 +129,7 @@
 .academic-create-entry-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-top: 2px; }
 .academic-create-entry-actions button { min-height: 33px; padding: 0 11px; border: 1px solid #465947; border-radius: 6px; background: #465947; color: #fff; font: inherit; font-size: 9px; font-weight: 700; cursor: pointer; }
 .academic-create-entry-actions button:disabled { opacity: .6; cursor: wait; }
-.academic-create-entry-actions p { margin: 0; color: #77796f; font-size: 8px; line-height: 1.45; }
+.academic-create-entry-actions p { margin: 0; color: #6f7168; font-size: 8px; line-height: 1.45; }
 .academic-create-entry-feedback { margin: 10px 0 0; font-size: 9px; line-height: 1.5; }
 .academic-create-entry-feedback.is-success { color: #356148; }
 .academic-create-entry-feedback.is-warning { color: #816324; }
@@ -138,7 +138,7 @@
 .academic-periods-panel { margin-top: 14px; }
 .academic-period-form-panel { display: grid; gap: 10px; margin-top: 15px; padding: 13px; border: 1px solid #e4e6dd; border-radius: 10px; background: #fbfcf8; }
 .academic-period-form-panel > header h3, .academic-period-form-panel > header h4 { margin: 3px 0 0; color: #30342c; font-size: 13px; font-weight: 650; }
-.academic-period-form-intro { margin: 0; color: #77796f; font-size: 9px; line-height: 1.55; }
+.academic-period-form-intro { margin: 0; color: #6f7168; font-size: 9px; line-height: 1.55; }
 .academic-period-form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 9px 10px; }
 .academic-period-form-field { display: grid; min-width: 0; gap: 5px; color: #52574d; font-size: 9px; font-weight: 700; line-height: 1.4; }
 .academic-period-form-select { box-sizing: border-box; width: 100%; min-width: 0; min-height: 34px; padding: 7px 9px; border: 1px solid #d9ddd5; border-radius: 6px; background: #fff; color: #33352f; font: inherit; font-size: 10px; }
@@ -149,7 +149,7 @@
 .academic-period-form-actions button.secondary { border-color: #d3d7ce; background: #fff; color: #55564e; }
 .academic-period-form-actions button:focus-visible, .academic-period-form-remove:focus-visible { outline: 3px solid var(--brand-focus, #1a1a1a); outline-offset: 2px; }
 .academic-period-form-actions button:disabled, .academic-period-form-remove:disabled { opacity: .55; cursor: wait; }
-.academic-period-form-actions > span { color: #77796f; font-size: 8px; line-height: 1.45; }
+.academic-period-form-actions > span { color: #6f7168; font-size: 8px; line-height: 1.45; }
 .academic-period-form-feedback { margin: 0; font-size: 9px; line-height: 1.5; }
 .academic-period-form-feedback.is-success { color: #356148; }
 .academic-period-form-feedback.is-warning { color: #816324; }
@@ -187,7 +187,7 @@
 .academic-period-confirmation > div { display: flex; flex-wrap: wrap; gap: 6px; }
 .academic-period-confirmation button { min-height: 27px; padding: 0 9px; border: 1px solid #465947; border-radius: 5px; background: #465947; color: #fff; font: inherit; font-size: 8px; font-weight: 700; cursor: pointer; }
 .academic-period-confirmation button.secondary { border-color: #d3d1c7; background: #fff; color: #55564e; }
-.academic-relation-close-current { grid-column: 1 / -1; margin: 0; color: #77796f; font-size: 8px; line-height: 1.5; }
+.academic-relation-close-current { grid-column: 1 / -1; margin: 0; color: #6f7168; font-size: 8px; line-height: 1.5; }
 .academic-relation-close-confirmation { display: grid; gap: 8px; margin-top: 11px; padding: 11px; border: 1px solid #e8dfc6; border-radius: 8px; background: #faf7ed; }
 .academic-relation-close-confirmation h4 { margin: 0; color: #30342c; font-size: 10px; }
 .academic-relation-close-confirmation p { margin: 0; color: #625c49; font-size: 8px; line-height: 1.6; }

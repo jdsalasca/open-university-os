@@ -126,11 +126,21 @@
   [class*='-results'],
   [class*='-preview'],
   .catalog-admin,
-  .catalog-admin-locked
+  .catalog-admin-locked,
+  .academic-create-entry,
+  [class*='-access-']
 ):not(.identity-preview-surface):not(.identity-preview-surface *) {
   border-color: var(--ui-border);
   background: var(--ui-surface);
   box-shadow: none;
+}
+
+// El boton de reintentar no lleva clase, asi que el patron anterior no lo alcanza: sin esto su
+// fondo blanco se queda con el texto claro del tema.
+:root[data-theme='dark'] .workspace main .role-access-error button {
+  border-color: var(--ui-border-strong);
+  background: var(--ui-surface-raised);
+  color: var(--ui-text-primary);
 }
 
 :root[data-theme='dark'] .workspace main .academic-structure-audit-events > li {

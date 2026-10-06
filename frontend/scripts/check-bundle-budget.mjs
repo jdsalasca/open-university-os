@@ -34,13 +34,19 @@ export const DEFAULT_BUNDLE_BUDGETS = Object.freeze({
   // costing ~0.1 kB of shell CSS.
   // A second browser sweep over #espacios and #programas found seven more elements under AA (1.02 to 2.15);
   // the rules repainting them add ~330 B. Six batches of dark badges are now guarded by tests.
-  entryStyles: 23_500,
+  // axe-core over the nine routes found the last light-on-light surfaces: the #academia create entries
+  // rendered their headings at 1.09 and the #accesos locked notice at 1.05. Both join the consolidated
+  // dark surface list, one by class and one by pattern, which cost ~200 B; the retry button needs its
+  // own rule because it carries no class. Consolidating saved ~196 B against writing them separately.
+  entryStyles: 23_700,
   workspaceHomeJavaScript: 300_000,
   // The route budget includes the public directory chunk but excludes the on-demand curriculum comparison panel.
   programsJavaScript: 350_000,
   // The skip-link leaves the flow so keyboard users no longer see the focus ring jump backwards;
   // its own surface, padding and z-index cost ~160 B.
-  programsStyles: 56_200,
+  // #programas inherits the shared dark surface rules for the create entries, so it grows with the
+  // entry budget by ~31 B in this batch.
+  programsStyles: 56_300,
   oidcJavaScript: 75_000,
 })
 

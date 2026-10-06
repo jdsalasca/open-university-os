@@ -88,7 +88,12 @@ export function WorkspaceHomePage({
       </header>
 
       {import.meta.env.DEV && isLocalPreview && (
-        <aside className="workspace-home-preview-notice" role="status">
+        <aside
+          className="workspace-home-preview-notice"
+          aria-label="Vista previa con datos sintéticos"
+          aria-live="polite"
+          aria-atomic="true"
+        >
           <strong>Desarrollador local · preview</strong>
           <span>Esta sesión es de demostración y usa permisos de prueba. No representa un rol institucional.</span>
         </aside>

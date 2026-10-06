@@ -297,7 +297,7 @@ function SpaceLocationCard({ location }: { location: SpaceLocation }) {
         {location.address && <p>{location.address}</p>}
         {location.locationDetail && <p className="spaces-location-detail">{location.locationDetail}</p>}
       </div>
-      {location.announcement && <SpaceAnnouncementDetails announcement={location.announcement} />}
+      {location.announcement && <SpaceAnnouncementDetails announcement={location.announcement} locationName={location.name} />}
       <div className="spaces-card-actions">
         {mapUrl
           ? <a className="spaces-map-link" href={mapUrl} target="_blank" rel="noreferrer">
@@ -318,9 +318,12 @@ function SpaceLocationCard({ location }: { location: SpaceLocation }) {
   )
 }
 
-function SpaceAnnouncementDetails({ announcement }: { announcement: SpaceAnnouncement }) {
+// axe-core, 5 de octubre de 2026: `landmark-unique`. Con dos o más lugares que anuncian
+// capacidades, dos `<section>` quedaban con la misma etiqueta y un lector de pantalla no podia
+// distinguirlas. El nombre del lugar va en la etiqueta, que es lo que hace única a la region.
+function SpaceAnnouncementDetails({ announcement, locationName }: { announcement: SpaceAnnouncement; locationName: string }) {
   return (
-    <section className="spaces-announcement" aria-label="Capacidades anunciadas">
+    <section className="spaces-announcement" aria-label={`Capacidades anunciadas en ${locationName}`}>
       <h3>Capacidades anunciadas</h3>
       <ul className="spaces-announcement-capacities">
         {announcement.capacities.map((capacity) => (

@@ -655,7 +655,12 @@ export function VisualIdentityCenter({
               )}
               <span>{draft.institutionName}</span>
             </div>
-            <nav className="preview-navigation" data-testid="preview-navigation" aria-label="Vista previa de navegación">
+            <nav
+              className="preview-navigation"
+              data-testid="preview-navigation"
+              aria-label="Vista previa de navegación"
+              tabIndex={0}
+            >
               {[...draft.modules].sort((a, b) => a.order - b.order).map((module) => (
                 <span key={module.key} aria-disabled={!module.available || !module.visible || undefined}>
                   {module.label}

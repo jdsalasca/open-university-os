@@ -376,6 +376,97 @@ test('the visual identity preview keeps its light-on-light labels readable', () 
   assert.ok(contrastRatio(disabledColor, '#ffffff') >= 4.5, 'disabled preview navigation must meet WCAG AA on white')
 })
 
+// Hallazgo del 5 de octubre de 2026: Lighthouse en modo oscuro sobre /#accesos dio 96/100 con
+// `color-contrast` en el mensaje "requiere identity:roles:read", dibujado con #f0f2eb sobre #faf7eb,
+// ratio 1,05:1. Las cajas de aviso del componente no aparecen en la lista de superficies oscuras del
+// tema, asi que conservan su fondo crema mientras la regla global les pinta el texto claro. El boton
+// "Reintentar" hereda el mismo texto sobre su blanco y tampoco se ve.
+test('dark theme gives the access notices a readable surface', () => {
+  // Arrange: van por patron en la lista consolidada, asi que un aviso nuevo de #accesos nace legible.
+  const selector = ':root[data-theme=dark] .workspace main :is('
+    + '.surface-card, .card, [class*=-card], [class*=-panel], [class*=-form], [class*=-dialog],'
+    + ' [class*=-confirmation], [class*=-empty], [class*=-list], [class*=-table-wrap],'
+    + ' [class*=-history], [class*=-audit], [class*=-events], [class*=-results], [class*=-preview],'
+    + ' .catalog-admin, .catalog-admin-locked, .academic-create-entry, [class*=-access-])'
+    + ':not(.identity-preview-surface):not(.identity-preview-surface *)'
+  const dark = darkRule(':root[data-theme=dark]')
+  const token = (name) => dark?.match(new RegExp(`--${name}:\\s*(#[0-9a-f]{6});`, 'i'))?.[1]
+
+  // Act
+  const declarations = darkRule(selector)
+
+  // Assert
+  assert.ok(declarations, 'the consolidated dark surface rule must be present')
+  assert.match(declarations, /background:\s*var\(--ui-surface\);/)
+  assert.match(declarations, /border-color:\s*var\(--ui-border\);/)
+  // La regla consolidada no fija `color`: lo aporta la regla puerta, que pinta todo `main` del tema
+  // oscuro con el token de texto primario. El contraste se mide con ese token sobre la superficie.
+  assert.ok(contrastRatio(token('ui-text-primary'), token('ui-surface')) >= 4.5,
+    'access notices must meet WCAG AA on the dark surface')
+})
+
+test('dark theme gives the access retry button a readable raised surface', () => {
+  // Arrange
+  const selector = ':root[data-theme=dark] .workspace main .role-access-error button'
+
+  // Act
+  const declarations = darkRule(selector)
+
+  // Assert
+  assert.ok(declarations, 'dark access retry button rule must be present')
+  assert.match(declarations, /background:\s*var\(--ui-surface-raised\);/)
+  assert.match(declarations, /border-color:\s*var\(--ui-border-strong\);/)
+  assertReadableContrast(declarations)
+})
+
+// Hallazgo del 5 de octubre de 2026 con axe-core sobre /#academia: los tres formularios de alta
+// (facultad, unidad hija, relacion) se dibujaban con el titulo a ratio 1,09 y la introduccion a 2,20.
+// `.academic-create-entry` fija `background: #fbfcf8` con literal y no aparece en la lista de
+// superficies oscuras del tema, asi que recibe el texto claro de la regla puerta sobre fondo claro.
+test('dark theme gives the academic create entries and the access notices a readable surface', () => {
+  // Arrange: ambos van por la lista consolidada, asi que un aviso nuevo de #accesos nace legible.
+  const selector = ':root[data-theme=dark] .workspace main :is('
+    + '.surface-card, .card, [class*=-card], [class*=-panel], [class*=-form], [class*=-dialog],'
+    + ' [class*=-confirmation], [class*=-empty], [class*=-list], [class*=-table-wrap],'
+    + ' [class*=-history], [class*=-audit], [class*=-events], [class*=-results], [class*=-preview],'
+    + ' .catalog-admin, .catalog-admin-locked, .academic-create-entry, [class*=-access-])'
+    + ':not(.identity-preview-surface):not(.identity-preview-surface *)'
+  const dark = darkRule(':root[data-theme=dark]')
+  const token = (name) => dark?.match(new RegExp(`--${name}:\\s*(#[0-9a-f]{6});`, 'i'))?.[1]
+
+  // Act
+  const declarations = darkRule(selector)
+
+  // Assert
+  assert.ok(declarations, 'the consolidated dark surface rule must be present')
+  assert.match(declarations, /background:\s*var\(--ui-surface\);/)
+  assert.match(declarations, /border-color:\s*var\(--ui-border\);/)
+  // La regla consolidada no fija `color`: lo aporta la regla puerta, que pinta todo `main` del tema
+  // oscuro con el token de texto primario. El contraste se mide con ese token sobre la superficie.
+  assert.ok(contrastRatio(token('ui-text-primary'), token('ui-surface')) >= 4.5,
+    'these surfaces must meet WCAG AA with the gate rule text color')
+})
+
+test('the academic create entries clear WCAG AA on their own light surface', () => {
+  // Arrange: axe-core medio 4,29 con `#77796f` sobre `#fbfcf8` en 23 nodos de tema claro, por debajo
+  // del 4,5 que exige AA. Se mide contra la superficie que el propio componente declara.
+  const operaciones = readFileSync(
+    fileURLToPath(new URL('../src/features/academics/AcademicOperationsPage.scss', import.meta.url)), 'utf8')
+
+  // Act
+  const superficie = operaciones.match(/\.academic-create-entry\s*\{([^}]*)\}/)?.[1]
+    ?.match(/background:\s*(#[0-9a-f]{6});/i)?.[1]
+  const intro = operaciones.match(/\.academic-create-entry-intro\s*\{([^}]*)\}/)?.[1]
+    ?.match(/color:\s*(#[0-9a-f]{6});/i)?.[1]
+  const acciones = operaciones.match(/\.academic-create-entry-actions p\s*\{([^}]*)\}/)?.[1]
+    ?.match(/color:\s*(#[0-9a-f]{6});/i)?.[1]
+
+  // Assert
+  assert.ok(superficie && intro && acciones, 'the create entry surface and muted labels must be declared')
+  assert.ok(contrastRatio(intro, superficie) >= 4.5, 'the entry intro must meet WCAG AA on its own surface')
+  assert.ok(contrastRatio(acciones, superficie) >= 4.5, 'the entry actions hint must meet WCAG AA on its own surface')
+})
+
 test('dark theme keeps the curriculum catalog hero readable', () => {
   // Arrange: measured in the browser, .catalog-hero keeps a cream gradient while the global dark
   // theme paints its heading light, so "Mallas curriculares de pregrado" rendered at ratio 1.0.

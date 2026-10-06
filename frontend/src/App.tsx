@@ -565,7 +565,12 @@ function ApplicationShell({
         <main id={mainContentId} tabIndex={-1}
           className={isHomeView ? 'workspace-home-page-content' : isStudentServicesView ? 'student-services-page-content' : isLibraryView ? 'library-page-content' : isNoticesView ? 'my-notices-page-content' : isNoticesAdminView ? 'notices-admin-page-content' : isRoleAccessView ? 'role-access-page-content' : isAdmissionsView ? 'admissions-page-content' : isSpacesView ? 'spaces-page-content' : isProgramsView ? 'catalog-page-content' : isAcademicOperationsView ? 'academic-page-content' : 'page-content identity-page-content'}>
           {isLocalPreviewSession && !isHomeView && (
-            <aside className="local-preview-session-banner" role="status">
+            <aside
+              className="local-preview-session-banner"
+              aria-label="Sesión de preview local"
+              aria-live="polite"
+              aria-atomic="true"
+            >
               <strong>Desarrollador local · modo preview</strong>
               <span>Permisos de demostración en este entorno; usa únicamente datos sintéticos. Esta sesión no es institucional.</span>
             </aside>

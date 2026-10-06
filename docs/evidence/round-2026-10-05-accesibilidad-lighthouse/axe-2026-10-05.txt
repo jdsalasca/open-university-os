@@ -1,0 +1,88 @@
+axe-core sobre 9 rutas en tema claro y oscuro, sesion de preview activa
+violaciones: 26
+
+light #resumen: 
+  [minor] aria-allowed-role — ARIA role should be appropriate for the element (1 nodos)
+      .workspace-home-preview-notice :: ARIA role status is not allowed for given element
+light #inicio: 
+  [minor] aria-allowed-role — ARIA role should be appropriate for the element (1 nodos)
+      .local-preview-session-banner :: ARIA role status is not allowed for given element
+  [serious] color-contrast — Elements must meet minimum color contrast ratio thresholds (9 nodos)
+      .draft-indicator :: Element has insufficient color contrast of 4.44 (foreground color: #6c7c69, background color: #ffffff, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1
+      .color-field:nth-child(1) > small :: Element has insufficient color contrast of 3.44 (foreground color: #8a8b83, background color: #ffffff, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1
+      .color-field:nth-child(2) > small :: Element has insufficient color contrast of 3.44 (foreground color: #8a8b83, background color: #ffffff, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1
+      .color-field:nth-child(3) > small :: Element has insufficient color contrast of 3.44 (foreground color: #8a8b83, background color: #ffffff, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1
+      .color-field:nth-child(4) > small :: Element has insufficient color contrast of 3.44 (foreground color: #8a8b83, background color: #ffffff, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1
+      .color-field:nth-child(5) > small :: Element has insufficient color contrast of 3.44 (foreground color: #8a8b83, background color: #ffffff, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1
+light #programas: 
+  [minor] aria-allowed-role — ARIA role should be appropriate for the element (1 nodos)
+      .local-preview-session-banner :: ARIA role status is not allowed for given element
+  [serious] color-contrast — Elements must meet minimum color contrast ratio thresholds (1 nodos)
+      .catalog-file-action :: Element has insufficient color contrast of 4.36 (foreground color: #76786d, background color: #fcfcf9, font size: 6.0pt (8px), font weight: bold). Expected contrast ratio of 4.5:1
+light #academia: 
+  [minor] aria-allowed-role — ARIA role should be appropriate for the element (1 nodos)
+      .local-preview-session-banner :: ARIA role status is not allowed for given element
+  [serious] color-contrast — Elements must meet minimum color contrast ratio thresholds (23 nodos)
+      section[aria-labelledby="academic-create-faculty-title"] > .academic-create-entry-intro :: Element has insufficient color contrast of 4.29 (foreground color: #77796f, background color: #fbfcf8, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1
+      section[aria-labelledby="academic-create-faculty-title"] > .academic-create-entry-form > .academic-create-entry-actions > p :: Element has insufficient color contrast of 4.29 (foreground color: #77796f, background color: #fbfcf8, font size: 6.0pt (8px), font weight: normal). Expected contrast ratio of 4.5:1
+      .academic-units-panel > .academic-create-entry:nth-child(4) > .academic-create-entry-intro :: Element has insufficient color contrast of 4.29 (foreground color: #77796f, background color: #fbfcf8, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1
+      .academic-units-panel > .academic-create-entry:nth-child(4) > .academic-create-entry-form > .academic-create-entry-actions > p :: Element has insufficient color contrast of 4.29 (foreground color: #77796f, background color: #fbfcf8, font size: 6.0pt (8px), font weight: normal). Expected contrast ratio of 4.5:1
+      .academic-units-panel > .academic-create-entry:nth-child(5) > .academic-create-entry-intro :: Element has insufficient color contrast of 4.29 (foreground color: #77796f, background color: #fbfcf8, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1
+      .academic-create-entry:nth-child(5) > .academic-create-entry-form > .academic-create-entry-actions > p :: Element has insufficient color contrast of 4.29 (foreground color: #77796f, background color: #fbfcf8, font size: 6.0pt (8px), font weight: normal). Expected contrast ratio of 4.5:1
+light #admisiones: 
+  [minor] aria-allowed-role — ARIA role should be appropriate for the element (1 nodos)
+      .local-preview-session-banner :: ARIA role status is not allowed for given element
+light #espacios: 
+  [minor] aria-allowed-role — ARIA role should be appropriate for the element (1 nodos)
+      .local-preview-session-banner :: ARIA role status is not allowed for given element
+  [moderate] landmark-unique — Landmarks should have a unique role or role/label/title (i.e. accessible name) combination (1 nodos)
+      .is-service.spaces-location-card:nth-child(22) > .spaces-announcement[aria-label="Capacidades anunciadas"] :: The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable
+light #accesos: 
+  [minor] aria-allowed-role — ARIA role should be appropriate for the element (1 nodos)
+      .local-preview-session-banner :: ARIA role status is not allowed for given element
+light #biblioteca: 
+  [minor] aria-allowed-role — ARIA role should be appropriate for the element (1 nodos)
+      .local-preview-session-banner :: ARIA role status is not allowed for given element
+  [moderate] page-has-heading-one — Page should contain a level-one heading (1 nodos)
+      html :: Page must have a level-one heading
+light #noticias: 
+  [minor] aria-allowed-role — ARIA role should be appropriate for the element (1 nodos)
+      .workspace-home-preview-notice :: ARIA role status is not allowed for given element
+dark #resumen: 
+  [minor] aria-allowed-role — ARIA role should be appropriate for the element (1 nodos)
+      .workspace-home-preview-notice :: ARIA role status is not allowed for given element
+dark #inicio: 
+  [minor] aria-allowed-role — ARIA role should be appropriate for the element (1 nodos)
+      .local-preview-session-banner :: ARIA role status is not allowed for given element
+dark #programas: 
+  [minor] aria-allowed-role — ARIA role should be appropriate for the element (1 nodos)
+      .local-preview-session-banner :: ARIA role status is not allowed for given element
+dark #academia: 
+  [minor] aria-allowed-role — ARIA role should be appropriate for the element (1 nodos)
+      .local-preview-session-banner :: ARIA role status is not allowed for given element
+  [serious] color-contrast — Elements must meet minimum color contrast ratio thresholds (18 nodos)
+      #academic-create-faculty-title :: Element has insufficient color contrast of 1.09 (foreground color: #f0f2eb, background color: #fbfcf8, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1
+      section[aria-labelledby="academic-create-faculty-title"] > .academic-create-entry-intro :: Element has insufficient color contrast of 2.2 (foreground color: #a8aea2, background color: #fbfcf8, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1
+      #academic-create-child-unit-title :: Element has insufficient color contrast of 1.09 (foreground color: #f0f2eb, background color: #fbfcf8, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1
+      .academic-units-panel > .academic-create-entry:nth-child(4) > .academic-create-entry-intro :: Element has insufficient color contrast of 2.2 (foreground color: #a8aea2, background color: #fbfcf8, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1
+      #academic-create-unit-relation-title :: Element has insufficient color contrast of 1.09 (foreground color: #f0f2eb, background color: #fbfcf8, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1
+      .academic-units-panel > .academic-create-entry:nth-child(5) > .academic-create-entry-intro :: Element has insufficient color contrast of 2.2 (foreground color: #a8aea2, background color: #fbfcf8, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1
+dark #admisiones: 
+  [minor] aria-allowed-role — ARIA role should be appropriate for the element (1 nodos)
+      .local-preview-session-banner :: ARIA role status is not allowed for given element
+dark #espacios: 
+  [minor] aria-allowed-role — ARIA role should be appropriate for the element (1 nodos)
+      .local-preview-session-banner :: ARIA role status is not allowed for given element
+  [moderate] landmark-unique — Landmarks should have a unique role or role/label/title (i.e. accessible name) combination (1 nodos)
+      .is-service.spaces-location-card:nth-child(22) > .spaces-announcement[aria-label="Capacidades anunciadas"] :: The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable
+dark #accesos: 
+  [minor] aria-allowed-role — ARIA role should be appropriate for the element (1 nodos)
+      .local-preview-session-banner :: ARIA role status is not allowed for given element
+dark #biblioteca: 
+  [minor] aria-allowed-role — ARIA role should be appropriate for the element (1 nodos)
+      .local-preview-session-banner :: ARIA role status is not allowed for given element
+  [moderate] page-has-heading-one — Page should contain a level-one heading (1 nodos)
+      html :: Page must have a level-one heading
+dark #noticias: 
+  [minor] aria-allowed-role — ARIA role should be appropriate for the element (1 nodos)
+      .workspace-home-preview-notice :: ARIA role status is not allowed for given element

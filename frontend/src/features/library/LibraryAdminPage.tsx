@@ -258,7 +258,7 @@ function LibraryAdminPageContent({
     <section className="library-admin" aria-labelledby="library-admin-title">
       <header className="library-admin-heading">
         <p className="library-admin-kicker">SERVICIOS BIBLIOGRÁFICOS</p>
-        <h2 id="library-admin-title">Biblioteca</h2>
+        <h1 id="library-admin-title">Biblioteca</h1>
         <p>Catálogo, ejemplares en circulación y préstamos pendientes. No registra datos personales de lectores.</p>
       </header>
 
@@ -271,7 +271,7 @@ function LibraryAdminPageContent({
 
       {loadState === 'ready' && <>
         <section className="library-section" aria-labelledby="library-open-loans-title">
-          <h3 id="library-open-loans-title">Préstamos pendientes</h3>
+          <h2 id="library-open-loans-title">Préstamos pendientes</h2>
           {openLoans.length > 0 && (
             <label className="library-field library-overdue-filter">
               <input
@@ -325,7 +325,7 @@ function LibraryAdminPageContent({
         </section>
 
         <section className="library-section" aria-labelledby="library-catalogue-title">
-          <h3 id="library-catalogue-title">Catálogo</h3>
+          <h2 id="library-catalogue-title">Catálogo</h2>
           <form className="library-form" onSubmit={(event) => {
             event.preventDefault()
             setLoadState('loading')
@@ -347,7 +347,7 @@ function LibraryAdminPageContent({
           </form>
 
           <form className="library-form" onSubmit={(event) => void lookUpBarcode(event)}>
-            <h4>Buscar ejemplar por código de barras</h4>
+            <h3>Buscar ejemplar por código de barras</h3>
             <label className="library-field">
               <span>Código de barras del ejemplar</span>
               <input
@@ -439,10 +439,10 @@ function LibraryAdminPageContent({
 
       {canWrite && (
         <section className="library-section" aria-labelledby="library-register-title">
-          <h3 id="library-register-title">Registrar</h3>
+          <h2 id="library-register-title">Registrar</h2>
 
           <form className="library-form" onSubmit={(event) => void registerTitle(event)}>
-            <h4>Nuevo título</h4>
+            <h3>Nuevo título</h3>
             <label className="library-field"><span>Título de la obra</span>
               <input name="title" required maxLength={240} /></label>
             <label className="library-field"><span>Autor</span>
@@ -458,7 +458,7 @@ function LibraryAdminPageContent({
 
           {selectedTitleId && (
             <form className="library-form" onSubmit={(event) => void registerCopy(event)}>
-              <h4>Nuevo ejemplar</h4>
+              <h3>Nuevo ejemplar</h3>
               <label className="library-field"><span>Código de barras</span>
                 <input name="barcode" required maxLength={48} /></label>
               <label className="library-field"><span>Ubicación</span>

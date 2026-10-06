@@ -136,6 +136,23 @@ describe('VisualIdentityCenter', () => {
     expect(previewBanner).toHaveAttribute('alt', 'Comunidad universitaria en el campus')
   })
 
+  // axe-core, 5 de octubre de 2026: `scrollable-region-focusable` en `.preview-navigation`. La fila se
+  // desplaza en horizontal cuando los nombres de los modulos no caben, y sus items son `span`, no
+  // enlaces: sin `tabindex` la region no se puede alcanzar con el teclado ni desplazarla.
+  it('lets the keyboard reach the scrollable navigation preview', () => {
+    // Arrange
+    renderCenter()
+
+    // Act
+    const preview = screen.getByTestId('preview-navigation')
+
+    // Assert
+    expect(preview).toHaveAttribute('tabindex', '0')
+    // `role="group"` no está permitido sobre `<nav>`, que ya aporta el rol `navigation`: axe-core lo
+    // reporta como `aria-allowed-role`. El `tabindex` es lo que hace falta para desplazar la region.
+    expect(preview).not.toHaveAttribute('role')
+  })
+
   it('edits a known module label in the navigation preview', async () => {
     // Arrange
     const user = userEvent.setup()
