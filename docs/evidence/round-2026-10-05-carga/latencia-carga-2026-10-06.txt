@@ -1,0 +1,26 @@
+Latencia bajo carga declarada: 200 peticiones por endpoint, concurrencia 20,
+5 repeticiones (se descarta la primera por conexiones frias), backend local con 44 tablas
+Objetivo documentado: promedio menor a 50 ms en consultas criticas
+
+endpoint | estado | mediana entre repeticiones | promedio | p95 | p99 | maximo
+--- | ---: | ---: | ---: | ---: | ---: | ---:
+/api/v1/me | 200 | 67.77 | 87.04 | 152.74 | 172.26 | 193.5
+/api/v1/branding | 200 | 87.66 | 89.84 | 152.04 | 183.45 | 240.63
+/api/v1/academic-structure | 200 | 86.86 | 88.86 | 166.51 | 243.26 | 319.26
+/api/v1/admin/academic-structure | 200 | 62.58 | 63.31 | 96.04 | 152.43 | 154.81
+/api/v1/academic-catalog/programs | 200 | 61.31 | 66.24 | 111.88 | 147.04 | 166.59
+/api/v1/admin/academic-catalog/drafts?pageSize=25 | 200 | 57.68 | 72.15 | 99.91 | 132.31 | 151.1
+/api/v1/academic-periods | 200 | 57.94 | 65.93 | 121.48 | 148.28 | 172.96
+/api/v1/admin/academic-periods | 200 | 50.88 | 55.73 | 97.53 | 100.57 | 101.76
+/api/v1/notices | 200 | 91.51 | 117.15 | 174.53 | 201.14 | 219.57
+/api/v1/admissions/calls | 200 | 53.47 | 64.46 | 113.76 | 160.39 | 230.62
+/api/v1/spaces | 200 | 114.93 | 125.58 | 177.39 | 200.69 | 214.51
+/api/v1/admin/academic-structure/audit-events?limit=50 | 200 | 72.04 | 87.47 | 157.49 | 186.44 | 232.84
+
+Endpoints con mediana >= 50 ms: 12 de 12
+Peor promedio observado en algun endpoint: 125.58 ms
+
+Como leerlo: la columna "mediana entre repeticiones" es el numero defendible, porque cada
+numero es la mediana de los promedios de cuatro bloques cargados y descarta el arranque en
+frio. "promedio" es el peor bloque, no el tipico. El objetivo se cumple si la mediana queda
+bajo 50 ms, y este script no lo declara cumplido por si solo: la tabla lo dice.

@@ -1,0 +1,21 @@
+Tamano del cuerpo de cada respuesta (una peticion por endpoint, sin carga)
+
+endpoint | estado | bytes | kB
+--- | ---: | ---: | ---:
+/api/v1/me | 200 | 470 | 0.5
+/api/v1/branding | 200 | 1082 | 1.1
+/api/v1/academic-structure | 200 | 94 | 0.1
+/api/v1/admin/academic-structure | 200 | 315 | 0.3
+/api/v1/academic-catalog/programs | 200 | 2 | 0.0
+/api/v1/admin/academic-catalog/drafts?pageSize=25 | 200 | 60 | 0.1
+/api/v1/academic-periods | 200 | 2 | 0.0
+/api/v1/admin/academic-periods | 200 | 2 | 0.0
+/api/v1/notices | 200 | 317 | 0.3
+/api/v1/admissions/calls | 200 | 2 | 0.0
+/api/v1/spaces | 200 | 17964 | 17.5
+/api/v1/admin/academic-structure/audit-events?limit=50 | 200 | 278 | 0.3
+
+Mayor cuerpo: /api/v1/spaces con 17.5 kB
+
+Un cuerpo grande no se arregla con un indice: se arregla paginando o reduciendo lo que
+via. Ese es el siguiente trabajo, distinto del de las consultas.
