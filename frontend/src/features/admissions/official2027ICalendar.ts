@@ -9,6 +9,10 @@ export const OFFICIAL_ADMISSIONS_CALENDAR_2027_I: PublicAdmissionsCalendar = {
     label: 'Calendario de admisiones publicado por la UPTC',
     url: 'https://reportes.uptc.edu.co/sitio/portal/sitios/universidad/vic_aca/adm_reg/1aspi/pre/',
   },
+  registrationSource: {
+    label: 'Inscripción de pregrado presencial publicada por la UPTC',
+    url: 'https://www.uptc.edu.co/sitio/portal/sitios/universidad/vic_aca/adm_reg/1aspi/pre/pap_preg.html',
+  },
   confirmationSource: {
     label: 'Comunicado institucional sobre la convocatoria 2027-I',
     url: 'https://dsp.uptc.edu.co/sitio/portal/cal_not_eve/noticias/det/UPTC-abre-inscripciones-para-estudiar-un-pregrado-presencial-a-distancia-o-virtual-el-proximo-semestre/',

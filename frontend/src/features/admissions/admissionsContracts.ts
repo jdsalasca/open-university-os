@@ -23,6 +23,7 @@ export interface PublicAdmissionsCalendar {
   updatedAt: string
   checkedAt: string
   source: AdmissionsCalendarSource
+  registrationSource?: AdmissionsCalendarSource
   confirmationSource: AdmissionsCalendarSource
   officialActSource?: AdmissionsCalendarSource
   sourceNote?: string

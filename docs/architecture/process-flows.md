@@ -88,7 +88,7 @@ La flecha punteada hacia el gate es una dependencia por descubrir, no un estado 
 
 ### Agenda pública de admisiones 2027-I
 
-La ruta `/#admisiones` usa como respaldo las fechas de pregrado presencial publicadas por ACRA, junto con la fecha de consulta y enlaces oficiales para confirmar cambios. Cuando la API versionada no tiene una publicación o no está disponible, se muestra ese respaldo sin borrar la fuente original. La persona puede descargar una instantánea `.ics` con eventos de día completo, fechas finales inclusivas convertidas al formato iCalendar y la fuente oficial incluida en cada evento. El archivo no se sincroniza después de descargarlo. Esta vista no crea postulaciones ni se conecta a PIN, selección, documentos o sistemas académicos; la inscripción se realiza únicamente en el canal oficial que UPTC publique.
+La ruta `/#admisiones` presenta como respaldo las fechas de pregrado presencial publicadas en el portal de admisiones de UPTC, junto con la fecha de consulta y enlaces para confirmar cambios. Cuando la API versionada no tiene una publicación o no está disponible, se muestra ese respaldo sin borrar la fuente original. La persona puede descargar una instantánea `.ics` con eventos de día completo, fechas finales inclusivas convertidas al formato iCalendar y la fuente oficial incluida en cada evento. El archivo no se sincroniza después de descargarlo. Si el calendario verificado incluye una ruta de inscripción, el CTA abre la página pública de UPTC en otra pestaña e informa que Universiry no recibe ni envía datos. Esta vista no crea postulaciones ni se conecta a PIN, selección, documentos o sistemas académicos.
 
 ```mermaid
 sequenceDiagram
@@ -96,24 +96,25 @@ sequenceDiagram
   participant UI as React: agenda pública 2027-I
   participant Content as Contenido versionado del frontend
   participant File as Archivo iCalendar local
-  participant ACRA as Portal público ACRA
+  participant Route as Ruta pública de inscripción UPTC
   participant News as Comunicado institucional UPTC
 
   Aspirante->>UI: abre #admisiones
   UI->>Content: carga convocatoria y fechas revisadas
-  Content-->>UI: hitos, fecha de consulta y referencias oficiales
-  UI-->>Aspirante: presenta la agenda y advierte que no recibe inscripciones
+  Content-->>UI: hitos, fecha de consulta, referencias y ruta opcional verificada
+  UI-->>Aspirante: presenta la agenda y el CTA de UPTC cuando existe
   Aspirante->>UI: solicita descargar las fechas oficiales
   UI->>Content: genera eventos de día completo con la fuente atribuida
   Content-->>File: crea una instantánea UTF-8 .ics
   File-->>Aspirante: descarga para el calendario personal
-  Aspirante->>ACRA: abre el calendario oficial para confirmar detalles
+  Aspirante->>Route: abre la ruta oficial de inscripción en una pestaña nueva
   Aspirante->>News: consulta el comunicado institucional enlazado
   Note over UI,File: La descarga es local y no sincroniza cambios ni contiene datos personales
+  Note over UI,Route: La página de UPTC publica su propio trámite; Universiry no recopila ni envía la información
   Note over UI,Content: Este es el respaldo estático cuando no hay agenda administrada publicada, su consola se muestra en el flujo siguiente
 ```
 
-La fuente ACRA se marcaba como actualizada el 15 de septiembre de 2026 y se consultó el 1 de octubre de 2026; cualquier modificación posterior debe reflejarse en el contenido y en su fecha de consulta. La [página oficial de aspirantes](https://reportes.uptc.edu.co/sitio/portal/sitios/universidad/vic_aca/adm_reg/1aspi/pre/) es la referencia operativa y el [comunicado institucional 240](https://dsp.uptc.edu.co/sitio/portal/cal_not_eve/noticias/det/UPTC-abre-inscripciones-para-estudiar-un-pregrado-presencial-a-distancia-o-virtual-el-proximo-semestre/) sirve como confirmación pública de apertura y fechas principales.
+El calendario público de aspirantes indica actualización del 15 de septiembre de 2026 y se consultó el 6 de octubre de 2026. La página [Inscripción pregrado presencial](https://www.uptc.edu.co/sitio/portal/sitios/universidad/vic_aca/adm_reg/1aspi/pre/pap_preg.html) indica actualización del 23 de septiembre de 2026 y se expone solo como ruta pública de UPTC; esto no identifica el sistema que procesa la convocatoria ni asigna responsabilidad funcional a un área. El [comunicado institucional 240](https://dsp.uptc.edu.co/sitio/portal/cal_not_eve/noticias/det/UPTC-abre-inscripciones-para-estudiar-un-pregrado-presencial-a-distancia-o-virtual-el-proximo-semestre/) es otra fuente pública para la convocatoria.
 
 ### Convocatorias versionadas: consulta, revisión y publicación
 

@@ -58,6 +58,21 @@ export function AdmissionsCalendarPage({
             <a className="admissions-primary-link" href={calendar.source.url} target="_blank" rel="noreferrer">
               Consultar {calendar.source.label} <span aria-hidden="true">↗</span>
             </a>
+            {calendar.registrationSource && (
+              <div className="admissions-registration-route">
+                <a
+                  className="admissions-registration-link"
+                  href={calendar.registrationSource.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Ver la ruta oficial de inscripción <span aria-hidden="true">↗</span>
+                </a>
+                <span className="admissions-registration-note">
+                  Se abre una página oficial de UPTC. Universiry no recibe ni envía tus datos.
+                </span>
+              </div>
+            )}
           </div>
           <p className="admissions-download-note">Copia personal de las fechas publicadas. Verifica cambios en los enlaces oficiales de admisiones de UPTC.</p>
         </div>

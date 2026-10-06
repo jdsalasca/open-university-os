@@ -70,6 +70,37 @@ describe('AdmissionsCalendarPage', () => {
     expect(page).not.toHaveTextContent(/\bACRA\b/i)
   })
 
+  it('shows a safe link to the official registration route when the verified source is available', () => {
+    // Arrange
+    render(<AdmissionsCalendarPage />)
+
+    // Act
+    const registrationRoute = screen.getByRole('link', { name: /ver la ruta oficial de inscripción/i })
+
+    // Assert
+    expect(registrationRoute).toHaveAttribute(
+      'href',
+      'https://www.uptc.edu.co/sitio/portal/sitios/universidad/vic_aca/adm_reg/1aspi/pre/pap_preg.html',
+    )
+    expect(registrationRoute).toHaveAttribute('target', '_blank')
+    expect(registrationRoute).toHaveAttribute('rel', 'noopener noreferrer')
+    expect(screen.getByText(/universiry no recibe ni envía tus datos/i)).toBeVisible()
+  })
+
+  it('omits the registration route when a calendar has no verified source', () => {
+    // Arrange
+    const calendarWithoutRegistrationRoute = {
+      ...OFFICIAL_ADMISSIONS_CALENDAR_2027_I,
+      registrationSource: undefined,
+    }
+
+    // Act
+    render(<AdmissionsCalendarPage calendar={calendarWithoutRegistrationRoute} />)
+
+    // Assert
+    expect(screen.queryByRole('link', { name: /ver la ruta oficial de inscripción/i })).not.toBeInTheDocument()
+  })
+
   it('orders published milestones by their start date', () => {
     // Arrange
     const calendar = OFFICIAL_ADMISSIONS_CALENDAR_2027_I

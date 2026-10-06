@@ -6,6 +6,8 @@ import { compile } from 'sass'
 
 const stylesheetPath = fileURLToPath(new URL('../src/styles/_theme.scss', import.meta.url))
 const compiledTheme = compile(stylesheetPath).css
+const admissionsStylesPath = fileURLToPath(new URL('../src/features/admissions/AdmissionsCalendarPage.scss', import.meta.url))
+const compiledAdmissionsStyles = compile(admissionsStylesPath).css
 
 function darkRule(selector) {
   // Sass parte los selectores :is() de tres o mas clases en varias lineas, asi que cada espacio
@@ -17,6 +19,15 @@ function darkRule(selector) {
     .map((part) => part.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
     .join('\\s+')
   return compiledTheme.match(new RegExp(`${pattern}\\s*\\{([^}]*)\\}`))?.[1]
+}
+
+function admissionsRule(selector) {
+  const pattern = selector
+    .trim()
+    .split(/\s+/)
+    .map((part) => part.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
+    .join('\\s+')
+  return compiledAdmissionsStyles.match(new RegExp(`${pattern}\\s*\\{([^}]*)\\}`))?.[1]
 }
 
 function contrastRatio(textColor, backgroundColor) {
@@ -228,6 +239,25 @@ test('dark theme keeps the public admissions calendar readable', () => {
   assert.ok(declarations, 'dark admissions surface rule must be present')
   assert.match(declarations, /background:\s*var\(--ui-surface-raised\);/)
   assertReadableContrast(declarations)
+})
+
+test('public admissions registration route keeps readable text with any institutional palette', () => {
+  // Arrange: the primary brand color can be changed by the identity center, so the CTA uses a stable dark surface.
+  const declarations = admissionsRule('.admissions-registration-link')
+  const hoverDeclarations = admissionsRule('.admissions-registration-link:hover')
+
+  // Act + Assert
+  assert.ok(declarations, 'registration CTA styles must be present')
+  assert.match(declarations, /background:\s*#20211d;/)
+  assert.match(declarations, /color:\s*#f4f4f0;/)
+  assertReadableContrast(declarations)
+  assert.match(hoverDeclarations ?? '', /background:\s*#383a30;/)
+  assertReadableContrast(`${hoverDeclarations}\ncolor: #fffdf5;`)
+
+  const darkThemeText = darkRule(':root[data-theme=dark] .workspace main :not(.identity-preview-surface):not(.identity-preview-surface *)')
+  assert.ok(darkThemeText, 'dark mode must apply a readable foreground to the route CTA')
+  assert.match(darkThemeText, /color:\s*var\(--ui-text-primary\);/)
+  assertReadableContrast(`${darkThemeText}\nbackground: #20211d;`)
 })
 
 test('dark theme keeps admissions muted text readable on its cards', () => {

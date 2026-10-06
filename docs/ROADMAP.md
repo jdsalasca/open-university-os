@@ -543,3 +543,11 @@ cuenta; no se tocan desde aqui. El unico residuo que no se puede quitar es
 | Agenda pública | `/#admisiones` incorpora los hitos del artículo 1 para inscripción, pruebas, resultados, ISE, derechos pecuniarios y opcionados. | Es informativa y de solo lectura; no recolecta datos ni automatiza decisiones. |
 | Aclaración de fechas | La interfaz distingue el plazo de derechos pecuniarios del pago de matrícula, cuya fecha depende del calendario académico 2027-I separado; también identifica la diferencia entre considerando 2026-II y título/artículo 1 2027-I. | Contrastar futuros cambios con el registro normativo y la página pública ACRA. |
 | Verificación | Vitest 538/538 en 78 archivos, guardas Node 117/117, lint y build con presupuesto aprobados; se revisó captura de escritorio y móvil de `/#admisiones`. | Cualquier formulario, campo, cupo o regla de selección sigue detrás de validación institucional y técnica. |
+
+### Enlazar la ruta pública vigente de inscripción 2027-I - 6 de octubre de 2026
+
+| Entrega | Resultado verificable | Estado y siguiente paso |
+| --- | --- | --- |
+| Ruta externa | La agenda muestra el enlace a la página «Inscripción pregrado presencial» publicada por UPTC, únicamente cuando el calendario contiene una fuente verificada. | El enlace abre con `noopener noreferrer`; el aviso deja claro que Universiry no recibe ni envía datos. |
+| Límites funcionales | El cambio no añade formulario, API, almacenamiento, perfil de aspirante ni lógica de selección. | La página pública confirma la ruta y su fecha de actualización (23 de septiembre de 2026), no el sistema que procesa la convocatoria ni la designación del área responsable. |
+| Verificación | Vitest 540/540 en 78 archivos; guardas Node 118/118; `npm run lint`, `npm run build` y presupuesto de bundle aprobados. La revisión visual en escritorio y móvil, en temas claro y oscuro, confirmó un enlace legible y sin desbordamiento horizontal a 390 px. | No reutilizar esta ruta en otras convocatorias sin volver a verificar la fuente vigente. |
