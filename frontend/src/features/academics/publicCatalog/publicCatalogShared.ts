@@ -1,12 +1,9 @@
+import { normalizeSearchText } from '../../../shared/text/normalizeSearchText'
+
 export const PUBLIC_UPTC_HOST = 'www.uptc.edu.co'
 
 export function normalizeCatalogText(value: string): string {
-  return value
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .toLocaleLowerCase('es-CO')
-    .replace(/\s+/g, ' ')
-    .trim()
+  return normalizeSearchText(value)
 }
 
 export function uniqueProgramOptions<T>(

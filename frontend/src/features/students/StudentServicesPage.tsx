@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react'
+import { normalizeSearchText } from '../../shared/text/normalizeSearchText'
 import { UPTC_OFFICIAL_PAYMENT_GUIDANCE_URL } from '../../shared/officialUptcLinks'
 import { StudentAcademicCalendar2026II } from './StudentAcademicCalendar2026II'
 import './StudentServicesPage.scss'
@@ -143,13 +144,6 @@ const STUDENT_SERVICE_FILTERS: readonly StudentServiceFilter[] = [
   ...Array.from(new Set(STUDENT_SERVICES.map((service) => service.category))),
 ]
 
-function normalizeSearchText(value: string): string {
-  return value
-    .normalize('NFD')
-    .replace(/\p{Diacritic}/gu, '')
-    .toLocaleLowerCase('es')
-    .trim()
-}
 
 export function StudentServicesPage() {
   const [query, setQuery] = useState('')

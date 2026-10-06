@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import { normalizeSearchText } from '../../shared/text/normalizeSearchText'
 import type {
   SpaceAnnouncement,
   SpaceDirectorySnapshot,
@@ -59,10 +60,10 @@ export function SpaceGuidePage({ client = defaultSpaceGuideClient }: SpaceGuideP
     client.listSpaces(controller.signal).then((snapshot) => {
       if (!active) return
       const availableMunicipalities = new Set(
-        snapshot.locations.map((location) => normalizeForSearch(location.municipality)),
+        snapshot.locations.map((location) => normalizeSearchText(location.municipality)),
       )
       setMunicipality((current) => current === 'ALL'
-        || availableMunicipalities.has(normalizeForSearch(current)) ? current : 'ALL')
+        || availableMunicipalities.has(normalizeSearchText(current)) ? current : 'ALL')
       setState({ status: 'ready', attempt, snapshot })
     }).catch(() => {
       if (active && !controller.signal.aborted) setState({ status: 'error', attempt })
@@ -78,7 +79,7 @@ export function SpaceGuidePage({ client = defaultSpaceGuideClient }: SpaceGuideP
     const municipalities = new Map<string, string>()
     for (const location of visibleState.snapshot.locations) {
       const label = location.municipality.trim()
-      const normalized = normalizeForSearch(label)
+      const normalized = normalizeSearchText(label)
       if (normalized && !municipalities.has(normalized)) municipalities.set(normalized, label)
     }
     return [...municipalities.values()].sort((left, right) => left.localeCompare(right, 'es-CO', { sensitivity: 'base' }))
@@ -86,21 +87,21 @@ export function SpaceGuidePage({ client = defaultSpaceGuideClient }: SpaceGuideP
 
   const visibleLocations = useMemo(() => {
     if (visibleState.status !== 'ready') return []
-    const normalizedSearch = normalizeForSearch(search.trim())
+    const normalizedSearch = normalizeSearchText(search)
     return visibleState.snapshot.locations.filter((location) => {
       if (kind !== 'ALL' && location.kind !== kind) return false
       if (municipality !== 'ALL'
-        && normalizeForSearch(location.municipality) !== normalizeForSearch(municipality)) return false
+        && normalizeSearchText(location.municipality) !== normalizeSearchText(municipality)) return false
       if (!normalizedSearch) return true
-      return normalizeForSearch(searchableText(location)).includes(normalizedSearch)
+      return normalizeSearchText(searchableText(location)).includes(normalizedSearch)
     })
   }, [kind, municipality, search, visibleState])
 
   const visiblePathways = useMemo(() => {
     if (visibleState.status !== 'ready') return []
-    const normalizedSearch = normalizeForSearch(search.trim())
+    const normalizedSearch = normalizeSearchText(search)
     return visibleState.snapshot.requestPathways.filter((pathway) => !normalizedSearch
-      || normalizeForSearch(searchablePathwayText(pathway)).includes(normalizedSearch))
+      || normalizeSearchText(searchablePathwayText(pathway)).includes(normalizedSearch))
   }, [search, visibleState])
 
   return (
@@ -164,7 +165,7 @@ export function SpaceGuidePage({ client = defaultSpaceGuideClient }: SpaceGuideP
           >
             <option value="ALL">Todos los municipios</option>
             {municipalityOptions.map((option) => (
-              <option key={normalizeForSearch(option)} value={option}>{option}</option>
+              <option key={normalizeSearchText(option)} value={option}>{option}</option>
             ))}
           </select>
         </label>
@@ -377,9 +378,6 @@ function searchablePathwayText(pathway: SpaceUsePathway): string {
   ].join(' ')
 }
 
-function normalizeForSearch(value: string): string {
-  return value.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLocaleLowerCase('es-CO')
-}
 
 function formatDate(value: string): string {
   const [year, month, day] = value.split('-').map(Number)

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { normalizeSearchText } from '../../shared/text/normalizeSearchText'
 import type { AdmissionsCalendarAuthorization, AdmissionsCallClient, PublicAdmissionsCall } from './admissionsCallContracts'
 import { admissionsCallClient } from './admissionsCallClient'
 import { AdmissionsCallManagementPanel } from './AdmissionsCallManagementPanel'
@@ -132,7 +133,7 @@ export function AdmissionsCalendarExperience({
 }
 
 function filterPublishedAdmissionsCalls(calls: readonly PublicAdmissionsCall[], searchQuery: string): PublicAdmissionsCall[] {
-  const query = normalizeAdmissionsSearchText(searchQuery)
+  const query = normalizeSearchText(searchQuery)
   if (!query) return [...calls]
 
   return calls.filter((call) => {
@@ -143,13 +144,10 @@ function filterPublishedAdmissionsCalls(calls: readonly PublicAdmissionsCall[], 
       call.content.callName,
       ...call.content.milestones.flatMap((milestone) => [milestone.title, milestone.description]),
     ].join(' ')
-    return normalizeAdmissionsSearchText(searchableText).includes(query)
+    return normalizeSearchText(searchableText).includes(query)
   })
 }
 
-function normalizeAdmissionsSearchText(value: string): string {
-  return value.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLocaleLowerCase('es-CO').replace(/\s+/g, ' ').trim()
-}
 
 function toPublicCalendar(call: PublicAdmissionsCall): PublicAdmissionsCalendar {
   return {

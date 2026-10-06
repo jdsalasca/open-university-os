@@ -1,4 +1,5 @@
 import { lazy, Suspense, useEffect, useMemo, useRef, useState } from 'react'
+import { normalizeSearchText } from '../../shared/text/normalizeSearchText'
 import type { ChangeEvent } from 'react'
 import { academicCatalogClient } from './academicCatalogClient'
 import { academicOperationsClient } from './academicOperationsClient'
@@ -1012,9 +1013,6 @@ function cohortLabel(curriculum: AcademicCurriculum): string {
   return `${curriculum.cohortFrom}${curriculum.cohortThrough ? ` — ${curriculum.cohortThrough}` : ' — sin término definido'}`
 }
 
-function normalizeSearchText(value: string): string {
-  return value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('es-CO').trim()
-}
 
 function resolveProgramPlacements(
   programs: readonly AcademicProgram[],

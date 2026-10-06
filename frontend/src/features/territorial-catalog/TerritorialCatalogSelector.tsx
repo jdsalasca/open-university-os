@@ -1,4 +1,5 @@
 import { useEffect, useId, useState } from 'react'
+import { normalizeSearchText } from '../../shared/text/normalizeSearchText'
 import type {
   TerritorialCatalogSource,
   TerritorialDepartment,
@@ -97,10 +98,10 @@ export function TerritorialCatalogSelector({ client = territorialCatalogClient }
     : entityResponseIsCurrent ? entityState.status : 'loading'
   const visibleEntities = currentEntityStatus === 'ready' && entityState.status === 'ready'
     ? (() => {
-    const query = normalizeForSearch(entitySearch.trim())
+    const query = normalizeSearchText(entitySearch.trim())
     if (!query) return entityState.entities
     return entityState.entities.filter((entity) =>
-      normalizeForSearch(`${entity.name} ${entity.code}`).includes(query))
+      normalizeSearchText(`${entity.name} ${entity.code}`).includes(query))
   })()
     : []
   const selectedEntity = currentEntityStatus === 'ready' && entityState.status === 'ready'
@@ -204,8 +205,4 @@ export function TerritorialCatalogSelector({ client = territorialCatalogClient }
       )}
     </section>
   )
-}
-
-function normalizeForSearch(value: string): string {
-  return value.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLocaleLowerCase('es-CO')
 }
