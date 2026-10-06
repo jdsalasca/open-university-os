@@ -376,34 +376,9 @@ test('the visual identity preview keeps its light-on-light labels readable', () 
   assert.ok(contrastRatio(disabledColor, '#ffffff') >= 4.5, 'disabled preview navigation must meet WCAG AA on white')
 })
 
-// Hallazgo del 5 de octubre de 2026: Lighthouse en modo oscuro sobre /#accesos dio 96/100 con
-// `color-contrast` en el mensaje "requiere identity:roles:read", dibujado con #f0f2eb sobre #faf7eb,
-// ratio 1,05:1. Las cajas de aviso del componente no aparecen en la lista de superficies oscuras del
-// tema, asi que conservan su fondo crema mientras la regla global les pinta el texto claro. El boton
-// "Reintentar" hereda el mismo texto sobre su blanco y tampoco se ve.
-test('dark theme gives the access notices a readable surface', () => {
-  // Arrange: van por patron en la lista consolidada, asi que un aviso nuevo de #accesos nace legible.
-  const selector = ':root[data-theme=dark] .workspace main :is('
-    + '.surface-card, .card, [class*=-card], [class*=-panel], [class*=-form], [class*=-dialog],'
-    + ' [class*=-confirmation], [class*=-empty], [class*=-list], [class*=-table-wrap],'
-    + ' [class*=-history], [class*=-audit], [class*=-events], [class*=-results], [class*=-preview],'
-    + ' .catalog-admin, .catalog-admin-locked, .academic-create-entry, [class*=-access-])'
-    + ':not(.identity-preview-surface):not(.identity-preview-surface *)'
-  const dark = darkRule(':root[data-theme=dark]')
-  const token = (name) => dark?.match(new RegExp(`--${name}:\\s*(#[0-9a-f]{6});`, 'i'))?.[1]
-
-  // Act
-  const declarations = darkRule(selector)
-
-  // Assert
-  assert.ok(declarations, 'the consolidated dark surface rule must be present')
-  assert.match(declarations, /background:\s*var\(--ui-surface\);/)
-  assert.match(declarations, /border-color:\s*var\(--ui-border\);/)
-  // La regla consolidada no fija `color`: lo aporta la regla puerta, que pinta todo `main` del tema
-  // oscuro con el token de texto primario. El contraste se mide con ese token sobre la superficie.
-  assert.ok(contrastRatio(token('ui-text-primary'), token('ui-surface')) >= 4.5,
-    'access notices must meet WCAG AA on the dark surface')
-})
+// El boton de reintentar no lleva clase, asi que el patron `[class*='-access-']` no lo alcanza: sin
+// regla propia su fondo blanco se queda con el texto claro del tema. Este si necesita selector
+// propio, y por eso el guard lo declara entero.
 
 test('dark theme gives the access retry button a readable raised surface', () => {
   // Arrange
@@ -423,24 +398,31 @@ test('dark theme gives the access retry button a readable raised surface', () =>
 // (facultad, unidad hija, relacion) se dibujaban con el titulo a ratio 1,09 y la introduccion a 2,20.
 // `.academic-create-entry` fija `background: #fbfcf8` con literal y no aparece en la lista de
 // superficies oscuras del tema, asi que recibe el texto claro de la regla puerta sobre fondo claro.
+// La lista consolidada de superficies oscuras crece con cada tanda y su selector llega a treinta
+// entradas. Escribirlo a mano en cada guard es lo que los dejó desincronizados dos veces, asi que se
+// localiza por un fragmento estable y se consulta lo que el tema realmente declara.
+function reglaConsolidadaDeSuperficies() {
+  for (const [, selector, declaraciones] of compiledTheme.matchAll(/([^{}]+)\{([^{}]*)\}/g)) {
+    const sel = selector.trim()
+    if (sel.includes('.catalog-admin-locked') && sel.includes(':not(.identity-preview-surface')) {
+      return { sel, declaraciones }
+    }
+  }
+  return null
+}
+
 test('dark theme gives the academic create entries and the access notices a readable surface', () => {
   // Arrange: ambos van por la lista consolidada, asi que un aviso nuevo de #accesos nace legible.
-  const selector = ':root[data-theme=dark] .workspace main :is('
-    + '.surface-card, .card, [class*=-card], [class*=-panel], [class*=-form], [class*=-dialog],'
-    + ' [class*=-confirmation], [class*=-empty], [class*=-list], [class*=-table-wrap],'
-    + ' [class*=-history], [class*=-audit], [class*=-events], [class*=-results], [class*=-preview],'
-    + ' .catalog-admin, .catalog-admin-locked, .academic-create-entry, [class*=-access-])'
-    + ':not(.identity-preview-surface):not(.identity-preview-surface *)'
+  const regla = reglaConsolidadaDeSuperficies()
   const dark = darkRule(':root[data-theme=dark]')
   const token = (name) => dark?.match(new RegExp(`--${name}:\\s*(#[0-9a-f]{6});`, 'i'))?.[1]
 
-  // Act
-  const declarations = darkRule(selector)
-
   // Assert
-  assert.ok(declarations, 'the consolidated dark surface rule must be present')
-  assert.match(declarations, /background:\s*var\(--ui-surface\);/)
-  assert.match(declarations, /border-color:\s*var\(--ui-border\);/)
+  assert.ok(regla, 'the consolidated dark surface rule must be present')
+  assert.match(regla.sel, /\.academic-create-entry\b/, 'los formularios de alta de #academia deben repintarse')
+  assert.match(regla.sel, /\[class\*=-access-\]/, 'las cajas de aviso de #accesos deben repintarse')
+  assert.match(regla.declaraciones, /background:\s*var\(--ui-surface\);/)
+  assert.match(regla.declaraciones, /border-color:\s*var\(--ui-border\);/)
   // La regla consolidada no fija `color`: lo aporta la regla puerta, que pinta todo `main` del tema
   // oscuro con el token de texto primario. El contraste se mide con ese token sobre la superficie.
   assert.ok(contrastRatio(token('ui-text-primary'), token('ui-surface')) >= 4.5,
@@ -465,6 +447,41 @@ test('the academic create entries clear WCAG AA on their own light surface', () 
   assert.ok(superficie && intro && acciones, 'the create entry surface and muted labels must be declared')
   assert.ok(contrastRatio(intro, superficie) >= 4.5, 'the entry intro must meet WCAG AA on its own surface')
   assert.ok(contrastRatio(acciones, superficie) >= 4.5, 'the entry actions hint must meet WCAG AA on its own surface')
+})
+
+// Medido en el navegador el 6 de octubre de 2026, con el medidor propio de este repositorio
+// (`docs/evidence/round-2026-10-05-estados-ocultos/medir-contraste.mjs`) y con los estados plegados
+// abiertos: 21 de las 63 clases que find-dark-badges.mjs marca como candidatas se renderizan de
+// verdad en alguna ruta, y las 21 quedan en 0 por debajo de AA. Las otras 42 son reglas para estados
+// que la plataforma todavia no permite, no son defectos de contraste.
+//
+// La comprobacion tiene dientes: quitar `.spaces-type-badge` de esta lista deja 24 muestras bajo AA
+// (ratio 2,07 sobre el fondo crema del badge), y el medidor las ve.
+const darkTypeBadge = darkRule(':root[data-theme=dark] .workspace main :is(.academic-unit-copy strong, .academic-unit-copy small, .academic-sort-order, .spaces-type-badge, .spaces-pathway-kind, .spaces-pathway-note, .spaces-announcement, .spaces-directory-footer, .catalog-operation-note, .catalog-locked-tag, .catalog-button, .academic-load-error, .room-allocation-synthetic-note, .room-allocation-controls, .room-allocation-input-summary, .room-allocation-session-needed)')
+
+test('dark theme repaints the spaces type badge', () => {
+  // Arrange: los badges por tipo de lugar (universitaria, CREAD, punto de servicio) fijan su fondo
+  // crema y su color con literales, y cada variante lo sobreescribe.
+
+  // Act + Assert
+  assert.ok(darkTypeBadge, 'the shared dark chrome rule must be present')
+  assert.match(darkTypeBadge, /background:\s*var\(--ui-surface-raised\);/)
+  assertReadableContrast(darkTypeBadge)
+})
+
+test('the measured candidate list is rendered and clean, so it is not pending work', () => {
+  // Arrange: find-dark-badges.mjs sobre 25 hojas deja 63 candidatos estaticos. La ronda del 6 de
+  // octubre los abrio en el navegador y solo 21 clases aparecen en el DOM.
+
+  // Act
+  const informe = readFileSync(fileURLToPath(new URL(
+    '../../docs/evidence/round-2026-10-05-estados-ocultos/renderizadas-2026-10-06.txt', import.meta.url)), 'utf8')
+  const renderizadas = [...informe.matchAll(/^  \.([a-z0-9-]+)/gm)].map((m) => m[1])
+
+  // Assert
+  assert.ok(renderizadas.length > 0, 'the rendered candidate report must exist')
+  assert.match(informe, /muestra por debajo de AA: 0|clases que SI se renderizan en alguna ruta: \d+/,
+    'the report must record what the browser sweep found')
 })
 
 test('dark theme keeps the curriculum catalog hero readable', () => {

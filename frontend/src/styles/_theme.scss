@@ -128,7 +128,9 @@
   .catalog-admin,
   .catalog-admin-locked,
   .academic-create-entry,
-  [class*='-access-']
+  [class*='-access-'],
+  [class*='-empty-state'],
+  .catalog-empty-art
 ):not(.identity-preview-surface):not(.identity-preview-surface *) {
   border-color: var(--ui-border);
   background: var(--ui-surface);

@@ -1,0 +1,197 @@
+hojas revisadas: 25
+clases que el tema oscuro repinta: 93
+candidatos SIN repintar en tema oscuro: 63
+
+Un candidato es una regla que fija fondo claro y color con literales, y cuya clase no esta
+en la lista de selectores que el tema oscuro repinta. Al entrar en tema oscuro el color lo
+reescribe la regla puerta y el fondo se queda claro: el texto queda ilegible.
+
+frontend\src\features\academics\AcademicCatalogPage.scss
+  .catalog-preview-badge
+  fondo #fffefa · color #575844 · ratio en claro 7.21
+frontend\src\features\academics\AcademicCatalogPage.scss
+  .catalog-empty-art
+  fondo #fff9d8 · color #786a2d · ratio en claro 5.08
+frontend\src\features\academics\AcademicCatalogPage.scss
+  .catalog-program-filter-context
+  fondo #f8f7ee · color #77724d · ratio en claro 4.54
+frontend\src\features\academics\AcademicCatalogPage.scss
+  .catalog-cohort-band
+  fondo #f8f7ee · color #7c713c · ratio en claro 4.56
+frontend\src\features\academics\AcademicCatalogPage.scss
+  .catalog-error
+  fondo #fff8f6 · color #7d4940 · ratio en claro 6.90
+frontend\src\features\academics\AcademicCatalogPage.scss
+  .catalog-error-icon
+  fondo #f6dcd5 · color #894e43 · ratio en claro 4.98
+frontend\src\features\academics\AcademicCatalogPage.scss
+  .catalog-preview-valid
+  fondo #f3faf1 · color #427049 · ratio en claro 5.42
+frontend\src\features\academics\AcademicCatalogPage.scss
+  .catalog-curriculum-filter-empty
+  fondo #fdfdfa · color #6f7067 · ratio en claro 4.92
+frontend\src\features\academics\AcademicCatalogPage.scss
+  .catalog-public-detail-empty
+  fondo #fdfdfa · color #6f7067 · ratio en claro 4.92
+frontend\src\features\academics\AcademicCatalogPage.scss
+  .catalog-action-success
+  fondo #f3faf2 · color #3e7049 · ratio en claro 5.46
+frontend\src\features\academics\AcademicCatalogPage.scss
+  .catalog-action-error
+  fondo #fff8f6 · color #7c4940 · ratio en claro 6.94
+frontend\src\features\academics\AcademicOperationsPage.scss
+  .academic-icon-units
+  fondo #f5efda · color #74621e · ratio en claro 5.20
+frontend\src\features\academics\AcademicOperationsPage.scss
+  .academic-icon-sites
+  fondo #eaf2ec · color #50745d · ratio en claro 4.61
+frontend\src\features\academics\AcademicOperationsPage.scss
+  .academic-icon-periods
+  fondo #eaf0f5 · color #48667d · ratio en claro 5.26
+frontend\src\features\academics\AcademicOperationsPage.scss
+  .academic-empty-state
+  fondo #fafaf7 · color #6f7067 · ratio en claro 4.79
+frontend\src\features\academics\AcademicOperationsPage.scss
+  .academic-unit-type
+  fondo #f7f2e3 · color #71601e · ratio en claro 5.53
+frontend\src\features\academics\AcademicOperationsPage.scss
+  .academic-unit-type-school
+  fondo #eef3eb · color #4b7053 · ratio en claro 4.99
+frontend\src\features\academics\AcademicOperationsPage.scss
+  .academic-unit-type-academic_unit
+  fondo #edf1f4 · color #596d7c · ratio en claro 4.74
+frontend\src\features\academics\AcademicOperationsPage.scss
+  .academic-affiliation-timeline li
+  fondo #fcfcf9 · color #686960 · ratio en claro 5.41
+frontend\src\features\academics\AcademicOperationsPage.scss
+  .academic-affiliation-row-heading > span
+  fondo #edf3ed · color #4c6f55 · ratio en claro 5.02
+frontend\src\features\academics\AcademicOperationsPage.scss
+  .academic-affiliation-row-heading > span.is-outside-current
+  fondo #f4f1e6 · color #77662e · ratio en claro 4.99
+frontend\src\features\academics\AcademicOperationsPage.scss
+  .academic-site-pin
+  fondo #eef4ef · color #57725e · ratio en claro 4.74
+frontend\src\features\academics\AcademicOperationsPage.scss
+  .academic-order-edit-button
+  fondo #f7f9f6 · color #435c48 · ratio en claro 6.93
+frontend\src\features\academics\AcademicOperationsPage.scss
+  .academic-period-state.state-approved
+  fondo #edf2fa · color #506f9d · ratio en claro 4.55
+frontend\src\features\academics\AcademicOperationsPage.scss
+  .academic-period-action-message
+  fondo #f3f8f2 · color #47714c · ratio en claro 5.23
+frontend\src\features\academics\AcademicOperationsPage.scss
+  .academic-period-action-message.is-error
+  fondo #fbf3f0 · color #965347 · ratio en claro 5.29
+frontend\src\features\academics\AcademicStructureAuditPanel.scss
+  .academic-structure-audit-badge
+  fondo #f2f6ef · color #48614a · ratio en claro 6.23
+frontend\src\features\academics\ReassignAcademicProgramAffiliationForm.scss
+  .academic-reassign-feedback
+  fondo #f3f8f2 · color #47714c · ratio en claro 5.23
+frontend\src\features\academics\ReassignAcademicProgramAffiliationForm.scss
+  .academic-reassign-feedback.is-warning
+  fondo #faf7ed · color #816324 · ratio en claro 5.23
+frontend\src\features\academics\ReassignAcademicProgramAffiliationForm.scss
+  .academic-reassign-feedback.is-error
+  fondo #fbf3f0 · color #965347 · ratio en claro 5.29
+frontend\src\features\access\RoleAccessPage.scss
+  .role-access-locked
+  fondo #faf7eb · color #695c37 · ratio en claro 6.14
+frontend\src\features\access\RoleAccessPage.scss
+  .role-access-feedback.is-success
+  fondo #f3f8f2 · color #376549 · ratio en claro 6.26
+frontend\src\features\access\RoleAccessPage.scss
+  .role-access-feedback.is-info
+  fondo #faf7eb · color #695c37 · ratio en claro 6.14
+frontend\src\features\access\RoleAccessPage.scss
+  .role-access-feedback.is-error
+  fondo #fff8f6 · color #84564b · ratio en claro 5.86
+frontend\src\features\access\RoleAccessPage.scss
+  .role-access-search input, .role-access-grant-form input, .role-access-grant-form select, 
+  fondo #fcfcf9 · color #292b24 · ratio en claro 13.94
+frontend\src\features\access\RoleAccessPage.scss
+  .role-access-identity-results > li > button
+  fondo #fdfdfa · color #3b3d35 · ratio en claro 10.82
+frontend\src\features\access\RoleAccessPage.scss
+  .role-access-state
+  fondo #edf5ed · color #4e7856 · ratio en claro 4.56
+frontend\src\features\access\RoleAccessPage.scss
+  .role-access-state.is-revoked
+  fondo #f4ece9 · color #8a5f50 · ratio en claro 4.70
+frontend\src\features\access\RoleAccessPage.scss
+  .role-access-inline-error
+  fondo #fff8f6 · color #895a4d · ratio en claro 5.51
+frontend\src\features\access\RoleAccessPage.scss
+  .role-access-permission-note
+  fondo #fcfaef · color #756b47 · ratio en claro 5.08
+frontend\src\features\admissions\AdmissionsCalendarPage.scss
+  .admissions-call-picker select
+  fondo #fffef8 · color #272820 · ratio en claro 14.73
+frontend\src\features\admissions\AdmissionsCalendarPage.scss
+  .admissions-timeline-item.is-application .admissions-timeline-index
+  fondo #fff8d5 · color #756525 · ratio en claro 5.39
+frontend\src\features\admissions\AdmissionsCallManagementPanel.scss
+  .admissions-live-revision, .admissions-fallback-status
+  fondo #fffef8 · color #555647 · ratio en claro 7.40
+frontend\src\features\admissions\AdmissionsCallManagementPanel.scss
+  .admissions-live-revision
+  fondo #f5faf4 · color #3e6345 · ratio en claro 6.46
+frontend\src\features\admissions\AdmissionsCallManagementPanel.scss
+  .admissions-admin-error
+  fondo #fff8f6 · color #8d3d35 · ratio en claro 7.02
+frontend\src\features\admissions\AdmissionsCallManagementPanel.scss
+  .admissions-admin-version
+  fondo #f6f4e8 · color #696449 · ratio en claro 5.40
+frontend\src\features\admissions\AdmissionsCallManagementPanel.scss
+  .admissions-admin-feedback
+  fondo #f6faf4 · color #456546 · ratio en claro 6.21
+frontend\src\features\admissions\AdmissionsCallManagementPanel.scss
+  .admissions-admin-feedback.is-error
+  fondo #fff8f6 · color #8d3d35 · ratio en claro 7.02
+frontend\src\features\admissions\demo\AdmissionsWorkflowLab.scss
+  .admissions-lab-feedback
+  fondo #e8f2e8 · color #315d3a · ratio en claro 6.64
+frontend\src\features\branding\VisualIdentityCenter.scss
+  .contrast-hint, .asset-security-note, .module-security-note
+  fondo #f7f7f3 · color #6f7067 · ratio en claro 4.67
+frontend\src\features\branding\VisualIdentityCenter.scss
+  .module-state-pill.available
+  fondo #edf4ed · color #507855 · ratio en claro 4.51
+frontend\src\features\branding\VisualIdentityCenter.scss
+  .schedule-state.scheduled
+  fondo #fff6dc · color #806917 · ratio en claro 4.93
+frontend\src\features\branding\VisualIdentityCenter.scss
+  .image-summary-icon
+  fondo #edf0f4 · color #606878 · ratio en claro 4.90
+frontend\src\features\room-planning\demo\RoomAllocationDemo.scss
+  .room-allocation-hero-mark span
+  fondo #d7e6c0 · color #26372e · ratio en claro 9.57
+frontend\src\features\room-planning\demo\RoomAllocationDemo.scss
+  .room-allocation-step
+  fondo #edf2e7 · color #47613e · ratio en claro 6.06
+frontend\src\features\room-planning\demo\RoomAllocationDemo.scss
+  .room-allocation-criteria li span
+  fondo #edf2e7 · color #56704b · ratio en claro 4.84
+frontend\src\features\room-planning\demo\RoomAllocationDemo.scss
+  .room-allocation-error
+  fondo #fff7f4 · color #6d3931 · ratio en claro 8.71
+frontend\src\features\room-planning\demo\RoomAllocationDemo.scss
+  .room-allocation-status.is-assigned
+  fondo #eaf4e8 · color #38623d · ratio en claro 6.24
+frontend\src\features\spaces\SpaceGuidePage.scss
+  .spaces-kind-field select, .spaces-municipality-field select
+  fondo #fbfbf8 · color #3a3b34 · ratio en claro 10.92
+frontend\src\features\spaces\SpaceGuidePage.scss
+  .is-cread .spaces-type-badge
+  fondo #edf4ec · color #44684a · ratio en claro 5.64
+frontend\src\features\spaces\SpaceGuidePage.scss
+  .is-service .spaces-type-badge
+  fondo #f0eff8 · color #555274 · ratio en claro 6.47
+frontend\src\features\spaces\SpaceGuidePage.scss
+  .is-regional_site .spaces-type-badge
+  fondo #fbefe9 · color #8a5235 · ratio en claro 5.58
+frontend\src\features\workspace\WorkspaceHomePage.scss
+  .workspace-home-preview-notice
+  fondo #fff8df · color #66571b · ratio en claro 6.71

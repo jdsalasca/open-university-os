@@ -468,3 +468,15 @@ recibe foco de teclado.
 
 No se integra ni se borra desde aqui: no esta terminado, no es de esta sesion y borrarlo destruiria
 trabajo ajeno. Queda anotado para que la ronda que lo retome sepa que existe y que es suyo.
+
+### Los estados que no se pintan: la auditoria media la portada - 6 de octubre de 2026
+
+| Entrega | Resultado verificable | Estado y siguiente paso |
+| --- | --- | --- |
+| El pendiente vago, respondido | La ronda anterior dejo anotados "63 candidatos estaticos que no se renderizan". `candidatos-renderizados.mjs` responde la pregunta: de 72 clases candidatas, **21 se pintan** en alguna ruta y **51 nunca aparecen** en el DOM. | Las 51 son reglas para estados que la plataforma todavia no permite. No son defectos de contraste. La lista de 21 queda en la evidencia. |
+| La auditoria estaba midiendo la portada | `auditar-axe.mjs` pedia la sesion de preview con 2,5 s fijos y comprobaba un texto que no existe (`modo preview` en vez de `Desarrollador local · preview`). Sin sesion, las rutas autenticadas caian a la portada y axe reportaba "sin h1" en `/#biblioteca`, que si lo tiene. | Tres arreglos: esperar al boton con 25 s, esperar el titulo propio de cada ruta, y fallar con el nombre de la ruta en vez de inventar un resultado. |
+| Sesiones que nunca se revocaban | El script abria nueve rutas por tema y no cerraba la sesion. El backend tiene cupo, y `medir-latencia.mjs` ya lo revocaba por eso. | Ahora captura el token de la respuesta del POST y lo revoca al terminar. |
+| Un defecto que no se habia medido nunca | Con la sesion real, `#programas` renderiza la vista de escritura y aparece el texto de carga del catalogo a **4,11:1** sobre `#f4f4f0`. | Corregido a `#6a6c62` (4,84). Era invisible a la auditoria anterior por falta de sesion, no por estar bien. |
+| Las 21 renderizadas dan 0, y el medidor muerde | `medir-contraste.mjs` sube por los ancestros hasta el fondo opaco y calcula el ratio del texto propio, con el umbral de AA correcto. Resultado: **0 muestras bajo AA**. | Para comprobar que no devuelve cero por no mirar: quitar `.spaces-type-badge` de la lista oscura deja **24 muestras bajo AA** a ratio 2,07. Restituido, 0. |
+| Dos guards se habian desincronizado | `check-dark-theme-feedback` reconstruia a mano el selector de la lista consolidada, que ya tiene veinte entradas. Al anadir dos mas, dejo de coincidir y quedo en rojo. | La solucion no es reescribir el selector: es localizar la regla por un fragmento estable y comprobar que el selector contenga lo que cada caso necesita. Ya no puede romperse por crecer la lista. |
+| Verificacion | **axe-core 0 violaciones** en 18 combinaciones con sesion emitida y revocada, **531 pruebas en 78 archivos**, guardas en verde, lint sin avisos, build dentro de presupuesto. | Presupuesto: `entryStyles` 23.700 → 23.800 y `programsStyles` 56.300 → 56.400, ~120 B por dos entradas en una lista que ya existe. Ver [evidencia](evidence/round-2026-10-05-estados-ocultos/README.md). |

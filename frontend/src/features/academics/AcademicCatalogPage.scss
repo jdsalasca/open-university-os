@@ -63,7 +63,10 @@
 .catalog-operation-note strong { color: #464331; }
 .catalog-note-icon { display: grid; flex: 0 0 18px; width: 18px; height: 18px; place-items: center; border-radius: 50%; background: #f4e6a1; color: #5e5529; font-family: Georgia, serif; font-size: 11px; font-weight: 800; }
 
-.catalog-loading { display: flex; min-height: 64px; align-items: center; gap: 10px; color: #76776f; font-size: 12px; }
+// axe-core, 6 de octubre de 2026: `#76776f` sobre `#f4f4f0` daba 4,11 en el texto de carga del
+// catálogo. Este estado solo se ve mientras la peticion vuela, asi que hacia falta una sesion de
+// preview que renderice la vista de escritura para llegar a el.
+.catalog-loading { display: flex; min-height: 64px; align-items: center; gap: 10px; color: #6a6c62; font-size: 12px; }
 .catalog-loading::before { width: 13px; height: 13px; border: 2px solid #d9d9d0; border-top-color: #a98e18; border-radius: 50%; animation: catalog-spin .7s linear infinite; content: ''; }
 /* The public directory renders one result window of cards, so a 64 px placeholder leaves the catalog
    hero sitting at the top of the viewport only to jump several thousand pixels down when the chunk

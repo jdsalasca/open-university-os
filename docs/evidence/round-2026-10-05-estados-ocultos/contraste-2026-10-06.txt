@@ -1,0 +1,2 @@
+contraste medido del texto propio de las 21 clases candidatas que sí se renderizan
+muestra por debajo de AA: 0
