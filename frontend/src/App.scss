@@ -240,6 +240,9 @@
 }
 
 @media (max-width: 650px) {
+  // El sidebar se fija abajo en móvil; ancla el enlace de salto al viewport para que el `top`
+  // negativo lo oculte realmente y no lo deje flotando sobre el contenido.
+  .skip-link { position: fixed; top: -60px; }
   .platform-shell { display: block; padding-bottom: calc(63px + env(safe-area-inset-bottom, 0px)); }
   .sidebar { position: fixed; top: auto; right: 0; bottom: 0; left: 0; display: block; width: auto; height: calc(62px + env(safe-area-inset-bottom, 0px)); padding: 0; border-top: 1px solid #383931; }
   .brand-lockup, .sidebar-group, .sidebar-caption, .sidebar-footer { display: none; }

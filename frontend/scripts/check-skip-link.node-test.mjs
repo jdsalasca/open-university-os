@@ -19,6 +19,10 @@ const inicio = app.indexOf('.skip-link {')
 const bloqueEntero = app.slice(inicio, app.indexOf('\n}', inicio) + 2)
 const base = /^\.skip-link\s*\{([\s\S]*?)\n\s*\}/.exec(bloqueEntero)?.[1] ?? ''
 const alEnfocar = /&:focus-visible\s*\{([^}]*)\}/.exec(bloqueEntero)?.[1] ?? ''
+const inicioMovil = app.indexOf('@media (max-width: 650px)')
+const finMovil = app.indexOf('@media (max-width: 320px)', inicioMovil)
+const bloqueMovil = inicioMovil >= 0 && finMovil > inicioMovil ? app.slice(inicioMovil, finMovil) : ''
+const reglaMovil = /\.skip-link\s*\{([^}]*)\}/.exec(bloqueMovil)?.[1] ?? ''
 
 test('el enlace para saltar al contenido sale del flujo y solo se ve al recibir el foco', () => {
   // Assert
@@ -26,6 +30,15 @@ test('el enlace para saltar al contenido sale del flujo y solo se ve al recibir 
   assert.match(base, /top:\s*-\d+px/, 'la regla base lo aparta de la pantalla')
   assert.ok(alEnfocar, 'debe existir la regla que lo devuelve al enfocar')
   assert.match(alEnfocar, /top:\s*\d+px/, 'al enfocarse vuelve a la pantalla')
+})
+
+test('en movil el enlace de salto se oculta respecto al viewport, no junto a la barra inferior', () => {
+  // Arrange
+  assert.ok(reglaMovil, 'el breakpoint móvil necesita una regla propia para el enlace')
+
+  // Assert
+  assert.match(reglaMovil, /position:\s*fixed/, 'su posicion no debe depender del sidebar fijado abajo')
+  assert.match(reglaMovil, /top:\s*-\d+px/, 'sin foco debe permanecer por encima del viewport')
 })
 
 test('el enlace de salto es legible sobre el sidebar cuando aparece', () => {
