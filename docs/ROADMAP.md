@@ -527,3 +527,11 @@ cuenta; no se tocan desde aqui. El unico residuo que no se puede quitar es
 | Pagina e ICS | El calendario atribuye fechas y orientacion a publicaciones oficiales de admisiones de la UPTC, sin presentar a ACRA como responsable formal. | Se conservan URLs, fechas, eventos y requisitos ya publicados; no se cambian reglas de seleccion. |
 | Regresion | Dos pruebas AAA comprueban la atribucion neutral en la pagina y en el archivo descargable. | Las pruebas focalizadas pasaron, seguidas por la suite completa de 78 archivos. |
 | Validacion | Vitest 536/536, guardas Node 117/117, lint y build con presupuesto pasaron; la vista local de admisiones se revisa tras integrar el cambio. | Se conserva una atribucion basada en publicaciones, sin asignar propiedad institucional a un area no confirmada. |
+
+### Separar la FAQ historica de las reglas publicadas para 2027-I - 6 de octubre de 2026
+
+| Entrega | Resultado verificable | Estado y siguiente paso |
+| --- | --- | --- |
+| Fuente historica identificada | La FAQ de registro contiene fechas de 2010/2011, valor de PIN, bancos, dos opciones de programa y umbral de examen anterior a 2000. | Estos datos se registran como históricos y quedan excluidos de requisitos, validadores y modelos para 2027-I. |
+| Fuente actual separada | ACRA publica su calendario 2027-I y enlaza la Resolución 111 de 2026 para pregrado presencial. | La página pública no basta para confirmar costo, opciones, cupos ni regla de selección. |
+| Gate | La consulta por buscador devolvió el contenido, mientras que abrir directamente las páginas dio HTTP 502. | El texto íntegro del acto y la validación institucional siguen pendientes; no se implementan reglas a partir de la FAQ antigua. |

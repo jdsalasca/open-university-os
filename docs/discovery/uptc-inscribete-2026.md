@@ -22,6 +22,12 @@ El [comunicado UPTC n.º 240 del 22 de septiembre de 2026](https://www.uptc.edu.
 
 Esta observación confirma que la página actual de ACRA enlaza una ruta pública de inscripción; no identifica el producto o backend que procesa la convocatoria 2027-I, ni prueba que la página con fecha de 2024 sea la fuente operativa autorizada. No se enviaron formularios ni se ingresaron datos personales. La navegación visible tampoco demuestra si «Inscríbete», SIRA y la Fase III comparten componentes o registros.
 
+## Vigencia de las preguntas frecuentes de registro
+
+En la revisión del 6 de octubre de 2026, el índice público de la [página de preguntas frecuentes de admisiones de pregrado](https://registro.uptc.edu.co/preguntas_frecuentes.htm) devolvió contenido con fechas de 2010 y 2011. Ese mismo contenido incluye un valor de PIN de $78.600, una lista de bancos, dos opciones de programa y un umbral de 220 puntos para exámenes anteriores a 2000. Son datos de la FAQ histórica, no requisitos confirmados para 2027-I; no trasladarlos al producto, sus formularios, validadores ni modelos.
+
+La [página actual de aspirantes de ACRA](https://www.uptc.edu.co/sitio/portal/sitios/universidad/vic_aca/adm_reg/1aspi/pre/) publica el calendario 2027-I y enlaza la Resolución 111 de 2026 para pregrado presencial. Esa referencia y las fechas de la convocatoria son evidencia pública acotada: no sustituyen el texto normativo íntegro ni confirman hoy el costo, la cantidad de opciones, los cupos o la regla de selección. El buscador recuperó el contenido de la FAQ y de ACRA, pero abrir esas páginas en la herramienta de consulta devolvió HTTP 502; no se abrió ni envió el formulario de inscripción.
+
 ## Límites de la evidencia
 
 La publicación institucional confirma que UPTC reportó haber implementado este sistema para 2026-II y describe parte de la experiencia de inscripción. No publica artefactos que permitan verificar versiones, disponibilidad efectiva, uso o soporte operativo; tampoco identifica su producto técnico, URL funcional, contratos, custodio de datos, APIs, base de datos, controles de acceso, retención/eliminación de documentos, conexión con el sistema de pagos/PIN ni fuente maestra por entidad.
