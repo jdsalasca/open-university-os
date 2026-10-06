@@ -1,0 +1,10 @@
+{
+  "feature": "Ignorar respuestas tardías del catálogo curricular público",
+  "status": "validated",
+  "items": [
+    { "id": "repro-ordering", "description": "La prueba AAA reproduce dos lecturas resueltas fuera de orden y falla antes del cambio", "verified": true },
+    { "id": "stale-result-guard", "description": "Una respuesta cancelada no reemplaza las mallas del programa seleccionado actualmente", "verified": true },
+    { "id": "frontend-verification", "description": "La prueba enfocada, la suite frontend, lint y build pasan", "verified": true },
+    { "id": "develop-integration", "description": "El cambio queda en develop y origin/develop con SHA y CI verificados", "verified": false }
+  ]
+}

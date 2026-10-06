@@ -456,6 +456,45 @@ describe('AcademicCatalogPage', () => {
     expect(listCurricula).toHaveBeenCalledWith(secondProgram.id, expect.any(AbortSignal))
   })
 
+  it('keeps the selected program curricula when an earlier read resolves late', async () => {
+    // Arrange
+    let resolveFirstRead!: (curricula: AcademicCurriculum[]) => void
+    let resolveSecondRead!: (curricula: AcademicCurriculum[]) => void
+    const firstRead = new Promise<AcademicCurriculum[]>((resolve) => { resolveFirstRead = resolve })
+    const secondRead = new Promise<AcademicCurriculum[]>((resolve) => { resolveSecondRead = resolve })
+    const listCurricula = vi.fn().mockImplementation((programId: string) => (
+      programId === program.id ? firstRead : secondRead
+    ))
+    const client = createClient({
+      listPrograms: vi.fn().mockResolvedValue([program, secondProgram]),
+      listCurricula,
+    })
+    await renderCatalogPage({ client })
+    await waitFor(() => expect(listCurricula).toHaveBeenCalledTimes(1))
+
+    // Act: select the second program and settle its read before the first one.
+    await userEvent.click(await screen.findByRole('button', { name: /Física de Prueba/i }))
+    await waitFor(() => expect(listCurricula).toHaveBeenCalledTimes(2))
+    await act(async () => {
+      resolveSecondRead([secondPublishedCurriculum])
+      await secondRead
+    })
+
+    // Assert: the latest response is visible before the old request settles.
+    expect(await screen.findByRole('article', { name: /2025-B/i })).toBeVisible()
+
+    // Act: the aborted first request settles after the current program's response.
+    await act(async () => {
+      resolveFirstRead([publishedCurriculum])
+      await firstRead
+    })
+
+    // Assert: late data from the previous program cannot replace the selected plan.
+    expect(screen.getByRole('heading', { name: 'Física de Prueba' })).toBeVisible()
+    expect(screen.getByRole('article', { name: /2025-B/i })).toBeVisible()
+    expect(screen.queryByRole('article', { name: /2026-A/i })).not.toBeInTheDocument()
+  })
+
   it('explains when no program matches and keeps the selected plan identifiable', async () => {
     // Arrange
     const client = createClient({

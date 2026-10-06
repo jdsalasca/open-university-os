@@ -105,6 +105,7 @@ export function AcademicCatalogPage({
     const controller = new AbortController()
     client.listCurricula(selectedProgramId, controller.signal)
       .then((result) => {
+        if (controller.signal.aborted) return
         setCurricula(result.filter((curriculum) => curriculum.status === 'PUBLISHED'))
         setCurriculaState('ready')
       })
