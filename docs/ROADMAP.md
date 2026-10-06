@@ -458,3 +458,13 @@ La medición de latencia local observada en esta ronda quedó en 60,5767 ms fren
 | Sin dependencias nuevas | Los MCP de navegador estaban ocupados, asi que los scripts lanzan su propio Chromium y usan el `axe-core` global. | El repositorio no gana ninguna dependencia: `@axe-core/playwright` ya estaba instalado globalmente. |
 | Verificacion | **531 pruebas en 78 archivos y 110 guardas de Node**, lint sin avisos, build dentro de presupuesto. Lighthouse `/#accesos` 96 → **100**, axe-core **0 violaciones**. | Los guards nuevos se probaron por mutacion: quitar `.academic-create-entry` o `[class*='-access-']` de la lista deja `check-dark-theme-feedback` en rojo. Ver [evidencia](evidence/round-2026-10-05-accesibilidad-lighthouse/README.md). |
 | El presupuesto se subio, no se recorto | Las superficies oscuras cuestan bytes. Se ahorraron **196 B** consolidando las cajas de aviso en la lista existente en vez de una regla por clase; el resto se pago: `entryStyles` 23.500 → 23.700 y `programsStyles` 56.200 → 56.300. | Queda anotado en `check-bundle-budget.mjs` con el coste, como las tandas anteriores. No se recortaron 200 B de CSS ajeno para disimular. |
+
+### Worktree ajeno en curso - 5 de octubre de 2026
+
+`.worktrees/mobile-skip-link-20261006` esta en `e560dff` (detached) con **trabajo sin commitear** de
+otra sesion: `App.scss`, `check-skip-link.node-test.mjs` y el plan
+`docs/superpowers/plans/2026-10-06-mobile-skip-link.md`. Oculta el enlace de salto en movil hasta que
+recibe foco de teclado.
+
+No se integra ni se borra desde aqui: no esta terminado, no es de esta sesion y borrarlo destruiria
+trabajo ajeno. Queda anotado para que la ronda que lo retome sepa que existe y que es suyo.
