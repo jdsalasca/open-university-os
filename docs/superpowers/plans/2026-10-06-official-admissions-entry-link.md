@@ -62,5 +62,5 @@
 - [x] Run all frontend tests (Vitest 540/540 across 78 files; Node guards 118/118), build with budgets, lint, and `git diff --check` after final edits.
 - [x] Start a local preview and inspect desktop/mobile screenshots of `/#admisiones` in light and dark themes; measured 390px viewport has no horizontal overflow.
 - [x] Review the full diff; no application fields, API, persistence, or PII were added. Register a Craft review.
-- [ ] Commit atomically, fast-forward local `develop`, push `origin/develop`, and verify the remote SHA and GitHub CI.
-- [ ] Remove this task's detached worktree and verify the main checkout is clean and aligned.
+- [x] Commit atomically, fast-forward local `develop`, push `origin/develop`, and verify the remote SHA and GitHub CI.
+- [x] Remove this task's detached worktree and verify the main checkout is clean and aligned.
