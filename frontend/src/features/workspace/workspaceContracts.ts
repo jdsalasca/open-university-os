@@ -4,4 +4,5 @@ export interface WorkspaceLink {
   description: string
   eyebrow: string
   symbol: string
+  openInNewTab?: boolean
 }

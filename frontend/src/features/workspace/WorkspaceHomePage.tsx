@@ -151,6 +151,14 @@ function buildPublicLinks(branding: PublicBranding): WorkspaceLink[] {
     eyebrow: 'Canales oficiales UPTC',
     symbol: '◎',
   })
+  links.push({
+    href: 'https://www.uptc.edu.co/sitio/portal/sitios/universidad/vic_aca/adm_reg/reconline.html',
+    title: 'Pagos y recibos',
+    description: 'Consulta la información oficial de recaudo. Universiry no recibe pagos ni datos bancarios.',
+    eyebrow: 'Canal oficial UPTC',
+    symbol: '$',
+    openInNewTab: true,
+  })
   const admissions = branding.modules.find((module) => module.key === 'admissions')
   if (admissions?.available && admissions.visible) {
     links.unshift({

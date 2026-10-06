@@ -11,6 +11,32 @@ function branding(overrides: Partial<PublicBranding> = {}): PublicBranding {
 }
 
 describe('WorkspaceHomePage', () => {
+  it('offers a safe route to the official UPTC payment guidance without processing a payment', () => {
+    // Arrange
+    render(<WorkspaceHomePage
+      branding={branding()}
+      permissions={[]}
+      isLocalPreview={false}
+      now={Date.parse('2026-10-06T14:00:00Z')}
+    />)
+
+    const publicSection = screen.getByRole('region', { name: /explora la universidad/i })
+
+    // Act
+    const paymentLink = within(publicSection).getByRole('link', {
+      name: /pagos y recibos.*nueva pestaña/i,
+    })
+
+    // Assert
+    expect(paymentLink).toHaveAttribute(
+      'href', 'https://www.uptc.edu.co/sitio/portal/sitios/universidad/vic_aca/adm_reg/reconline.html',
+    )
+    expect(paymentLink).toHaveAttribute('target', '_blank')
+    expect(paymentLink).toHaveAttribute('rel', 'noopener noreferrer')
+    expect(paymentLink).toHaveAccessibleName(/pagos y recibos.*no recibe pagos ni datos bancarios.*nueva pestaña/i)
+    expect(paymentLink).toHaveTextContent(/universiry no recibe pagos ni datos bancarios/i)
+  })
+
   it('gives students a public route to the official academic service directory', () => {
     // Arrange
     render(<WorkspaceHomePage
