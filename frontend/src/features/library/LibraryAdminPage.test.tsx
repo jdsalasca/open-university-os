@@ -1,4 +1,4 @@
-import { cleanup, render, screen, waitFor } from '@testing-library/react'
+import { act, cleanup, render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { LibraryAdminPage } from './LibraryAdminPage'
@@ -202,6 +202,85 @@ describe('LibraryAdminPage', () => {
     // Assert
     expect(await screen.findByRole('alert')).toHaveTextContent(/no fue posible consultar/i)
     expect(screen.queryByText('Este título no tiene ejemplares registrados.')).toBeNull()
+  })
+
+  it('keeps the copies for the currently selected title when an older read finishes later', async () => {
+    // Arrange: the user changes from one title to another while the first shelf is still loading.
+    const secondTitle: LibraryTitle = { ...TITLE, titleId: 'title-2', title: 'Física moderna' }
+    const secondCopy: LibraryCopy = { ...ACTIVE_COPY, copyId: 'copy-2', titleId: 'title-2', barcode: 'BC-0002' }
+    let resolveFirst!: (copies: LibraryCopy[]) => void
+    let resolveSecond!: (copies: LibraryCopy[]) => void
+    const firstRead = new Promise<LibraryCopy[]>((resolve) => { resolveFirst = resolve })
+    const secondRead = new Promise<LibraryCopy[]>((resolve) => { resolveSecond = resolve })
+    const client = fakeClient({
+      getTitles: vi.fn(async () => [TITLE, secondTitle]),
+      getCopies: vi.fn((titleId: string) => titleId === 'title-1' ? firstRead : secondRead),
+    })
+    const user = userEvent.setup()
+    render(<LibraryAdminPage client={client} authorization={{ accessToken: 'token', canRead: true, canWrite: false }} />)
+
+    // Act: start both reads, then let the newest selection finish before the older request.
+    const titleSelect = await screen.findByLabelText('Seleccionar título')
+    await user.selectOptions(titleSelect, 'title-1')
+    const firstSignal = vi.mocked(client.getCopies).mock.calls[0]?.[2]
+    await user.selectOptions(titleSelect, 'title-2')
+    expect(firstSignal?.aborted).toBe(true)
+    await act(async () => { resolveSecond([secondCopy]) })
+    expect(await screen.findByText('BC-0002')).toBeTruthy()
+    await act(async () => { resolveFirst([ACTIVE_COPY]) })
+
+    // Assert: the late result for title 1 cannot replace the visible shelf for title 2.
+    expect((screen.getByLabelText('Seleccionar título') as HTMLSelectElement).value).toBe('title-2')
+    expect(screen.getByText('BC-0002')).toBeTruthy()
+    expect(screen.queryByText('BC-0001')).toBeNull()
+  })
+
+  it('ignores an error from a copy read after the user selects another title', async () => {
+    // Arrange: the first shelf fails after the second title has loaded successfully.
+    const secondTitle: LibraryTitle = { ...TITLE, titleId: 'title-2', title: 'Física moderna' }
+    const secondCopy: LibraryCopy = { ...ACTIVE_COPY, copyId: 'copy-2', titleId: 'title-2', barcode: 'BC-0002' }
+    let rejectFirst!: (error: Error) => void
+    let resolveSecond!: (copies: LibraryCopy[]) => void
+    const firstRead = new Promise<LibraryCopy[]>((_resolve, reject) => { rejectFirst = reject })
+    const secondRead = new Promise<LibraryCopy[]>((resolve) => { resolveSecond = resolve })
+    const client = fakeClient({
+      getTitles: vi.fn(async () => [TITLE, secondTitle]),
+      getCopies: vi.fn((titleId: string) => titleId === 'title-1' ? firstRead : secondRead),
+    })
+    const user = userEvent.setup()
+    render(<LibraryAdminPage client={client} authorization={{ accessToken: 'token', canRead: true, canWrite: false }} />)
+
+    // Act: select the second title, then fail the already-aborted first request.
+    const titleSelect = await screen.findByLabelText('Seleccionar título')
+    await user.selectOptions(titleSelect, 'title-1')
+    await user.selectOptions(titleSelect, 'title-2')
+    await act(async () => { resolveSecond([secondCopy]) })
+    expect(await screen.findByText('BC-0002')).toBeTruthy()
+    await act(async () => { rejectFirst(new Error('network failure')) })
+
+    // Assert: a stale rejection cannot replace the current shelf with an error.
+    expect(screen.queryByRole('alert')).toBeNull()
+    expect(screen.getByText('BC-0002')).toBeTruthy()
+  })
+
+  it('aborts the active copy read when the library view unmounts', async () => {
+    // Arrange: hold the shelf read open so unmount cleanup owns the pending request.
+    let requestSignal: AbortSignal | undefined
+    const client = fakeClient({
+      getCopies: vi.fn((_titleId: string, _accessToken: string, signal?: AbortSignal) => {
+        requestSignal = signal
+        return new Promise<LibraryCopy[]>(() => undefined)
+      }),
+    })
+    const user = userEvent.setup()
+    const view = render(<LibraryAdminPage client={client} authorization={{ accessToken: 'token', canRead: true, canWrite: false }} />)
+
+    // Act
+    await user.selectOptions(await screen.findByLabelText('Seleccionar título'), 'title-1')
+    view.unmount()
+
+    // Assert
+    expect(requestSignal?.aborted).toBe(true)
   })
 
   it('registers a title without reporting a failure after the write succeeded', async () => {

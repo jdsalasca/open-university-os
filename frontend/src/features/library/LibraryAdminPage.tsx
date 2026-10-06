@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import type { FormEvent } from 'react'
 import { LibraryApiError, LIST_LIMIT } from './libraryClient'
 import { libraryClient as defaultLibraryClient } from './libraryClient'
@@ -61,6 +61,7 @@ function LibraryAdminPageContent({
   const [foundCopy, setFoundCopy] = useState<LibraryCopy | null>(null)
   const [barcodeError, setBarcodeError] = useState<string | null>(null)
   const [lookingUp, setLookingUp] = useState(false)
+  const copiesReadController = useRef<AbortController | null>(null)
 
   /** A refused bearer means the cached permissions are stale, so the institutional session is revalidated. */
   const reportAuthorizationRejection = useCallback(async (error: unknown) => {
@@ -104,6 +105,8 @@ function LibraryAdminPageContent({
     }
   }, [fetchCatalogue])
 
+  useEffect(() => () => copiesReadController.current?.abort(), [])
+
   function reload() {
     setLoadState('loading')
     setLoadError(null)
@@ -111,18 +114,27 @@ function LibraryAdminPageContent({
   }
 
   const selectTitle = useCallback(async (titleId: string) => {
+    copiesReadController.current?.abort()
+    copiesReadController.current = null
     setSelectedTitleId(titleId)
     setCopies([])
     setActionError(null)
     setCopiesFailed(false)
     if (!titleId) return
+    const controller = new AbortController()
+    copiesReadController.current = controller
     try {
-      setCopies(await client.getCopies(titleId, accessToken))
+      const nextCopies = await client.getCopies(titleId, accessToken, controller.signal)
+      if (controller.signal.aborted) return
+      setCopies(nextCopies)
     } catch (error) {
+      if (controller.signal.aborted) return
       // An unreadable shelf is not an empty shelf: the list must not claim there are no copies.
       setCopiesFailed(true)
       setActionError(LOAD_ERROR)
       await reportAuthorizationRejection(error)
+    } finally {
+      if (copiesReadController.current === controller) copiesReadController.current = null
     }
   }, [accessToken, client, reportAuthorizationRejection])
 
