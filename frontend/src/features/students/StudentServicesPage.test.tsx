@@ -120,6 +120,7 @@ describe('StudentServicesPage', () => {
     // Assert
     expect(within(agenda).getByText('Instantánea informativa consultada el 5 de octubre de 2026.')).toBeVisible()
     expect(within(agenda).getByText('actualizada 17 sep 2026')).toHaveAttribute('datetime', '2026-09-17')
+    fireEvent.click(within(agenda).getByRole('button', { name: /todas las fechas/i }))
     expect(within(agenda).getByRole('list', { name: 'Hitos publicados por ACRA' }).querySelectorAll('li')).toHaveLength(18)
     expect(within(agenda).getByRole('heading', { name: 'Matrícula · estudiantes sin beneficio de gratuidad · ordinaria' })).toBeVisible()
     const cancellationHeading = within(agenda).getByRole('heading', { name: 'Cancelación de asignaturas y semestre · presencial' })
@@ -257,7 +258,8 @@ describe('StudentServicesPage', () => {
 
     // Assert
     expect(screen.getByText('0', { selector: 'strong' })).toBeVisible()
-    expect(screen.getByRole('status')).toHaveTextContent('No encontramos servicios con esos filtros.')
+    const emptyHeading = screen.getByRole('heading', { name: 'No encontramos servicios con esos filtros.' })
+    expect(emptyHeading.closest('[role="status"]')).toHaveTextContent('No encontramos servicios con esos filtros.')
     await user.click(screen.getByRole('button', { name: 'Limpiar búsqueda y filtros' }))
     expect(screen.getAllByRole('article')).toHaveLength(11)
     expect(search).toHaveValue('')

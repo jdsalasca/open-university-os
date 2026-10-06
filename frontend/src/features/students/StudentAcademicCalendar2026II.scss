@@ -1,0 +1,108 @@
+.student-academic-calendar-filter {
+  display: grid;
+  gap: 0.55rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--ui-border, #e7e8e1);
+  border-radius: 0.85rem;
+  background: var(--ui-surface, #fff);
+}
+
+.student-academic-calendar-filter-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.student-academic-calendar-filter-options button,
+.student-academic-calendar-empty button {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.55rem 0.85rem;
+  border: 1px solid var(--ui-border-strong, #c9cbc1);
+  border-radius: 0.7rem;
+  background: var(--ui-surface, #fff);
+  color: var(--ui-text-primary, #20211d);
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.student-academic-calendar-filter-options button[aria-pressed='true'] {
+  border-color: var(--institution-dark, #171815);
+  background: var(--institution-dark, #171815);
+  color: #fff;
+}
+
+.student-academic-calendar-filter-options button span {
+  min-width: 1.5rem;
+  padding: 0.12rem 0.38rem;
+  border-radius: 99px;
+  background: var(--ui-surface-subtle, #f3f1e9);
+  color: var(--ui-text-primary, #20211d);
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+
+.student-academic-calendar-filter-options button[aria-pressed='true'] span {
+  background: var(--brand-primary, #ffcc29);
+  color: var(--institution-dark, #171815);
+}
+
+.student-academic-calendar-filter-options button:focus-visible,
+.student-academic-calendar-empty button:focus-visible {
+  outline: 3px solid var(--ui-focus, var(--brand-focus, #1a1a1a));
+  outline-offset: 3px;
+}
+
+.student-academic-calendar-filter-status {
+  margin: 0;
+  color: var(--ui-text-secondary, #5d6157);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.student-academic-calendar-empty {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1.25rem;
+  padding: 1rem 1.1rem;
+  border: 1px dashed var(--ui-border-strong, #c9cbc1);
+  border-radius: 0.9rem;
+  background: var(--ui-surface, #fff);
+}
+
+.student-academic-calendar-empty p {
+  margin: 0;
+  color: var(--ui-text-secondary, #5d6157);
+  line-height: 1.5;
+}
+
+.student-academic-calendar-empty button {
+  border-color: var(--institution-dark, #171815);
+  background: var(--institution-dark, #171815);
+  color: #fff;
+}
+
+@media (max-width: 500px) {
+  .student-academic-calendar-filter-options {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .student-academic-calendar-filter-options button {
+    min-width: 0;
+    padding-inline: 0.55rem;
+    font-size: 0.76rem;
+  }
+
+  .student-academic-calendar-empty {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}

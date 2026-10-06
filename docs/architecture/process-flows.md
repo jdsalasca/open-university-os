@@ -1467,7 +1467,7 @@ El [registro de procedencia](../discovery/uptc-undergraduate-directory-snapshot-
 
 ## Directorio público de servicios estudiantiles
 
-El directorio `/#estudiantes` presenta once fichas estáticas de Bienestar, Biblioteca, sistemas institucionales, gestiones académicas y calendario de pregrado. Bienestar Virtual y Apoyo socioeconómico permanecen como servicios separados. La búsqueda y el filtro por categoría operan en memoria del navegador; ningún texto se envía al backend o se persiste. La misma página muestra los 18 hitos publicados por ACRA para pregrado 2026-II y permite descargar una copia `.ics`. La ficha de fuentes registra las fechas, la fecha de actualización visible y el alcance de la instantánea. La agenda conserva las poblaciones/modalidades publicadas, distingue su fecha de consulta (5 de octubre de 2026) y enlaza a ACRA para verificar modificaciones.
+El directorio `/#estudiantes` presenta once fichas estáticas de Bienestar, Biblioteca, sistemas institucionales, gestiones académicas y calendario de pregrado. Bienestar Virtual y Apoyo socioeconómico permanecen como servicios separados. La búsqueda y el filtro por categoría operan en memoria del navegador; ningún texto se envía al backend o se persiste. La misma página contiene los 18 hitos de la instantánea pública de pregrado 2026-II, consultada el 5 de octubre de 2026, e indica la fecha de actualización visible en ACRA. Por defecto presenta los eventos cuyo último día publicado es hoy o posterior, usando `America/Bogota` y un límite inclusivo. Dos controles accesibles permiten alternar entre fechas vigentes/próximas y la instantánea completa; el estado vacío ofrece mostrar todas las fechas. La descarga `.ics` siempre incluye los 18 eventos, independiente del filtro. El enlace a ACRA permite verificar cambios; el filtro local no determina si una fecha aplica a una persona.
 
 ```mermaid
 sequenceDiagram
@@ -1478,10 +1478,20 @@ sequenceDiagram
   Visitor->>React: abre el directorio
   React->>React: presenta once fichas tipadas con fuente y fecha
   React-->>Visitor: muestra servicios institucionales en cinco categorías
-  React->>React: presenta 18 fechas de pregrado 2026-II como una instantánea pública
+  React->>React: calcula la fecha actual de Colombia y compara con el fin inclusivo de cada evento
+  React-->>Visitor: muestra hitos con endsOn >= hoy y anuncia el total
+  opt La persona consulta el calendario completo
+    Visitor->>React: selecciona «Todas las fechas»
+    React->>React: muestra los 18 hitos sin alterar la instantánea
+  end
+  alt La instantánea no tiene fechas vigentes o próximas
+    React-->>Visitor: muestra un mensaje y una acción para abrir todas las fechas
+    Visitor->>React: selecciona «Mostrar las fechas publicadas»
+    React->>React: presenta los 18 hitos originales
+  end
   opt La persona guarda las fechas en su calendario personal
     Visitor->>React: solicita la descarga .ics
-    React->>React: valida identificadores y fechas; serializa los 18 hitos y la fuente ACRA
+    React->>React: valida y serializa los 18 hitos originales y la fuente ACRA, sin usar el filtro de pantalla
     React-->>Visitor: descarga eventos de día completo con límites inclusivos
   end
   Visitor->>React: escribe texto o elige una categoría
@@ -1498,7 +1508,7 @@ sequenceDiagram
   Source-->>Visitor: muestra el calendario y sus cambios vigentes
 ```
 
-Las fichas orientan y no confirman requisitos, cupos ni disponibilidad. Aunque el título mencione préstamo o consulta, Universiry no presta recursos ni reserva espacios. El navegador abre las páginas públicas en otra pestaña con `noopener noreferrer`. La agenda es una copia estática: no consulta API ni determina si una fecha aplica a una persona. Cuando ACRA solo publica una fecha límite («hasta»), la vista no inventa el comienzo del intervalo; la fuente confirma los cambios y el estado actual. La serialización `.ics` reutiliza el adaptador compartido con admisiones, conserva las fechas finales inclusivas de la publicación y las codifica como `DTEND` exclusivo. Las áreas de Bienestar y Biblioteca deben validar el catálogo y su mantenimiento antes de tratarlo como contenido institucional vigente. Ver [el registro de fuentes](../discovery/uptc-student-services-directory-2026-10.md).
+Las fichas orientan y no confirman requisitos, cupos ni disponibilidad. Aunque el título mencione préstamo o consulta, Universiry no presta recursos ni reserva espacios. El navegador abre las páginas públicas en otra pestaña con `noopener noreferrer`. La agenda es una copia estática: no consulta API ni determina si una fecha aplica a una persona. El filtro aplica únicamente sobre las cadenas ISO de fecha de esta instantánea y toma la fecha del navegador en `America/Bogota`; no modifica los datos publicados. Cuando ACRA solo publica una fecha límite («hasta»), la vista no inventa el comienzo del intervalo. La descarga conserva las 18 fechas independientemente de la vista; la serialización `.ics` reutiliza el adaptador compartido con admisiones, conserva las fechas finales inclusivas de la publicación y las codifica como `DTEND` exclusivo. Las áreas de Bienestar y Biblioteca deben validar el catálogo y su mantenimiento antes de tratarlo como contenido institucional vigente. Ver [el registro de fuentes](../discovery/uptc-student-services-directory-2026-10.md).
 
 ## Catálogo y circulación de biblioteca
 
