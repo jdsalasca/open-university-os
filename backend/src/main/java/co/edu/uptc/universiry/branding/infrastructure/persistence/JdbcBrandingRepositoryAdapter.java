@@ -12,6 +12,8 @@ import org.springframework.jdbc.core.SqlParameterValue;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Types;
 import java.time.Clock;
 import java.time.Instant;
@@ -49,7 +51,7 @@ public class JdbcBrandingRepositoryAdapter implements BrandingRepository {
     @Override
     @Transactional(readOnly = true)
     public Optional<BrandingConfiguration> findCurrentPublic(Instant requestTime) {
-        return currentRevision(false).flatMap(revision -> loadConfiguration(revision, requestTime, true));
+        return currentPublicHeader().flatMap(header -> loadConfiguration(header, requestTime, true));
     }
 
     @Override
@@ -173,26 +175,42 @@ public class JdbcBrandingRepositoryAdapter implements BrandingRepository {
         return revisions.stream().findFirst();
     }
 
+    /**
+     * Puntero de revision y cabecera en un solo viaje. Antes eran dos consultas encadenadas —el
+     * puntero y despues la fila de {@code institution_branding_revision}— y cada una paga el tiempo
+     * de red entre contenedores. Medido el 5 de octubre de 2026, {@code GET /api/v1/branding} tardaba
+     * 92 ms de promedio; con 6 colores, 9 modulos y 0 banners el problema no eran las filas.
+     */
+    private Optional<RevisionHeader> currentPublicHeader() {
+        return jdbcTemplate.query(
+                """
+                        SELECT r.revision_id, r.institution_name, r.logo_light_asset_id, r.logo_dark_asset_id,
+                               r.favicon_asset_id
+                        FROM institution_branding_current c
+                        JOIN institution_branding_revision r ON r.revision_id = c.revision_id
+                        WHERE c.singleton_id = 1
+                        """,
+                (resultSet, rowNumber) -> headerOf(resultSet)
+        ).stream().findFirst();
+    }
+
     private Optional<BrandingConfiguration> loadConfiguration(long revision, Instant requestTime, boolean onlyActiveBanners) {
         List<RevisionHeader> headers = jdbcTemplate.query(
                 """
                         SELECT revision_id, institution_name, logo_light_asset_id, logo_dark_asset_id, favicon_asset_id
                         FROM institution_branding_revision WHERE revision_id = ?
                         """,
-                (resultSet, rowNumber) -> new RevisionHeader(
-                        resultSet.getLong("revision_id"),
-                        resultSet.getString("institution_name"),
-                        resultSet.getString("logo_light_asset_id"),
-                        resultSet.getString("logo_dark_asset_id"),
-                        resultSet.getString("favicon_asset_id")
-                ),
+                (resultSet, rowNumber) -> headerOf(resultSet),
                 revision
         );
         if (headers.isEmpty()) {
             return Optional.empty();
         }
+        return loadConfiguration(headers.getFirst(), requestTime, onlyActiveBanners);
+    }
 
-        RevisionHeader header = headers.getFirst();
+    private Optional<BrandingConfiguration> loadConfiguration(RevisionHeader header, Instant requestTime, boolean onlyActiveBanners) {
+        long revision = header.revision();
         Map<String, BrandColor> colors = new LinkedHashMap<>();
         jdbcTemplate.query(
                 "SELECT token_key, color_hex FROM institution_color_token WHERE revision_id = ? ORDER BY token_key",
@@ -247,6 +265,16 @@ public class JdbcBrandingRepositoryAdapter implements BrandingRepository {
                 modules,
                 banners
         ));
+    }
+
+    private static RevisionHeader headerOf(ResultSet resultSet) throws SQLException {
+        return new RevisionHeader(
+                resultSet.getLong("revision_id"),
+                resultSet.getString("institution_name"),
+                resultSet.getString("logo_light_asset_id"),
+                resultSet.getString("logo_dark_asset_id"),
+                resultSet.getString("favicon_asset_id")
+        );
     }
 
     private static SqlParameterValue nullableChar(String value) {

@@ -1,0 +1,19 @@
+Latencia de 20 peticiones por endpoint, backend local con 44 tablas y sesion de preview
+
+endpoint | estado | promedio | mediana | p95 | maximo | bajo 50 ms
+--- | ---: | ---: | ---: | ---: | ---: | ---
+/api/v1/me | 200 | 35.8 | 29.49 | 179.12 | 179.12 | si
+/api/v1/branding | 200 | 92.46 | 74.58 | 303.96 | 303.96 | NO
+/api/v1/academic-structure | 200 | 32.28 | 29.47 | 88.27 | 88.27 | si
+/api/v1/admin/academic-structure | 200 | 44.32 | 41.56 | 101.78 | 101.78 | si
+/api/v1/academic-catalog/programs | 200 | 23.84 | 18.7 | 57.72 | 57.72 | si
+/api/v1/admin/academic-catalog/drafts?pageSize=25 | 200 | 25.92 | 24.71 | 53.94 | 53.94 | si
+/api/v1/academic-periods | 200 | 18.1 | 16.38 | 56.1 | 56.1 | si
+/api/v1/admin/academic-periods | 200 | 38.08 | 31.3 | 95.93 | 95.93 | si
+/api/v1/notices | 200 | 57.58 | 37.65 | 304.83 | 304.83 | NO
+/api/v1/admissions/calls | 200 | 19.91 | 19.64 | 39.2 | 39.2 | si
+/api/v1/spaces | 200 | 73.33 | 50.5 | 340.19 | 340.19 | NO
+/api/v1/admin/academic-structure/audit-events?limit=50 | 200 | 23.03 | 14.15 | 79.45 | 79.45 | si
+
+Endpoints con promedio >= 50 ms: 3 de 12
+Promedio de la sesion completa (13 endpoints en serie): 40.39 ms
