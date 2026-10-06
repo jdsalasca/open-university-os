@@ -1,4 +1,4 @@
-import { Component, lazy, Suspense, useCallback, useEffect, useState } from 'react'
+import { Component, lazy, Suspense, useCallback, useEffect, useRef, useState } from 'react'
 import type { ReactNode } from 'react'
 import { academicCatalogClient } from './features/academics/academicCatalogClient'
 import type { AcademicCatalogClient, AcademicCatalogPermission } from './features/academics/contracts'
@@ -180,6 +180,49 @@ function ApplicationShell({
     window.addEventListener('hashchange', onHashChange)
     return () => window.removeEventListener('hashchange', onHashChange)
   }, [])
+
+  // Al cambiar de ruta el foco se queda en el enlace que se pulso, y el siguiente Tab sigue
+  // recorriendo el menu: el contenido nuevo no llega a anunciarse. Se mueve al encabezado principal de
+  // la pagina, que es lo que recomienda WAI-ARIA para navegacion de una sola pagina, y no al `main`
+  // entero por dos razones concretas:
+  //
+  //  1. `main` mide miles de pixeles y arranca en y=0, debajo de la barra superior, asi que cualquier
+  //     indicador en su borde superior queda tapado.
+  //  2. `main` empieza por el aviso de sesion sintetica, de modo que un lector de pantalla anunciaba
+  //     ese aviso en vez del titulo de la pagina a la que se acaba de entrar.
+  //
+  // Las vistas se cargan bajo demanda, asi que al cambiar de ruta el `h1` todavia no existe: React esta
+  // resolviendo el chunk y `main` solo contiene el marcador de carga. Por eso se enfoca `main` de
+  // inmediato —para no perder el foco— y en cuanto aparece el titulo se le pasa el foco a el.
+  //
+  // Solo al cambiar de vista, nunca en cada render, para no quitarle el foco a quien esta escribiendo.
+  const mainRef = useRef<HTMLElement | null>(null)
+  const firstView = useRef(true)
+  useEffect(() => {
+    if (firstView.current) {
+      firstView.current = false
+      return
+    }
+    const principal = mainRef.current
+    if (!principal) return
+    const enfocarTitulo = () => {
+      const titulo = principal.querySelector('h1')
+      if (!(titulo instanceof HTMLElement)) return false
+      if (!titulo.hasAttribute('tabindex')) titulo.setAttribute('tabindex', '-1')
+      titulo.focus()
+      return true
+    }
+    if (!enfocarTitulo()) {
+      principal.focus()
+      const observador = new MutationObserver(() => {
+        if (enfocarTitulo()) observador.disconnect()
+      })
+      observador.observe(principal, { childList: true, subtree: true })
+      // Si la vista nunca trae un `h1`, el observador se retira solo para no quedar mirando el DOM.
+      window.setTimeout(() => observador.disconnect(), 5000)
+    }
+    return () => undefined
+  }, [view])
 
   const modules = branding.modules.filter((module) =>
     module.available
@@ -562,7 +605,7 @@ function ApplicationShell({
           </div>
         </header>
 
-        <main id={mainContentId} tabIndex={-1}
+        <main id={mainContentId} tabIndex={-1} ref={mainRef}
           className={isHomeView ? 'workspace-home-page-content' : isStudentServicesView ? 'student-services-page-content' : isLibraryView ? 'library-page-content' : isNoticesView ? 'my-notices-page-content' : isNoticesAdminView ? 'notices-admin-page-content' : isRoleAccessView ? 'role-access-page-content' : isAdmissionsView ? 'admissions-page-content' : isSpacesView ? 'spaces-page-content' : isProgramsView ? 'catalog-page-content' : isAcademicOperationsView ? 'academic-page-content' : 'page-content identity-page-content'}>
           {isLocalPreviewSession && !isHomeView && (
             <aside

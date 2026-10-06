@@ -503,6 +503,38 @@ describe('App', () => {
     expect(screen.getByRole('status')).toHaveClass('module-loading-tall')
   })
 
+  // Medido en el navegador el 6 de octubre de 2026: al pulsar un enlace de la barra lateral el foco
+  // se quedaba en el propio enlace en 6 de 8 rutas, y con teclado o lector de pantalla el contenido
+  // nuevo no llegaba a anunciarse. El foco aterriza ahora en el titulo de la pagina, o en la region si
+  // la vista todavia no lo tiene porque su chunk sigue cargando.
+  it('moves focus into the content when the route changes from the shell navigation', async () => {
+    // Arrange
+    const user = userEvent.setup()
+    window.history.replaceState(null, '', '#resumen')
+    render(
+      <BrandingProvider loader={async () => DEFAULT_BRANDING}>
+        <App
+          oidcConfiguration={{ status: 'unconfigured' }}
+          currentIdentityClient={identityClientWithPermissions([])}
+          localPreviewSessionClient={null}
+        />
+      </BrandingProvider>,
+    )
+    const enlace = within(screen.getByRole('navigation', { name: 'Principal' }))
+      .getByRole('link', { name: 'Programas' })
+    enlace.focus()
+    expect(enlace).toHaveFocus()
+
+    // Act
+    await user.keyboard('{Enter}')
+    const mainContent = await screen.findByRole('main')
+
+    // Assert: el foco entra en el contenido, no se queda en el menu.
+    await waitFor(() => expect(mainContent.contains(document.activeElement)).toBe(true))
+    // Y aterriza en el titulo, que es lo que un lector de pantalla anuncia al entrar en la pagina.
+    await waitFor(() => expect(document.activeElement?.tagName).toBe('H1'))
+  })
+
   it('updates the skip link target when the active route changes', async () => {
     // Arrange
     const user = userEvent.setup()

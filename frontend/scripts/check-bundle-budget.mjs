@@ -39,7 +39,10 @@ export const DEFAULT_BUNDLE_BUDGETS = Object.freeze({
   // dark surface list, one by class and one by pattern, which cost ~200 B; the retry button needs its
   // own rule because it carries no class. Consolidating saved ~196 B against writing them separately.
   // The academic empty state and the catalog empty art join the same list, ~40 B more.
-  entryStyles: 23_800,
+  // The focus indicator for the page title adds ~34 B: a 3px ring on `main h1:focus-visible`. It cannot
+  // live on the region, because `main` is 4310 px tall and starts under the top bar, so nothing painted
+  // on its top edge is visible.
+  entryStyles: 23_900,
   workspaceHomeJavaScript: 300_000,
   // The route budget includes the public directory chunk but excludes the on-demand curriculum comparison panel.
   programsJavaScript: 350_000,
@@ -47,7 +50,7 @@ export const DEFAULT_BUNDLE_BUDGETS = Object.freeze({
   // its own surface, padding and z-index cost ~160 B.
   // #programas inherits the shared dark surface rules for the create entries and the empty state, so
   // it grows with the entry budget by ~80 B in this batch.
-  programsStyles: 56_400,
+  programsStyles: 56_500,
   oidcJavaScript: 75_000,
 })
 

@@ -134,6 +134,17 @@
 .environment-indicator { width: 7px; height: 7px; margin-top: 4px; border-radius: 50%; background: #7bc69a; box-shadow: 0 0 0 4px #7bc69a22; }
 
 .workspace { min-width: 0; }
+
+// Indicador de foco del titulo de la pagina, que es a donde aterriza el foco al cambiar de ruta.
+//
+// Se descarto poner el indicador en `main`: mide miles de pixeles y arranca en y=0, debajo de la barra
+// superior, asi que el borde superior queda tapado y no se veia. El contorno completo alrededor de la
+// region tampoco servia: en la captura parecia un error de maquetacion.
+.workspace main h1:focus-visible {
+  outline: 3px solid var(--ui-focus, var(--brand-focus, #1a1a1a));
+  outline-offset: 4px;
+}
+
 .topbar {
   display: flex;
   align-items: center;
