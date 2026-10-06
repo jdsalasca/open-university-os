@@ -9,7 +9,7 @@ import { test } from 'node:test'
 // texto. En un ancho de una sola columna la marca no compite con el titulo.
 const scss = readFileSync(fileURLToPath(new URL('../src/features/access/RoleAccessPage.scss', import.meta.url)), 'utf8')
 
-const movil = /\@media \(max-width: 600px\) \{([\s\S]*)\n\}/.exec(scss)?.[1] ?? ''
+const movil = /@media \(max-width: 600px\) \{([\s\S]*)\n\}/.exec(scss)?.[1] ?? ''
 
 test('en movil el heroe de accesos deja de competir con la marca por el ancho', () => {
   // Assert
