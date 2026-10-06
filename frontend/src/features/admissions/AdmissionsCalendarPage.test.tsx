@@ -30,12 +30,24 @@ describe('AdmissionsCalendarPage', () => {
     expect(page.querySelector('input')).toBeNull()
   })
 
-  it('links to the official ACRA calendar and identifies when its dates were checked', () => {
+  it('attributes public admissions guidance to UPTC without assigning responsibility to ACRA', () => {
     // Arrange
     render(<AdmissionsCalendarPage />)
 
     // Act
-    const officialCalendar = screen.getByRole('link', { name: /consultar calendario oficial de acra/i })
+    const page = screen.getByRole('region', { name: /admisiones.*pregrado presencial/i })
+
+    // Assert
+    expect(page).toHaveTextContent(/requisitos.*enlaces oficiales de uptc/i)
+    expect(page).not.toHaveTextContent(/\bACRA\b/i)
+  })
+
+  it('links to the official UPTC admissions calendar and identifies when its dates were checked', () => {
+    // Arrange
+    render(<AdmissionsCalendarPage />)
+
+    // Act
+    const officialCalendar = screen.getByRole('link', { name: /consultar calendario de admisiones publicado por la uptc/i })
 
     // Assert
     expect(officialCalendar).toHaveAttribute(
@@ -44,7 +56,7 @@ describe('AdmissionsCalendarPage', () => {
     )
     expect(officialCalendar).toHaveAttribute('target', '_blank')
     expect(officialCalendar).toHaveAttribute('rel', 'noreferrer')
-    expect(screen.getByText(/fuente.*acra.*actualizada el 15 de septiembre de 2026/i)).toBeVisible()
+    expect(screen.getByText(/fuente.*admisiones publicado por la uptc.*actualizada el 15 de septiembre de 2026/i)).toBeVisible()
     expect(screen.getByText(/consultada el 4 de octubre de 2026/i)).toBeVisible()
     expect(screen.getByRole('link', { name: /comunicado institucional.*2027-i/i })).toHaveAttribute(
       'href',

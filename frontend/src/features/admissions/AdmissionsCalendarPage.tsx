@@ -36,7 +36,7 @@ export function AdmissionsCalendarPage({
           <p className="admissions-eyebrow"><span aria-hidden="true" /> INFORMACIÓN PÚBLICA · UPTC</p>
           <h1>{calendar.title ?? 'Pregrado presencial 2027-I'}</h1>
           <p className="admissions-intro">
-            Una guía de fechas para seguir la convocatoria de la UPTC. Confirma requisitos y novedades directamente con ACRA antes de cada paso.
+            Una guía de fechas para seguir la convocatoria publicada por la UPTC. Consulta los requisitos y cambios vigentes en los enlaces oficiales de UPTC antes de cada trámite.
           </p>
           <div className="admissions-source-stamp">
             <span className="admissions-source-dot" aria-hidden="true" />
@@ -59,7 +59,7 @@ export function AdmissionsCalendarPage({
               Consultar {calendar.source.label} <span aria-hidden="true">↗</span>
             </a>
           </div>
-          <p className="admissions-download-note">Copia personal de las fechas publicadas. Verifica cambios en ACRA.</p>
+          <p className="admissions-download-note">Copia personal de las fechas publicadas. Verifica cambios en los enlaces oficiales de admisiones de UPTC.</p>
         </div>
 
         <aside className="admissions-call-card" aria-label={isPublishedCall ? 'Convocatoria publicada' : 'Convocatoria vigente'}>
@@ -107,7 +107,7 @@ export function AdmissionsCalendarPage({
         <section className="admissions-checklist" aria-labelledby="admissions-before-title">
           <p className="admissions-eyebrow"><span aria-hidden="true" /> ANTES DE INSCRIBIRTE</p>
           <h2 id="admissions-before-title">Revisa tus datos</h2>
-          <p>ACRA indica que debes contar con los resultados de Saber 11. Verifica que el código SNP, los nombres y los apellidos coincidan con el registro del ICFES.</p>
+          <p>La información de admisiones publicada por UPTC indica que debes contar con los resultados de Saber 11. Verifica que el código SNP, los nombres y los apellidos coincidan con el registro del ICFES.</p>
           <span className="admissions-checklist-footnote">Consulta los requisitos completos en la fuente oficial.</span>
         </section>
         <section className="admissions-official-source" aria-labelledby="admissions-source-title">
@@ -115,7 +115,7 @@ export function AdmissionsCalendarPage({
           <div>
             <p className="admissions-eyebrow">FUENTE Y SEGUIMIENTO</p>
             <h2 id="admissions-source-title">Mantente al día con UPTC</h2>
-            <p>Las fechas pueden tener ajustes. Consulta el acto enlazado por ACRA y el comunicado institucional antes de realizar cualquier trámite.</p>
+            <p>Las fechas pueden tener ajustes. Consulta la Resolución 111 de 2026 y el comunicado institucional en sus enlaces oficiales antes de realizar cualquier trámite.</p>
             {calendar.officialActSource && (
               <a href={calendar.officialActSource.url} target="_blank" rel="noreferrer">
                 Consultar {calendar.officialActSource.label} <span aria-hidden="true">↗</span>

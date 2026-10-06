@@ -24,7 +24,7 @@ function createAdmissionsCalendarDocument(calendar: PublicAdmissionsCalendar): C
     uidDomain: 'admisiones.universiry.local',
     filename: createAdmissionsCalendarFilename(calendar),
     sourceUrl: calendar.source.url,
-    sourceNotice: 'Instantánea descargada; confirma cambios directamente con ACRA.',
+    sourceNotice: 'Copia descargada; verifica los cambios en los enlaces oficiales de admisiones de UPTC.',
     events: calendar.milestones.map((milestone) => ({
       ...milestone,
       category: MILESTONE_CATEGORIES[milestone.kind],

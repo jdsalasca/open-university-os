@@ -6,7 +6,7 @@ export const OFFICIAL_ADMISSIONS_CALENDAR_2027_I: PublicAdmissionsCalendar = {
   updatedAt: '15 de septiembre de 2026',
   checkedAt: '4 de octubre de 2026',
   source: {
-    label: 'Calendario oficial de ACRA',
+    label: 'Calendario de admisiones publicado por la UPTC',
     url: 'https://reportes.uptc.edu.co/sitio/portal/sitios/universidad/vic_aca/adm_reg/1aspi/pre/',
   },
   confirmationSource: {
@@ -24,7 +24,7 @@ export const OFFICIAL_ADMISSIONS_CALENDAR_2027_I: PublicAdmissionsCalendar = {
       endsOn: '2026-10-21',
       dateLabel: '21 sep – 21 oct 2026',
       title: 'Venta de pines de inscripción',
-      description: 'ACRA publica este intervalo para los programas presenciales. Consulta en su página los medios, valores y condiciones vigentes.',
+      description: 'La publicación de admisiones de UPTC registra este intervalo para los programas presenciales. Consulta la fuente oficial para conocer los medios, valores y condiciones vigentes.',
       kind: 'application',
     },
     {
@@ -42,7 +42,7 @@ export const OFFICIAL_ADMISSIONS_CALENDAR_2027_I: PublicAdmissionsCalendar = {
       endsOn: '2026-10-29',
       dateLabel: '28 y 29 oct 2026',
       title: 'Pruebas especiales',
-      description: 'ACRA anuncia pruebas para Artes Plásticas y Visuales, Licenciatura en Educación Física, Recreación y Deporte, y Licenciatura en Música.',
+      description: 'La publicación de admisiones de UPTC incluye pruebas para Artes Plásticas y Visuales, Licenciatura en Educación Física, Recreación y Deporte, y Licenciatura en Música.',
       kind: 'selection',
     },
     {
@@ -60,7 +60,7 @@ export const OFFICIAL_ADMISSIONS_CALENDAR_2027_I: PublicAdmissionsCalendar = {
       endsOn: '2026-11-27',
       dateLabel: '17–27 nov 2026',
       title: 'Formulario de registro ISE',
-      description: 'Ventana informada por ACRA después de la publicación de resultados.',
+      description: 'Ventana publicada para el formulario de registro ISE, posterior a la publicación de resultados.',
       kind: 'enrollment',
     },
     {

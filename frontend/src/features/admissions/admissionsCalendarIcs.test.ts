@@ -28,6 +28,22 @@ describe('createAdmissionsCalendarIcs', () => {
     expect(calendar).not.toMatch(/DTSTART:[0-9]{8}T/)
   })
 
+  it('keeps downloaded guidance tied to UPTC publications without assigning an ACRA owner', () => {
+    // Arrange
+    const generatedAt = new Date('2026-10-01T17:00:00.000Z')
+
+    // Act
+    const calendar = createAdmissionsCalendarIcs(OFFICIAL_ADMISSIONS_CALENDAR_2027_I, generatedAt)
+    const unfolded = calendar.replace(/\r\n /g, '')
+
+    // Assert
+    expect(unfolded).toContain('Copia descargada\\; verifica los cambios en los enlaces oficiales de admisiones de UPTC.')
+    expect(unfolded).toContain('La publicación de admisiones de UPTC registra este intervalo')
+    expect(unfolded).toContain('La publicación de admisiones de UPTC incluye pruebas')
+    expect(unfolded).toContain('Ventana publicada para el formulario de registro ISE')
+    expect(unfolded).not.toMatch(/\bACRA\b/i)
+  })
+
   it('uses the selected call name in calendar metadata instead of retaining the 2027-I identifier', () => {
     // Arrange
     const selectedCall = {

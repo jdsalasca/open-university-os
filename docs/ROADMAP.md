@@ -519,3 +519,11 @@ cuenta; no se tocan desde aqui. El unico residuo que no se puede quitar es
 | Un defecto preexistente destapado | `App.test.tsx` tiene dos tests que afirman el marcador de carga perezosa. Fallan si cualquier test anterior carga el chunk de Programas, porque ese estado solo existe mientras la importacion sigue en vuelo. | Mi test de foco navega a Programas y con el los rompia. Se intento `vi.resetModules()` con import dinamico de `App` y **empeoro todo**: el `App` nuevo usa otra instancia de `BrandingContext`. Se revirtio y el test se movio despues de los dos sensibles, sin debilitar nada. |
 | Indicador visual, no solo DOM | Se probo `outline` en `main` y la captura mostro un recuadro negro rodeando casi toda la ventana: se lee como error de maquetacion. | El indicador quedo como un anillo de 3 px alrededor del titulo, con el token de foco del tema. Captura `anillo-titulo.png`. |
 | Verificacion | **534 pruebas en 78 archivos**, guardas en verde, lint sin avisos, build dentro de presupuesto. `check-route-focus` cubre indicador, `tabIndex`, busqueda del `h1`, paso del foco, respaldo, observador y que el primer render no robe el foco. | Presupuesto: `entryStyles` 23.800 → 23.900 y `programsStyles` 56.400 → 56.500, ~34 B por un anillo. Ver [evidencia](evidence/round-2026-10-05-foco-ruta/README.md). |
+
+### Neutralizar la atribucion institucional del calendario publico 2027-I - 6 de octubre de 2026
+
+| Entrega | Resultado verificable | Estado y siguiente paso |
+| --- | --- | --- |
+| Pagina e ICS | El calendario atribuye fechas y orientacion a publicaciones oficiales de admisiones de la UPTC, sin presentar a ACRA como responsable formal. | Se conservan URLs, fechas, eventos y requisitos ya publicados; no se cambian reglas de seleccion. |
+| Regresion | Dos pruebas AAA comprueban la atribucion neutral en la pagina y en el archivo descargable. | Las pruebas focalizadas pasaron, seguidas por la suite completa de 78 archivos. |
+| Validacion | Vitest 536/536, guardas Node 117/117, lint y build con presupuesto pasaron; la vista local de admisiones se revisa tras integrar el cambio. | Se conserva una atribucion basada en publicaciones, sin asignar propiedad institucional a un area no confirmada. |
