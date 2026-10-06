@@ -32,7 +32,7 @@ describe('StudentServicesPage', () => {
 
     // Assert
     const cards = screen.getAllByRole('article')
-    expect(cards).toHaveLength(11)
+    expect(cards).toHaveLength(12)
     expect(cards.map((card) => within(card).getByRole('heading').textContent)).toEqual([
       'Bienestar Universitario',
       'Bienestar Virtual',
@@ -45,12 +45,13 @@ describe('StudentServicesPage', () => {
       'SIRA estudiante',
       'Inscripción de materias',
       'Fechas académicas de pregrado',
+      'Pagos y recibos',
     ])
     expect(screen.getByRole('searchbox', { name: 'Buscar servicios estudiantiles' })).toBeVisible()
     expect(screen.queryAllByRole('form')).toHaveLength(0)
 
     const sourceLinks = screen.getAllByRole('link', { name: /en el portal oficial UPTC/i })
-    expect(sourceLinks).toHaveLength(11)
+    expect(sourceLinks).toHaveLength(12)
     for (const link of sourceLinks) {
       const sourceUrl = new URL(link.getAttribute('href') ?? '')
       expect(sourceUrl.protocol).toBe('https:')
@@ -68,7 +69,7 @@ describe('StudentServicesPage', () => {
     await screen.findByRole('heading', { name: 'Servicios para acompañar tu vida universitaria' })
 
     // Assert
-    expect(screen.getAllByRole('article')).toHaveLength(11)
+    expect(screen.getAllByRole('article')).toHaveLength(12)
     const officialRoutes = [
       {
         title: 'Cultura',
@@ -108,6 +109,45 @@ describe('StudentServicesPage', () => {
 
     expect(screen.queryAllByRole('form')).toHaveLength(0)
     expect(screen.queryByLabelText(/contraseña|documento|código estudiantil/i)).not.toBeInTheDocument()
+  })
+
+  it('links students to the official payment guide without collecting payment data', async () => {
+    // Arrange
+    renderStudentServicesPage()
+
+    // Act
+    const paymentHeading = await screen.findByRole('heading', { name: 'Pagos y recibos' })
+    const paymentCard = paymentHeading.closest('article')
+
+    // Assert
+    expect(paymentCard).not.toBeNull()
+    expect(within(paymentCard!).getByText(/universiry no recibe pagos ni datos bancarios/i)).toBeVisible()
+    const paymentLink = within(paymentCard!).getByRole('link', {
+      name: /consultar pagos y recibos en el portal oficial uptc/i,
+    })
+    expect(paymentLink).toHaveAttribute(
+      'href', 'https://www.uptc.edu.co/sitio/portal/sitios/universidad/vic_aca/adm_reg/reconline.html',
+    )
+    expect(paymentLink).toHaveAttribute('target', '_blank')
+    expect(paymentLink).toHaveAttribute('rel', 'noopener noreferrer')
+    expect(within(paymentCard!).queryByRole('textbox')).not.toBeInTheDocument()
+    expect(within(paymentCard!).queryByRole('form')).not.toBeInTheDocument()
+  })
+
+  it('finds the payment guide by receipt terminology inside the academic services category', async () => {
+    // Arrange
+    const user = userEvent.setup()
+    renderStudentServicesPage()
+    await screen.findByRole('heading', { name: 'Servicios para acompañar tu vida universitaria' })
+
+    // Act
+    await user.click(screen.getByRole('button', { name: 'Gestiones académicas' }))
+    await user.type(screen.getByRole('searchbox', { name: 'Buscar servicios estudiantiles' }), 'RECIBOS')
+
+    // Assert
+    expect(screen.getAllByRole('article')).toHaveLength(1)
+    expect(screen.getByRole('heading', { name: 'Pagos y recibos' })).toBeVisible()
+    expect(screen.getByText('1', { selector: 'strong' })).toBeVisible()
   })
 
   it('shows the source-attributed 2026-II student academic calendar and lets the visitor download it', async () => {
@@ -261,7 +301,7 @@ describe('StudentServicesPage', () => {
     const emptyHeading = screen.getByRole('heading', { name: 'No encontramos servicios con esos filtros.' })
     expect(emptyHeading.closest('[role="status"]')).toHaveTextContent('No encontramos servicios con esos filtros.')
     await user.click(screen.getByRole('button', { name: 'Limpiar búsqueda y filtros' }))
-    expect(screen.getAllByRole('article')).toHaveLength(11)
+    expect(screen.getAllByRole('article')).toHaveLength(12)
     expect(search).toHaveValue('')
     expect(search).toHaveFocus()
     expect(screen.getByRole('button', { name: 'Todos' })).toHaveAttribute('aria-pressed', 'true')

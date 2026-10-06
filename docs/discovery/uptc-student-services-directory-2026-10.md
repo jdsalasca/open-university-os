@@ -55,3 +55,9 @@ La consulta de fechas se contrastó con contenido indexado del dominio oficial `
 - La búsqueda normaliza mayúsculas y tildes en memoria del navegador. No requiere identidad y no se conecta a servicios personales.
 - La publicación de sistemas como SIRA, UPTC Conecta, Bienestar Virtual o los servicios de Biblioteca no confirma contratos de API, acceso automatizado ni autorización para reemplazarlos.
 - ACRA y Registro Académico no quedan designados como dueños de datos o procesos por aparecer en un enlace público.
+
+## Adición: pagos y recibos — 6 de octubre de 2026
+
+El directorio de `/#estudiantes` añade una ficha «Pagos y recibos» que enlaza a la página institucional [Información para el pago en línea](https://www.uptc.edu.co/sitio/portal/sitios/universidad/vic_aca/adm_reg/reconline.html). En la consulta por búsqueda del dominio oficial, el 6 de octubre, la página aparecía como una guía informativa de pago para trámites o servicios académicos y mostraba «Información actualizada: 28 de agosto» sin año visible. La apertura directa de la URL agotó el tiempo de espera; por eso no se copiaron pasos, valores, cuentas, requisitos ni instrucciones de pago.
+
+La ficha comparte la constante del enlace externo con la portada y solo orienta a la fuente. No contiene formulario, autenticación, datos bancarios, recibos personalizados ni procesamiento de pagos. La consulta pública no designa a ACRA como dueña funcional del proceso.

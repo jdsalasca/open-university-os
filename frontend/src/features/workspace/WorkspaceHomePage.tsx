@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import type { BrandBanner, PublicBranding } from '../branding/contracts'
 import type { ApplicationPermission } from '../identity/identityContracts'
+import { UPTC_OFFICIAL_PAYMENT_GUIDANCE_URL } from '../../shared/officialUptcLinks'
 import { WorkspaceLinkCard } from './WorkspaceLinkCard'
 import type { WorkspaceLink } from './workspaceContracts'
 import './WorkspaceHomePage.scss'
@@ -152,7 +153,7 @@ function buildPublicLinks(branding: PublicBranding): WorkspaceLink[] {
     symbol: '◎',
   })
   links.push({
-    href: 'https://www.uptc.edu.co/sitio/portal/sitios/universidad/vic_aca/adm_reg/reconline.html',
+    href: UPTC_OFFICIAL_PAYMENT_GUIDANCE_URL,
     title: 'Pagos y recibos',
     description: 'Consulta la información oficial de recaudo. Universiry no recibe pagos ni datos bancarios.',
     eyebrow: 'Canal oficial UPTC',

@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react'
+import { UPTC_OFFICIAL_PAYMENT_GUIDANCE_URL } from '../../shared/officialUptcLinks'
 import { StudentAcademicCalendar2026II } from './StudentAcademicCalendar2026II'
 import './StudentServicesPage.scss'
 
@@ -126,6 +127,14 @@ const STUDENT_SERVICES: readonly StudentService[] = [
     sourceUrl: 'https://uptc.edu.co/sitio/portal/sitios/universidad/vic_aca/adm_reg/2estu/est_pre.html',
     sourceUpdatedLabel: '17 sep 2026',
     sourceUpdatedDate: '2026-09-17',
+  },
+  {
+    id: 'pagos-recibos',
+    category: 'Gestiones académicas',
+    title: 'Pagos y recibos',
+    description: 'Consulta la guía oficial de pagos y recibos de la UPTC. Universiry no recibe pagos ni datos bancarios.',
+    searchTerms: ['pagos', 'recibos', 'recaudo', 'derechos pecuniarios'],
+    sourceUrl: UPTC_OFFICIAL_PAYMENT_GUIDANCE_URL,
   },
 ]
 
