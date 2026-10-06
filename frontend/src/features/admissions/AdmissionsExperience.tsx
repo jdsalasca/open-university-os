@@ -35,7 +35,9 @@ export function AdmissionsCalendarExperience({
   const [publicError, setPublicError] = useState(false)
   const [publicRefreshNumber, setPublicRefreshNumber] = useState(0)
   const [selectedCallId, setSelectedCallId] = useState<string | null>(null)
-  const selectedCall = calls.find((call) => call.callId === selectedCallId) ?? calls[0]
+  const [searchQuery, setSearchQuery] = useState('')
+  const matchingCalls = filterPublishedAdmissionsCalls(calls, searchQuery)
+  const selectedCall = matchingCalls.find((call) => call.callId === selectedCallId) ?? matchingCalls[0]
   const calendar = selectedCall ? toPublicCalendar(selectedCall) : undefined
 
   useEffect(() => {
@@ -82,19 +84,41 @@ export function AdmissionsCalendarExperience({
       {publicError && (
         <button className="admissions-admin-secondary" type="button" onClick={refreshPublicCall}>Reintentar</button>
       )}
-      {publicState === 'published' && calls.length > 1 && selectedCall && (
+      {publicState === 'published' && calls.length > 1 && (
         <div className="admissions-call-picker">
-          <label htmlFor="admissions-published-call">Convocatoria publicada</label>
-          <select id="admissions-published-call" value={selectedCall.callId}
-            onChange={(event) => setSelectedCallId(event.currentTarget.value)}>
-            {calls.map((call) => <option key={call.callId} value={call.callId}>
-              {call.content.callName} · {call.content.title}
-            </option>)}
-          </select>
-          <span>Elige el calendario que quieres consultar.</span>
+          <label htmlFor="admissions-call-search">Buscar convocatorias publicadas</label>
+          <input id="admissions-call-search" type="search" value={searchQuery}
+            onChange={(event) => setSearchQuery(event.currentTarget.value)}
+            aria-describedby="admissions-call-search-hint" />
+          <span id="admissions-call-search-hint">Busca por nombre, referencia oficial o texto de un hito.</span>
+          {searchQuery.trim().length > 0 && matchingCalls.length > 0 && (
+            <p className="admissions-call-search-count" role="status">
+              {matchingCalls.length} de {calls.length} convocatorias publicadas
+            </p>
+          )}
+          {matchingCalls.length > 1 && selectedCall && (
+            <>
+              <label htmlFor="admissions-published-call">Convocatoria publicada</label>
+              <select id="admissions-published-call" value={selectedCall.callId}
+                onChange={(event) => setSelectedCallId(event.currentTarget.value)}>
+                {matchingCalls.map((call) => <option key={call.callId} value={call.callId}>
+                  {call.content.callName} · {call.content.title}
+                </option>)}
+              </select>
+              <span>Elige el calendario que quieres consultar.</span>
+            </>
+          )}
+          {searchQuery.trim().length > 0 && matchingCalls.length === 0 && (
+            <div className="admissions-call-search-empty">
+              <p role="status">No hay convocatorias publicadas que coincidan con tu búsqueda.</p>
+              <button type="button" onClick={() => setSearchQuery('')}>Limpiar búsqueda</button>
+            </div>
+          )}
         </div>
       )}
-      <AdmissionsCalendarPage calendar={calendar} />
+      {publicState !== 'published' || selectedCall
+        ? <AdmissionsCalendarPage calendar={calendar} />
+        : null}
       {authorization?.canRead === true && (
         <AdmissionsCallManagementPanel
           client={client}
@@ -105,6 +129,26 @@ export function AdmissionsCalendarExperience({
       )}
     </div>
   )
+}
+
+function filterPublishedAdmissionsCalls(calls: readonly PublicAdmissionsCall[], searchQuery: string): PublicAdmissionsCall[] {
+  const query = normalizeAdmissionsSearchText(searchQuery)
+  if (!query) return [...calls]
+
+  return calls.filter((call) => {
+    const searchableText = [
+      call.callKey,
+      call.officialReference,
+      call.content.title,
+      call.content.callName,
+      ...call.content.milestones.flatMap((milestone) => [milestone.title, milestone.description]),
+    ].join(' ')
+    return normalizeAdmissionsSearchText(searchableText).includes(query)
+  })
+}
+
+function normalizeAdmissionsSearchText(value: string): string {
+  return value.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLocaleLowerCase('es-CO').replace(/\s+/g, ' ').trim()
 }
 
 function toPublicCalendar(call: PublicAdmissionsCall): PublicAdmissionsCalendar {

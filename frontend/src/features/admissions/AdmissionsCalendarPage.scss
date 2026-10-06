@@ -17,9 +17,48 @@
 }
 
 .admissions-call-picker label { font-weight: 750; }
-.admissions-call-picker select { width: min(100%, 560px); min-height: 40px; padding: 8px 11px; border: 1px solid #d9d6c8; border-radius: 8px; background: #fffef8; color: #272820; font: inherit; }
-.admissions-call-picker select:focus-visible { @include tokens.focus-ring; }
-.admissions-call-picker span { color: #706f65; font-size: 9px; }
+.admissions-call-picker select,
+.admissions-call-picker input[type='search'] {
+  width: min(100%, 560px);
+  min-height: 44px;
+  padding: 8px 11px;
+  border: 1px solid var(--ui-border, #d9d6c8);
+  border-radius: 8px;
+  background: var(--ui-surface, #fffef8);
+  color: var(--ui-text-primary, #272820);
+  font: inherit;
+}
+.admissions-call-picker select:focus-visible,
+.admissions-call-picker input:focus-visible,
+.admissions-call-search-empty button:focus-visible { @include tokens.focus-ring; }
+.admissions-call-picker span { color: var(--ui-text-secondary, #55564d); font-size: 12px; }
+.admissions-call-search-count { margin: 2px 0; color: var(--ui-text-secondary, #55564d); font-size: 12px; }
+.admissions-call-search-empty {
+  display: flex;
+  width: min(100%, 560px);
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 16px;
+  padding: 12px;
+  border: 1px solid var(--ui-border, #d9d6c8);
+  border-radius: 10px;
+  background: var(--ui-surface-subtle, #f4f4f0);
+  color: var(--ui-text-primary, #272820);
+}
+.admissions-call-search-empty p { margin: 0; font-size: 12px; }
+.admissions-call-search-empty button {
+  min-height: 40px;
+  padding: 6px 10px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--brand-focus, #1a1a1a);
+  font: inherit;
+  font-weight: 750;
+  text-decoration: underline;
+  cursor: pointer;
+}
 
 .admissions-hero {
   position: relative;

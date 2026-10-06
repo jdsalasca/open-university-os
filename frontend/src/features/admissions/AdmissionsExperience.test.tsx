@@ -128,6 +128,68 @@ describe('AdmissionsExperience', () => {
     expect(callCard).not.toHaveTextContent('2027—I')
   })
 
+  it('filters published calls by public text without accent sensitivity', async () => {
+    // Arrange
+    const user = userEvent.setup()
+    const secondCall: PublicAdmissionsCall = {
+      ...publishedCall,
+      callId: 'b48bb8d1-a0c3-4a74-a926-95b8737b1879',
+      callKey: 'posgrado-especializacion-2028-ii',
+      revisionId: 'd03a8db4-4ead-4c71-8a5a-61d3394564b3',
+      content: {
+        ...publishedCall.content,
+        title: 'Posgrado en Educación',
+        callName: 'Calendario Académico 2028-II',
+        milestones: [{ key: 'documents', kind: 'APPLICATION', startsOn: '2028-01-01', endsOn: '2028-01-05',
+          title: 'Recepción de documentos', description: 'Educación a distancia.' }],
+      },
+      officialReference: 'Resolución Única 93 de 2028',
+    }
+    const client = clientWith({ getPublicCalls: async () => [publishedCall, secondCall] })
+
+    // Act
+    render(<AdmissionsExperience client={client} />)
+    const search = await screen.findByRole('searchbox', { name: /buscar convocatorias publicadas/i })
+    await user.type(search, ' EDUCACION ')
+
+    // Assert
+    expect(await screen.findByRole('heading', { name: 'Posgrado en Educación' })).toBeVisible()
+    expect(screen.getByText('1 de 2 convocatorias publicadas')).toBeVisible()
+    expect(screen.queryByRole('heading', { name: /pregrado presencial 2028-i/i })).not.toBeInTheDocument()
+
+    for (const query of ['posgrado-especializacion', 'resolucion unica 93', 'recepcion de documentos', 'educacion a distancia']) {
+      await user.clear(search)
+      await user.type(search, query)
+      expect(await screen.findByRole('heading', { name: 'Posgrado en Educación' })).toBeVisible()
+    }
+  })
+
+  it('shows a clearable empty result instead of the reference calendar when no call matches', async () => {
+    // Arrange
+    const user = userEvent.setup()
+    const secondCall: PublicAdmissionsCall = {
+      ...publishedCall,
+      callId: 'b48bb8d1-a0c3-4a74-a926-95b8737b1879',
+      callKey: 'pregrado-presencial-2027-i',
+      revisionId: 'd03a8db4-4ead-4c71-8a5a-61d3394564b3',
+      content: { ...publishedCall.content, title: 'Pregrado presencial 2027-I',
+        callName: 'Primer semestre académico de 2027' },
+    }
+    const client = clientWith({ getPublicCalls: async () => [publishedCall, secondCall] })
+
+    // Act
+    render(<AdmissionsExperience client={client} />)
+    const search = await screen.findByRole('searchbox', { name: /buscar convocatorias publicadas/i })
+    await user.type(search, 'odontología sin coincidencias')
+
+    // Assert
+    expect(await screen.findByText(/no hay convocatorias publicadas que coincidan/i)).toBeVisible()
+    expect(screen.queryByRole('heading', { name: /pregrado presencial 2027-i/i })).not.toBeInTheDocument()
+    expect(screen.queryByRole('complementary', { name: /convocatoria vigente/i })).not.toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: /limpiar búsqueda/i }))
+    expect(await screen.findByRole('heading', { name: /pregrado presencial 2028-i/i })).toBeVisible()
+  })
+
   it('does not query or show administration without the backend read permission', async () => {
     // Arrange
     const client = clientWith()
