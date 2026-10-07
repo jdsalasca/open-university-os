@@ -87,7 +87,10 @@ Add a private helper in `V0OperationalBoundaryTest.java` that:
 - [ ] **Step 4: Run the test to verify it passes**
 
 Run: `cd backend && ./mvnw -Dtest=V0OperationalBoundaryTest test`
-Expected: `Tests run: 2, Failures: 0, Errors: 0, Skipped: 0`.
+Expected: `Tests run: 3, Failures: 0, Errors: 0, Skipped: 0`.
+
+The third test pins singular, plural, and document variants through `isOperationalTableName`; the schema
+assertion reuses the same predicate instead of an inline set.
 
 - [ ] **Step 5: Run the backend suite**
 
@@ -137,7 +140,7 @@ existing route parser.
 - [ ] **Step 4: Run the tests to verify they pass**
 
 Run: `cd frontend && node --test scripts/check-api-surface.node-test.mjs`
-Expected: `tests 5, pass 5, fail 0`.
+Expected: `tests 6, pass 6, fail 0`, including the singular/plural/admin detector test.
 
 - [ ] **Step 5: Verify the new tests detect a real violation**
 

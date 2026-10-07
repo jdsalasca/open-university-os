@@ -75,12 +75,19 @@ const esPrefijo = (base, ruta) => {
 // pagos ni cuentas locales. Cualquier ruta nueva en estos recursos debe actualizar este guard junto con
 // su decision institucional.
 const RECURSOS_OPERATIVOS_FUERA_DE_V0 = new Set([
+  'applicant',
   'applicants',
+  'enrollment',
   'enrollments',
+  'matriculation',
   'matriculations',
+  'payment',
   'payments',
+  'receipt',
   'receipts',
+  'reservation',
   'reservations',
+  'registration',
   'registrations',
 ])
 
@@ -120,4 +127,24 @@ test('el backend no expone rutas operativas fuera del alcance V0', () => {
 
 test('el cliente no llama rutas operativas fuera del alcance V0', () => {
   assert.deepEqual(findOperationalIntakeRoutes(rutas), [])
+})
+
+test('el detector operativo cubre formas singulares, plurales y administrativas', () => {
+  assert.deepEqual(findOperationalIntakeRoutes([
+    '/api/v1/applicant',
+    '/api/v1/applicants',
+    '/api/v1/enrollment',
+    '/api/v1/admin/payments',
+    '/api/v1/receipts',
+    '/api/v1/reservation',
+    '/api/v1/registrations',
+  ]), [
+    '/api/v1/admin/payments',
+    '/api/v1/applicant',
+    '/api/v1/applicants',
+    '/api/v1/enrollment',
+    '/api/v1/receipts',
+    '/api/v1/registrations',
+    '/api/v1/reservation',
+  ])
 })
