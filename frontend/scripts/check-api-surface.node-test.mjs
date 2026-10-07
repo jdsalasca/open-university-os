@@ -71,6 +71,28 @@ const esPrefijo = (base, ruta) => {
   return b.length <= r.length && b.every((s, i) => s === r[i] || /^\{[A-Za-z]+\}$/.test(s))
 }
 
+// V0 publica informacion y enlaces oficiales; no tramita inscripciones, matricula, reservas, recibos,
+// pagos ni cuentas locales. Cualquier ruta nueva en estos recursos debe actualizar este guard junto con
+// su decision institucional.
+const RECURSOS_OPERATIVOS_FUERA_DE_V0 = new Set([
+  'applicants',
+  'enrollments',
+  'matriculations',
+  'payments',
+  'receipts',
+  'reservations',
+  'registrations',
+])
+
+function findOperationalIntakeRoutes(rutas) {
+  return rutas.filter((ruta) => {
+    const partes = segmentos(ruta)
+    if (partes.length < 3 || partes[0] !== 'api' || partes[1] !== 'v1') return false
+    const recurso = partes[2] === 'admin' ? partes[3] : partes[2]
+    return RECURSOS_OPERATIVOS_FUERA_DE_V0.has(recurso)
+  }).sort()
+}
+
 test('toda ruta del cliente tiene un mapeo que la publica', () => {
   // Se toma /api/v1/recurso como base: mas especifico detectaria drift real,
   // menos especifico dejaria pasar recursos que ya no existen.
@@ -90,4 +112,12 @@ test('todo recurso administrativo del backend lo consume algun cliente', () => {
     [],
     'el backend expone recursos administrativos que el cliente nunca llama',
   )
+})
+
+test('el backend no expone rutas operativas fuera del alcance V0', () => {
+  assert.deepEqual(findOperationalIntakeRoutes(mapeos.map((m) => m.ruta)), [])
+})
+
+test('el cliente no llama rutas operativas fuera del alcance V0', () => {
+  assert.deepEqual(findOperationalIntakeRoutes(rutas), [])
 })
