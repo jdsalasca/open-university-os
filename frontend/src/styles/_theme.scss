@@ -337,6 +337,14 @@
   color: var(--ui-text-secondary);
 }
 
+// El patron `[class*='-note']` de la regla de texto apagado pinta este aviso del gris del modo
+// oscuro mientras su fondo sigue siendo el claro del componente. Se repintan fondo y texto y se deja
+// el borde amarillo de acento, que funciona en ambos temas.
+:root[data-theme='dark'] .workspace main .admissions-source-note {
+  background: var(--ui-surface-raised);
+  color: var(--ui-text-primary);
+}
+
 :root[data-theme='dark'] .workspace main .catalog-hero {
   border-color: var(--ui-border);
   background: var(--ui-surface-raised);

@@ -514,6 +514,25 @@ test('the measured candidate list is rendered and clean, so it is not pending wo
     'the report must record what the browser sweep found')
 })
 
+// Hallazgo del 6 de octubre de 2026 con axe-core sobre `dark #admisiones`: `.admissions-source-note`
+// a ratio 2,27 (`#a8aea2` sobre `#ffffff`). El componente fija su fondo en `var(--brand-surface)` pero
+// su `color: var(--brand-text)` pierde contra el patron `[class*='-note']` de la regla de texto apagado
+// del tema, que le pone el gris apagado del modo oscuro sobre fondo claro.
+// Se conserva el borde amarillo de acento: solo se repintan fondo y texto.
+test('dark theme gives the admissions source note a readable surface', () => {
+  // Arrange
+  const selector = ':root[data-theme=dark] .workspace main .admissions-source-note'
+
+  // Act
+  const declarations = darkRule(selector)
+
+  // Assert
+  assert.ok(declarations, 'dark admissions source note rule must be present')
+  assert.match(declarations, /background:\s*var\(--ui-surface-raised\);/)
+  assert.match(declarations, /color:\s*var\(--ui-text-primary\);/)
+  assertReadableContrast(declarations)
+})
+
 test('dark theme keeps the curriculum catalog hero readable', () => {
   // Arrange: measured in the browser, .catalog-hero keeps a cream gradient while the global dark
   // theme paints its heading light, so "Mallas curriculares de pregrado" rendered at ratio 1.0.
