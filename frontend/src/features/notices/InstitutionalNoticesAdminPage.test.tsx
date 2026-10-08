@@ -28,6 +28,15 @@ function fakeClient(overrides: Partial<NoticesAdminClient> = {}): NoticesAdminCl
 afterEach(() => cleanup())
 
 describe('InstitutionalNoticesAdminPage', () => {
+  // axe-core, 8 de octubre de 2026: la página empezaba en `h2` sin `h1`.
+  it('titles the page with a level-one heading', async () => {
+    // Arrange + Act
+    render(<InstitutionalNoticesAdminPage client={fakeClient()} authorization={{ accessToken: 'token', canRead: true, canWrite: false }} />)
+
+    // Assert
+    expect(await screen.findByRole('heading', { level: 1, name: 'Avisos institucionales' })).toBeVisible()
+  })
+
   it('lists the published notices with their reference and audiences', async () => {
     // Arrange + Act
     render(<InstitutionalNoticesAdminPage client={fakeClient()} authorization={{ accessToken: 'token', canRead: true, canWrite: false }} />)

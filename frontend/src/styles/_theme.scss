@@ -345,6 +345,14 @@
   color: var(--ui-text-primary);
 }
 
+// El filtro pulsado fija fondo amarillo y texto oscuro con literales; la regla puerta le pinta el
+// texto claro en oscuro (1,33 sobre `#ffcc29`). Se usan literales a proposito, como en el resto de
+// superficies especiales de este archivo: el amarillo de marca no cambia con el tema.
+:root[data-theme='dark'] .workspace main .student-academic-calendar-filter-options button[aria-pressed='true'] span {
+  background: #ffcc29;
+  color: #171815;
+}
+
 :root[data-theme='dark'] .workspace main .catalog-hero {
   border-color: var(--ui-border);
   background: var(--ui-surface-raised);

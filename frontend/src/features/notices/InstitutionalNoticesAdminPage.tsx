@@ -130,7 +130,7 @@ function InstitutionalNoticesAdminPageContent({
     <section className="notices-admin" aria-labelledby="notices-admin-title">
       <header className="notices-admin-heading">
         <p className="notices-admin-kicker">COMUNICACIONES INSTITUCIONALES</p>
-        <h2 id="notices-admin-title">Avisos institucionales</h2>
+        <h1 id="notices-admin-title">Avisos institucionales</h1>
         <p>Cada aviso se publica completo y no se edita; una corrección es otro aviso. La audiencia decide quién puede leerlo.</p>
       </header>
 
@@ -148,7 +148,7 @@ function InstitutionalNoticesAdminPageContent({
           {notices.map((notice) => (
             <li key={notice.noticeId} className="notices-admin-item">
               <div className="notices-admin-item-heading">
-                <h3>{notice.title}</h3>
+                <h2>{notice.title}</h2>
                 <span className="notices-admin-window">
                   <time dateTime={notice.publishedFrom}>{notice.publishedFrom}</time>
                   {' – '}
@@ -173,7 +173,7 @@ function InstitutionalNoticesAdminPageContent({
 
       {canWrite && (
         <form className="notices-admin-form" aria-label="Publicar aviso institucional" onSubmit={(event) => void publish(event)}>
-          <h3>Publicar aviso</h3>
+          <h2>Publicar aviso</h2>
           <label className="notices-admin-field"><span>Título</span>
             <input name="title" required maxLength={160} /></label>
           <label className="notices-admin-field"><span>Cuerpo</span>

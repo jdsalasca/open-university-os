@@ -533,6 +533,24 @@ test('dark theme gives the admissions source note a readable surface', () => {
   assertReadableContrast(declarations)
 })
 
+// Hallazgo del 8 de octubre de 2026 con axe-core sobre `dark #admisiones` y `dark #estudiantes`,
+// una vez corregida la lista de rutas (la anterior medía la portada dos veces en lugar de `#avisos`).
+// El filtro pulsado del calendario estudiantil fija su fondo amarillo con literal y su texto oscuro
+// con literal, y la regla puerta le pinta el texto claro en oscuro: 1,33 sobre `#ffcc29`.
+test('dark theme keeps the pressed student filter readable on its yellow surface', () => {
+  // Arrange
+  const selector = ':root[data-theme=dark] .workspace main .student-academic-calendar-filter-options button[aria-pressed=true] span'
+
+  // Act
+  const declarations = darkRule(selector)
+
+  // Assert
+  assert.ok(declarations, 'dark pressed student filter rule must be present')
+  assert.match(declarations, /background:\s*#ffcc29;/)
+  assert.match(declarations, /color:\s*#171815;/)
+  assertReadableContrast(declarations)
+})
+
 test('dark theme keeps the curriculum catalog hero readable', () => {
   // Arrange: measured in the browser, .catalog-hero keeps a cream gradient while the global dark
   // theme paints its heading light, so "Mallas curriculares de pregrado" rendered at ratio 1.0.

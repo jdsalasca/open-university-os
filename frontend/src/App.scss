@@ -181,7 +181,7 @@
 .page-content { max-width: 1440px; margin: 0 auto; padding: 34px 42px 20px; }
 .workspace-home-page-content { min-width: 0; min-height: calc(100vh - 69px); padding: 0; }
 .workspace-home-page-content > .page-footer { width: min(calc(100% - clamp(36px, 6.4vw, 96px)), 1510px); margin: 0 auto 18px; }
-.module-loading { display: grid; min-height: clamp(220px, 54vh, 520px); place-items: center; color: #74766e; font-size: 12px; }
+.module-loading { display: grid; min-height: clamp(220px, 54vh, 520px); place-items: center; color: #6b6d62; font-size: 12px; }
 // ponytail: la reserva replica la altura real del modulo (~4508 px medidos con la
 // ventana de 24 tarjetas). Si cambia la ventana o el contenido, hay que volver a
 // medir; mientras tanto el salto del footer es preferible a un CLS de 0,75.

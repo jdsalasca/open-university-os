@@ -21,6 +21,16 @@ function fakeClient(overrides: Partial<NoticesClient> = {}): NoticesClient {
 afterEach(() => cleanup())
 
 describe('MyNoticesPage', () => {
+  // axe-core, 8 de octubre de 2026: la página empezaba en `h2` sin `h1`. El título de página es el
+  // nivel uno; los avisos cuelgan de él como nivel dos.
+  it('titles the page with a level-one heading', async () => {
+    // Arrange + Act
+    render(<MyNoticesPage client={fakeClient()} accessToken="token" />)
+
+    // Assert
+    expect(await screen.findByRole('heading', { level: 1, name: 'Mis avisos' })).toBeVisible()
+  })
+
   it('lists the notices a person can read with their validity window', async () => {
     // Arrange + Act
     render(<MyNoticesPage client={fakeClient()} accessToken="token" />)

@@ -44,7 +44,9 @@ export const DEFAULT_BUNDLE_BUDGETS = Object.freeze({
   // on its top edge is visible.
   // The admissions source note needs its own dark surface: the muted-text pattern
   // [class*='-note'] paints it at 2.27 on its light background, ~90 B. The yellow accent border is kept as is.
-  entryStyles: 24_000,
+  // El filtro pulsado del calendario estudiantil necesita superficie propia en oscuro:
+  // el patron de texto apagado lo dejaba a 1.33 sobre el amarillo. ~110 B.
+  entryStyles: 24_150,
   workspaceHomeJavaScript: 300_000,
   // The route budget includes the public directory chunk but excludes the on-demand curriculum comparison panel.
   programsJavaScript: 350_000,
@@ -52,7 +54,7 @@ export const DEFAULT_BUNDLE_BUDGETS = Object.freeze({
   // its own surface, padding and z-index cost ~160 B.
   // #programas inherits the shared dark surface rules for the create entries and the empty state, so
   // it grows with the entry budget by ~80 B in this batch.
-  programsStyles: 56_600,
+  programsStyles: 56_750,
   oidcJavaScript: 75_000,
 })
 

@@ -646,3 +646,11 @@ cuenta; no se tocan desde aqui. El unico residuo que no se puede quitar es
 | --- | --- | --- |
 | La CI no construye las imágenes | Los Dockerfiles de producción se verificarían el día del despliegue, tarde. | `check-prod-dockerfiles` fija: backend non-root + readiness + sin perfil dev + multietapa; frontend nginx multietapa sin dev server, con `nginx.conf` y solo `dist` en la etapa final. |
 | Verificado con mutación | `USER root` temporal lo deja en rojo; restaurado en verde. | El propio guard se afinó una vez: detectaba la palabra en comentarios, ahora solo patrones de activación real. Ver [evidencia](evidence/round-2026-10-08-imagenes-prod/README.md). |
+
+### La auditoría medía la portada dos veces - 8 de octubre de 2026
+
+| Entrega | Resultado verificable | Estado y siguiente paso |
+| --- | --- | --- |
+| `#noticias` no existe | Las rutas reales salen de `readApplicationView`: 11 en total. `#noticias` cae a la portada. | `auditar-axe.mjs` usaba `#noticias`: medía la portada dos veces y nunca vio `#avisos`, `#avisos-admin` ni `#estudiantes`. Lista corregida a las 11 rutas. |
+| 7 violaciones reales nuevas | `page-has-heading-one` ×4 en `#avisos` y `#avisos-admin` (empiezan en `h2`); `.module-loading` a 4,17 en claro; filtro pulsado estudiantil a **1,33** sobre amarillo en oscuro. | Las dos páginas pasan a `h1` con sus `h3` bajados a `h2` (y sus 3 reglas SCSS); `.module-loading` se oscurece a 4,77; el filtro conserva texto oscuro sobre amarillo en oscuro. |
+| Verificación | **axe-core 0 violaciones** en 22 combinaciones, foco 8/8 en títulos, **557 pruebas en 80 archivos y 129 guardas**, lint sin avisos, build dentro de presupuesto. | Presupuesto: `entryStyles` 24.000 → 24.150 y `programsStyles` 56.600 → 56.750, ~110 B por la superficie del filtro. Ver [evidencia](evidence/round-2026-10-08-humo/README.md). |

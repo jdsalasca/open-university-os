@@ -72,7 +72,7 @@ function MyNoticesPageContent({ client, accessToken }: { client: NoticesClient; 
     <section className="my-notices" aria-labelledby="my-notices-title">
       <header className="my-notices-heading">
         <p className="my-notices-kicker">COMUNICACIONES INSTITUCIONALES</p>
-        <h2 id="my-notices-title">Mis avisos</h2>
+        <h1 id="my-notices-title">Mis avisos</h1>
         <p>Avisos cuya audiencia corresponde a tus ámbitos institucionales vigentes. El servidor decide qué puedes leer.</p>
       </header>
 
@@ -88,7 +88,7 @@ function MyNoticesPageContent({ client, accessToken }: { client: NoticesClient; 
           {notices.map((notice) => (
             <li key={notice.noticeId} className="my-notices-item">
               <div className="my-notices-item-heading">
-                <h3>{notice.title}</h3>
+                <h2>{notice.title}</h2>
                 <span className="my-notices-window">
                   <time dateTime={notice.publishedFrom}>{notice.publishedFrom}</time>
                   {' – '}

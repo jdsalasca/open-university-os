@@ -1,0 +1,25 @@
+axe-core sobre 11 rutas en tema claro y oscuro, sesion de preview activa
+violaciones: 0
+
+light #resumen: sin violaciones
+light #inicio: sin violaciones
+light #estudiantes: sin violaciones
+light #biblioteca: sin violaciones
+light #avisos: sin violaciones
+light #avisos-admin: sin violaciones
+light #programas: sin violaciones
+light #academia: sin violaciones
+light #admisiones: sin violaciones
+light #espacios: sin violaciones
+light #accesos: sin violaciones
+dark #resumen: sin violaciones
+dark #inicio: sin violaciones
+dark #estudiantes: sin violaciones
+dark #biblioteca: sin violaciones
+dark #avisos: sin violaciones
+dark #avisos-admin: sin violaciones
+dark #programas: sin violaciones
+dark #academia: sin violaciones
+dark #admisiones: sin violaciones
+dark #espacios: sin violaciones
+dark #accesos: sin violaciones

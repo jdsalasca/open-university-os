@@ -22,16 +22,21 @@ const { chromium } = require(process.env.PLAYWRIGHT_CORE)
 const axeSource = (await import('node:fs')).readFileSync(process.env.AXE_PATH, 'utf8')
 
 const BASE = process.env.BASE ?? 'http://localhost:5173'
+// Once rutas reales de la aplicación, leídas de `readApplicationView` en App.tsx. `#noticias` NO
+// existe: cae a la portada. Las auditorías anteriores lo usaban y midieron la portada dos veces,
+// dejando `#avisos`, `#avisos-admin` y `#estudiantes` sin auditar.
 const RUTAS = [
   ['#resumen', 'Tu universidad'],
   ['#inicio', 'Centro de identidad visual'],
+  ['#estudiantes', 'Servicios para acompañar'],
+  ['#biblioteca', 'Biblioteca'],
+  ['#avisos', 'Mis avisos'],
+  ['#avisos-admin', 'Administrar avisos'],
   ['#programas', 'Mallas curriculares'],
   ['#academia', 'Estructura y periodos'],
   ['#admisiones', 'Pregrado presencial'],
   ['#espacios', 'espacios'],
   ['#accesos', 'Accesos'],
-  ['#biblioteca', 'Biblioteca'],
-  ['#noticias', 'Mis avisos'],
 ]
 
 const navegador = await chromium.launchPersistentContext(
