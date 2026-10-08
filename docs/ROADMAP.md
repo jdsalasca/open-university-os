@@ -688,3 +688,10 @@ cuenta; no se tocan desde aqui. El unico residuo que no se puede quitar es
 | Entrega | Resultado verificable | Estado y siguiente paso |
 | --- | --- | --- |
 | Creación completa en el navegador | `ciclo-biblioteca.mjs` con sesión de preview: registrar título, elegirlo, registrar ejemplar con código sintético y recuperarlo por búsqueda. | **3 de 3 verdes.** Préstamo/devolución/retiro conservan su cobertura unitaria y de concurrencia; el cableado cliente→API→MySQL→vista es lo que aquí se prueba. Ver [evidencia](evidence/round-2026-10-08-biblioteca/README.md). |
+
+### Re-verificación de imágenes tras cambios - 8 de octubre de 2026
+
+| Entrega | Resultado verificable | Estado y siguiente paso |
+| --- | --- | --- |
+| El claim caduca con cada commit | Desde la primera verificación cambiaron avisos, superficies, foco y banner. | Ambas imágenes reconstruidas del código actual: bundle frontend con hash distinto (prueba de build fresco); backend todo cacheado porque su código no cambió (dicho explícitamente). |
+| Verificación repetida | Frontend 200 con cabeceras; backend UP contra MySQL desechable como `app`, 40 s esta vez por el host compartido (antes 8 s). | Contenedores de prueba eliminados. Ver [evidencia](evidence/round-2026-10-08-imagenes-prod/README.md). |
