@@ -1,0 +1,6 @@
+Publicación de convocatoria sintética en #admisiones: borrador, publicación y lectura pública
+Pasos verdes: 3 de 3
+
+OK   guardar el borrador de la convocatoria sintética :: borrador visible en la consola
+OK   publicar la convocatoria con referencia oficial :: convocatoria visible; estado publicado: true
+OK   la convocatoria publicada se lee en la vista pública :: API pública devuelve la convocatoria sintética

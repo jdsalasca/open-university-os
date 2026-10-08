@@ -709,3 +709,9 @@ cuenta; no se tocan desde aqui. El unico residuo que no se puede quitar es
 | --- | --- | --- |
 | Nueve scripts filtraban al fallar | Los auditores revocaban solo al final feliz; un throw a mitad dejaba navegador abierto y sesión viva hasta agotar el cupo (ya pasó 3 veces, siempre con diagnóstico confuso después). | `auditar-axe`, `auditar-estados` y `medir-carga` envuelven su cuerpo en `try/finally` con cierre y revocación. |
 | Prueba del patrón | Emitir → fallar a propósito → usar el token. | **HTTP 401 tras el fallo: revocado.** Sin el `finally` seguiría vivo (200). |
+
+### Publicación de convocatoria de punta a punta - 8 de octubre de 2026
+
+| Entrega | Resultado verificable | Estado y siguiente paso |
+| --- | --- | --- |
+| Flujo transaccional en el navegador | `ciclo-convocatoria.mjs`: crear borrador, publicar con referencia oficial y leer en la API pública. | **3 de 3 verdes.** El `window.confirm` hay que aceptarlo explícito o la publicación nunca ocurre; los selectores van por `id` estable. Ver [evidencia](evidence/round-2026-10-08-admisiones/README.md). |
