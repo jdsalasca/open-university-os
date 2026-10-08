@@ -631,3 +631,11 @@ cuenta; no se tocan desde aqui. El unico residuo que no se puede quitar es
 | 262 URLs medidas | `auditar-enlaces.mjs` pide cada URL externa real con HEAD y reintenta con GET: **250 verdes**. | Las 12 señaladas se triaron una por una: 11 son fixtures de tests y 1 es límite de tasa del auditor (OSM 429). **Cero enlaces muertos de cara al usuario.** |
 | Dos trampas del instrumento | La primera pasada dio 260 falsos positivos por el verificador TLS de Node. | La forma correcta fue `NODE_OPTIONS=--use-system-ca`, no relajar la verificación. Medir la plantilla (`/search` sin query) no es medir el enlace. |
 | Guard permanente | `check-external-links-https` en `npm test`: ninguna URL de producción usa `http://`. | Verificado con mutación: inyectar `http://` lo deja en rojo con archivo, línea y URL. Ver [evidencia](evidence/round-2026-10-07-enlaces/README.md). |
+
+### Imágenes Docker de producción - 8 de octubre de 2026
+
+| Entrega | Resultado verificable | Estado y siguiente paso |
+| --- | --- | --- |
+| Lo que faltaba | El repo solo tenía `Dockerfile.dev`: no existía forma de construir lo publicable. | `frontend/Dockerfile` (build + nginx, sin reescritura SPA porque las rutas son hash) y `backend/Dockerfile` (build Maven + JRE non-root con readiness). |
+| Verificación corriendo | Frontend efímero: `/` 200 con `nosniff`+`Referrer-Policy`+`no-store`, asset con `immutable`, `#programas` 200. Backend contra MySQL desechable con migraciones reales: readiness **UP en 8 s** como usuario `app`. | Sin TLS, dominio, CSP ni framing: pertenecen al proxy con DTIC y una política inventada rompería OIDC. |
+| Un bug real al verificar | El documento volvía sin cabeceras aunque estaban declaradas: `add_header` en un `location` reemplaza las heredadas. | Se repiten en cada bloque y `check-nginx-headers` lo exige, verificado con mutación. Ver [evidencia](evidence/round-2026-10-08-imagenes-prod/README.md). |
