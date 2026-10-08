@@ -661,3 +661,10 @@ cuenta; no se tocan desde aqui. El unico residuo que no se puede quitar es
 | --- | --- | --- |
 | El otro auditor medía el esqueleto | `auditar-estados.mjs` reportó 6 "sin h1" en páginas que sí lo tienen: solo esperaba tiempos fijos y el chunk no había llegado. | Misma medicina que `auditar-axe.mjs`: 11 rutas reales, espera al contenido de cada ruta, sesión comprobada y revocada. **0 nodos en 22 combinaciones.** |
 | Sesiones filtradas por los auditores | Las corridas viejas nunca revocaban y agotaron el cupo del backend. | Reinicio del backend (sesiones en memoria por diseño) y revocación en el script. Ver [evidencia](evidence/round-2026-10-08-humo/README.md). |
+
+### Barrido responsive tras los cambios recientes - 8 de octubre de 2026
+
+| Entrega | Resultado verificable | Estado y siguiente paso |
+| --- | --- | --- |
+| Medición sistemática | `medir-desborde.mjs`: 11 rutas × 360/768 px con sesión, sale distinto de cero si algo excede. | **0 px en las 22 combinaciones.** |
+| Revisión visual | El documento no ve recortes internos: capturas a 360 px de `#avisos`, `#academia` y `#estudiantes`. | Aviso reubicado legible, `h1` nuevos sin competencia, filtros correctos. Ver [evidencia](evidence/round-2026-10-08-responsive/README.md). |

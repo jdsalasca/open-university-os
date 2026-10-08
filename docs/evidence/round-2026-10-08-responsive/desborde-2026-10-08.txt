@@ -1,0 +1,25 @@
+Desborde horizontal por ruta en 360 y 768px, con sesión de preview
+Combinaciones con scroll lateral: 0 de 22
+
+360px #resumen: exceso 0px
+360px #inicio: exceso 0px
+360px #estudiantes: exceso 0px
+360px #biblioteca: exceso 0px
+360px #avisos: exceso 0px
+360px #avisos-admin: exceso 0px
+360px #programas: exceso 0px
+360px #academia: exceso 0px
+360px #admisiones: exceso 0px
+360px #espacios: exceso 0px
+360px #accesos: exceso 0px
+768px #resumen: exceso 0px
+768px #inicio: exceso 0px
+768px #estudiantes: exceso 0px
+768px #biblioteca: exceso 0px
+768px #avisos: exceso 0px
+768px #avisos-admin: exceso 0px
+768px #programas: exceso 0px
+768px #academia: exceso 0px
+768px #admisiones: exceso 0px
+768px #espacios: exceso 0px
+768px #accesos: exceso 0px
