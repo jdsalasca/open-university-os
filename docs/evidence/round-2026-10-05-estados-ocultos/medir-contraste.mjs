@@ -12,7 +12,7 @@ const require = createRequire(import.meta.url)
 const { chromium } = require(process.env.PLAYWRIGHT_CORE)
 
 const BASE = process.env.BASE ?? 'http://localhost:5173'
-const RUTAS = ['#resumen', '#inicio', '#programas', '#academia', '#admisiones', '#espacios', '#accesos', '#biblioteca', '#noticias']
+const RUTAS = ['#resumen', '#inicio', '#estudiantes', '#biblioteca', '#avisos', '#avisos-admin', '#programas', '#academia', '#admisiones', '#espacios', '#accesos']
 
 const INFORME = new URL('./renderizadas-2026-10-06.txt', import.meta.url).pathname.replace(/^\//, '')
 const clases = [...readFileSync(INFORME, 'utf8').split('\n')]

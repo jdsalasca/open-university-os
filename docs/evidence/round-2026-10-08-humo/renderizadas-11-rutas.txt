@@ -1,0 +1,29 @@
+candidatos estaticos: 72
+clases que SI se renderizan en alguna ruta: 21
+clases que nunca se pintan: 51
+
+Una clase que nunca aparece en el DOM no es un defecto de contraste: es una regla para un estado
+que la plataforma todavia no permite. Solo la lista de abajo es trabajo real.
+
+renderizadas:
+  .academic-affiliation-timeline  <-  light #academia, dark #academia
+  .academic-empty-state  <-  light #academia, dark #academia
+  .academic-icon-periods  <-  light #academia, dark #academia
+  .academic-icon-sites  <-  light #academia, dark #academia
+  .academic-icon-units  <-  light #academia, dark #academia
+  .academic-structure-audit-badge  <-  light #academia, dark #academia
+  .admissions-fallback-status  <-  light #admisiones, dark #admisiones
+  .admissions-timeline-index  <-  light #admisiones, dark #admisiones
+  .admissions-timeline-item  <-  light #admisiones, dark #admisiones
+  .catalog-empty-art  <-  light #programas, dark #programas
+  .catalog-preview-badge  <-  light #programas, dark #programas
+  .contrast-hint  <-  light #inicio, dark #inicio
+  .image-summary-icon  <-  light #inicio, dark #inicio
+  .is-application  <-  light #admisiones, dark #admisiones
+  .is-cread  <-  light #espacios, dark #espacios
+  .is-service  <-  light #espacios, dark #espacios
+  .role-access-locked  <-  light #accesos, dark #accesos
+  .spaces-kind-field  <-  light #espacios, dark #espacios
+  .spaces-municipality-field  <-  light #espacios, dark #espacios
+  .spaces-type-badge  <-  light #espacios, dark #espacios
+  .workspace-home-preview-notice  <-  light #resumen, dark #resumen

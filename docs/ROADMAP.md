@@ -654,3 +654,10 @@ cuenta; no se tocan desde aqui. El unico residuo que no se puede quitar es
 | `#noticias` no existe | Las rutas reales salen de `readApplicationView`: 11 en total. `#noticias` cae a la portada. | `auditar-axe.mjs` usaba `#noticias`: medía la portada dos veces y nunca vio `#avisos`, `#avisos-admin` ni `#estudiantes`. Lista corregida a las 11 rutas. |
 | 7 violaciones reales nuevas | `page-has-heading-one` ×4 en `#avisos` y `#avisos-admin` (empiezan en `h2`); `.module-loading` a 4,17 en claro; filtro pulsado estudiantil a **1,33** sobre amarillo en oscuro. | Las dos páginas pasan a `h1` con sus `h3` bajados a `h2` (y sus 3 reglas SCSS); `.module-loading` se oscurece a 4,77; el filtro conserva texto oscuro sobre amarillo en oscuro. |
 | Verificación | **axe-core 0 violaciones** en 22 combinaciones, foco 8/8 en títulos, **557 pruebas en 80 archivos y 129 guardas**, lint sin avisos, build dentro de presupuesto. | Presupuesto: `entryStyles` 24.000 → 24.150 y `programsStyles` 56.600 → 56.750, ~110 B por la superficie del filtro. Ver [evidencia](evidence/round-2026-10-08-humo/README.md). |
+
+### Endurecer el segundo auditor axe - 8 de octubre de 2026
+
+| Entrega | Resultado verificable | Estado y siguiente paso |
+| --- | --- | --- |
+| El otro auditor medía el esqueleto | `auditar-estados.mjs` reportó 6 "sin h1" en páginas que sí lo tienen: solo esperaba tiempos fijos y el chunk no había llegado. | Misma medicina que `auditar-axe.mjs`: 11 rutas reales, espera al contenido de cada ruta, sesión comprobada y revocada. **0 nodos en 22 combinaciones.** |
+| Sesiones filtradas por los auditores | Las corridas viejas nunca revocaban y agotaron el cupo del backend. | Reinicio del backend (sesiones en memoria por diseño) y revocación en el script. Ver [evidencia](evidence/round-2026-10-08-humo/README.md). |

@@ -1,0 +1,37 @@
+axe-core con los estados plegados abiertos: 11 rutas en claro y oscuro
+nodos en violacion: 6
+
+light #resumen: 1 controles abiertos, 0 nodos
+light #inicio: 0 controles abiertos, 0 nodos
+light #estudiantes: 0 controles abiertos, 0 nodos
+light #biblioteca: 0 controles abiertos, 1 nodos
+  [moderate] page-has-heading-one (1 nodos)
+      html :: Page must have a level-one heading
+light #avisos: 0 controles abiertos, 1 nodos
+  [moderate] page-has-heading-one (1 nodos)
+      html :: Page must have a level-one heading
+light #avisos-admin: 0 controles abiertos, 1 nodos
+  [moderate] page-has-heading-one (1 nodos)
+      html :: Page must have a level-one heading
+light #programas: 0 controles abiertos, 0 nodos
+light #academia: 0 controles abiertos, 0 nodos
+light #admisiones: 0 controles abiertos, 0 nodos
+light #espacios: 0 controles abiertos, 0 nodos
+light #accesos: 0 controles abiertos, 0 nodos
+dark #resumen: 0 controles abiertos, 0 nodos
+dark #inicio: 0 controles abiertos, 0 nodos
+dark #estudiantes: 0 controles abiertos, 0 nodos
+dark #biblioteca: 0 controles abiertos, 1 nodos
+  [moderate] page-has-heading-one (1 nodos)
+      html :: Page must have a level-one heading
+dark #avisos: 0 controles abiertos, 1 nodos
+  [moderate] page-has-heading-one (1 nodos)
+      html :: Page must have a level-one heading
+dark #avisos-admin: 0 controles abiertos, 1 nodos
+  [moderate] page-has-heading-one (1 nodos)
+      html :: Page must have a level-one heading
+dark #programas: 0 controles abiertos, 0 nodos
+dark #academia: 0 controles abiertos, 0 nodos
+dark #admisiones: 0 controles abiertos, 0 nodos
+dark #espacios: 0 controles abiertos, 0 nodos
+dark #accesos: 0 controles abiertos, 0 nodos

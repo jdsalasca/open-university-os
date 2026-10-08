@@ -1,6 +1,6 @@
 // Los 63 candidatos de find-dark-badges.mjs son reglas de componente con fondo claro y color literal
 // cuya clase el tema oscuro no repinta. La ronda anterior los declaro "pendientes" porque no se sabe
-// si se pintan. Este script responde exactamente eso: tras recorrer las nueve rutas con todos los
+// si se pintan. Este script responde exactamente eso: tras recorrer las once rutas con todos los
 // estados desplegados, comprueba si cada clase candidata aparece en el DOM real.
 //
 // Un candidato que nunca se renderiza no es un defecto: es codigo para un estado que la plataforma
@@ -15,7 +15,7 @@ const require = createRequire(import.meta.url)
 const { chromium } = require(process.env.PLAYWRIGHT_CORE)
 
 const BASE = process.env.BASE ?? 'http://localhost:5173'
-const RUTAS = ['#resumen', '#inicio', '#programas', '#academia', '#admisiones', '#espacios', '#accesos', '#biblioteca', '#noticias']
+const RUTAS = ['#resumen', '#inicio', '#estudiantes', '#biblioteca', '#avisos', '#avisos-admin', '#programas', '#academia', '#admisiones', '#espacios', '#accesos']
 
 // El archivo que genera find-dark-badges.mjs, para no mantener una segunda lista a mano.
 const INFORME = new URL('./candidatos-estaticos.txt', import.meta.url).pathname.replace(/^\//, '')

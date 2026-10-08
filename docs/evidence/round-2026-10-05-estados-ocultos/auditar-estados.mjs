@@ -1,6 +1,6 @@
-// Segunda pasada de axe-core, abriendo los estados que las nueve rutas no pintan por defecto.
+// Segunda pasada de axe-core, abriendo los estados que las once rutas no pintan por defecto.
 //
-// La ronda anterior dio 0 violaciones en las nueve rutas, pero eso solo cubre lo que se ve al entrar.
+// La ronda anterior dio 0 violaciones en las once rutas, pero eso solo cubre lo que se ve al entrar.
 // Quedan 63 candidatos estaticos de find-dark-badges.mjs, y casi todos viven detras de un boton:
 // los formularios de alta de #academia empiezan plegados, y el panel de oferta y el historial de
 // periodos tambien. Aqui se pulsan todos los controles que esconden contenido y se vuelve a medir.
@@ -15,13 +15,38 @@ const { chromium } = require(process.env.PLAYWRIGHT_CORE)
 const axeSource = readFileSync(process.env.AXE_PATH, 'utf8')
 
 const BASE = process.env.BASE ?? 'http://localhost:5173'
-const RUTAS = ['#resumen', '#inicio', '#programas', '#academia', '#admisiones', '#espacios', '#accesos', '#biblioteca', '#noticias']
+
+// El token vive solo en memoria en el navegador, por diseño. Se captura de la respuesta del POST
+// para revocar la sesión al terminar y no agotar el cupo del backend.
+let tokenSesion = null
+const RUTAS = [
+  ['#resumen', 'Tu universidad'],
+  ['#inicio', 'Centro de identidad visual'],
+  ['#estudiantes', 'Servicios para acompañar'],
+  ['#biblioteca', 'Biblioteca'],
+  ['#avisos', 'Mis avisos'],
+  ['#avisos-admin', 'Administrar avisos'],
+  ['#programas', 'Mallas curriculares'],
+  ['#academia', 'Estructura y periodos'],
+  ['#admisiones', 'Pregrado presencial'],
+  ['#espacios', 'espacios'],
+  ['#accesos', 'Accesos'],
+]
 
 const navegador = await chromium.launchPersistentContext(
   `${process.env.TEMP}/opencode-chrome-profile-estados-2026-10-06`,
   { executablePath: process.env.CHROMIUM, headless: true, viewport: { width: 1280, height: 1000 } },
 )
 const pagina = await navegador.newPage()
+
+pagina.on('response', async (respuesta) => {
+  if (!respuesta.url().includes('/api/v1/dev/local-preview-session') || respuesta.request().method() !== 'POST') return
+  try {
+    tokenSesion = (await respuesta.json()).accessToken ?? null
+  } catch {
+    tokenSesion = null
+  }
+})
 
 const correrAxe = () => pagina.evaluate(async () => {
   // eslint-disable-next-line no-undef
@@ -55,17 +80,29 @@ const resultados = []
 for (const tema of ['light', 'dark']) {
   await pagina.goto(`${BASE}/#resumen`, { waitUntil: 'networkidle' })
   await pagina.waitForTimeout(2500)
-  const boton = await pagina.$('text=Entrar al preview local')
+  // Misma lección que en auditar-axe.mjs: esperar al botón de verdad y comprobar la sesión, o la
+  // auditoría mide la portada. Y revocar al terminar para no agotar el cupo del backend.
+  const boton = await pagina
+    .waitForSelector('text=Entrar al preview local', { timeout: 25000 })
+    .catch(() => null)
   if (boton) {
     await boton.click()
-    await pagina.waitForSelector('text=Desarrollador local', { timeout: 20000 }).catch(() => {})
+    await pagina.waitForSelector('text=Desarrollador local · preview', { timeout: 25000 }).catch(() => {})
     await pagina.waitForTimeout(1500)
   }
+  const conSesion = await pagina.evaluate(() => document.body.textContent.includes('Desarrollador local · preview'))
+  if (!conSesion) throw new Error('no se pudo emitir la sesion de preview')
 
-  for (const ruta of RUTAS) {
+  for (const [ruta, texto] of RUTAS) {
     await pagina.goto(`${BASE}/${ruta}`, { waitUntil: 'networkidle' })
     await pagina.evaluate((valor) => document.documentElement.setAttribute('data-theme', valor), tema)
-    await pagina.waitForTimeout(1200)
+    // Esperar el contenido propio de la ruta y no un tiempo fijo: con el host saturado el chunk
+    // perezoso tarda, y medir el esqueleto reporta "sin h1" en páginas que sí lo tienen.
+    const listo = await pagina
+      .waitForFunction((t) => document.body.textContent.includes(t), texto, { timeout: 20000 })
+      .then(() => true)
+      .catch(() => false)
+    if (!listo) throw new Error(`la ruta ${ruta} no llegó a pintar "${texto}" en 20 s`)
 
     const abiertos = await abrirTodo()
     await pagina.waitForTimeout(900)
@@ -75,6 +112,15 @@ for (const tema of ['light', 'dark']) {
   }
 }
 await navegador.close()
+
+// Sin esto el cupo de sesiones del backend se agota y las siguientes auditorías miden la portada en
+// vez de la ruta.
+if (tokenSesion) {
+  await fetch(`${BASE}/api/v1/dev/local-preview-session`, {
+    method: 'DELETE',
+    headers: { Authorization: `Bearer ${tokenSesion}` },
+  })
+}
 
 const total = resultados.reduce((a, r) => a + r.violaciones.reduce((s, v) => s + v.total, 0), 0)
 const lineas = [

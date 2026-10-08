@@ -1,4 +1,4 @@
-// Pasada de humo visual: las nueve rutas en tema oscuro con sesión de preview, una captura por
+// Pasada de humo visual: las once rutas en tema oscuro con sesión de preview, una captura por
 // ruta para revisión humana. No afirma nada por sí mismo: es el instrumento para encontrar el
 // siguiente defecto real en vez de suponer dónde está.
 import { createRequire } from 'node:module'
@@ -7,7 +7,7 @@ const require = createRequire(import.meta.url)
 const { chromium } = require(process.env.PLAYWRIGHT_CORE)
 
 const BASE = process.env.BASE ?? 'http://localhost:5179'
-const RUTAS = ['#resumen', '#inicio', '#programas', '#academia', '#admisiones', '#espacios', '#accesos', '#biblioteca', '#noticias']
+const RUTAS = ['#resumen', '#inicio', '#estudiantes', '#biblioteca', '#avisos', '#avisos-admin', '#programas', '#academia', '#admisiones', '#espacios', '#accesos']
 const SALIDA = new URL('./', import.meta.url).pathname.replace(/^\//, '')
 
 const navegador = await chromium.launchPersistentContext(

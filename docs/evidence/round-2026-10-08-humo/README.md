@@ -25,6 +25,18 @@ los avisos.
 - **557 pruebas en 80 archivos y 129 guardas**, lint sin avisos, build dentro de presupuesto.
 - Captura `avisos-dark-h1.png`: jerarquía `h1`→`h2` legible en oscuro.
 
+## Seguimiento: los instrumentos también medían mal
+
+Al re-auditar con la lista corregida, `auditar-estados.mjs` reportó 6 `page-has-heading-one` en páginas
+que sí tienen `h1`: medía el esqueleto porque solo esperaba tiempos fijos y el chunk perezoso no había
+llegado (mismo fallo ya corregido en `auditar-axe.mjs`, nunca portado aquí). Se le aplicó la misma
+medicina: 11 rutas reales, espera al contenido propio de cada ruta, comprobación de sesión y
+revocación al terminar. Resultado: **0 nodos en violación en las 22 combinaciones**
+(`axe-estados-11-endurecido.txt`).
+
+De paso se confirmó que el cupo de sesiones del backend se agota con las propias auditorías si no se
+revoca: hubo que reiniciar el backend (sesiones en memoria por diseño) para emitir de nuevo.
+
 ## Archivos de esta ronda
 
 - `pasada-humo.mjs`: capturas de humo por ruta (así se descubrió lo de `#noticias`).
