@@ -1,0 +1,7 @@
+Pasada funcional por flujos públicos con backend arriba y sesión de preview
+Pasos verdes: 4 de 4
+
+OK   programas: buscar "ingeniería" deja resultados :: 24 menciones de ingeniería en la vista
+OK   espacios: filtrar por municipio reduce la lista :: municipio "Sedes universitarias": 29 -> 9 tarjetas
+OK   admisiones: el ICS se descarga y es un calendario válido :: ICS válido con 22 eventos
+OK   avisos: abrir un aviso muestra su contenido :: título "Mis avisos", 404 caracteres

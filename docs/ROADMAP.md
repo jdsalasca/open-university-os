@@ -668,3 +668,9 @@ cuenta; no se tocan desde aqui. El unico residuo que no se puede quitar es
 | --- | --- | --- |
 | Medición sistemática | `medir-desborde.mjs`: 11 rutas × 360/768 px con sesión, sale distinto de cero si algo excede. | **0 px en las 22 combinaciones.** |
 | Revisión visual | El documento no ve recortes internos: capturas a 360 px de `#avisos`, `#academia` y `#estudiantes`. | Aviso reubicado legible, `h1` nuevos sin competencia, filtros correctos. Ver [evidencia](evidence/round-2026-10-08-responsive/README.md). |
+
+### Pasada funcional por flujos públicos - 8 de octubre de 2026
+
+| Entrega | Resultado verificable | Estado y siguiente paso |
+| --- | --- | --- |
+| Usar la app como una persona | `pasada-funcional.mjs`: buscar programa, filtrar espacios, descargar ICS y abrir aviso, con backend arriba y sesión activa. | **4 de 4 verdes**: búsqueda filtra (24 menciones), municipio 29 → 9 tarjetas, **ICS real descargado y válido con 22 eventos**, avisos con título y contenido. Ver [evidencia](evidence/round-2026-10-08-jornada/README.md). |
