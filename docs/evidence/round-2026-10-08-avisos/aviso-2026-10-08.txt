@@ -1,0 +1,6 @@
+Publicación de un aviso sintético en #avisos-admin con sesión de preview
+Pasos verdes: 3 de 3
+
+OK   abrir la consola de avisos :: título "Avisos institucionales"
+OK   publicar un aviso sintético :: aviso "sintetico-muyvujtk" visible tras publicar
+OK   el aviso publicado se lee en la página pública :: aviso "sintetico-muyvujtk" legible en #avisos

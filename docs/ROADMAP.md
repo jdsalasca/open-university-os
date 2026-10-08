@@ -674,3 +674,11 @@ cuenta; no se tocan desde aqui. El unico residuo que no se puede quitar es
 | Entrega | Resultado verificable | Estado y siguiente paso |
 | --- | --- | --- |
 | Usar la app como una persona | `pasada-funcional.mjs`: buscar programa, filtrar espacios, descargar ICS y abrir aviso, con backend arriba y sesión activa. | **4 de 4 verdes**: búsqueda filtra (24 menciones), municipio 29 → 9 tarjetas, **ICS real descargado y válido con 22 eventos**, avisos con título y contenido. Ver [evidencia](evidence/round-2026-10-08-jornada/README.md). |
+
+### Publicar y leer un aviso de punta a punta - 8 de octubre de 2026
+
+| Entrega | Resultado verificable | Estado y siguiente paso |
+| --- | --- | --- |
+| Flujo completo verificado | `publicar-aviso.mjs`: abrir consola, publicar sintético y leerlo en `#avisos`. | **3 de 3 verdes.** La escritura y la lectura usan el mismo `user_id` y la misma vigencia. |
+| Tres falsas alarmas del instrumento | Selector en español contra `name` en inglés; `$eval` no activa `onChange` de React; fechas `required` sin llenar. | Ninguna era la app. `fill()` de confianza y todos los obligatorios. |
+| La vigencia manda en Bogotá | Un aviso con inicio "de mañana" en UTC no se veía en público: el `Clock` es `America/Bogota` y la lectura lo excluía **correctamente**. | Las fechas del script van en tiempo institucional. Los sintéticos quedan en DEV hasta noviembre. Ver [evidencia](evidence/round-2026-10-08-avisos/README.md). |
