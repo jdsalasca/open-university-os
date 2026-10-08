@@ -623,3 +623,11 @@ cuenta; no se tocan desde aqui. El unico residuo que no se puede quitar es
 | Inventario en vez de discusión | `inventario.mjs` revisa las 27 migraciones y los 337 Java buscando construcciones de MySQL. | **DDL casi portable**: 43 `TIMESTAMP(n)` inocuos, 11 `AUTO_INCREMENT` por reescribir, 1 backtick. **Consultas: 7 `SELECT ... FOR UPDATE` en 6 adaptadores**, que SQLite no expresa: son los bloqueos de concurrencia y habría que repensarlos, no traducirlos. |
 | Lo que no incluye | Segundo dialecto de migraciones a perpetuidad, contratos MySQL, respaldo con `mysqldump` y pool medido. | El perfil `sqlite` arranca sin contenedor con Flyway apagado: correr la suite ahí no prueba nada y no se hizo. |
 | Decisión | Técnicamente viable con trabajo acotado; nada de eso cambia los gates ni lo decide una ronda. | MySQL sigue siendo el objetivo hasta un ADR con estos números delante. Ver [evidencia](evidence/round-2026-10-07-sqlite-inventario/README.md). |
+
+### Auditoría de enlaces externos - 7 de octubre de 2026
+
+| Entrega | Resultado verificable | Estado y siguiente paso |
+| --- | --- | --- |
+| 262 URLs medidas | `auditar-enlaces.mjs` pide cada URL externa real con HEAD y reintenta con GET: **250 verdes**. | Las 12 señaladas se triaron una por una: 11 son fixtures de tests y 1 es límite de tasa del auditor (OSM 429). **Cero enlaces muertos de cara al usuario.** |
+| Dos trampas del instrumento | La primera pasada dio 260 falsos positivos por el verificador TLS de Node. | La forma correcta fue `NODE_OPTIONS=--use-system-ca`, no relajar la verificación. Medir la plantilla (`/search` sin query) no es medir el enlace. |
+| Guard permanente | `check-external-links-https` en `npm test`: ninguna URL de producción usa `http://`. | Verificado con mutación: inyectar `http://` lo deja en rojo con archivo, línea y URL. Ver [evidencia](evidence/round-2026-10-07-enlaces/README.md). |
