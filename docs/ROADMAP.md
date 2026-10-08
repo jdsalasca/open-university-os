@@ -695,3 +695,10 @@ cuenta; no se tocan desde aqui. El unico residuo que no se puede quitar es
 | --- | --- | --- |
 | El claim caduca con cada commit | Desde la primera verificación cambiaron avisos, superficies, foco y banner. | Ambas imágenes reconstruidas del código actual: bundle frontend con hash distinto (prueba de build fresco); backend todo cacheado porque su código no cambió (dicho explícitamente). |
 | Verificación repetida | Frontend 200 con cabeceras; backend UP contra MySQL desechable como `app`, 40 s esta vez por el host compartido (antes 8 s). | Contenedores de prueba eliminados. Ver [evidencia](evidence/round-2026-10-08-imagenes-prod/README.md). |
+
+### Alta académica con referencia DEMO- de punta a punta - 8 de octubre de 2026
+
+| Entrega | Resultado verificable | Estado y siguiente paso |
+| --- | --- | --- |
+| Escritura académica en el navegador | `ciclo-lugar.mjs`: crear lugar raíz con referencia `DEMO-` en `#academia` y comprobar consola, árbol público y auditoría. | **3 de 3 verdes**: visible en consola, excluido del árbol público, evento en bitácora. `DEMO-` es la convención del dominio, no un truco del test. |
+| Tres errores del instrumento | Inputs sin `name`, misma etiqueta en varios formularios y un POST que ni se enviaba. | La pista definitiva fue contar peticiones: sin red es validación nativa, y el diagnóstico pregunta al formulario campo por campo. Ver [evidencia](evidence/round-2026-10-08-academia/README.md). |

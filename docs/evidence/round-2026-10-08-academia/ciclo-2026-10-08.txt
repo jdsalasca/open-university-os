@@ -1,0 +1,6 @@
+Alta de lugar raíz con referencia DEMO- en #academia: consola, árbol público y auditoría
+Pasos verdes: 3 de 3
+
+OK   crear el lugar raíz con referencia DEMO- :: lugar demo-sitio-muyx1ewk visible en la consola
+OK   el árbol público excluye la referencia DEMO- :: árbol público limpio de la referencia sintética
+OK   la auditoría registra el alta :: bitácora con el evento de alta
