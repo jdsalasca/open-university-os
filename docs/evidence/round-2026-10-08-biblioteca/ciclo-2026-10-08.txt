@@ -1,0 +1,6 @@
+Ciclo de biblioteca con sesión de preview: título, ejemplar y búsqueda por código
+Pasos verdes: 3 de 3
+
+OK   registrar un título sintético :: título visible en el catálogo
+OK   registrar un ejemplar del título :: ejemplar SINT-MUYW8Y3J visible en la lista
+OK   recuperar el ejemplar por su código de barras :: ejemplar SINT-MUYW8Y3J recuperado por búsqueda
