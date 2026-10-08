@@ -607,3 +607,11 @@ cuenta; no se tocan desde aqui. El unico residuo que no se puede quitar es
 | --- | --- | --- |
 | Auditoría sin hallazgos | `npm audit` en frontend, con y sin dev: **0 vulnerabilidades**. | Nada que corregir; queda registrado como línea base. |
 | Actualizaciones automáticas | `.github/dependabot.yml` nuevo: npm, maven, docker (ambos Dockerfiles) y github-actions, semanal. | Validado contra esquema con PyYAML: 5 ecosistemas, directorios absolutos, intervalo declarado. Cada actualización llegará en PR pequeño y revisable. |
+
+### Simulacro de respaldo de volúmenes - 7 de octubre de 2026
+
+| Entrega | Resultado verificable | Estado y siguiente paso |
+| --- | --- | --- |
+| El volumen de la app está vacío | `branding-assets` tiene **0 archivos**: respaldarlo no probaría nada. | El script prueba el **mecanismo** con volúmenes desechables y canarios sintéticos, sin tocar volúmenes de la aplicación. |
+| `verify-volume-backup.ps1` + Pester | Siembra, respalda a tar, restaura en otro volumen y compara por sha256. | **2 archivos idénticos tras el viaje.** Pester 4/4. |
+| Dos bugs del script | `foreach` no desestructura tuplas en PowerShell; `$(...)` sin escapar se evalúa localmente. | Ambos se vieron al ejecutar, no al suponer. Ver [evidencia](evidence/round-2026-10-07-respaldo-volumen/README.md). |
