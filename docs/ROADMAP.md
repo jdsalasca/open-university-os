@@ -639,3 +639,10 @@ cuenta; no se tocan desde aqui. El unico residuo que no se puede quitar es
 | Lo que faltaba | El repo solo tenía `Dockerfile.dev`: no existía forma de construir lo publicable. | `frontend/Dockerfile` (build + nginx, sin reescritura SPA porque las rutas son hash) y `backend/Dockerfile` (build Maven + JRE non-root con readiness). |
 | Verificación corriendo | Frontend efímero: `/` 200 con `nosniff`+`Referrer-Policy`+`no-store`, asset con `immutable`, `#programas` 200. Backend contra MySQL desechable con migraciones reales: readiness **UP en 8 s** como usuario `app`. | Sin TLS, dominio, CSP ni framing: pertenecen al proxy con DTIC y una política inventada rompería OIDC. |
 | Un bug real al verificar | El documento volvía sin cabeceras aunque estaban declaradas: `add_header` en un `location` reemplaza las heredadas. | Se repiten en cada bloque y `check-nginx-headers` lo exige, verificado con mutación. Ver [evidencia](evidence/round-2026-10-08-imagenes-prod/README.md). |
+
+### Guard para los Dockerfiles de producción - 8 de octubre de 2026
+
+| Entrega | Resultado verificable | Estado y siguiente paso |
+| --- | --- | --- |
+| La CI no construye las imágenes | Los Dockerfiles de producción se verificarían el día del despliegue, tarde. | `check-prod-dockerfiles` fija: backend non-root + readiness + sin perfil dev + multietapa; frontend nginx multietapa sin dev server, con `nginx.conf` y solo `dist` en la etapa final. |
+| Verificado con mutación | `USER root` temporal lo deja en rojo; restaurado en verde. | El propio guard se afinó una vez: detectaba la palabra en comentarios, ahora solo patrones de activación real. Ver [evidencia](evidence/round-2026-10-08-imagenes-prod/README.md). |
