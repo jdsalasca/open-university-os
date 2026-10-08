@@ -1,0 +1,16 @@
+Enlaces externos reales auditados: 262
+Verdes (2xx/3xx): 250
+Rotos o sin respuesta: 12
+
+ROTO 404 https://uptc.edu.co/calendario :: 
+ROTO 400 https://www.openstreetmap.org/search :: 
+ROTO 404 https://www.uptc.edu.co/programa/001 :: 
+ROTO 404 https://www.uptc.edu.co/programa/002 :: 
+ROTO 404 https://www.uptc.edu.co/programs/education-001/ :: 
+ROTO 404 https://www.uptc.edu.co/programs/engineering-001/ :: 
+ROTO 404 https://www.uptc.edu.co/sitio/portal/programas/13105/ :: 
+ROTO 404 https://www.uptc.edu.co/sitio/portal/programas/14999/ :: 
+ROTO 404 https://www.uptc.edu.co/sitio/portal/programas/education-001/ :: 
+ROTO 404 https://www.uptc.edu.co/sitio/portal/programas/engineering-001/ :: 
+ROTO 404 https://www.uptc.edu.co/sitio/portal/programas/public-001/ :: 
+ROTO 404 https://www.uptc.edu.co/sitio/portal/programas/public-test-program/ :: 
