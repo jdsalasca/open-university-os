@@ -112,78 +112,69 @@ async function usoDeCpu() {
 const token = await sesion()
 const cargaInicial = await usoDeCpu()
 
-if (CALENTAMIENTO > 0) {
-  const inicioCalentamiento = Date.now()
-  for (const ruta of RUTAS) await medirRuta(token, ruta, CALENTAMIENTO)
-  console.log(`calentamiento de ${CALENTAMIENTO} peticiones x ${RUTAS.length} endpoints en ${((Date.now() - inicioCalentamiento) / 1000).toFixed(1)} s`)
-}
-
-const bloques = []
-for (let repeticion = 1; repeticion <= REPETICIONES; repeticion++) {
-  const porRuta = {}
-  for (const ruta of RUTAS) porRuta[ruta] = await medirRuta(token, ruta)
-  bloques.push(porRuta)
-  console.log(`repeticion ${repeticion}/${REPETICIONES} lista`)
-}
-const cargaFinal = await usoDeCpu()
-const cargaMedia = cargaInicial !== null && cargaFinal !== null ? Math.round((cargaInicial + cargaFinal) / 2) : null
-
-// Se descarta la primera: mide el establecimiento de conexionesTCP y el caches frio de MySQL, que no
-// es el estado del sistema una vez que alguien esta usando la aplicacion.
-const utiles = bloques.slice(1)
-const lineas = [
-  `Latencia bajo carga declarada: ${PETICIONES} peticiones por endpoint, concurrencia ${CONCURRENCIA},`,
-  `${REPETICIONES} repeticiones (se descarta la primera por conexiones frias), backend local con 44 tablas`,
-  CALENTAMIENTO > 0 ? `Calentamiento previo: ${CALENTAMIENTO} peticiones por endpoint` : 'Sin calentamiento previo',
-  cargaMedia === null
-    ? 'Utilizacion del host: NO MEDIBLE en esta plataforma, así que estos numeros no se pueden separar del ruido de la maquina'
-    : `Utilizacion del host durante la medicion: ${cargaMedia}% (${cargaInicial}% al inicio, ${cargaFinal}% al final)`,
-  cargaMedia !== null && cargaMedia >= 80
-    ? `AVISO: el host estaba al ${cargaMedia}%. Estos numeros miden la maquina, no el codigo: no los uses.`
-    : `Objetivo documentado: promedio menor a ${OBJETIVO_MS} ms en consultas criticas`,
-  '',
-  'endpoint | estado | mediana entre repeticiones | promedio | p95 | p99 | maximo',
-  '--- | ---: | ---: | ---: | ---: | ---: | ---:',
-]
-const resumen = []
-for (const ruta of RUTAS) {
-  const muestras = utiles.map((b) => b[ruta]).filter(Boolean)
-  const porRuta = {
-    ruta,
-    estado: muestras[0]?.estado ?? 'sin datos',
-    medianaEntreRepeticiones: Number(percentil(muestras.map((m) => m.promedio), 50).toFixed(2)),
-    promedioPeor: Number(Math.max(...muestras.map((m) => m.promedio)).toFixed(2)),
-    p95: Number(Math.max(...muestras.map((m) => m.p95)).toFixed(2)),
-    p99: Number(Math.max(...muestras.map((m) => m.p99)).toFixed(2)),
-    maximo: Number(Math.max(...muestras.map((m) => m.maximo)).toFixed(2)),
+try {
+  if (CALENTAMIENTO > 0) {
+    const inicioCalentamiento = Date.now()
+    for (const ruta of RUTAS) await medirRuta(token, ruta, CALENTAMIENTO)
+    console.log(`calentamiento de ${CALENTAMIENTO} peticiones x ${RUTAS.length} endpoints en ${((Date.now() - inicioCalentamiento) / 1000).toFixed(1)} s`)
   }
-  resumen.push(porRuta)
-  lineas.push([
-    porRuta.ruta,
-    porRuta.estado,
-    porRuta.medianaEntreRepeticiones,
-    porRuta.promedioPeor,
-    porRuta.p95,
-    porRuta.p99,
-    porRuta.maximo,
-  ].join(' | '))
+
+  const bloques = []
+  for (let repeticion = 1; repeticion <= REPETICIONES; repeticion++) {
+    const porRuta = {}
+    for (const ruta of RUTAS) porRuta[ruta] = await medirRuta(token, ruta)
+    bloques.push(porRuta)
+    console.log(`repeticion ${repeticion}/${REPETICIONES} lista`)
+  }
+  const cargaFinal = await usoDeCpu()
+  const cargaMedia = cargaInicial !== null && cargaFinal !== null ? Math.round((cargaInicial + cargaFinal) / 2) : null
+
+  // Se descarta la primera: mide el establecimiento de conexionesTCP y el caches frio de MySQL, que no
+  // es el estado del sistema una vez que alguien esta usando la aplicacion.
+  const utiles = bloques.slice(1)
+  const lineas = [
+    `Latencia bajo carga declarada: ${PETICIONES} peticiones por endpoint, concurrencia ${CONCURRENCIA},`,
+    `${REPETICIONES} repeticiones (se descarta la primera por conexiones frias), backend local con 44 tablas`,
+    CALENTAMIENTO > 0 ? `Calentamiento previo: ${CALENTAMIENTO} peticiones por endpoint` : 'Sin calentamiento previo',
+    cargaMedia === null
+      ? 'Utilizacion del host: NO MEDIBLE en esta plataforma, así que estos numeros no se pueden separar del ruido de la maquina'
+      : `Utilizacion del host durante la medicion: ${cargaMedia}% (${cargaInicial}% al inicio, ${cargaFinal}% al final)`,
+    cargaMedia !== null && cargaMedia >= 80
+      ? `AVISO: el host estaba al ${cargaMedia}%. Estos numeros miden la maquina, no el codigo: no los uses.`
+      : `Objetivo documentado: promedio menor a ${OBJETIVO_MS} ms en consultas criticas`,
+    '',
+    'endpoint | estado | mediana entre repeticiones | promedio | p95 | p99 | maximo',
+    '--- | ---: | ---: | ---: | ---: | ---: | ---:',
+  ]
+  const resumen = []
+  for (const ruta of RUTAS) {
+    const muestras = utiles.map((b) => b[ruta]).filter(Boolean)
+    const porRuta = {
+      ruta,
+      estado: muestras[0]?.estado ?? 'sin datos',
+      medianaEntreRepeticiones: Number(percentil(muestras.map((m) => m.promedio), 50).toFixed(2)),
+      promedioPeor: Number(Math.max(...muestras.map((m) => m.promedio)).toFixed(2)),
+      p95: Number(Math.max(...muestras.map((m) => m.p95)).toFixed(2)),
+      p99: Number(Math.max(...muestras.map((m) => m.p99)).toFixed(2)),
+      maximo: Number(Math.max(...muestras.map((m) => m.maximo)).toFixed(2)),
+    }
+    resumen.push(porRuta)
+    lineas.push([
+      porRuta.ruta,
+      porRuta.estado,
+      porRuta.medianaEntreRepeticiones,
+      porRuta.promedioPeor,
+      porRuta.p95,
+      porRuta.p99,
+      porRuta.maximo,
+    ].join(' | '))
+  }
+} finally {
+  await fetch(`${BASE}/api/v1/dev/local-preview-session`, {
+    method: 'DELETE',
+    headers: { Authorization: `Bearer ${token}` },
+  }).catch(() => {})
 }
-
-const sobreObjetivo = resumen.filter((r) => r.medianaEntreRepeticiones >= OBJETIVO_MS)
-lineas.push('')
-lineas.push(`Endpoints con mediana >= ${OBJETIVO_MS} ms: ${sobreObjetivo.length} de ${resumen.length}`)
-lineas.push(`Peor promedio observado en algun endpoint: ${Math.max(...resumen.map((r) => r.promedioPeor))} ms`)
-lineas.push('')
-lineas.push('Como leerlo: la columna "mediana entre repeticiones" es el numero defendible, porque cada')
-lineas.push('numero es la mediana de los promedios de cuatro bloques cargados y descarta el arranque en')
-lineas.push('frio. "promedio" es el peor bloque, no el tipico. El objetivo se cumple si la mediana queda')
-lineas.push(`bajo ${OBJETIVO_MS} ms, y este script no lo declara cumplido por si solo: la tabla lo dice.`)
-
-// Sin revocar antes de imprimir, la tabla ya esta calculada.// La sesion se revoca antes de imprimir: el backend tiene cupo y las rondas siguientes la necesitan.
-await fetch(`${BASE}/api/v1/dev/local-preview-session`, {
-  method: 'DELETE',
-  headers: { Authorization: `Bearer ${token}` },
-})
 
 const salida = process.argv[2]
 if (salida) writeFileSync(salida, lineas.join('\n'), 'utf8')

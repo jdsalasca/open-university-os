@@ -58,64 +58,64 @@ pagina.on('response', async (respuesta) => {
 })
 
 const resultados = []
-for (const tema of ['light', 'dark']) {
-  await pagina.goto(`${BASE}/#resumen`, { waitUntil: 'networkidle' })
-  await pagina.waitForTimeout(2500)
-  // La sesion de preview tiene cupo en el backend y este script abre nueve rutas por tema. Se espera
-  // al boton en vez de dormir un tiempo fijo: con 2,5 s a veces la app aun no lo pintaba y la
-  // auditoriamediava la portada en lugar de la ruta, que es como se reporto "sin h1" en una pagina
-  // que si lo tiene.
-  const boton = await pagina
-    .waitForSelector('text=Entrar al preview local', { timeout: 25000 })
-    .catch(() => null)
-  if (boton) {
-    await boton.click()
-    await pagina.waitForSelector('text=Desarrollador local · preview', { timeout: 25000 }).catch(() => {})
-    await pagina.waitForTimeout(1500)
-  }
-  const conSesion = await pagina.evaluate(() => document.body.textContent.includes('Desarrollador local · preview'))
-  if (!conSesion) throw new Error('no se pudo emitir la sesion de preview')
-  if (!tokenSesion) throw new Error('la sesion de preview se abrio en el navegador pero no se pudo capturar el token para revocarla')
-  await pagina.evaluate((valor) => document.documentElement.setAttribute('data-theme', valor), tema)
-
-  for (const [ruta, texto] of RUTAS) {
-    await pagina.goto(`${BASE}/${ruta}`, { waitUntil: 'networkidle' })
+try {
+  for (const tema of ['light', 'dark']) {
+    await pagina.goto(`${BASE}/#resumen`, { waitUntil: 'networkidle' })
+    await pagina.waitForTimeout(2500)
+    // La sesion de preview tiene cupo en el backend y este script abre nueve rutas por tema. Se espera
+    // al boton en vez de dormir un tiempo fijo: con 2,5 s a veces la app aun no lo pintaba y la
+    // auditoriamediava la portada en lugar de la ruta, que es como se reporto "sin h1" en una pagina
+    // que si lo tiene.
+    const boton = await pagina
+      .waitForSelector('text=Entrar al preview local', { timeout: 25000 })
+      .catch(() => null)
+    if (boton) {
+      await boton.click()
+      await pagina.waitForSelector('text=Desarrollador local · preview', { timeout: 25000 }).catch(() => {})
+      await pagina.waitForTimeout(1500)
+    }
+    const conSesion = await pagina.evaluate(() => document.body.textContent.includes('Desarrollador local · preview'))
+    if (!conSesion) throw new Error('no se pudo emitir la sesion de preview')
+    if (!tokenSesion) throw new Error('la sesion de preview se abrio en el navegador pero no se pudo capturar el token para revocarla')
     await pagina.evaluate((valor) => document.documentElement.setAttribute('data-theme', valor), tema)
-    // Esperar el contenido real de la ruta y no un tiempo fijo: `/#biblioteca` carga su chunk bajo
-    // demanda y una espera de 1,2 s bastaba para medir el esqueleto vacio, que axeCore cuenta como
-    // pagina sin encabezado de nivel uno. Era un fallo de la auditoria, no de la pagina.
-    const listo = await pagina
-      .waitForFunction((t) => document.body.textContent.includes(t), texto, { timeout: 20000 })
-      .then(() => true)
-      .catch(() => false)
-    if (!listo) throw new Error(`la ruta ${ruta} no llego a pintar "${texto}" en 20 s`)
-    await pagina.waitForTimeout(700)
-    await pagina.addScriptTag({ content: axeSource })
-    const violacion = await pagina.evaluate(async () => {
-      // eslint-disable-next-line no-undef
-      const resultado = await window.axe.run(document, {
-        runOnly: { type: 'tag', values: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'best-practice'] },
-      })
-      return resultado.violations.map((v) => ({
-        id: v.id,
-        impacto: v.impact,
-        ayuda: v.help,
-        nodos: v.nodes.slice(0, 6).map((n) => ({ objetivo: n.target.join(' '), resumen: (n.failureSummary ?? '').split('\n')[1]?.trim() })),
-        total: v.nodes.length,
-      }))
-    })
-    resultados.push({ tema, ruta, violaciones: violacion })
-  }
-}
-await navegador.close()
 
-// Sin esto el cupo de sesiones del backend se agota y las siguientes audits miden la portada en vez
-// de la ruta, que es como se empezaba a reportar "sin h1" en paginas que si lo tienen.
-if (tokenSesion) {
-  await fetch(`${BASE}/api/v1/dev/local-preview-session`, {
-    method: 'DELETE',
-    headers: { Authorization: `Bearer ${tokenSesion}` },
-  })
+    for (const [ruta, texto] of RUTAS) {
+      await pagina.goto(`${BASE}/${ruta}`, { waitUntil: 'networkidle' })
+      await pagina.evaluate((valor) => document.documentElement.setAttribute('data-theme', valor), tema)
+      // Esperar el contenido real de la ruta y no un tiempo fijo: `/#biblioteca` carga su chunk bajo
+      // demanda y una espera de 1,2 s bastaba para medir el esqueleto vacio, que axeCore cuenta como
+      // pagina sin encabezado de nivel uno. Era un fallo de la auditoria, no de la pagina.
+      const listo = await pagina
+        .waitForFunction((t) => document.body.textContent.includes(t), texto, { timeout: 20000 })
+        .then(() => true)
+        .catch(() => false)
+      if (!listo) throw new Error(`la ruta ${ruta} no llego a pintar "${texto}" en 20 s`)
+      await pagina.waitForTimeout(700)
+      await pagina.addScriptTag({ content: axeSource })
+      const violacion = await pagina.evaluate(async () => {
+        // eslint-disable-next-line no-undef
+        const resultado = await window.axe.run(document, {
+          runOnly: { type: 'tag', values: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'best-practice'] },
+        })
+        return resultado.violations.map((v) => ({
+          id: v.id,
+          impacto: v.impact,
+          ayuda: v.help,
+          nodos: v.nodes.slice(0, 6).map((n) => ({ objetivo: n.target.join(' '), resumen: (n.failureSummary ?? '').split('\n')[1]?.trim() })),
+          total: v.nodes.length,
+        }))
+      })
+      resultados.push({ tema, ruta, violaciones: violacion })
+    }
+  }
+} finally {
+  await navegador.close().catch(() => {})
+  if (tokenSesion) {
+    await fetch(`${BASE}/api/v1/dev/local-preview-session`, {
+      method: 'DELETE',
+      headers: { Authorization: `Bearer ${tokenSesion}` },
+    }).catch(() => {})
+  }
 }
 
 const total = resultados.reduce((a, r) => a + r.violaciones.length, 0)

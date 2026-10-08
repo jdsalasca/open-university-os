@@ -702,3 +702,10 @@ cuenta; no se tocan desde aqui. El unico residuo que no se puede quitar es
 | --- | --- | --- |
 | Escritura académica en el navegador | `ciclo-lugar.mjs`: crear lugar raíz con referencia `DEMO-` en `#academia` y comprobar consola, árbol público y auditoría. | **3 de 3 verdes**: visible en consola, excluido del árbol público, evento en bitácora. `DEMO-` es la convención del dominio, no un truco del test. |
 | Tres errores del instrumento | Inputs sin `name`, misma etiqueta en varios formularios y un POST que ni se enviaba. | La pista definitiva fue contar peticiones: sin red es validación nativa, y el diagnóstico pregunta al formulario campo por campo. Ver [evidencia](evidence/round-2026-10-08-academia/README.md). |
+
+### Sesiones que no filtran al fallar - 8 de octubre de 2026
+
+| Entrega | Resultado verificable | Estado y siguiente paso |
+| --- | --- | --- |
+| Nueve scripts filtraban al fallar | Los auditores revocaban solo al final feliz; un throw a mitad dejaba navegador abierto y sesión viva hasta agotar el cupo (ya pasó 3 veces, siempre con diagnóstico confuso después). | `auditar-axe`, `auditar-estados` y `medir-carga` envuelven su cuerpo en `try/finally` con cierre y revocación. |
+| Prueba del patrón | Emitir → fallar a propósito → usar el token. | **HTTP 401 tras el fallo: revocado.** Sin el `finally` seguiría vivo (200). |

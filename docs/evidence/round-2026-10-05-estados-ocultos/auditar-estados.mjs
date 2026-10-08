@@ -77,49 +77,49 @@ const abrirTodo = () => pagina.evaluate(async () => {
 })
 
 const resultados = []
-for (const tema of ['light', 'dark']) {
-  await pagina.goto(`${BASE}/#resumen`, { waitUntil: 'networkidle' })
-  await pagina.waitForTimeout(2500)
-  // Misma lección que en auditar-axe.mjs: esperar al botón de verdad y comprobar la sesión, o la
-  // auditoría mide la portada. Y revocar al terminar para no agotar el cupo del backend.
-  const boton = await pagina
-    .waitForSelector('text=Entrar al preview local', { timeout: 25000 })
-    .catch(() => null)
-  if (boton) {
-    await boton.click()
-    await pagina.waitForSelector('text=Desarrollador local · preview', { timeout: 25000 }).catch(() => {})
-    await pagina.waitForTimeout(1500)
+try {
+  for (const tema of ['light', 'dark']) {
+    await pagina.goto(`${BASE}/#resumen`, { waitUntil: 'networkidle' })
+    await pagina.waitForTimeout(2500)
+    // Misma lección que en auditar-axe.mjs: esperar al botón de verdad y comprobar la sesión, o la
+    // auditoría mide la portada. Y revocar al terminar para no agotar el cupo del backend.
+    const boton = await pagina
+      .waitForSelector('text=Entrar al preview local', { timeout: 25000 })
+      .catch(() => null)
+    if (boton) {
+      await boton.click()
+      await pagina.waitForSelector('text=Desarrollador local · preview', { timeout: 25000 }).catch(() => {})
+      await pagina.waitForTimeout(1500)
+    }
+    const conSesion = await pagina.evaluate(() => document.body.textContent.includes('Desarrollador local · preview'))
+    if (!conSesion) throw new Error('no se pudo emitir la sesion de preview')
+
+    for (const [ruta, texto] of RUTAS) {
+      await pagina.goto(`${BASE}/${ruta}`, { waitUntil: 'networkidle' })
+      await pagina.evaluate((valor) => document.documentElement.setAttribute('data-theme', valor), tema)
+      // Esperar el contenido propio de la ruta y no un tiempo fijo: con el host saturado el chunk
+      // perezoso tarda, y medir el esqueleto reporta "sin h1" en páginas que sí lo tienen.
+      const listo = await pagina
+        .waitForFunction((t) => document.body.textContent.includes(t), texto, { timeout: 20000 })
+        .then(() => true)
+        .catch(() => false)
+      if (!listo) throw new Error(`la ruta ${ruta} no llegó a pintar "${texto}" en 20 s`)
+
+      const abiertos = await abrirTodo()
+      await pagina.waitForTimeout(900)
+      await pagina.addScriptTag({ content: axeSource })
+      const violaciones = await correrAxe()
+      resultados.push({ tema, ruta, abiertos, violaciones })
+    }
   }
-  const conSesion = await pagina.evaluate(() => document.body.textContent.includes('Desarrollador local · preview'))
-  if (!conSesion) throw new Error('no se pudo emitir la sesion de preview')
-
-  for (const [ruta, texto] of RUTAS) {
-    await pagina.goto(`${BASE}/${ruta}`, { waitUntil: 'networkidle' })
-    await pagina.evaluate((valor) => document.documentElement.setAttribute('data-theme', valor), tema)
-    // Esperar el contenido propio de la ruta y no un tiempo fijo: con el host saturado el chunk
-    // perezoso tarda, y medir el esqueleto reporta "sin h1" en páginas que sí lo tienen.
-    const listo = await pagina
-      .waitForFunction((t) => document.body.textContent.includes(t), texto, { timeout: 20000 })
-      .then(() => true)
-      .catch(() => false)
-    if (!listo) throw new Error(`la ruta ${ruta} no llegó a pintar "${texto}" en 20 s`)
-
-    const abiertos = await abrirTodo()
-    await pagina.waitForTimeout(900)
-    await pagina.addScriptTag({ content: axeSource })
-    const violaciones = await correrAxe()
-    resultados.push({ tema, ruta, abiertos, violaciones })
+} finally {
+  await navegador.close().catch(() => {})
+  if (tokenSesion) {
+    await fetch(`${BASE}/api/v1/dev/local-preview-session`, {
+      method: 'DELETE',
+      headers: { Authorization: `Bearer ${tokenSesion}` },
+    }).catch(() => {})
   }
-}
-await navegador.close()
-
-// Sin esto el cupo de sesiones del backend se agota y las siguientes auditorías miden la portada en
-// vez de la ruta.
-if (tokenSesion) {
-  await fetch(`${BASE}/api/v1/dev/local-preview-session`, {
-    method: 'DELETE',
-    headers: { Authorization: `Bearer ${tokenSesion}` },
-  })
 }
 
 const total = resultados.reduce((a, r) => a + r.violaciones.reduce((s, v) => s + v.total, 0), 0)
