@@ -600,3 +600,10 @@ cuenta; no se tocan desde aqui. El unico residuo que no se puede quitar es
 | El gate pedía copias probadas | `tools/verify-mysql-backup-restore.ps1` vuelca la base de desarrollo, la restaura en un MySQL 8.4 desechable sin volumen y compara catálogo, conteos y versión Flyway. Cualquier diferencia sale con código distinto de cero. | **44 tablas, Flyway 27 en origen y en restauración: idéntica.** Pester 4/4 para la comparación. |
 | Dos bugs del propio script | `"${salida}"` unía las 44 tablas con espacios en una sola "tabla"; y `MAX(version)` como texto daba 9 en vez de 27. | Unir con saltos de línea y `MAX(CAST(version AS UNSIGNED))`. Ambos se vieron al medir, no al suponer. |
 | Lo que esto NO prueba | Que el respaldo sirva no es una política de respaldos. | Frecuencia, retención, custodia fuera del host y restauración en producción pertenecen a la decisión de operación con DTIC. Ver [evidencia](evidence/round-2026-10-07-respaldo-mysql/README.md). |
+
+### Auditoría de dependencias y Dependabot - 7 de octubre de 2026
+
+| Entrega | Resultado verificable | Estado y siguiente paso |
+| --- | --- | --- |
+| Auditoría sin hallazgos | `npm audit` en frontend, con y sin dev: **0 vulnerabilidades**. | Nada que corregir; queda registrado como línea base. |
+| Actualizaciones automáticas | `.github/dependabot.yml` nuevo: npm, maven, docker (ambos Dockerfiles) y github-actions, semanal. | Validado contra esquema con PyYAML: 5 ecosistemas, directorios absolutos, intervalo declarado. Cada actualización llegará en PR pequeño y revisable. |
