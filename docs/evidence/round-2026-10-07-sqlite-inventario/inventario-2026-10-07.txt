@@ -1,0 +1,38 @@
+Migraciones revisadas: 27
+
+V10__academic_structure_relation_order.sql: SQL estándar
+V11__academic_structure_order_audit_actions.sql: SQL estándar
+V12__close_academic_organization_relations.sql: SQL estándar
+V13__close_academic_site_relations.sql: SQL estándar
+V14__close_academic_program_affiliations.sql: SQL estándar
+V15__add_public_admissions_module_to_branding.sql: SQL estándar
+V16__add_public_spaces_module_to_branding.sql: SQL estándar
+V17__identity_role_assignments.sql: TIMESTAMP con precisión x3
+V18__restrict_manual_identity_role_assignments.sql: SQL estándar
+V19__reassign_academic_program_affiliations.sql: SQL estándar
+V1__branding_configuration.sql: AUTO_INCREMENT x4 · TIMESTAMP con precisión x5
+V20__index_academic_structure_audit_history.sql: SQL estándar
+V21__canonical_university_users.sql: TIMESTAMP con precisión x1
+V22__version_admissions_calls.sql: AUTO_INCREMENT x1 · TIMESTAMP con precisión x4
+V23__academic_offering_drafts.sql: AUTO_INCREMENT x1 · TIMESTAMP con precisión x3
+V24__institutional_notices.sql: AUTO_INCREMENT x1 · TIMESTAMP con precisión x2
+V25__library_catalogue_and_loans.sql: TIMESTAMP con precisión x3
+V26__library_loan_actor.sql: SQL estándar
+V27__library_copy_withdrawal.sql: backticks `col` x1 · TIMESTAMP con precisión x1
+V2__academic_catalog.sql: AUTO_INCREMENT x2 · TIMESTAMP con precisión x7
+V3__curriculum_search_projection.sql: SQL estándar
+V4__normalize_curriculum_search_snapshot_defaults.sql: SQL estándar
+V5__index_curriculum_draft_queue_order.sql: SQL estándar
+V6__academic_structure.sql: AUTO_INCREMENT x1 · TIMESTAMP con precisión x4
+V7__academic_periods_and_calendars.sql: AUTO_INCREMENT x1 · TIMESTAMP con precisión x10
+V8__allow_calendar_amendments.sql: SQL estándar
+V9__academic_period_references_and_program_order.sql: SQL estándar
+
+Archivos Java revisados: 337
+Construcciones MySQL en consultas Java:
+
+Totales por construcción:
+  migraciones · TIMESTAMP con precisión: 43
+  migraciones · AUTO_INCREMENT: 11
+  migraciones · backticks `col`: 1
+  java · SELECT ... FOR UPDATE (SQLite no lo soporta): 7

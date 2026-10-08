@@ -615,3 +615,11 @@ cuenta; no se tocan desde aqui. El unico residuo que no se puede quitar es
 | El volumen de la app está vacío | `branding-assets` tiene **0 archivos**: respaldarlo no probaría nada. | El script prueba el **mecanismo** con volúmenes desechables y canarios sintéticos, sin tocar volúmenes de la aplicación. |
 | `verify-volume-backup.ps1` + Pester | Siembra, respalda a tar, restaura en otro volumen y compara por sha256. | **2 archivos idénticos tras el viaje.** Pester 4/4. |
 | Dos bugs del script | `foreach` no desestructura tuplas en PowerShell; `$(...)` sin escapar se evalúa localmente. | Ambos se vieron al ejecutar, no al suponer. Ver [evidencia](evidence/round-2026-10-07-respaldo-volumen/README.md). |
+
+### Cuánto costaría cambiar a SQLite, medido - 7 de octubre de 2026
+
+| Entrega | Resultado verificable | Estado y siguiente paso |
+| --- | --- | --- |
+| Inventario en vez de discusión | `inventario.mjs` revisa las 27 migraciones y los 337 Java buscando construcciones de MySQL. | **DDL casi portable**: 43 `TIMESTAMP(n)` inocuos, 11 `AUTO_INCREMENT` por reescribir, 1 backtick. **Consultas: 7 `SELECT ... FOR UPDATE` en 6 adaptadores**, que SQLite no expresa: son los bloqueos de concurrencia y habría que repensarlos, no traducirlos. |
+| Lo que no incluye | Segundo dialecto de migraciones a perpetuidad, contratos MySQL, respaldo con `mysqldump` y pool medido. | El perfil `sqlite` arranca sin contenedor con Flyway apagado: correr la suite ahí no prueba nada y no se hizo. |
+| Decisión | Técnicamente viable con trabajo acotado; nada de eso cambia los gates ni lo decide una ronda. | MySQL sigue siendo el objetivo hasta un ADR con estos números delante. Ver [evidencia](evidence/round-2026-10-07-sqlite-inventario/README.md). |
