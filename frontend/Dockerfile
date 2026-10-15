@@ -7,7 +7,7 @@
 # política de framing pertenecen a la decisión del proxy de producción con DTIC
 # (docs/security/frontend-production-gate.md). Aquí solo van las cabeceras que son seguras en
 # cualquier origen: `nosniff` y `Referrer-Policy`.
-FROM node:24-alpine AS build
+FROM node:25-alpine AS build
 WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci
